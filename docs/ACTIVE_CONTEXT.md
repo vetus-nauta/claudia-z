@@ -1,7 +1,7 @@
 # Active Context
 
 Last updated: 2026-06-11
-Latest pushed commit: `92bb923 Add approved port guest media derivatives`
+Latest pushed commit: `93b0fc1 Ground zone copy in WordPress source facts`
 
 ## Work Rule
 
@@ -48,6 +48,23 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Stage uses `localMedia(folder, stage, full, mobile, focus)`.
 - Internal stage headline hidden outside Overview; `.stage-builder-mark` shows Sunseeker mark instead.
 - Details sheet includes transparent Sunseeker mark and specs.
+- Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
+
+## WordPress Source Text Mapping
+
+Old WordPress XML text is source material for facts only, not wording or layout.
+
+- Overview / Exterior: Sunseeker 76, 2019 context, deep-V hull, strong profile, broad glazing, deck volume, main-deck near-360-degree view.
+- Flybridge: large upper deck, social seating, bar/service context, grill/fridges/ice maker/acoustic system, shade/awning context. Avoid hard guest-count claims unless re-confirmed.
+- Cockpit: adaptable aft lounge, table/service, saloon transition, route toward stern water area.
+- Aft Swim Platform: bathing platform / mini beach-club use, tender boarding, SeaBob/SUP/water-toy context.
+- Tender: old WordPress mentions Williams 445; owner later requested a Williams 420-style placeholder. Do not display a specific tender model until owner confirms.
+- Saloon: main-deck interior, seating/dining, galley context, broad glazing, connection to cockpit.
+- Master cabin: lower-deck principal cabin, double berth, storage/wardrobe, work/lounge details, ensuite.
+- Forward VIP: lower-deck forward guest cabin, central berth, storage, light, ensuite.
+- Starboard guest: lower-deck guest cabin with double-berth arrangement, storage, ensuite.
+- Port guest / children's cabin: lower-deck flexible three-berth/family layout with ensuite.
+- Accessories from old text: SUP x2 and SeaBob are useful context for future platform/tender media, not primary claims until final media confirms.
 
 ## Approved Real Media
 
