@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
+    <title>Claudia Z</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <main class="presentation" aria-live="polite">
+      <section class="stage" aria-label="Claudia Z private presentation">
+        <img class="stage__media" id="zoneMedia" alt="" decoding="async" fetchpriority="high">
+        <div class="stage__scrim" aria-hidden="true"></div>
+
+        <div class="topbar" aria-label="Presentation controls">
+          <div class="identity">
+            <span class="identity__name">Claudia Z</span>
+            <span class="identity__meta">Sunseeker 76</span>
+          </div>
+          <div class="language" aria-label="Language">
+            <button class="language__button" type="button" data-lang="en">EN</button>
+            <button class="language__button" type="button" data-lang="ru">RU</button>
+          </div>
+        </div>
+
+        <div class="stage__content">
+          <p class="eyebrow" data-i18n="eyebrow"></p>
+          <h1 data-i18n="headline"></h1>
+          <p class="lead" data-i18n="lead"></p>
+
+          <div class="quickfacts" aria-label="Key facts">
+            <span data-fact="length">23.60 m</span>
+            <span data-fact="cabins">4 cabins</span>
+            <span data-fact="speed">32 kn</span>
+          </div>
+        </div>
+
+        <div class="command">
+          <nav class="zone-rail" id="zoneRail" aria-label="Yacht zones"></nav>
+          <div class="actions" aria-label="Presentation actions">
+            <button class="action" type="button" id="detailsButton" data-i18n="details"></button>
+            <button class="action action--primary" type="button" id="inquiryButton" data-i18n="inquiry"></button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sheet" id="detailsSheet" aria-hidden="true" aria-label="Yacht details">
+        <div class="sheet__bar">
+          <strong data-i18n="detailsTitle"></strong>
+          <button class="icon-button" type="button" data-close="details" aria-label="Close">×</button>
+        </div>
+        <div class="sheet__grid">
+          <dl class="specs">
+            <div><dt data-i18n="length"></dt><dd>23.60 m / 77'5"</dd></div>
+            <div><dt data-i18n="beam"></dt><dd>5.95 m / 19'6"</dd></div>
+            <div><dt data-i18n="draft"></dt><dd>2.2 m / 5'7"</dd></div>
+            <div><dt data-i18n="engines"></dt><dd>MAN V12 1550 · 2 x 1550 PS</dd></div>
+            <div><dt data-i18n="fuel"></dt><dd>6,000 l</dd></div>
+            <div><dt data-i18n="range"></dt><dd>500 nm @ 10 kn</dd></div>
+          </dl>
+          <div class="zone-note">
+            <p id="zoneTitle"></p>
+            <p id="zoneCopy"></p>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="sheet sheet--inquiry" id="inquirySheet" aria-hidden="true" aria-label="Private inquiry">
+        <div class="sheet__bar">
+          <strong data-i18n="inquiryTitle"></strong>
+          <button class="icon-button" type="button" data-close="inquiry" aria-label="Close">×</button>
+        </div>
+        <p class="inquiry-copy" data-i18n="inquiryCopy"></p>
+        <div class="inquiry-summary" id="inquirySummary"></div>
+      </aside>
+    </main>
+
+    <script src="src/app.js" defer></script>
+  </body>
+</html>
