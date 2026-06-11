@@ -47,7 +47,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Static frontend in `index.html`, `src/app.js`, `src/styles.css`.
 - Theme switcher exists.
 - Stage uses `localMedia(folder, stage, full, mobile, focus)`.
-- Overview has a visible welcome hall glass panel: yacht logo, Sunseeker mark, short description, and key facts. It should feel slightly ceremonial/premium while staying readable over photography.
+- Overview has a compact top-right welcome masthead: yacht logo, restrained Sunseeker mark, owner-approved previous description text, and key facts. It must not use a large card/panel or block the four overview photos.
 - Internal zones do not keep permanent text over the media surface; their details remain in the top-right glass info popup so zone photos stay primary.
 - Yacht information now opens from the compact top-right glass trigger into a semi-transparent glass popup pinned to the upper-right corner.
 - The info trigger uses a restrained animated cue; keep motion soft, premium, and non-playful.

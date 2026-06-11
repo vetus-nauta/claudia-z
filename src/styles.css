@@ -13,8 +13,7 @@
   --command-panel: rgba(8, 11, 12, 0.5);
   --sheet-bg: rgba(18, 22, 25, 0.68);
   --sheet-border: rgba(246, 241, 232, 0.22);
-  --welcome-bg: linear-gradient(145deg, rgba(8, 11, 12, 0.58), rgba(8, 11, 12, 0.34));
-  --welcome-border: rgba(246, 241, 232, 0.24);
+  --welcome-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
   --scrim: linear-gradient(180deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.12) 30%, rgba(8, 11, 12, 0.78) 100%),
     linear-gradient(90deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.1) 58%, rgba(8, 11, 12, 0.34));
   --panel-solid: #121619;
@@ -52,8 +51,7 @@
   --command-panel: rgba(250, 250, 244, 0.56);
   --sheet-bg: rgba(250, 250, 244, 0.76);
   --sheet-border: rgba(25, 35, 38, 0.18);
-  --welcome-bg: linear-gradient(145deg, rgba(250, 250, 244, 0.72), rgba(250, 250, 244, 0.5));
-  --welcome-border: rgba(25, 35, 38, 0.18);
+  --welcome-shadow: 0 2px 18px rgba(255, 255, 255, 0.52);
   --scrim: linear-gradient(180deg, rgba(250, 250, 244, 0.18), rgba(250, 250, 244, 0.03) 34%, rgba(250, 250, 244, 0.34) 100%),
     linear-gradient(90deg, rgba(250, 250, 244, 0.2), rgba(250, 250, 244, 0.02) 58%, rgba(250, 250, 244, 0.12));
   --panel-solid: #f7f5ee;
@@ -303,33 +301,31 @@ button {
 
 .stage__content {
   position: fixed;
-  left: 14px;
-  bottom: calc(112px + var(--safe-bottom));
+  top: calc(74px + var(--safe-top));
+  right: 20px;
   z-index: 18;
-  width: min(520px, calc(100vw - 28px));
-  max-height: min(60dvh, 520px);
+  width: min(270px, calc(100vw - 40px));
+  max-height: min(44dvh, 360px);
   overflow: hidden;
-  border: 1px solid var(--welcome-border);
-  border-radius: var(--radius);
-  padding: 18px;
-  background: var(--welcome-bg);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(26px) saturate(1.08);
+  padding: 0;
+  color: #f7f2e8;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translate3d(-10px, 8px, 0) scale(0.99);
+  text-align: right;
+  text-shadow: var(--welcome-shadow);
+  transform: translate3d(8px, -6px, 0);
   transition: opacity 220ms ease, transform 260ms cubic-bezier(0.2, 0.78, 0.18, 1), visibility 220ms ease;
 }
 
 .stage__content::before {
   content: "";
   display: block;
-  width: 72px;
+  width: 54px;
   height: 1px;
-  margin: 0 0 16px;
-  background: var(--accent);
-  opacity: 0.72;
+  margin: 0 0 12px auto;
+  background: rgba(215, 183, 120, 0.92);
+  opacity: 0.82;
 }
 
 .stage__content--overview {
@@ -341,8 +337,8 @@ button {
 
 .hero-wordmark {
   display: none;
-  width: min(330px, 76vw);
-  margin: 0 0 12px -3px;
+  width: min(190px, 54vw);
+  margin: 0 0 6px auto;
 }
 
 .stage__content--overview .hero-wordmark {
@@ -355,7 +351,7 @@ button {
   height: auto;
   max-height: min(21vh, 132px);
   object-fit: contain;
-  object-position: left center;
+  object-position: right center;
   filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.32));
   pointer-events: none;
   user-select: none;
@@ -364,8 +360,9 @@ button {
 .stage-builder-mark {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   width: fit-content;
-  margin: 2px 0 4px;
+  margin: 0 0 8px auto;
 }
 
 .stage__content--overview .stage-builder-mark {
@@ -373,8 +370,8 @@ button {
 }
 
 .stage-builder-mark .sunseeker-mark {
-  width: clamp(116px, 14vw, 162px);
-  opacity: 0.8;
+  width: clamp(74px, 8vw, 104px);
+  opacity: 0.72;
 }
 
 :root[data-theme="dark"] .sunseeker-mark--on-light,
@@ -384,10 +381,24 @@ button {
   display: none;
 }
 
+.stage__content .claudia-wordmark--on-dark,
+:root[data-theme="light"] .stage__content .claudia-wordmark--on-dark,
+.stage__content .sunseeker-mark--on-dark,
+:root[data-theme="light"] .stage__content .sunseeker-mark--on-dark {
+  display: block;
+}
+
+.stage__content .claudia-wordmark--on-light,
+:root[data-theme="light"] .stage__content .claudia-wordmark--on-light,
+.stage__content .sunseeker-mark--on-light,
+:root[data-theme="light"] .stage__content .sunseeker-mark--on-light {
+  display: none;
+}
+
 .eyebrow {
-  margin: 0 0 12px;
-  color: var(--accent);
-  font-size: 12px;
+  margin: 0 0 8px;
+  color: rgba(215, 183, 120, 0.96);
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -404,11 +415,12 @@ h1 {
 }
 
 .lead {
-  max-width: 34rem;
-  margin: 16px 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(15px, 2vw, 18px);
-  line-height: 1.45;
+  max-width: 16rem;
+  margin: 0 0 0 auto;
+  color: rgba(247, 242, 232, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.36;
 }
 
 .stage-zone-detail {
@@ -431,7 +443,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
-  margin-top: 20px;
+  margin: 12px 0 0 auto;
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
   width: fit-content;
@@ -441,10 +453,11 @@ h1 {
 .quickfacts span {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 8px 13px;
-  color: var(--ink-soft);
-  font-size: 12px;
+  min-height: 28px;
+  padding: 6px 9px;
+  color: rgba(247, 242, 232, 0.76);
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -860,14 +873,16 @@ h1 {
   }
 
   .stage__content {
-    left: 24px;
-    bottom: 112px;
-    width: min(560px, calc(100vw - 48px));
-    padding: 20px;
+    top: calc(74px + var(--safe-top));
+    right: 24px;
+    left: auto;
+    bottom: auto;
+    width: min(270px, calc(100vw - 48px));
+    padding: 0;
   }
 
   .hero-wordmark {
-    width: min(390px, 42vw);
+    width: min(210px, 28vw);
   }
 
   h1 {
@@ -963,29 +978,33 @@ h1 {
   }
 
   .stage__content {
-    left: 12px;
-    bottom: calc(78px + var(--safe-bottom));
-    width: calc(100vw - 24px);
-    max-height: min(54dvh, 430px);
-    padding: 15px;
+    top: calc(68px + var(--safe-top));
+    right: 14px;
+    left: auto;
+    bottom: auto;
+    width: min(220px, calc(100vw - 28px));
+    max-height: min(42dvh, 320px);
+    padding: 0;
   }
 
   .hero-wordmark {
-    width: min(270px, 72vw);
+    width: min(158px, 42vw);
   }
 
   .lead {
-    font-size: 14px;
+    max-width: 13.5rem;
+    font-size: 11px;
+    line-height: 1.32;
   }
 
   .quickfacts {
-    margin-top: 16px;
+    margin-top: 10px;
   }
 
   .quickfacts span {
-    min-height: 34px;
-    padding: 7px 10px;
-    font-size: 11px;
+    min-height: 26px;
+    padding: 5px 7px;
+    font-size: 9px;
   }
 
   .stage-zone-detail {
@@ -1004,9 +1023,11 @@ h1 {
 
 @media (min-width: 1160px) {
   .stage__content {
-    left: 56px;
-    bottom: 118px;
-    padding: 22px;
+    top: calc(76px + var(--safe-top));
+    right: 56px;
+    left: auto;
+    bottom: auto;
+    padding: 0;
   }
 
   .command {

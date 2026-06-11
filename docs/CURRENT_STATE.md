@@ -66,7 +66,7 @@
 - Prototype now includes a compact dark/light theme switcher. Dark and light themes use different interface tones: dark glass/light type and pale glass/dark type, with shared layout.
 - Prototype includes basic casual photo-copy deterrents: no image drag, context-menu blocking on the stage, and a transparent media guard layer. This is not absolute protection.
 - Visible yacht-name treatment: show `Claudia Z` only in the Overview welcome hall and Overview info popup. Internal zones must not repeat the yacht name as the main stage headline.
-- Copy placement: Overview uses a visible welcome hall glass panel with yacht logo, Sunseeker mark, short description, and key facts. Internal zones keep media clean; their concise `copy` and `detail` live in the top-right glass info popup.
+- Copy placement: Overview uses a compact top-right masthead with yacht logo, restrained Sunseeker mark, the previous owner-approved description text, and key facts. It must not become a large card/panel over the photo sequence. Internal zones keep media clean; their concise `copy` and `detail` live in the top-right glass info popup.
 - Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar instead of overflowing horizontally.
 - Aft Swim Platform currently uses a generated temporary placeholder scene with a bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and a small fruit/champagne table. Replace it with owner-approved real media when supplied.
