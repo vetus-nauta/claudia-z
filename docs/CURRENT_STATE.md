@@ -14,7 +14,7 @@
 - GitHub is the source of truth.
 - Old site text will be provided by the owner and may be used only as directional reference, not copied or closely paraphrased.
 - Primary language is English; Russian is supported; all other detected languages fall back to English.
-- Initial media/content zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform.
+- Initial media/content zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Photos will be supplied later as Google Drive folders/links on request.
 
@@ -35,7 +35,7 @@ Source facts available for new copy:
 - Listed capacities: fresh water 1,400 l, black tank 400 l, fuel 6,000 l.
 - Listed propulsion: MAN V12 1550 shaft, 2 x 1550 PS.
 - Listed performance: maximum speed 32 knots; range at 10 knots 500 nautical miles.
-- Layout/content direction: exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, saloon/dining/galley, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin, ensuite bathrooms.
+- Layout/content direction: exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender, saloon/dining/galley, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin, ensuite bathrooms.
 - Experience direction: deep-V hull, broad deck space, near 360-degree main-deck views, flybridge social area, cockpit lounge/bar, stern beach-club style zone, tender/SeaBob context, foredeck sunbeds/seating.
 - Media references include 125 jpg files, 8 png files, and 1 webp header image in the complete export; placeholder stock images and WordPress theme assets must not drive the new design.
 

@@ -10,6 +10,7 @@ Do not build the 3D model until source media and zone map are approved.
 
 - exterior profile
 - aft swim platform / bathing platform
+- tender
 - cockpit
 - flybridge
 - bow area

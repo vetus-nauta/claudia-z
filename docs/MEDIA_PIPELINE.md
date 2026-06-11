@@ -22,6 +22,7 @@ Classify media by:
 - starboard guest cabin
 - port guest / children's cabin
 - aft swim platform / bathing platform
+- tender
 - cockpit
 - flybridge
 - bow area
@@ -55,8 +56,9 @@ When requesting media from the owner, prefer clear folders:
 - `06_foredeck`
 - `07_cockpit`
 - `08_aft_swim_platform`
-- `09_video`
-- `10_details`
+- `09_tender`
+- `10_video`
+- `11_details`
 
 Folder names may vary, but agents must map them back to stable yacht zones.
 
@@ -68,6 +70,13 @@ Use these names for the aft bathing area:
 - English display: `Aft Swim Platform`
 - Russian display: `Кормовая купальная платформа`
 - Acceptable descriptive text: `bathing platform` when describing the function of the zone.
+
+Use these names for the tender:
+
+- Internal zone key: `tender`
+- English display: `Tender`
+- Russian display: `Тендер`
+- Treat tender as its own media section even when tender photos are physically connected to the aft swim platform.
 
 ## Metadata Per Asset
 

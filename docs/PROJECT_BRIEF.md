@@ -81,6 +81,7 @@ Initial content should be organized around:
 - foredeck
 - cockpit
 - aft swim platform / bathing platform
+- tender
 
 Photos will be provided later through Google Drive folders by request.
 
@@ -94,7 +95,7 @@ The old WordPress exports may inform factual content only. Current extracted fac
 - Fresh water 1,400 l; black tank 400 l; fuel 6,000 l.
 - MAN V12 1550 shaft engines, 2 x 1550 PS.
 - Maximum speed 32 knots; listed range at 10 knots 500 nautical miles.
-- Directional spaces: flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, saloon/dining/galley, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
+- Directional spaces: flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender, saloon/dining/galley, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 
 These facts should be verified before final publication where accuracy matters.
 

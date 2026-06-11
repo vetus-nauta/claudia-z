@@ -93,7 +93,7 @@ Approved
 ## 2026-06-11 — Initial Yacht Sections And Media Intake
 
 Decision:
-Initial content/media structure should include general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, and aft swim platform / bathing platform. Interior media should additionally be separated into saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin.
+Initial content/media structure should include general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, and tender. Interior media should additionally be separated into saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin.
 
 Impact:
 Photos will be requested from the owner as Google Drive folders/links and mapped into stable yacht zones for current gallery and future 3D guide compatibility.
