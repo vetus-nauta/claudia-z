@@ -1,7 +1,7 @@
 # Active Context
 
 Last updated: 2026-06-11
-Latest pushed commit: `3c5f4d3 Add platform placeholder and internal brand treatment`
+Latest pushed commit: `0a2b6c4 Add approved forward VIP media derivatives`
 
 ## Work Rule
 
@@ -113,6 +113,14 @@ Forward VIP cabin, `assets/media/forward_vip/`:
 - First four frames explain berth symmetry, cabin volume, storage, and vanity.
 - `47-P1999506` and `49-P1999515` are ensuite/bathroom frames.
 
+Port guest / children's cabin, `assets/media/port_guest/`:
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Approved order: `58-P1999575`, `54-P1999537`, `53-P1999532`, `60-P1999557`, `62-P1999562`.
+- First three frames explain the port/children's cabin volume, bunk layout, berth surface, and window line.
+- `60-P1999557` and `62-P1999562` are ensuite/bathroom frames.
+- User-provided `60-P1999575` was not found in Drive; treated as a mistaken merge of existing `58-P1999575` and `60-P1999557`, not used as a separate asset.
+
 ## Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
@@ -134,7 +142,6 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 - `main_deck`
 - `interior`
-- `port_guest`
 
 ## Media Intake Protocol
 

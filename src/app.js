@@ -272,9 +272,11 @@ const zones = [
   {
     id: "port_guest",
     media: [
-      media("55-p1999538.jpg", "50% 52%"),
-      media("45-p1999492.jpg", "50% 52%"),
-      media("47-p1999506.jpg", "50% 50%")
+      localMedia("port_guest", "58-p1999575-stage.webp", "58-p1999575-full.webp", "58-p1999575-mobile.webp", "50% 50%"),
+      localMedia("port_guest", "54-p1999537-stage.webp", "54-p1999537-full.webp", "54-p1999537-mobile.webp", "50% 50%"),
+      localMedia("port_guest", "53-p1999532-stage.webp", "53-p1999532-full.webp", "53-p1999532-mobile.webp", "50% 50%"),
+      localMedia("port_guest", "60-p1999557-stage.webp", "60-p1999557-full.webp", "60-p1999557-mobile.webp", "50% 50%"),
+      localMedia("port_guest", "62-p1999562-stage.webp", "62-p1999562-full.webp", "62-p1999562-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Port guest",
