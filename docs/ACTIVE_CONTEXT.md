@@ -106,6 +106,13 @@ Starboard guest cabin, `assets/media/starboard_guest/`:
 - First three frames explain berth/window/storage perspectives.
 - `23-P1999446` is vanity/storage detail; `27-P1999448` and `34-P1999463` are ensuite/bathroom frames.
 
+Forward VIP cabin, `assets/media/forward_vip/`:
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Approved order: `38-P1999471`, `45-P1999492`, `43-P1999484`, `44-P1999491`, `47-P1999506`, `49-P1999515`.
+- First four frames explain berth symmetry, cabin volume, storage, and vanity.
+- `47-P1999506` and `49-P1999515` are ensuite/bathroom frames.
+
 ## Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
@@ -127,7 +134,6 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 - `main_deck`
 - `interior`
-- `forward_vip`
 - `port_guest`
 
 ## Media Intake Protocol
