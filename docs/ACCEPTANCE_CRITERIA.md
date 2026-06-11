@@ -14,6 +14,7 @@ The first release is acceptable only if:
 - it has no public SEO growth strategy or keyword landing copy
 - it has no public prices
 - it has no direct charter/rental/booking language
+- it has no private inquiry CTA, public contact form, or owner-contact path
 - old site text is used only as directional reference, not copied or closely paraphrased
 - English is the primary/default language
 - Russian is supported
@@ -23,6 +24,7 @@ The first release is acceptable only if:
 - interior media can be filtered or grouped by saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin
 - it presents yacht beautifully and confidently
 - all approved media displays correctly
+- approved hero and zone media do not accidentally crop off bow, stern, hull, flybridge, tender, or key deck geometry
 - videos have poster/fallback
 - no owner private data is exposed
 - no secrets are committed

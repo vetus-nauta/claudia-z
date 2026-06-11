@@ -3,21 +3,23 @@ const mediaBase = "https://claudiazdotcom.wordpress.com/wp-content/uploads/2022/
 const zones = [
   {
     id: "overview",
-    image: `${mediaBase}dji_0279_1.jpg`,
+    image: `${mediaBase}dji_0240.jpg`,
+    focus: "50% 46%",
     en: {
       label: "Overview",
       title: "A private first look",
-      copy: "The opening view should read quickly: a 23.60 m Sunseeker 76, presented for selected broker and client conversations."
+      copy: "The opening view should identify the yacht, the scale, and the route into the media without adding a contact path."
     },
     ru: {
       label: "Обзор",
       title: "Первое частное впечатление",
-      copy: "Первый экран должен считываться сразу: Sunseeker 76 длиной 23.60 м для закрытого показа брокерам и клиентам."
+      copy: "Первый экран должен сразу показать яхту, уровень и путь в медиа без контактного сценария."
     }
   },
   {
     id: "exterior",
     image: `${mediaBase}dji_0248.jpg`,
+    focus: "58% 44%",
     en: {
       label: "Exterior",
       title: "Profile and deck presence",
@@ -32,6 +34,7 @@ const zones = [
   {
     id: "flybridge",
     image: `${mediaBase}164-p1477618_1.jpg`,
+    focus: "50% 50%",
     en: {
       label: "Flybridge",
       title: "Open social deck",
@@ -46,6 +49,7 @@ const zones = [
   {
     id: "main_deck",
     image: `${mediaBase}main-deck.png`,
+    focus: "50% 50%",
     en: {
       label: "Main deck",
       title: "Saloon, dining, movement",
@@ -60,6 +64,7 @@ const zones = [
   {
     id: "foredeck",
     image: `${mediaBase}167-p1477642.jpg`,
+    focus: "50% 50%",
     en: {
       label: "Foredeck",
       title: "Forward lounge",
@@ -74,6 +79,7 @@ const zones = [
   {
     id: "cockpit",
     image: `${mediaBase}170-p1999735_1.jpg`,
+    focus: "50% 50%",
     en: {
       label: "Cockpit",
       title: "Aft lounge connection",
@@ -88,6 +94,7 @@ const zones = [
   {
     id: "aft_swim_platform",
     image: `${mediaBase}117-p1477608.jpg`,
+    focus: "52% 54%",
     en: {
       label: "Aft Swim Platform",
       title: "Water access aft",
@@ -102,6 +109,7 @@ const zones = [
   {
     id: "tender",
     image: `${mediaBase}168-p1477709_1.jpg`,
+    focus: "50% 50%",
     en: {
       label: "Tender",
       title: "Tender and water toys",
@@ -116,6 +124,7 @@ const zones = [
   {
     id: "interior",
     image: `${mediaBase}1-p1999373.jpg`,
+    focus: "50% 50%",
     en: {
       label: "Interior",
       title: "Interior calm",
@@ -133,12 +142,9 @@ const copy = {
   en: {
     eyebrow: "Private yacht presentation",
     headline: "Claudia Z",
-    lead: "A controlled, media-first presentation for selected broker and client conversations. Quiet, direct, and built around the yacht itself.",
-    details: "Details",
-    inquiry: "Private inquiry",
+    lead: "Sunseeker 76 arranged as a quiet visual guide: decks, interiors, details, and water-level zones in one controlled view.",
+    details: "Yacht details",
     detailsTitle: "Yacht facts",
-    inquiryTitle: "Private inquiry",
-    inquiryCopy: "Availability, operational details, and introductions are handled privately and remain subject to confirmation.",
     length: "Length",
     beam: "Beam",
     draft: "Draft",
@@ -147,18 +153,14 @@ const copy = {
     range: "Range",
     factLength: "23.60 m",
     factCabins: "4 cabins",
-    factSpeed: "32 kn",
-    inquirySummary: "Prepared context: Claudia Z, Sunseeker 76, selected private presentation. Preferred zone:"
+    factSpeed: "32 kn"
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "Контролируемая медиа-презентация для выбранных брокеров и прямых клиентских разговоров. Спокойно, ясно, вокруг самой яхты.",
-    details: "Детали",
-    inquiry: "Частный запрос",
+    lead: "Sunseeker 76 как спокойный визуальный гид: палубы, интерьер, детали и зоны у воды в одном контролируемом просмотре.",
+    details: "Детали яхты",
     detailsTitle: "Факты о яхте",
-    inquiryTitle: "Частный запрос",
-    inquiryCopy: "Доступность, операционные детали и представления обсуждаются приватно и требуют подтверждения.",
     length: "Длина",
     beam: "Ширина",
     draft: "Осадка",
@@ -167,8 +169,7 @@ const copy = {
     range: "Запас хода",
     factLength: "23.60 м",
     factCabins: "4 каюты",
-    factSpeed: "32 уз.",
-    inquirySummary: "Контекст: Claudia Z, Sunseeker 76, закрытая презентация. Выбранная зона:"
+    factSpeed: "32 уз."
   }
 };
 
@@ -180,10 +181,8 @@ const state = {
 const media = document.querySelector("#zoneMedia");
 const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
-const inquirySheet = document.querySelector("#inquirySheet");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
-const inquirySummary = document.querySelector("#inquirySummary");
 
 function detectLanguage() {
   const preferred = [navigator.language, ...(navigator.languages || [])]
@@ -236,9 +235,9 @@ function renderZone() {
   const zone = currentZone();
   media.src = zone.image;
   media.alt = zone[state.lang].title;
+  media.style.objectPosition = zone.focus;
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
-  inquirySummary.textContent = `${copy[state.lang].inquirySummary} ${zone[state.lang].label}.`;
 }
 
 function render() {
@@ -258,26 +257,18 @@ document.querySelectorAll(".language__button").forEach((button) => {
 });
 
 document.querySelector("#detailsButton").addEventListener("click", () => {
-  toggleSheet(inquirySheet, false);
   toggleSheet(detailsSheet);
-});
-
-document.querySelector("#inquiryButton").addEventListener("click", () => {
-  toggleSheet(detailsSheet, false);
-  toggleSheet(inquirySheet);
 });
 
 document.querySelectorAll("[data-close]").forEach((button) => {
   button.addEventListener("click", () => {
-    const target = button.dataset.close === "details" ? detailsSheet : inquirySheet;
-    toggleSheet(target, false);
+    toggleSheet(detailsSheet, false);
   });
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     toggleSheet(detailsSheet, false);
-    toggleSheet(inquirySheet, false);
   }
 });
 

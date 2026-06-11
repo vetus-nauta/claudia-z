@@ -46,6 +46,8 @@ Avoid:
 - Guaranteed availability
 - Direct legal offer language
 - Owner identity
+- Owner-contact path
+- Private inquiry as a site CTA
 - Unverified performance/range/technical claims
 - SEO keyword stuffing
 - Generic sales landing-page copy
@@ -55,14 +57,10 @@ Avoid:
 Prefer:
 
 - Private yacht presentation
-- Availability by request
-- Selected dates
-- Private introduction
 - Guest experience
 - Details shared privately
-- Private inquiry
 - Subject to confirmation
-- Broker/client conversation
+- Controlled private viewing
 
 ## Style
 

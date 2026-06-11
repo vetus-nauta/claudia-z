@@ -104,6 +104,11 @@ For every selected asset, define:
 - Always provide video poster image.
 - Never autoplay sound.
 - Prepare mobile and tablet crops.
+- Define focal point, mobile crop, tablet crop, and desktop crop before approving any hero or zone image.
+- Reject accidental crops that cut the bow, stern, hull line, flybridge, tender, or key deck geometry.
+- Allow tight crops only when the asset is explicitly classified as a detail shot.
+- Judge each image by content and design role: hero, zone opener, detail, atmosphere, technical proof, or future 3D reference.
+- Do not use a photo as hero merely because it is available; it must survive mobile framing and preserve the yacht's shape.
 - Use lazy loading except critical hero media.
 - Keep first screen fast.
 

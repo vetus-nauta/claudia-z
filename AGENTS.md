@@ -82,7 +82,7 @@ Use careful language:
 - availability by request
 - selected dates
 - guest experience
-- private inquiry
+- controlled private viewing
 - broker/client conversation
 - details shared privately
 - subject to confirmation
@@ -126,7 +126,7 @@ The first controlled presentation layer should include:
 - tender zone
 - calm experience narrative
 - gallery / video layer
-- private inquiry entry
+- no public inquiry or owner-contact entry
 - no prices
 - no direct booking language
 
@@ -180,7 +180,7 @@ A future private panel may include:
 - admin account
 - invited client/broker account
 - invite-only access
-- private inquiry threads
+- private communication threads
 - private messenger
 - MongoDB Atlas or equivalent managed database
 - encrypted transport
@@ -218,6 +218,9 @@ Before using media:
 - prepare smartphone/tablet crops
 - avoid low-quality compression
 - avoid heavy mobile load
+- never accept accidental crops that cut the bow, stern, hull line, flybridge, tender, or key deck geometry unless the crop is an intentional approved detail shot
+- define a focal point and mobile/tablet crop for every hero or zone image
+- reject hero media that only works on desktop but damages the yacht shape on mobile
 - use video poster images
 - do not autoplay sound
 
@@ -303,12 +306,12 @@ When acting as analyst, strategist, architect, reviewer, or discovery interviewe
 
 For early-stage discovery, use the core 10-question model:
 
-1. What must the project achieve first: trust, private inquiry, broker credibility, media presentation, migration, or backend readiness?
-2. Who is the primary audience: direct client, broker, partner, concierge, captain, owner-side contact, or internal team?
+1. What must the project achieve first: trust, broker credibility, media presentation, migration, or backend readiness?
+2. Who is the primary audience: direct client, broker, partner, concierge, captain, or internal team?
 3. What should the visitor feel in the first 10 seconds?
 4. What must never be public?
 5. Which yacht facts are verified and safe to publish?
-6. What is the preferred private inquiry path?
+6. What interaction paths must be absent from the presentation site?
 7. What privacy level is required for the first release?
 8. What must be preserved from the current WordPress/site state?
 9. What outcome counts as a successful first release?

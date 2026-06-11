@@ -100,3 +100,28 @@ Photos will be requested from the owner as Google Drive folders/links and mapped
 
 Status:
 Approved
+
+## 2026-06-11 — No Public Inquiry Or Owner Contact
+
+Decision:
+The presentation site must not include a private inquiry CTA, public contact form, owner-contact path, or any direct connection to the yacht owner.
+
+Supersedes:
+Earlier wording that mentioned private inquiry as a first-release site path.
+
+Impact:
+The first release is a controlled visual presentation only. Future private access or communication systems must remain separate from the public presentation surface unless explicitly approved later.
+
+Status:
+Approved
+
+## 2026-06-11 — Strict Media Crop Control
+
+Decision:
+Hero and zone media must be approved with deliberate focal points and mobile/tablet/desktop crop behavior. Accidental crops that cut the bow, stern, hull line, flybridge, tender, or key deck geometry are not acceptable.
+
+Impact:
+Images are judged by design role and framing, not by availability alone. Temporary media may be used for layout testing, but final media requires content-aware review before approval.
+
+Status:
+Approved

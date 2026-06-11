@@ -14,7 +14,7 @@ Namecheap `public_html` is the publication target, not the project memory.
 5. Deploy only approved build.
 6. Verify domain and HTTPS.
 7. Verify no-index controls: robots, meta robots, sitemap absence, and headers where available.
-8. Verify media and forms.
+8. Verify media and confirm no public contact forms exist.
 9. Keep rollback backup.
 
 ## Do Not

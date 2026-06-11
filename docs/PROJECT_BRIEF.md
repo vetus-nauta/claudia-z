@@ -2,7 +2,7 @@
 
 ## Project
 
-Premium controlled no-index yacht presentation tool and future private inquiry system.
+Premium controlled no-index yacht presentation tool and future private access system.
 
 ## Current Domain Context
 
@@ -41,7 +41,7 @@ Create a beautiful, mobile-first and tablet-first presentation that shows:
 - lifestyle and sea atmosphere
 - premium experience
 - photo/video story
-- discreet private inquiry path
+- controlled visual viewing without public contact or owner-contact paths
 
 The presentation is for controlled sharing with selected brokers, trusted partners, and direct private clients. It must be hard no-index by default and must not be built for public search discovery.
 
@@ -105,7 +105,6 @@ Later phases may include:
 
 - private access area
 - invite-only client/broker login
-- inquiry management
 - private messenger
 - MongoDB Atlas backend
 - admin dashboard

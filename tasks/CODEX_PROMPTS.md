@@ -22,7 +22,7 @@ Open this repository.
 Read AGENTS.md, .agent-start.md, docs/PROJECT_BRIEF.md, docs/CURRENT_STATE.md, and docs/SECURITY_PRIVACY_POLICY.md.
 Use skills: discovery-interview, premium-yacht-ux, privacy-security-review.
 
-Task: prepare the first architecture plan for the controlled no-index premium yacht presentation and future private inquiry layer.
+Task: prepare the first architecture plan for the controlled no-index premium yacht presentation and future private access layer.
 Do not write code yet.
 Return product architecture, page structure, backend modules, risks, and first safe implementation step.
 ```

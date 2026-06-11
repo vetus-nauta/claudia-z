@@ -20,6 +20,7 @@ Agent foundation and pre-build rules.
 - Owner will provide media later through Google Drive folders/links on request.
 - Old site source intake is complete enough to start architecture: four different WordPress XML files were read from Google Drive, including Russian pages, one English post, media attachments, and a full export.
 - Use extracted facts/specifications/zones only; old copy, WordPress theme data, header/footer/navigation, and old layout patterns are excluded.
+- Prototype media is temporary; final hero/zone media must pass content-aware crop review before approval.
 
 ## Current Hard Rules
 
@@ -28,7 +29,9 @@ Agent foundation and pre-build rules.
 - No public SEO growth strategy.
 - No public prices.
 - No `book now`, `rent now`, direct rental, or public charter-offer language.
+- No `private inquiry`, public contact form, or owner-contact path on the presentation site.
 - No owner identity or private client data.
+- No accidental media crops that cut bow, stern, hull line, flybridge, tender, or key deck geometry.
 - No unnecessary analytics or tracking.
 - No heavy 3D on first mobile view unless explicitly approved.
 - No unnecessary header/footer chrome, oversized cards, or oversized headings as default structure.
@@ -40,9 +43,8 @@ Agent foundation and pre-build rules.
 
 - Final brand architecture: Claudia Z, Bell Rock, Bell Rock Way, or mixed.
 - Final tech stack.
-- First release scope: static-only or early private inquiry layer.
+- First release scope: static-only controlled presentation.
 - Exact media library and zone taxonomy.
-- Private inquiry path and access model.
 - Google Drive media folder links.
 
 ## Next Recommended Step

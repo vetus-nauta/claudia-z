@@ -1,4 +1,4 @@
-# Backend and Private Messenger Plan
+# Backend and Private Communication Plan
 
 ## Status
 
@@ -6,7 +6,7 @@ Future phase. Do not implement unless explicitly requested.
 
 ## Goal
 
-Create a private inquiry and communication panel for admin and invited clients/brokers.
+Create a private communication panel for admin and invited clients/brokers. This is a future access layer, not a public contact path on the presentation site.
 
 ## Roles
 
@@ -20,7 +20,6 @@ Create a private inquiry and communication panel for admin and invited clients/b
 - User
 - Role
 - Invite
-- Inquiry
 - Conversation
 - Message
 - Attachment
