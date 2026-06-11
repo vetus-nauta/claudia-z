@@ -29,6 +29,7 @@ Agent foundation and pre-build rules.
 - Mobile gallery behavior: no visible previous/next photo buttons; use horizontal swipe plus a minimal hint, with tap on free photo area for optimized full-size opening.
 - Vertical/mobile derivatives must preserve yacht geometry and fill remaining space with color/tone-matched background extension so the frame feels complete vertically.
 - Overview / General Plans now uses approved real derivatives from owner-provided Drive photos: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
+- Exterior now uses approved real derivatives from owner-provided Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`. `DJI_0247` is intentionally retained as a distant scenic candidate with careful gentle zoom/crop. Hold/reject decisions are recorded in `docs/CURRENT_STATE.md`.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 

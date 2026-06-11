@@ -23,6 +23,14 @@
   - Rejected from main overview: `DJI_0257_1` because top-down framing feels too technical and does not read as premium first-view media.
   - Not used in main overview: `DJI_0252_1`; keep only as optional secondary/reference because it is still too drone-showcase for the first premium route.
   - Mobile uses separate integrated derivatives to preserve the yacht shape without cutting bow/stern/hull/flybridge.
+- Exterior first real media pass:
+  - Source folder: Google Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`.
+  - Requested/found source range: `DJI_0240` through `DJI_0252` excluding missing `DJI_0242` and `DJI_0249`; `DJI_0258` through `DJI_0270` with missing `DJI_0260`, `DJI_0263`, and `DJI_0265`.
+  - Approved Exterior sequence: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
+  - `DJI_0247` is the approved distant scenic candidate and may use a careful gentle zoom/crop; do not reject it simply because the yacht is farther away.
+  - Hold as alternates/reference: `DJI_0240`, `DJI_0245`, `DJI_0246`, `DJI_0258`, `DJI_0259`, `DJI_0264`.
+  - Reject from main Exterior sequence: `DJI_0241`, `DJI_0243`, `DJI_0244`, `DJI_0248`, `DJI_0250`, `DJI_0251`, `DJI_0252`, `DJI_0268`, `DJI_0269`.
+  - Top-down/technical photos from this batch may support future Decks/Flybridge/Aft Platform only after a separate section-specific composition review.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.

@@ -114,6 +114,14 @@ Rules:
 - Avoid unrelated solid color bars, black bars, white bars, or generic gradients.
 - Use blur/soft feathering only to support the image, not as a decorative effect.
 
+## Exterior Media Pass 2026-06-11
+
+- Source folder: Google Drive `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`.
+- Intake scope: `DJI_0240`-`DJI_0252` except missing `0242`, `0249`; `DJI_0258`-`DJI_0270` except missing `0260`, `0263`, `0265`.
+- Approved Exterior order: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
+- `DJI_0247` is approved as the distant scenic frame; use careful gentle zoom/crop without losing the yacht or mountain scale.
+- Public derivatives live in `assets/media/exterior/`; source originals remain only in ignored `.media-source/exterior/`.
+
 ## Motion And Feedback
 
 Use restrained motion to make browsing feel comfortable:

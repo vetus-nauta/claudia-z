@@ -8,11 +8,11 @@ function media(file, focus = "50% 50%") {
   };
 }
 
-function localMedia(stageFile, fullFile, mobileFile, focus = "50% 50%") {
+function localMedia(folder, stageFile, fullFile, mobileFile, focus = "50% 50%") {
   return {
-    src: `assets/media/overview/${stageFile}`,
-    fullSrc: `assets/media/overview/${fullFile}`,
-    mobileSrc: `assets/media/overview/${mobileFile}`,
+    src: `assets/media/${folder}/${stageFile}`,
+    fullSrc: `assets/media/${folder}/${fullFile}`,
+    mobileSrc: `assets/media/${folder}/${mobileFile}`,
     focus
   };
 }
@@ -21,10 +21,10 @@ const zones = [
   {
     id: "overview",
     media: [
-      localMedia("dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
-      localMedia("dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
-      localMedia("dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
-      localMedia("dji_0258_1-stage.webp", "dji_0258_1-full.webp", "dji_0258_1-mobile.webp", "48% 52%")
+      localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
+      localMedia("overview", "dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
+      localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
+      localMedia("overview", "dji_0258_1-stage.webp", "dji_0258_1-full.webp", "dji_0258_1-mobile.webp", "48% 52%")
     ],
     en: {
       label: "Overview",
@@ -40,9 +40,12 @@ const zones = [
   {
     id: "exterior",
     media: [
-      media("dji_0248.jpg", "58% 44%"),
-      media("dji_0264.jpg", "52% 50%"),
-      media("dji_0272.jpg", "50% 52%")
+      localMedia("exterior", "dji_0262-stage.webp", "dji_0262-full.webp", "dji_0262-mobile.webp", "50% 48%"),
+      localMedia("exterior", "dji_0266-stage.webp", "dji_0266-full.webp", "dji_0266-mobile.webp", "50% 52%"),
+      localMedia("exterior", "dji_0247-stage.webp", "dji_0247-full.webp", "dji_0247-mobile.webp", "50% 52%"),
+      localMedia("exterior", "dji_0267-stage.webp", "dji_0267-full.webp", "dji_0267-mobile.webp", "52% 50%"),
+      localMedia("exterior", "dji_0261-stage.webp", "dji_0261-full.webp", "dji_0261-mobile.webp", "50% 50%"),
+      localMedia("exterior", "dji_0270-stage.webp", "dji_0270-full.webp", "dji_0270-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Exterior",
