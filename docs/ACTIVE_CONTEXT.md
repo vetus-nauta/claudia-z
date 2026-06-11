@@ -91,12 +91,18 @@ Aft Swim Platform, `assets/media/aft_swim_platform/`:
 - Scene includes bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and small fruit/champagne table.
 - Replace with owner-approved real media when supplied.
 
+Tender, `assets/media/tender/`:
+
+- Internet placeholder only: `williams-sportjet-placeholder`.
+- Source: Williams Tenders USA official photo library / SportJet image.
+- Used because owner requested a Williams 420-style placeholder; do not treat as confirmed final tender model or final yacht media.
+- Replace with owner-approved real tender media when supplied.
+
 ## Still Placeholder / Not Final
 
 These zones still use old WordPress placeholder media in `src/app.js`:
 
 - `main_deck`
-- `tender`
 - `interior`
 - `saloon`
 - `master_cabin`
@@ -121,4 +127,3 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 - Real Aft Swim Platform media to replace generated placeholder.
 - Tender.
 - Main deck / saloon / interior sequence.
-

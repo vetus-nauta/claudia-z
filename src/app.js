@@ -153,9 +153,7 @@ const zones = [
   {
     id: "tender",
     media: [
-      media("168-p1477709_1.jpg", "50% 50%"),
-      media("168-p1477709_1-1.jpg", "50% 50%"),
-      media("dji_0281_1.jpg", "50% 54%")
+      localMedia("tender", "williams-sportjet-placeholder-stage.webp", "williams-sportjet-placeholder-full.webp", "williams-sportjet-placeholder-mobile.webp", "45% 52%")
     ],
     en: {
       label: "Tender",
