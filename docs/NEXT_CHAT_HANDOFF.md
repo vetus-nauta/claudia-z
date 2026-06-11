@@ -32,7 +32,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Namecheap `public_html` is only a publication target.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
-- The Overview hero now uses a compact top-right welcome masthead with Claudia Z logo, restrained Sunseeker mark, the previous owner-approved description text, and key facts. Do not turn it back into a large card/panel over the four overview photos.
+- The Overview hero now uses a compact top-right welcome masthead with Claudia Z logo, right-aligned Sunseeker mark scaled to feel deliberate, the previous owner-approved description text, and key facts. Description/facts align left inside the masthead. Do not turn it back into a large card/panel over the four overview photos.
 - Internal zones must not repeat `Claudia Z` as the visible stage title. Their concise copy and details live in the top-right glass info popup, keeping zone media clean.
 - Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
 - Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
