@@ -33,7 +33,7 @@ Classify media by:
 For every selected asset, define:
 
 - source filename
-- public/private use
+- presentation/private use
 - yacht zone
 - orientation
 - resolution

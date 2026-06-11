@@ -2,9 +2,9 @@
 
 ## Project
 
-Premium private yacht presentation website and future private inquiry system.
+Premium controlled no-index yacht presentation tool and future private inquiry system.
 
-## Current Public Context
+## Current Domain Context
 
 Current domain/site: `claudia-z.com`.
 Current site may be a WordPress site on Namecheap hosting.
@@ -23,12 +23,14 @@ This is a private yacht presentation / digital yacht card.
 
 It is not:
 
+- a public sales website
+- an SEO website
 - a public charter marketplace
 - a price-list website
 - a direct rental offer
 - a “book now” funnel
 
-## Public Website Goal
+## Controlled Presentation Goal
 
 Create a beautiful, mobile-first and tablet-first presentation that shows:
 
@@ -39,6 +41,8 @@ Create a beautiful, mobile-first and tablet-first presentation that shows:
 - premium experience
 - photo/video story
 - discreet private inquiry path
+
+The presentation is for controlled sharing with selected brokers, trusted partners, and direct private clients. It must be hard no-index by default and must not be built for public search discovery.
 
 ## Future Private Layer Goal
 
@@ -59,6 +63,8 @@ The text should be premium, restrained, confident, and human.
 Avoid:
 
 - sales noise
+- search-engine copy
+- long generic landing-page openings
 - fake luxury clichés
 - aggressive call-to-action
 - legal charter promises
@@ -66,6 +72,7 @@ Avoid:
 
 Prefer:
 
+- clear first-screen meaning
 - calm maritime language
 - selected experience
 - private introduction

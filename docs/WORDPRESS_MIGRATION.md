@@ -2,14 +2,14 @@
 
 ## Goal
 
-Replace the old WordPress website with a new premium presentation website only after safe extraction, build, review, backup, and approval.
+Replace the old WordPress website with a new controlled no-index premium presentation only after safe extraction, build, review, backup, and approval.
 
 ## Procedure
 
 1. Backup current `public_html`.
 2. Backup WordPress database.
 3. Extract media from `wp-content/uploads`.
-4. Extract page text and useful SEO metadata.
+4. Extract page text and legacy metadata for audit/reference only.
 5. Build the new project separately in GitHub/dev.
 6. Classify and optimize media.
 7. Test new website on staging/dev URL.
@@ -17,7 +17,7 @@ Replace the old WordPress website with a new premium presentation website only a
 9. Create final pre-replacement backup.
 10. Clear old WordPress files from `public_html` only after approval.
 11. Upload/deploy new site to `public_html`.
-12. Verify domain, HTTPS, media, forms, redirects, and mobile layout.
+12. Verify domain, HTTPS, no-index controls, media, forms, redirects, and mobile layout.
 13. Keep rollback archive.
 
 ## Do Not
@@ -26,6 +26,7 @@ Replace the old WordPress website with a new premium presentation website only a
 - Do not edit production blindly.
 - Do not lose `wp-content/uploads`.
 - Do not replace site without a rollback plan.
+- Do not carry forward public SEO/indexing behavior.
 - Do not keep old WordPress admin exposed if no longer used.
 
 ## Important WordPress Sources

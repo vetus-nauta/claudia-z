@@ -1,6 +1,6 @@
 ---
 name: wordpress-migration
-description: Use when planning or executing migration from old WordPress on Namecheap public_html to the new GitHub-managed premium website.
+description: Use when planning or executing migration from old WordPress on Namecheap public_html to the new GitHub-managed controlled premium presentation.
 ---
 
 # WordPress Migration

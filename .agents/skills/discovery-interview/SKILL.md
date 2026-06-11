@@ -19,6 +19,7 @@ Convert an unclear request into a development-ready brief and protect the projec
 - Be direct, human, and constructive.
 - Separate known facts, assumptions, unknowns, risks, and recommendations.
 - Challenge contradictions, vague goals, premature backend work, unsafe privacy promises, and public charter/rental framing.
+- If a new approved direction contradicts old guidance, require contradiction cleanup instead of adding another rule.
 - Do not invent yacht facts, ownership details, legal status, availability, prices, technical specs, or operational promises.
 - Prefer a clear recommendation over a neutral list of options.
 
@@ -54,4 +55,5 @@ Use these when the project direction is not yet fully clear. Do not ask all 10 i
 13. UX risks
 14. Contradictions or weak points
 15. Recommendation
-16. First safe implementation step
+16. Superseded guidance to remove if direction is approved
+17. First safe implementation step

@@ -11,6 +11,8 @@ This file describes the intended repository structure.
   docs/
     PROJECT_BRIEF.md
     CURRENT_STATE.md
+    DECISIONS.md
+    NEXT_CHAT_HANDOFF.md
     PROJECT_MAP.md
     CONTENT_RULES.md
     SECURITY_PRIVACY_POLICY.md
@@ -56,6 +58,6 @@ Possible options:
 - static premium HTML/CSS/JS for first release
 - Astro/Next.js for media-rich presentation
 - Next.js + backend for private panel
-- separate static public layer and private backend subdomain
+- separate controlled presentation layer and private backend subdomain
 
-Default first safe approach: public presentation first, backend later.
+Default first safe approach: controlled no-index presentation first, backend later.

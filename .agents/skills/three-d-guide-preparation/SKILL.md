@@ -9,7 +9,7 @@ description: Use when preparing the future 3D yacht guide, video capture checkli
 
 Prepare the website architecture and capture checklist for a future interactive 3D yacht guide.
 
-This skill is mandatory whenever public UX, gallery, media zones, deck navigation, walkthrough structure, hotspot language, or CSS placeholders may affect future 3D integration.
+This skill is mandatory whenever presentation UX, gallery, media zones, deck navigation, walkthrough structure, hotspot language, or CSS placeholders may affect future 3D integration.
 
 ## Do Not
 
@@ -17,11 +17,11 @@ Do not build the 3D model before source material and structure are ready.
 
 Do not force heavy 3D into the first mobile view.
 
-Do not let the first public site block future 3D by using an unstructured gallery or unrelated marketing sections.
+Do not let the first controlled presentation block future 3D by using an unstructured gallery or unrelated marketing sections.
 
-## Public Site Integration
+## Controlled Presentation Integration
 
-Before full 3D exists, the public site should still prepare:
+Before full 3D exists, the controlled presentation should still prepare:
 
 - stable yacht zone names
 - zone-based media grouping

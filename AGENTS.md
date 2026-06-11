@@ -2,19 +2,19 @@
 
 ## Project Identity
 
-This repository is for a premium private yacht presentation website.
+This repository is for a premium controlled no-index yacht presentation tool.
 
-Current public site context: `claudia-z.com`.
+Current domain context: `claudia-z.com`.
 Potential brand direction: Bell Rock / Bell Rock Way.
 Current yacht focus: Sunseeker 76 / Claudia Z, but the structure must not lock the product to one yacht only. Future yachts may be added.
 
-The site is a private digital presentation / yacht card, not a public charter marketplace.
+The site is a private digital presentation / yacht card for controlled sharing, not a public sales site, SEO site, or public charter marketplace.
 
 ## Primary Goal
 
-Create a premium, discreet, mobile-first and tablet-first digital presentation for selected private clients, brokers, and trusted contacts.
+Create a premium, discreet, mobile-first and tablet-first presentation tool for selected brokers, trusted partners, and direct private clients.
 
-The public layer must feel like a private salon, not like a mass-market charter landing page.
+The presentation layer must feel like a private salon, not like a mass-market charter landing page.
 
 ## Main Devices
 
@@ -28,12 +28,14 @@ Desktop matters, but smartphone and tablet are the main client-facing surfaces.
 
 ## Commercial and Legal Wording Boundaries
 
-The public site must not:
+The presentation must not:
 
 - show prices
 - say “book now”
 - say “rent now”
 - present a public charter offer
+- behave like a public sales funnel
+- rely on public SEO discovery
 - create direct legal interpretation of public rental/charter terms
 - expose ownership details
 - expose owner identity
@@ -61,6 +63,7 @@ Do not promise absolute anonymity or impossibility of legal attribution.
 Use privacy-by-design:
 
 - minimal public exposure
+- hard no-index by default
 - minimal personal data collection
 - no unnecessary analytics
 - secure authentication
@@ -72,11 +75,11 @@ Use privacy-by-design:
 - no public owner identity
 - no public private-contact details unless approved
 
-## Public Website Scope
+## Controlled Presentation Scope
 
-The first public website layer should include:
+The first controlled presentation layer should include:
 
-- premium hero
+- premium first screen
 - yacht identity
 - beautiful yacht description
 - exterior / interior / lifestyle media
@@ -86,9 +89,27 @@ The first public website layer should include:
 - no prices
 - no direct booking language
 
+## No-Index And Access Discipline
+
+The project is not intended for public search discovery.
+
+Default publication rules:
+
+- use `robots.txt` to disallow crawling
+- use page-level robots meta such as `noindex, nofollow, noarchive`
+- use `X-Robots-Tag` headers where hosting allows
+- do not generate or publish a sitemap
+- do not implement SEO growth strategy, public keyword targeting, or search landing pages
+- do not add unnecessary analytics, pixels, or public tracking scripts
+- treat any legacy page metadata as migration context only, not as a new-site goal
+
+No-index is not access control. Anything sensitive, owner-identifying, commercially private, or client-specific must use private delivery, invite-only access, or another approved protection layer.
+
 ## CSS And Visual System Discipline
 
-The public site must use one shared visual system, not a set of unrelated page fragments.
+The presentation must use one shared visual system, not a set of unrelated page fragments.
+
+Default UX standard: Interface-Light Media-First.
 
 For CSS and layout work:
 
@@ -96,7 +117,13 @@ For CSS and layout work:
 - create or preserve a shared CSS base before adding complex sections
 - keep colors, typography, spacing, buttons, media frames, overlays, and gallery patterns consistent
 - design mobile first, then tablet, then desktop
+- maximize meaningful information and minimize non-meaningful interface fields
+- avoid unnecessary header, footer, oversized cards, oversized headings, and decorative fields
+- do not spend first-screen space on navigation chrome when the same job can be done with compact controls, overlay, drawer, or sheet
+- avoid card collections as the main presentation pattern
 - make the first mobile viewport feel like a complete premium experience, not the top of a generic landing page
+- make the first 10 seconds clear: what this is, what level it is, and how to continue
+- respect that serious clients may study longer, but only after the opening is clear
 - prefer compact modern media patterns such as full-screen viewer, swipe gallery, media rail, zone gallery, drawer, or progressive reveal
 - avoid long stacked gallery pages when a focused interactive media experience is better
 - reserve the information architecture for a future 3D yacht guide: zones, hotspots, media mapping, and deck navigation must remain compatible
@@ -133,7 +160,7 @@ Migration discipline:
 2. Backup `public_html`.
 3. Backup database.
 4. Extract media from `wp-content/uploads`.
-5. Extract useful text and SEO metadata.
+5. Extract useful text and legacy metadata for audit/reference only.
 6. Build new project separately in GitHub/dev.
 7. Test on dev/staging.
 8. Only after approval, replace `public_html` with the new build.
@@ -186,6 +213,38 @@ For every non-trivial task:
 8. Do not rewrite large working files blindly.
 9. Run available checks.
 10. Report changed files and verification result.
+
+## Memory And Handoff Protocol
+
+The repository must preserve one active truth without accumulating contradictory instructions.
+
+Use these layers:
+
+- `AGENTS.md`: stable project rules and behavioral postulates only
+- `docs/DECISIONS.md`: approved strategic decisions and what they supersede
+- `docs/CURRENT_STATE.md`: current active project state
+- `docs/NEXT_CHAT_HANDOFF.md`: short current context for the next chat; update or replace, do not append endlessly
+- `tasks/`: concrete task notes, not permanent rules
+
+After significant work, update the smallest necessary memory layer:
+
+- changed rule or project logic -> update `AGENTS.md`
+- approved strategic decision -> append `docs/DECISIONS.md`
+- changed active state -> update `docs/CURRENT_STATE.md`
+- next-chat context changed -> replace relevant parts of `docs/NEXT_CHAT_HANDOFF.md`
+
+## Contradiction Cleanup Protocol
+
+Do not layer contradictory project rules.
+
+When an approved decision supersedes earlier guidance:
+
+1. Search the repository for old wording and related terms.
+2. Remove or rewrite old guidance everywhere it appears.
+3. Do not leave old and new rules side by side unless the old rule is explicitly marked as superseded in `docs/DECISIONS.md`.
+4. Keep `CURRENT_STATE.md` and `NEXT_CHAT_HANDOFF.md` current-only.
+5. Run `rg` checks for replaced terms before finishing.
+6. Report what was replaced and what verification was run.
 
 ## Analyst Behavior
 

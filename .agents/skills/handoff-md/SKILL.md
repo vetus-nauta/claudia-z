@@ -7,7 +7,13 @@ description: Use when preparing a developer handoff, implementation brief, archi
 
 ## Purpose
 
-Create clear markdown documents for developers and future AI agents.
+Create clear markdown documents for developers and future AI agents without turning project rules into a historical dump.
+
+Use `docs/NEXT_CHAT_HANDOFF.md` for current handoff state. Keep it short and current-only.
+
+Use `docs/DECISIONS.md` only for approved strategic decisions and supersession notes.
+
+Do not duplicate stable rules from `AGENTS.md`; reference them.
 
 ## Required Sections
 
@@ -24,6 +30,7 @@ Create clear markdown documents for developers and future AI agents.
 11. Risks
 12. Acceptance criteria
 13. First safe task
+14. Superseded guidance removed, if any
 
 ## Style
 

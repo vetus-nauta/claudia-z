@@ -1,6 +1,6 @@
 # Content Rules
 
-## Public Site Must Not Say
+## Controlled Presentation Must Not Say
 
 Avoid:
 
@@ -13,8 +13,10 @@ Avoid:
 - Direct legal offer language
 - Owner identity
 - Unverified performance/range/technical claims
+- SEO keyword stuffing
+- Generic sales landing-page copy
 
-## Public Site May Say
+## Controlled Presentation May Say
 
 Prefer:
 
@@ -31,6 +33,10 @@ Prefer:
 ## Style
 
 Use premium, restrained, clean language.
+
+Copy must be easy to understand quickly and worth studying longer.
+
+The first screen must make the object, level, and next action clear without a long intro.
 
 Good direction:
 
@@ -50,6 +56,9 @@ Bad direction:
 - too much “VIP” language
 - price anchoring
 - legal promises
+- water
+- repeated claims
+- large empty headings without useful content
 
 ## Yacht Description Direction
 

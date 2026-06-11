@@ -54,4 +54,4 @@ Create a private inquiry and communication panel for admin and invited clients/b
 ## First Safe Backend Task
 
 Prepare architecture and data model only.
-Do not build until public presentation layer and security policy are approved.
+Do not build until controlled presentation layer and security policy are approved.

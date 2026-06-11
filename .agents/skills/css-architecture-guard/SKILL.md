@@ -7,7 +7,7 @@ description: Use for CSS architecture, visual system consistency, layout fixes, 
 
 ## Purpose
 
-Keep the public site visually coherent and prevent CSS from becoming a stack of one-off overrides.
+Keep the controlled presentation visually coherent and prevent CSS from becoming a stack of one-off overrides.
 
 ## Ownership
 
@@ -30,6 +30,23 @@ Before building UI, define or preserve one shared CSS base:
 - 3D-ready primitives: zone marker, hotspot trigger, deck switcher, walkthrough entry, fallback media panel
 
 Do not let each section create its own unrelated layout language.
+
+## Information Density Standard
+
+Maximize meaningful information. Minimize non-meaningful interface fields.
+
+Header, footer, large labels, decorative blocks, and oversized cards are not default structure. Use them only when they perform a clear job.
+
+Prefer:
+
+- compact controls
+- overlay controls
+- bottom sheet or drawer
+- media-first layout
+- dense but readable details
+- progressive disclosure for secondary information
+
+Avoid spending first-screen mobile space on navigation chrome, empty branding bands, legal-looking footers, or repeated headings.
 
 ## Mobile First Experience
 
@@ -78,7 +95,7 @@ Do:
 
 - organize media by yacht zone, not only by visual mood
 - keep zone IDs stable enough to reuse for hotspots and walkthrough state
-- allow a future 3D entry point without redesigning the full public interface
+- allow a future 3D entry point without redesigning the full controlled interface
 - provide photo/video fallback for zones where 3D is unavailable
 - keep mobile performance ahead of 3D ambition
 
@@ -86,7 +103,7 @@ Do not:
 
 - hardcode gallery structure that cannot map to yacht zones
 - bury spatial navigation under unrelated marketing sections
-- require 3D to access core public content
+- require 3D to access core presentation content
 - load heavy 3D assets on first mobile view unless explicitly approved
 
 ## No Layering Rule

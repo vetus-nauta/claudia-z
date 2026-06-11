@@ -22,7 +22,7 @@ Open this repository.
 Read AGENTS.md, .agent-start.md, docs/PROJECT_BRIEF.md, docs/CURRENT_STATE.md, and docs/SECURITY_PRIVACY_POLICY.md.
 Use skills: discovery-interview, premium-yacht-ux, privacy-security-review.
 
-Task: prepare the first architecture plan for the public premium yacht presentation and future private inquiry layer.
+Task: prepare the first architecture plan for the controlled no-index premium yacht presentation and future private inquiry layer.
 Do not write code yet.
 Return product architecture, page structure, backend modules, risks, and first safe implementation step.
 ```
@@ -49,6 +49,7 @@ Task: propose the mobile-first homepage structure for a premium private yacht pr
 The first mobile viewport must feel like a complete premium experience, not a generic landing-page opener.
 Use a shared visual/CSS system and modern compact media patterns such as swipe gallery, media rail, full-screen viewer, drawer, or zone-based gallery where appropriate.
 Preserve future 3D guide compatibility through yacht zones, hotspot-ready media, and a lightweight guide entry/fallback plan.
+The result must be controlled no-index and must not include public SEO/indexing behavior.
 No prices. No public charter/rental/booking language. Do not write code yet.
 ```
 

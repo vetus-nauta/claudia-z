@@ -31,6 +31,21 @@ Do not promise:
 - no public admin URLs
 - no private documents in the repo
 - no exposed registrar/hosting details
+- no public search indexing
+- no sitemap
+- no SEO growth strategy
+
+## No-Index Baseline
+
+The presentation layer must be hard no-index by default:
+
+- `robots.txt` should disallow crawling
+- pages should include robots meta such as `noindex, nofollow, noarchive`
+- use `X-Robots-Tag` headers where hosting allows
+- do not publish a sitemap
+- do not optimize for search discovery
+
+No-index is not access control. Sensitive, client-specific, owner-identifying, or commercially private material requires approved private delivery or invite-only access.
 
 ## Technical Baseline
 

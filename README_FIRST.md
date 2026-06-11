@@ -1,4 +1,4 @@
-# First Agent Layer — Bell Rock / Claudia Z Private Yacht Presentation
+# First Agent Layer — Bell Rock / Claudia Z Controlled Yacht Presentation
 
 This package is intended to be unpacked into the root of a GitHub repository.
 
@@ -33,9 +33,12 @@ First give diagnosis and proposed approach. Do not write code yet.
 
 ## Project position
 
-This repository is for a premium, private yacht presentation website and future private inquiry/messenger layer.
+This repository is for a premium controlled no-index yacht presentation tool and future private inquiry/messenger layer.
 
 It is not a public charter marketplace.
+It is not a public sales site.
+It is not an SEO site.
 It must not show prices.
 It must not use direct public rental/charter/legal-offer language.
+It must not be indexed by search engines.
 It must protect discretion, owner privacy, and client/broker privacy using lawful privacy-by-design.

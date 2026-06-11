@@ -25,7 +25,7 @@ wp-content/uploads
 4. Classify by yacht zone.
 5. Identify best hero media.
 6. Identify low-quality/rejected media.
-7. Create public/private flag.
+7. Create presentation/private flag.
 8. Prepare mobile/tablet/desktop crop requirements.
 9. Prepare optimized output structure.
 
@@ -33,7 +33,7 @@ wp-content/uploads
 
 1. Source folders inspected
 2. Asset classification
-3. Recommended public assets
+3. Recommended presentation assets
 4. Assets requiring review
 5. Missing media
 6. Optimization plan

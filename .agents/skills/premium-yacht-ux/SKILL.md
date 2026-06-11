@@ -21,6 +21,7 @@ The interface must feel like a private digital salon, not a public charter marke
 8. One shared visual system across all sections.
 9. First mobile viewport as a complete experience, not a generic landing-page opener.
 10. Future 3D guide compatibility through zone-based media and navigation.
+11. Maximum meaningful information with minimum non-meaningful interface fields.
 
 ## Avoid
 
@@ -35,6 +36,8 @@ The interface must feel like a private digital salon, not a public charter marke
 - Unrelated section-by-section design systems
 - Long stacked galleries when swipe, rail, drawer, or full-screen media would be better
 - Media structures that cannot later become deck zones, hotspots, or a walkthrough guide
+- Header/footer-first layouts that consume mobile space without adding value
+- Oversized headings or cards used as filler instead of useful content
 
 ## CSS Coordination
 
@@ -46,7 +49,7 @@ Do not solve visual inconsistency by adding more local overrides. If the design 
 
 For gallery, zone, deck, walkthrough, hotspot, or spatial navigation decisions, use `three-d-guide-preparation`.
 
-Do not build full 3D unless requested, but keep the public experience ready for it. A good first release can use photo/video zones that later become 3D hotspots.
+Do not build full 3D unless requested, but keep the controlled experience ready for it. A good first release can use photo/video zones that later become 3D hotspots.
 
 ## Preferred Language
 
@@ -71,4 +74,5 @@ When reviewing or designing, provide:
 7. Copy tone
 8. CSS/system consistency notes
 9. Future 3D compatibility notes
-10. Risks
+10. Information density notes
+11. Risks

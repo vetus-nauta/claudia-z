@@ -23,7 +23,7 @@ Do not promise absolute anonymity, legal non-attribution, or impossibility of di
 - minimize collected data
 - secure communications
 - limit internal access
-- prevent public indexing of private areas
+- prevent public indexing of the presentation and all private areas
 - avoid unnecessary analytics and tracking
 
 ## Security Baseline
@@ -42,6 +42,7 @@ Require:
 - audit boundaries
 - backup policy
 - retention policy
+- no-index controls for presentation surfaces
 
 ## Output
 
@@ -51,6 +52,7 @@ Require:
 4. Encryption approach
 5. Access control
 6. Retention policy
-7. Domain/public exposure risks
-8. Required technical tasks
-9. What must not be promised
+7. Domain/exposure risks
+8. Indexing/crawling risks
+9. Required technical tasks
+10. What must not be promised

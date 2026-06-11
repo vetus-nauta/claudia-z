@@ -1,13 +1,13 @@
 ---
 name: content-legal-guard
-description: Use when writing or reviewing public copy, inquiry text, CTA labels, availability language, broker/client messaging, and yacht presentation claims.
+description: Use when writing or reviewing presentation copy, inquiry text, CTA labels, availability language, broker/client messaging, and yacht presentation claims.
 ---
 
 # Content Legal Guard
 
 ## Purpose
 
-Keep public wording discreet, premium, and legally careful.
+Keep presentation wording discreet, premium, and legally careful.
 
 ## Avoid
 

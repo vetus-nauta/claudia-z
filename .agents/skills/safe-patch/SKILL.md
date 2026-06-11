@@ -15,8 +15,9 @@ description: Use for any code or file modification. Enforces inspect-first, expl
 6. Do not replace large files blindly.
 7. Do not remove working behavior unless explicitly requested.
 8. Do not commit secrets.
-9. Run available checks.
-10. Report changed files and verification result.
+9. When changing project rules, search for and remove superseded contradictory guidance.
+10. Run available checks.
+11. Report changed files and verification result.
 
 ## Output Before Patch
 
@@ -25,6 +26,7 @@ description: Use for any code or file modification. Enforces inspect-first, expl
 - Risk level
 - Proposed patch
 - Verification plan
+- Contradiction cleanup plan when rules/docs change
 - `Пишем?`
 
 ## Output After Patch
@@ -32,4 +34,5 @@ description: Use for any code or file modification. Enforces inspect-first, expl
 - Files changed
 - What changed
 - Checks run
+- Superseded guidance removed/replaced
 - Remaining risks
