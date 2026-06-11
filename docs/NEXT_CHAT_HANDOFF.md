@@ -12,6 +12,7 @@ Agent foundation and pre-build rules.
 - GitHub is the source of truth.
 - Namecheap `public_html` is only a publication target.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
+- Dark and light theme support is required through one shared visual system and a compact switcher.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
 - English is primary/default; Russian is supported; every other language falls back to English.
@@ -33,6 +34,8 @@ Agent foundation and pre-build rules.
 - No `private inquiry`, public contact form, or owner-contact path on the presentation site.
 - No owner identity or private client data.
 - No accidental media crops that cut bow, stern, hull line, flybridge, tender, or key deck geometry.
+- No master photo originals in public presentation output unless explicitly approved.
+- Do not promise absolute browser photo protection; use practical deterrents and private originals.
 - No unnecessary analytics or tracking.
 - No heavy 3D on first mobile view unless explicitly approved.
 - No unnecessary header/footer chrome, oversized cards, or oversized headings as default structure.

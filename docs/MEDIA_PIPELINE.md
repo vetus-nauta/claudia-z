@@ -119,6 +119,16 @@ For every selected asset, define:
 - Use lazy loading except critical hero media.
 - Keep first screen fast.
 
+## Photo Protection Rules
+
+- Public presentation media must use optimized display derivatives, not master originals.
+- Master originals must remain outside the public build unless explicitly approved.
+- Classify each asset protection level: public presentation derivative, private review, master original, or reject.
+- Avoid exposing Drive source links, original filenames, or master storage paths in public markup where practical.
+- Add interaction deterrents for public derivatives where practical: no drag, no context-menu save, controlled viewer overlay, and long-press review on mobile.
+- Consider subtle watermarking or per-recipient derivative sets only after approval.
+- Do not describe these controls as absolute download prevention.
+
 ## Output Expected From Agents
 
 When working with media, produce:
@@ -128,4 +138,5 @@ When working with media, produce:
 3. Missing media list
 4. Crop requirements
 5. Performance risks
-6. Implementation notes
+6. Protection level and derivative plan
+7. Implementation notes

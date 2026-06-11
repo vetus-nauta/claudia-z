@@ -125,3 +125,25 @@ Images are judged by design role and framing, not by availability alone. Tempora
 
 Status:
 Approved
+
+## 2026-06-11 — Dark And Light Theme Support
+
+Decision:
+The presentation must support both dark and light themes through one shared visual system and a compact theme switcher.
+
+Impact:
+Theme support must preserve layout, media framing, information hierarchy, and premium tone. The implementation should follow system preference by default where practical and may store only a non-sensitive local theme preference.
+
+Status:
+Approved
+
+## 2026-06-11 — Photo Protection Is Deterrence, Not Absolute Security
+
+Decision:
+The site should include practical deterrents against casual photo copying/downloading, but agents must not claim that browser-rendered images can be fully protected from copying, screenshots, inspection, or download.
+
+Impact:
+Use display derivatives instead of originals, keep master assets out of the public build, avoid exposing source URLs where practical, add interaction deterrents where they do not damage UX, and reserve sensitive originals for approved private delivery.
+
+Status:
+Approved

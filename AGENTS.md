@@ -152,6 +152,17 @@ The presentation must use one shared visual system, not a set of unrelated page 
 
 Default UX standard: Interface-Light Media-First.
 
+The interface must support both dark and light themes. Theme support is a CSS/UX responsibility, not a separate visual redesign.
+
+Theme rules:
+
+- provide a compact dark/light theme switcher
+- default may follow system preference until a user choice is made
+- preserve the same layout, spacing, media framing, and information hierarchy in both themes
+- store only non-sensitive theme preference locally if needed
+- verify contrast and media readability in both themes on iPhone and iPad
+- do not let dark and light themes become two unrelated design systems
+
 For CSS and layout work:
 
 - use `premium-yacht-ux`, `mobile-first-audit`, `css-architecture-guard`, and `safe-patch`
@@ -223,6 +234,29 @@ Before using media:
 - reject hero media that only works on desktop but damages the yacht shape on mobile
 - use video poster images
 - do not autoplay sound
+
+## Photo Protection Discipline
+
+Browser photo protection is deterrence, not absolute prevention. Agents must never promise that public browser-rendered images cannot be copied, screenshotted, inspected, or downloaded.
+
+Protection direction:
+
+- use display-optimized derivatives instead of original high-resolution files on the presentation surface
+- keep originals outside the public build and share them only through approved private channels
+- disable obvious right-click, drag, long-press save, and image context interactions where practical
+- add a transparent overlay or controlled media viewer layer where it does not damage UX
+- avoid direct exposure of original filenames, source folders, and master asset URLs in public markup where practical
+- use no-index and no-sitemap controls for media surfaces
+- consider subtle watermarking or per-recipient derivatives only if approved
+- do not rely on client-side blocking as security for genuinely sensitive media
+
+Agent ownership:
+
+- `privacy-security-review`: define realistic protection boundaries and what must not be promised
+- `media-extraction-pipeline`: create public derivatives, preserve originals, classify protection level
+- `css-architecture-guard`: implement interaction deterrents without breaking mobile UX or accessibility
+- `mobile-first-audit`: verify protection controls on iPhone/iPad, including long-press behavior
+- `content-legal-guard`: avoid copy that overpromises photo security
 
 ## Future 3D Guide
 

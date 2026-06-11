@@ -9,6 +9,7 @@ The first release is acceptable only if:
 - it loads fast enough for mobile users
 - first mobile screen is clear without a long generic intro
 - it uses the Interface-Light Media-First standard
+- it supports dark and light themes with a compact switcher and one shared visual system
 - it maximizes meaningful information while minimizing non-meaningful fields such as unnecessary header/footer chrome
 - it has no public indexing: robots, meta robots, sitemap absence, and headers where available are verified
 - it has no public SEO growth strategy or keyword landing copy
@@ -25,6 +26,8 @@ The first release is acceptable only if:
 - it presents yacht beautifully and confidently
 - all approved media displays correctly
 - approved hero and zone media do not accidentally crop off bow, stern, hull, flybridge, tender, or key deck geometry
+- public media uses display derivatives, not master originals
+- casual photo-copy deterrents are implemented where practical without promising absolute protection
 - videos have poster/fallback
 - no owner private data is exposed
 - no secrets are committed

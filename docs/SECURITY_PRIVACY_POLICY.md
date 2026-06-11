@@ -35,6 +35,26 @@ Do not promise:
 - no sitemap
 - no SEO growth strategy
 
+## Photo Protection Boundary
+
+Photo protection on a browser-rendered presentation is limited.
+
+Do not promise:
+
+- impossible downloading
+- impossible copying
+- impossible screenshots
+- complete source concealment for any asset rendered in the browser
+
+Do require:
+
+- public display derivatives instead of master originals
+- private storage for original media
+- no public Drive/master asset links where practical
+- no-index controls for pages and media surfaces
+- interaction deterrents only as a UX/security layer, not as a guarantee
+- clear separation between public presentation assets and private/master media
+
 ## No-Index Baseline
 
 The presentation layer must be hard no-index by default:
