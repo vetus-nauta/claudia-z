@@ -61,9 +61,11 @@ const zones = [
   {
     id: "flybridge",
     media: [
-      media("129-p1477663.jpg", "50% 54%"),
-      media("130-p1999658.jpg", "50% 52%"),
-      media("136-p1999672.jpg", "50% 52%")
+      localMedia("flybridge", "130-p1999658-stage.webp", "130-p1999658-full.webp", "130-p1999658-mobile.webp", "50% 48%"),
+      localMedia("flybridge", "dji_0276-stage.webp", "dji_0276-full.webp", "dji_0276-mobile.webp", "50% 48%"),
+      localMedia("flybridge", "129-p1477663-stage.webp", "129-p1477663-full.webp", "129-p1477663-mobile.webp", "48% 48%"),
+      localMedia("flybridge", "132-p1999663-stage.webp", "132-p1999663-full.webp", "132-p1999663-mobile.webp", "45% 50%"),
+      localMedia("flybridge", "126-p1477652-stage.webp", "126-p1477652-full.webp", "126-p1477652-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Flybridge",

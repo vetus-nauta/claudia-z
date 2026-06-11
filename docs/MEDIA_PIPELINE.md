@@ -122,6 +122,14 @@ Rules:
 - `DJI_0247` is approved as the distant scenic frame; use careful gentle zoom/crop without losing the yacht or mountain scale.
 - Public derivatives live in `assets/media/exterior/`; source originals remain only in ignored `.media-source/exterior/`.
 
+## Flybridge Media Pass 2026-06-11
+
+- Source folders: Google Drive `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC` for DJI files and `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA` for GH5 Edited files.
+- Corrected source filename: user-provided `1230-P1999658` resolves to actual Drive file `130-P1999658.jpg`.
+- Approved Flybridge order: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`.
+- Rejected from the main Flybridge sequence: `125-P1477650`, `DJI_0269`, `DJI_0270`.
+- Public derivatives live in `assets/media/flybridge/`; source originals remain only in ignored `.media-source/flybridge/`.
+
 ## Motion And Feedback
 
 Use restrained motion to make browsing feel comfortable:

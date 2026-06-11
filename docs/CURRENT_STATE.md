@@ -31,6 +31,13 @@
   - Hold as alternates/reference: `DJI_0240`, `DJI_0245`, `DJI_0246`, `DJI_0258`, `DJI_0259`, `DJI_0264`.
   - Reject from main Exterior sequence: `DJI_0241`, `DJI_0243`, `DJI_0244`, `DJI_0248`, `DJI_0250`, `DJI_0251`, `DJI_0252`, `DJI_0268`, `DJI_0269`.
   - Top-down/technical photos from this batch may support future Decks/Flybridge/Aft Platform only after a separate section-specific composition review.
+- Flybridge first real media pass:
+  - Source folders: DJI folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`; GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+  - User requested `1230-P1999658`; the actual Drive filename is `130-P1999658.jpg` and should be treated as the corrected source.
+  - Approved Flybridge sequence: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`.
+  - Hold/reference: `124-P1477648`, `137-P1999678`.
+  - Reject from main Flybridge sequence: `125-P1477650`, `DJI_0269`, `DJI_0270`.
+  - `DJI_0269` and `DJI_0270` may be considered later for aft platform, exterior, or deck overview only after a separate section-specific review.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.

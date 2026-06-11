@@ -30,6 +30,7 @@ Agent foundation and pre-build rules.
 - Vertical/mobile derivatives must preserve yacht geometry and fill remaining space with color/tone-matched background extension so the frame feels complete vertically.
 - Overview / General Plans now uses approved real derivatives from owner-provided Drive photos: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
 - Exterior now uses approved real derivatives from owner-provided Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`. `DJI_0247` is intentionally retained as a distant scenic candidate with careful gentle zoom/crop. Hold/reject decisions are recorded in `docs/CURRENT_STATE.md`.
+- Flybridge now uses approved real derivatives from DJI folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC` and GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`. The user's `1230-P1999658` was resolved to actual Drive filename `130-P1999658.jpg`.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 
