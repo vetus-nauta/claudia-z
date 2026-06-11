@@ -83,6 +83,15 @@ Cockpit, `assets/media/cockpit/`:
 - `113-P1477599`: aft seating and open-view reading.
 - `115-P1477604`: table/service and saloon transition.
 
+Saloon, `assets/media/saloon/`:
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Approved order: `80-P1477573`, `89-P1999637`, `87-P1999629`, `85-P1999616`, `94-P1477558`, `98-P1999624`.
+- Hold/reference: `81-P1477579`, `82-P1477580`, `88-P1999632`, `90-P1999642`, `95-P1477561`.
+- Not Saloon main sequence: `56-P1999540` is cabin/bunk content; `99-P1999602`, `100-P1999606`, `101-P1999607` are helm / pilot station content.
+- User corrected filename uses Latin `P`: `94-P1477558`.
+- User-provided `94-P1477561` was not found in Drive; actual nearby Drive file is `95-P1477561`.
+
 ## Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
@@ -104,7 +113,6 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 - `main_deck`
 - `interior`
-- `saloon`
 - `master_cabin`
 - `forward_vip`
 - `starboard_guest`
@@ -124,6 +132,8 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 ## Next Likely Sections
 
+- Interior overview or cabins.
 - Real Aft Swim Platform media to replace generated placeholder.
-- Tender.
-- Main deck / saloon / interior sequence.
+- Real Tender media to replace internet placeholder.
+
+Note: `main_deck` is a category/route concept, not the next standalone gallery. Foredeck and Cockpit are already in that route; Saloon is now filled separately.
