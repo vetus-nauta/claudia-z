@@ -18,6 +18,10 @@
 
         <div class="topbar" aria-label="Presentation controls">
           <div class="controls">
+            <button class="info-trigger" type="button" id="detailsButton" aria-expanded="false" aria-controls="detailsSheet">
+              <span class="info-trigger__mark" aria-hidden="true">i</span>
+              <span class="info-trigger__hint" data-i18n="details"></span>
+            </button>
             <button class="theme-button" type="button" id="themeButton" aria-label="Switch theme" aria-pressed="false">
               <span class="theme-button__icon" aria-hidden="true"></span>
             </button>
@@ -59,9 +63,6 @@
             <span id="currentZoneLabel"></span>
           </button>
           <nav class="zone-rail" id="zoneRail" aria-label="Yacht zones"></nav>
-          <div class="actions" aria-label="Presentation actions">
-            <button class="action action--primary" type="button" id="detailsButton" data-i18n="details"></button>
-          </div>
         </div>
       </section>
 
@@ -70,8 +71,13 @@
           <strong data-i18n="detailsTitle"></strong>
           <button class="icon-button" type="button" data-close="details" aria-label="Close">×</button>
         </div>
+        <div class="sheet-identity" aria-hidden="true">
+          <img class="claudia-wordmark claudia-wordmark--on-dark" src="assets/brand/claudia-z-logo-on-dark.webp" alt="" draggable="false">
+          <img class="claudia-wordmark claudia-wordmark--on-light" src="assets/brand/claudia-z-logo-on-light.webp" alt="" draggable="false">
+        </div>
         <div class="builder-mark" aria-label="Sunseeker">
           <img class="sunseeker-mark sunseeker-mark--on-dark" src="assets/brand/sunseeker-mark-on-dark.png" alt="Sunseeker" draggable="false">
+          <img class="sunseeker-mark sunseeker-mark--on-light" src="assets/brand/sunseeker-mark-on-light.png" alt="Sunseeker" draggable="false">
         </div>
         <div class="sheet__grid">
           <dl class="specs">

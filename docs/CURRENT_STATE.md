@@ -61,12 +61,13 @@
 - Hero logo source has been processed into transparent web derivatives:
   - `assets/brand/claudia-z-logo-on-dark.webp`
   - `assets/brand/claudia-z-logo-on-light.webp`
-  Use these for the Overview identity instead of a plain text `Claudia Z` heading. Keep the text heading only for accessibility. On the current dark-framed hero media, keep the visible mark light/readable even when the page theme is set to light.
+  Use these for the Overview identity instead of a plain text `Claudia Z` heading. Keep the text heading only for accessibility. Use the theme-appropriate transparent derivative in the welcome hall and info popup.
 - Sunseeker manufacturer logo was extracted from old WordPress media and converted into cleaned transparent UI derivatives. Use it only as a secondary builder mark inside content; `Claudia Z` remains the primary presentation identity.
-- Prototype now includes a compact dark/light theme switcher.
+- Prototype now includes a compact dark/light theme switcher. Dark and light themes use different interface tones: dark glass/light type and pale glass/dark type, with shared layout.
 - Prototype includes basic casual photo-copy deterrents: no image drag, context-menu blocking on the stage, and a transparent media guard layer. This is not absolute protection.
-- Visible yacht-name treatment: show `Claudia Z` only on the main Overview state. Internal zones must not repeat the yacht name as the main stage headline; use the integrated transparent Sunseeker mark instead.
-- Stage copy now changes by zone: Overview uses the main yacht summary, while each internal zone shows its own concise `copy` plus a clamped two-line `detail` preview. The full zone detail remains in the details sheet.
+- Visible yacht-name treatment: show `Claudia Z` only in the Overview welcome hall and Overview info popup. Internal zones must not repeat the yacht name as the main stage headline.
+- Copy placement: Overview uses a visible welcome hall glass panel with yacht logo, Sunseeker mark, short description, and key facts. Internal zones keep media clean; their concise `copy` and `detail` live in the top-right glass info popup.
+- Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar instead of overflowing horizontally.
 - Aft Swim Platform currently uses a generated temporary placeholder scene with a bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and a small fruit/champagne table. Replace it with owner-approved real media when supplied.
 - Photos will be supplied later as Google Drive folders/links on request.

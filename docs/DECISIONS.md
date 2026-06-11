@@ -181,6 +181,20 @@ Zone navigation should behave as quiet text tabs with subtle active state, facts
 Status:
 Approved
 
+## 2026-06-12 — Editorial Copy Chief Role
+
+Decision:
+All Claudia Z presentation copy should be reviewed through the `editorial-copy-chief` role in `.agents/skills/editorial-copy-chief`.
+
+Supersedes:
+AI-style descriptive copy, photo-caption prose, generic luxury brochure phrasing, and long section text that repeats what is already visible in media.
+
+Impact:
+Copy should be short, human, bilingual, fact-aware, and suitable for a private yacht presentation. The role works with `content-legal-guard` whenever wording touches public offer, charter/rental, availability, pricing, owner identity, public contact, or claims.
+
+Status:
+Approved
+
 ## 2026-06-12 — Adaptive Navigation And Zone Copy
 
 Decision:

@@ -17,6 +17,7 @@ Use specialist roles conceptually:
 
 - Lead: final decisions, conflict removal, commit/push.
 - Photo/media: composition, focal point, mobile crop, reject/hold/use.
+- Editorial Copy Chief: magazine-grade copy, bilingual wording, AI-slop cleanup, no photo-caption prose.
 - UX/UI: minimal chrome, no duplicate labels, mobile behavior.
 - CSS/frontend: stable layout and implementation.
 - Context/docs: record serious logic changes only, remove contradictions.
@@ -46,11 +47,17 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Static frontend in `index.html`, `src/app.js`, `src/styles.css`.
 - Theme switcher exists.
 - Stage uses `localMedia(folder, stage, full, mobile, focus)`.
-- Internal stage headline hidden outside Overview; `.stage-builder-mark` shows Sunseeker mark instead.
-- Overview identity uses cleaned transparent `Claudia Z` logo derivatives from Drive. Because the current hero is dark-framed media in both themes, the visible hero mark must stay light/readable regardless of selected theme. Do not return to a visible plain text hero title; keep text only for accessibility.
+- Overview has a visible welcome hall glass panel: yacht logo, Sunseeker mark, short description, and key facts. It should feel slightly ceremonial/premium while staying readable over photography.
+- Internal zones do not keep permanent text over the media surface; their details remain in the top-right glass info popup so zone photos stay primary.
+- Yacht information now opens from the compact top-right glass trigger into a semi-transparent glass popup pinned to the upper-right corner.
+- The info trigger uses a restrained animated cue; keep motion soft, premium, and non-playful.
+- Dark/light themes are now separate interface systems, not just different photo dimming. Dark uses dark glass and light type; light uses pale glass, dark type, lighter navigation/popovers, and theme-specific control tones.
+- Overview identity uses cleaned transparent `Claudia Z` logo derivatives in both the welcome hall and the glass info popup. Use theme-appropriate transparent logo derivatives; do not return to a visible plain text hero title; keep text only for accessibility.
+- Internal zone info popups use the transparent Sunseeker mark instead of repeating the yacht name on the media surface.
 - Navigation must read as restrained premium product material, not constructor UI: avoid pill/chip section buttons, oversized CTA blocks, and school-like gallery controls. Prefer text tabs, hairlines, quiet state changes, and mobile swipe behavior.
 - Details sheet includes transparent Sunseeker mark and specs.
-- Zone descriptions are now split into two UI layers: a short zone-specific text on the stage for immediate context, and fuller `detail` text in the details sheet. Overview keeps the main yacht summary instead of repeating a zone description.
+- Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo.
+- Text placement: Overview carries the welcome hall copy. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.
 - Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
 
 ## WordPress Source Text Mapping

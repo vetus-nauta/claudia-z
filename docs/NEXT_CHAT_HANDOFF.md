@@ -32,9 +32,10 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Namecheap `public_html` is only a publication target.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
-- The Overview hero identity uses cleaned transparent `Claudia Z` logo derivatives from the owner-provided Drive logo folder. The mark was refined to feel smaller and lighter; do not revert to the large heavy logo or visible plain-text title.
-- Internal zones must not repeat `Claudia Z` as the visible stage title. They use the transparent Sunseeker builder mark and zone-specific copy.
-- Stage copy is now zone-aware: Overview shows the main yacht summary; each internal zone shows its own concise `copy` plus a short clamped `detail` preview. The fuller detail remains in the details sheet.
+- The Overview hero now uses a visible welcome hall glass panel with Claudia Z logo, Sunseeker mark, short description, and key facts. It should feel slightly ceremonial while staying readable over photography.
+- Internal zones must not repeat `Claudia Z` as the visible stage title. Their concise copy and details live in the top-right glass info popup, keeping zone media clean.
+- Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
+- Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
 - Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar. Do not reintroduce a long horizontal zone rail that runs off screen.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
