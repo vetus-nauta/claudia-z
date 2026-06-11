@@ -99,6 +99,13 @@ Master cabin, `assets/media/master_cabin/`:
 - First four frames explain the bed, lounge/window side, storage/vanity, and cabin proportions.
 - Last three frames show the ensuite/bathroom as part of the master-cabin story.
 
+Starboard guest cabin, `assets/media/starboard_guest/`:
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Approved order: `19-P1999421`, `21-P1999436`, `22-P1999445`, `23-P1999446`, `27-P1999448`, `34-P1999463`.
+- First three frames explain berth/window/storage perspectives.
+- `23-P1999446` is vanity/storage detail; `27-P1999448` and `34-P1999463` are ensuite/bathroom frames.
+
 ## Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
@@ -121,7 +128,6 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 - `main_deck`
 - `interior`
 - `forward_vip`
-- `starboard_guest`
 - `port_guest`
 
 ## Media Intake Protocol
