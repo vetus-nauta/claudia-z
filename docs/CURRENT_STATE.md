@@ -58,6 +58,10 @@
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.
 - Hero logo source folder received: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, containing two PNG candidates and two TXT companion files.
+- Hero logo source has been processed into transparent web derivatives:
+  - `assets/brand/claudia-z-logo-on-dark.webp`
+  - `assets/brand/claudia-z-logo-on-light.webp`
+  Use these for the Overview identity instead of a plain text `Claudia Z` heading. Keep the text heading only for accessibility. On the current dark-framed hero media, keep the visible mark light/readable even when the page theme is set to light.
 - Sunseeker manufacturer logo was extracted from old WordPress media and converted into cleaned transparent UI derivatives. Use it only as a secondary builder mark inside content; `Claudia Z` remains the primary presentation identity.
 - Prototype now includes a compact dark/light theme switcher.
 - Prototype includes basic casual photo-copy deterrents: no image drag, context-menu blocking on the stage, and a transparent media guard layer. This is not absolute protection.

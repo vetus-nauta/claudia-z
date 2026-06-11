@@ -170,6 +170,17 @@ If `Claudia Z` is the hero title, it should not also appear as a simultaneous to
 Status:
 Approved
 
+## 2026-06-11 — Premium Control Language
+
+Decision:
+The interface must avoid constructor-like pill navigation, oversized CTA blocks, and school-like gallery arrows.
+
+Impact:
+Zone navigation should behave as quiet text tabs with subtle active state, facts should read as a compact information line, and gallery controls should be minimal on desktop and hidden on mobile in favor of swipe. The Overview hero identity should use transparent `Claudia Z` logo assets prepared from the Drive source folder. On dark-framed hero media, the visible mark must remain light/readable regardless of selected theme. The visible hero title should not be rendered as plain text; keep text only for accessibility.
+
+Status:
+Approved
+
 ## 2026-06-11 — Integrated Marks, Not Logo Stickers
 
 Decision:

@@ -273,7 +273,7 @@ const copy = {
   en: {
     eyebrow: "Controlled yacht presentation",
     headline: "Claudia Z",
-    lead: "A 24 m Sunseeker 76 built in 2020, presented for quiet family cruising with open decks, guest accommodation, water access, and tender context.",
+    lead: "Sunseeker 76 combines speed, volume, and maneuverability with quiet family cruising. Designed with taste for comfortable time on board. Built in 2020.",
     details: "Yacht details",
     detailsTitle: "Specifications",
     length: "Length",
@@ -295,7 +295,7 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "24-метровая Sunseeker 76 2020 года для спокойного семейного путешествия: открытые палубы, гостевое размещение, выход к воде и тендер.",
+    lead: "Sunseeker 76 - отличное сочетание скоростных показателей, вместительности и маневренности. Семейная круизная яхта, спроектированная со вкусом для комфортного отдыха. Год постройки 2020.",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
     length: "Длина",
