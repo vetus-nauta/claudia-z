@@ -16,18 +16,19 @@ Classify media by:
 - exterior profile
 - exterior details
 - interior overview
+- interior saloon
+- master cabin
+- forward VIP cabin
+- starboard guest cabin
+- port guest / children's cabin
 - swim platform
 - cockpit
 - flybridge
 - bow area
 - foredeck
 - main deck
-- saloon
 - galley
 - helm
-- master cabin
-- VIP cabin
-- guest cabins
 - bathrooms
 - detail shots
 - lifestyle
@@ -44,6 +45,11 @@ When requesting media from the owner, prefer clear folders:
 - `01_general_plans`
 - `02_exterior`
 - `03_interior`
+- `03a_interior_saloon`
+- `03b_master_cabin`
+- `03c_forward_vip_cabin`
+- `03d_starboard_guest_cabin`
+- `03e_port_guest_childrens_cabin`
 - `04_flybridge`
 - `05_main_deck`
 - `06_foredeck`

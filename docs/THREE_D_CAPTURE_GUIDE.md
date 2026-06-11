@@ -17,8 +17,9 @@ Do not build the 3D model until source media and zone map are approved.
 - galley
 - helm
 - master cabin
-- VIP cabin
-- guest cabins
+- forward VIP cabin
+- starboard guest cabin
+- port guest / children's cabin
 - bathrooms
 - crew/service areas if approved
 - engine room only if approved

@@ -45,7 +45,7 @@ Create a beautiful, mobile-first and tablet-first presentation that shows:
 
 The presentation is for controlled sharing with selected brokers, trusted partners, and direct private clients. It must be hard no-index by default and must not be built for public search discovery.
 
-Old site content may be used as source material only. Do not reuse the old site's design, layout, section rhythm, interaction patterns, WordPress theme behavior, or marketing mechanics.
+Old site text may be used as directional reference only. Do not reuse the old site's wording, close paraphrases, design, layout, section rhythm, interaction patterns, WordPress theme behavior, or marketing mechanics.
 
 ## Language
 
@@ -71,6 +71,11 @@ Initial content should be organized around:
 - general plans / overview
 - exterior
 - interior
+  - saloon
+  - master cabin
+  - forward VIP cabin
+  - starboard guest cabin
+  - port guest / children's cabin
 - flybridge
 - main deck
 - foredeck
@@ -78,6 +83,20 @@ Initial content should be organized around:
 - swim platform / bathing zone
 
 Photos will be provided later through Google Drive folders by request.
+
+## Current Source Facts
+
+The old WordPress exports may inform factual content only. Current extracted facts include:
+
+- Claudia Z / Sunseeker 76, model/year context 2019.
+- Length 23.60 m / 77'5"; beam 5.95 m / 19'6"; draft 2.2 m / 5'7".
+- Dry weight 53,700 kg / 118,140 lb.
+- Fresh water 1,400 l; black tank 400 l; fuel 6,000 l.
+- MAN V12 1550 shaft engines, 2 x 1550 PS.
+- Maximum speed 32 knots; listed range at 10 knots 500 nautical miles.
+- Directional spaces: flybridge, main deck, foredeck, cockpit, swim platform / bathing zone, saloon/dining/galley, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
+
+These facts should be verified before final publication where accuracy matters.
 
 ## Future Private Layer Goal
 

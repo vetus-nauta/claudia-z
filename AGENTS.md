@@ -19,17 +19,17 @@ The presentation layer must feel like a private salon, not like a mass-market ch
 
 ## Content Source Discipline
 
-Old site content may be used only as source material.
+Old site text may be used only as directional reference.
 
 Do not reuse the old site's visual approach, layout patterns, interaction patterns, copy structure, section rhythm, WordPress theme behavior, or marketing mechanics.
 
 When content is provided from the old site:
 
-- extract facts, useful wording, yacht details, and media references
-- rewrite into the controlled presentation tone
+- extract factual direction, yacht details, topic coverage, and media references
+- write new copy from scratch in the controlled presentation tone
 - verify claims before publishing
 - keep only approved content
-- do not copy old-site UX or SEO tactics
+- do not copy old wording, phrasing, UX, or SEO tactics
 
 ## Language And Locale
 
@@ -200,7 +200,7 @@ Migration discipline:
 2. Backup `public_html`.
 3. Backup database.
 4. Extract media from `wp-content/uploads`.
-5. Extract useful text and legacy metadata for audit/reference only.
+5. Extract factual direction and legacy metadata for audit/reference only.
 6. Build new project separately in GitHub/dev.
 7. Test on dev/staging.
 8. Only after approval, replace `public_html` with the new build.

@@ -2,18 +2,19 @@
 
 ## Source Content
 
-Old site content may be used only as raw source material.
+Old site text may be used only as directional reference.
 
 Allowed:
 
 - facts
 - yacht details
-- useful phrases after rewriting
+- topic coverage
 - service/context information after verification
 - media references
 
 Not allowed:
 
+- old wording or close paraphrase
 - old layout logic
 - old section order as a default
 - old calls to action
@@ -21,7 +22,7 @@ Not allowed:
 - old visual or interaction patterns
 - unverified claims
 
-Rewrite all approved content into the current controlled presentation tone.
+Write new copy from scratch in the current controlled presentation tone.
 
 ## Language Rules
 

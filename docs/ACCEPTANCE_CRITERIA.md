@@ -14,12 +14,13 @@ The first release is acceptable only if:
 - it has no public SEO growth strategy or keyword landing copy
 - it has no public prices
 - it has no direct charter/rental/booking language
-- old site content is used only as source material, not as design or UX direction
+- old site text is used only as directional reference, not copied or closely paraphrased
 - English is the primary/default language
 - Russian is supported
 - non-English/non-Russian languages fall back to English
 - language switching/detection does not create duplicate visible content blocks
 - initial content zones are represented or intentionally deferred: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, swim platform / bathing zone
+- interior media can be filtered or grouped by saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin
 - it presents yacht beautifully and confidently
 - all approved media displays correctly
 - videos have poster/fallback

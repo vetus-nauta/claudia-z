@@ -65,16 +65,16 @@ Agents must search for old wording, remove or rewrite superseded guidance, keep 
 Status:
 Approved
 
-## 2026-06-11 — Domain Active And Old Site Content Boundary
+## 2026-06-11 — Domain Active And Old Site Text Boundary
 
 Decision:
-Domain `claudia-z.com` is active. Old site content may be used only as source material.
+Domain `claudia-z.com` is active. Old site text may be used only as directional reference.
 
 Supersedes:
-Any approach that copies the old site's design, layout, section rhythm, interaction patterns, WordPress theme behavior, SEO tactics, or marketing mechanics.
+Any approach that copies the old site's wording, close paraphrases, design, layout, section rhythm, interaction patterns, WordPress theme behavior, SEO tactics, or marketing mechanics.
 
 Impact:
-Agents may extract facts and useful content, then rewrite and restructure according to the current controlled no-index, media-first standard.
+Agents may extract factual direction, topic coverage, yacht details, and media references, then write new copy from scratch according to the current controlled no-index, media-first standard.
 
 Status:
 Approved
@@ -93,7 +93,7 @@ Approved
 ## 2026-06-11 — Initial Yacht Sections And Media Intake
 
 Decision:
-Initial content/media structure should include general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, and swim platform / bathing zone.
+Initial content/media structure should include general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, and swim platform / bathing zone. Interior media should additionally be separated into saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin.
 
 Impact:
 Photos will be requested from the owner as Google Drive folders/links and mapped into stable yacht zones for current gallery and future 3D guide compatibility.
