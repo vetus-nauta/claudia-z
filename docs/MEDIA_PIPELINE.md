@@ -8,6 +8,13 @@ Media will be requested and received in owner-provided Google Drive folders/link
 
 Do not assume assets exist until the owner provides folders or links.
 
+## Current Media Sources
+
+- Hero logo source: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`.
+  - Contains two PNG logo/image candidates and two TXT source/prompt companion files.
+  - Treat as a brand/hero-logo asset source, not as yacht photography.
+  - Before implementation, inspect the PNGs for transparency, resolution, contrast on dark media, mobile legibility, and whether generated marks are suitable for use.
+
 ## Classification
 
 Classify media by:

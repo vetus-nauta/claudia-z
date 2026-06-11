@@ -18,6 +18,7 @@ Agent foundation and pre-build rules.
 - Initial sections/zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Owner will provide media later through Google Drive folders/links on request.
+- Hero logo source folder is recorded: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, two PNG candidates plus two TXT companion files.
 - Old site source intake is complete enough to start architecture: four different WordPress XML files were read from Google Drive, including Russian pages, one English post, media attachments, and a full export.
 - Use extracted facts/specifications/zones only; old copy, WordPress theme data, header/footer/navigation, and old layout patterns are excluded.
 - Prototype media is temporary; final hero/zone media must pass content-aware crop review before approval.

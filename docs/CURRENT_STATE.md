@@ -18,6 +18,7 @@
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
+- Hero logo source folder received: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, containing two PNG candidates and two TXT companion files.
 - Photos will be supplied later as Google Drive folders/links on request.
 
 ## Source Intake 2026-06-11
