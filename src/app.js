@@ -175,12 +175,15 @@ const copy = {
 
 const state = {
   lang: detectLanguage(),
+  theme: detectTheme(),
   zoneId: "overview"
 };
 
 const media = document.querySelector("#zoneMedia");
+const mediaGuard = document.querySelector("#mediaGuard");
 const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
+const themeButton = document.querySelector("#themeButton");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
 
@@ -191,6 +194,14 @@ function detectLanguage() {
   return preferred.some((lang) => lang.startsWith("ru")) ? "ru" : "en";
 }
 
+function detectTheme() {
+  const storedTheme = window.localStorage.getItem("claudia-z-theme");
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return storedTheme;
+  }
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
 function currentZone() {
   return zones.find((zone) => zone.id === state.zoneId) || zones[0];
 }
@@ -199,6 +210,14 @@ function setLanguage(lang) {
   state.lang = lang === "ru" ? "ru" : "en";
   document.documentElement.lang = state.lang;
   render();
+}
+
+function setTheme(theme) {
+  state.theme = theme === "light" ? "light" : "dark";
+  document.documentElement.dataset.theme = state.theme;
+  window.localStorage.setItem("claudia-z-theme", state.theme);
+  themeButton.setAttribute("aria-pressed", state.theme === "light" ? "true" : "false");
+  themeButton.setAttribute("aria-label", state.theme === "light" ? "Switch to dark theme" : "Switch to light theme");
 }
 
 function setZone(zoneId) {
@@ -256,6 +275,10 @@ document.querySelectorAll(".language__button").forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
+themeButton.addEventListener("click", () => {
+  setTheme(state.theme === "dark" ? "light" : "dark");
+});
+
 document.querySelector("#detailsButton").addEventListener("click", () => {
   toggleSheet(detailsSheet);
 });
@@ -272,4 +295,17 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+document.addEventListener("contextmenu", (event) => {
+  if (event.target.closest(".stage")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("dragstart", (event) => {
+  if (event.target === media || event.target === mediaGuard) {
+    event.preventDefault();
+  }
+});
+
+setTheme(state.theme);
 render();

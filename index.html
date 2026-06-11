@@ -12,7 +12,8 @@
   <body>
     <main class="presentation" aria-live="polite">
       <section class="stage" aria-label="Claudia Z private presentation">
-        <img class="stage__media" id="zoneMedia" alt="" decoding="async" fetchpriority="high">
+        <img class="stage__media" id="zoneMedia" alt="" decoding="async" fetchpriority="high" draggable="false">
+        <div class="media-guard" id="mediaGuard" aria-hidden="true"></div>
         <div class="stage__scrim" aria-hidden="true"></div>
 
         <div class="topbar" aria-label="Presentation controls">
@@ -20,9 +21,14 @@
             <span class="identity__name">Claudia Z</span>
             <span class="identity__meta">Sunseeker 76</span>
           </div>
-          <div class="language" aria-label="Language">
-            <button class="language__button" type="button" data-lang="en">EN</button>
-            <button class="language__button" type="button" data-lang="ru">RU</button>
+          <div class="controls">
+            <button class="theme-button" type="button" id="themeButton" aria-label="Switch theme" aria-pressed="false">
+              <span class="theme-button__icon" aria-hidden="true"></span>
+            </button>
+            <div class="language" aria-label="Language">
+              <button class="language__button" type="button" data-lang="en">EN</button>
+              <button class="language__button" type="button" data-lang="ru">RU</button>
+            </div>
           </div>
         </div>
 
