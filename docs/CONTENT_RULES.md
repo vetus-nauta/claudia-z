@@ -1,5 +1,38 @@
 # Content Rules
 
+## Source Content
+
+Old site content may be used only as raw source material.
+
+Allowed:
+
+- facts
+- yacht details
+- useful phrases after rewriting
+- service/context information after verification
+- media references
+
+Not allowed:
+
+- old layout logic
+- old section order as a default
+- old calls to action
+- old SEO copy
+- old visual or interaction patterns
+- unverified claims
+
+Rewrite all approved content into the current controlled presentation tone.
+
+## Language Rules
+
+Write English first.
+
+Russian is supported as a secondary language.
+
+If the user's system/browser language is Russian, show Russian. If it is English, show English. For every other language, show English.
+
+Do not show both full languages at once in the main interface.
+
 ## Controlled Presentation Must Not Say
 
 Avoid:

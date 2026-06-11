@@ -50,6 +50,8 @@ The first mobile viewport must feel like a complete premium experience, not a ge
 Use a shared visual/CSS system and modern compact media patterns such as swipe gallery, media rail, full-screen viewer, drawer, or zone-based gallery where appropriate.
 Preserve future 3D guide compatibility through yacht zones, hotspot-ready media, and a lightweight guide entry/fallback plan.
 The result must be controlled no-index and must not include public SEO/indexing behavior.
+Support English as primary/default, Russian as secondary, and English fallback for all other languages.
+Use old site content only as source material; do not copy old design, UX, layout, SEO, or marketing mechanics.
 No prices. No public charter/rental/booking language. Do not write code yet.
 ```
 

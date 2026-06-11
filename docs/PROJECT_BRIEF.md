@@ -7,6 +7,7 @@ Premium controlled no-index yacht presentation tool and future private inquiry s
 ## Current Domain Context
 
 Current domain/site: `claudia-z.com`.
+Domain is active.
 Current site may be a WordPress site on Namecheap hosting.
 The new project should replace the old WordPress presentation only after backup, extraction, build, staging, and approval.
 
@@ -43,6 +44,40 @@ Create a beautiful, mobile-first and tablet-first presentation that shows:
 - discreet private inquiry path
 
 The presentation is for controlled sharing with selected brokers, trusted partners, and direct private clients. It must be hard no-index by default and must not be built for public search discovery.
+
+Old site content may be used as source material only. Do not reuse the old site's design, layout, section rhythm, interaction patterns, WordPress theme behavior, or marketing mechanics.
+
+## Language
+
+Primary language: English.
+
+Supported first-release languages:
+
+- English (`en`)
+- Russian (`ru`)
+
+Language behavior:
+
+- Russian users see Russian.
+- English users see English.
+- All other languages fall back to English.
+- Only one active language should be shown at a time.
+- Language controls must be compact and not consume first-screen space.
+
+## Initial Content Areas
+
+Initial content should be organized around:
+
+- general plans / overview
+- exterior
+- interior
+- flybridge
+- main deck
+- foredeck
+- cockpit
+- swim platform / bathing zone
+
+Photos will be provided later through Google Drive folders by request.
 
 ## Future Private Layer Goal
 

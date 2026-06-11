@@ -64,3 +64,39 @@ Agents must search for old wording, remove or rewrite superseded guidance, keep 
 
 Status:
 Approved
+
+## 2026-06-11 — Domain Active And Old Site Content Boundary
+
+Decision:
+Domain `claudia-z.com` is active. Old site content may be used only as source material.
+
+Supersedes:
+Any approach that copies the old site's design, layout, section rhythm, interaction patterns, WordPress theme behavior, SEO tactics, or marketing mechanics.
+
+Impact:
+Agents may extract facts and useful content, then rewrite and restructure according to the current controlled no-index, media-first standard.
+
+Status:
+Approved
+
+## 2026-06-11 — Language Detection And Fallback
+
+Decision:
+English is the primary/default language. Russian is the secondary supported language. If the detected/preferred language is neither English nor Russian, the presentation opens in English.
+
+Impact:
+Implement compact language handling, show one active language at a time, and maintain content parity for approved `en` and `ru` content.
+
+Status:
+Approved
+
+## 2026-06-11 — Initial Yacht Sections And Media Intake
+
+Decision:
+Initial content/media structure should include general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, and swim platform / bathing zone.
+
+Impact:
+Photos will be requested from the owner as Google Drive folders/links and mapped into stable yacht zones for current gallery and future 3D guide compatibility.
+
+Status:
+Approved

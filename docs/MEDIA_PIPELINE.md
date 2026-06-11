@@ -4,15 +4,24 @@
 
 Turn existing yacht photos and videos into a premium, fast, mobile-first media system.
 
+Media will be requested and received in owner-provided Google Drive folders/links.
+
+Do not assume assets exist until the owner provides folders or links.
+
 ## Classification
 
 Classify media by:
 
+- general plans / overview
 - exterior profile
+- exterior details
+- interior overview
 - swim platform
 - cockpit
 - flybridge
 - bow area
+- foredeck
+- main deck
 - saloon
 - galley
 - helm
@@ -28,11 +37,29 @@ Classify media by:
 - vertical mobile clips
 - horizontal cinematic clips
 
+## Initial Requested Folder Logic
+
+When requesting media from the owner, prefer clear folders:
+
+- `01_general_plans`
+- `02_exterior`
+- `03_interior`
+- `04_flybridge`
+- `05_main_deck`
+- `06_foredeck`
+- `07_cockpit`
+- `08_swim_platform`
+- `09_video`
+- `10_details`
+
+Folder names may vary, but agents must map them back to stable yacht zones.
+
 ## Metadata Per Asset
 
 For every selected asset, define:
 
 - source filename
+- source folder/link
 - presentation/private use
 - yacht zone
 - orientation

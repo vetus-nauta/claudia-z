@@ -5,6 +5,7 @@
 This repository is for a premium controlled no-index yacht presentation tool.
 
 Current domain context: `claudia-z.com`.
+Domain is active.
 Potential brand direction: Bell Rock / Bell Rock Way.
 Current yacht focus: Sunseeker 76 / Claudia Z, but the structure must not lock the product to one yacht only. Future yachts may be added.
 
@@ -15,6 +16,39 @@ The site is a private digital presentation / yacht card for controlled sharing, 
 Create a premium, discreet, mobile-first and tablet-first presentation tool for selected brokers, trusted partners, and direct private clients.
 
 The presentation layer must feel like a private salon, not like a mass-market charter landing page.
+
+## Content Source Discipline
+
+Old site content may be used only as source material.
+
+Do not reuse the old site's visual approach, layout patterns, interaction patterns, copy structure, section rhythm, WordPress theme behavior, or marketing mechanics.
+
+When content is provided from the old site:
+
+- extract facts, useful wording, yacht details, and media references
+- rewrite into the controlled presentation tone
+- verify claims before publishing
+- keep only approved content
+- do not copy old-site UX or SEO tactics
+
+## Language And Locale
+
+Primary language is English.
+
+Supported languages for first release:
+
+- `en`: primary/default
+- `ru`: secondary
+
+Language behavior:
+
+- detect user/browser language when possible
+- show Russian only when the detected/preferred language is Russian
+- show English when the detected/preferred language is English
+- fall back to English for every other language
+- keep language switching discreet and compact
+- do not duplicate large blocks on screen; show one active language at a time
+- maintain content parity between `en` and `ru` for approved presentation content
 
 ## Main Devices
 
@@ -83,6 +117,12 @@ The first controlled presentation layer should include:
 - yacht identity
 - beautiful yacht description
 - exterior / interior / lifestyle media
+- general plans / overview
+- flybridge zone
+- main deck zone
+- foredeck zone
+- cockpit zone
+- swim platform / bathing zone
 - calm experience narrative
 - gallery / video layer
 - private inquiry entry
