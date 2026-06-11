@@ -10,7 +10,7 @@
   --control: rgba(14, 18, 20, 0.56);
   --command-bg: linear-gradient(180deg, rgba(8, 11, 12, 0), rgba(8, 11, 12, 0.78) 20%, rgba(8, 11, 12, 0.92));
   --command-panel: rgba(8, 11, 12, 0.5);
-  --sheet-bg: rgba(18, 22, 25, 0.92);
+  --sheet-bg: rgba(18, 22, 25, 0.97);
   --scrim: linear-gradient(180deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.12) 30%, rgba(8, 11, 12, 0.78) 100%),
     linear-gradient(90deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.1) 58%, rgba(8, 11, 12, 0.34));
   --panel-solid: #121619;
@@ -37,7 +37,7 @@
   --control: rgba(245, 242, 235, 0.34);
   --command-bg: linear-gradient(180deg, rgba(240, 243, 241, 0), rgba(39, 50, 54, 0.5) 20%, rgba(27, 37, 40, 0.74));
   --command-panel: rgba(245, 242, 235, 0.28);
-  --sheet-bg: rgba(18, 24, 27, 0.92);
+  --sheet-bg: rgba(18, 24, 27, 0.97);
   --scrim: linear-gradient(180deg, rgba(16, 22, 24, 0.42), rgba(16, 22, 24, 0.08) 34%, rgba(16, 22, 24, 0.56) 100%),
     linear-gradient(90deg, rgba(16, 22, 24, 0.48), rgba(16, 22, 24, 0.06) 58%, rgba(16, 22, 24, 0.22));
   --panel-solid: #f0eee8;
@@ -96,6 +96,36 @@ button {
   z-index: -1;
   user-select: none;
   -webkit-touch-callout: none;
+}
+
+.media-frame {
+  position: relative;
+  aspect-ratio: var(--media-ratio, 16 / 10);
+  overflow: hidden;
+  background: #152024;
+}
+
+.media-frame > img,
+.media-frame > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--media-focus, 50% 50%);
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.media-frame--hero {
+  --media-ratio: 16 / 9;
+}
+
+.media-frame--portrait {
+  --media-ratio: 4 / 5;
+}
+
+.media-frame--detail {
+  --media-ratio: 1 / 1;
 }
 
 .stage__scrim {
@@ -244,6 +274,13 @@ h1 {
   gap: 10px;
   padding: 10px 12px calc(12px + var(--safe-bottom));
   background: var(--command-bg);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.is-details-open .command {
+  transform: translateY(calc(100% + 18px));
+  opacity: 0;
+  pointer-events: none;
 }
 
 .zone-rail {

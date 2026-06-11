@@ -111,6 +111,10 @@ For every selected asset, define:
 ## Performance Rules
 
 - Use optimized images.
+- Use stable media containers with fixed approved aspect ratios; photos must never resize the layout according to their original proportions.
+- Create display derivatives for each approved use case instead of relying on browser-only cropping of master images.
+- Define the required crop format before production: hero, zone opener, gallery frame, detail frame, mobile portrait, tablet, and desktop.
+- Keep gallery and zone frames visually consistent so the interface does not jump between unrelated image shapes.
 - Avoid heavy autoplay on mobile.
 - Always provide video poster image.
 - Never autoplay sound.

@@ -16,8 +16,10 @@
 - Primary language is English; Russian is supported; all other detected languages fall back to English. Language is automatic only; no visible language switcher in the presentation UI.
 - Initial media/content zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
+- Prototype zone navigation now includes the required interior subzones with temporary old-media placeholders pending final owner-provided media.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
+- Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.
 - Hero logo source folder received: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, containing two PNG candidates and two TXT companion files.
 - Sunseeker manufacturer logo was extracted from old WordPress media and converted into cleaned dark/light UI derivatives. Use it only as a secondary builder mark; `Claudia Z` remains the primary presentation identity.
 - Prototype now includes a compact dark/light theme switcher.

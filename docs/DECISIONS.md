@@ -147,3 +147,14 @@ Use display derivatives instead of originals, keep master assets out of the publ
 
 Status:
 Approved
+
+## 2026-06-11 — Stable Media Frames And Crops
+
+Decision:
+Presentation photos must be prepared as display derivatives for approved common formats. Media containers must use stable aspect ratios so image proportions do not move or reshape the interface.
+
+Impact:
+Agents must define crop role, focal point, mobile/tablet/desktop behavior, and output size before approving media. Browser `object-fit` may be used for controlled display, but final publication should use pre-cut derivatives where practical.
+
+Status:
+Approved

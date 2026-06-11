@@ -33,7 +33,7 @@ First give diagnosis and proposed approach. Do not write code yet.
 
 ## Project position
 
-This repository is for a premium controlled no-index yacht presentation tool and future private inquiry/messenger layer.
+This repository is for a premium controlled no-index yacht presentation tool and future private access/messenger layer.
 
 It is not a public charter marketplace.
 It is not a public sales site.

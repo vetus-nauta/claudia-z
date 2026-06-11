@@ -7,13 +7,13 @@ const zones = [
     focus: "50% 46%",
     en: {
       label: "Overview",
-      title: "A private first look",
-      copy: "The opening view should identify the yacht, the scale, and the route into the media without adding a contact path."
+      title: "Claudia Z at a glance",
+      copy: "Start with the yacht's profile, scale, and calm presence on the water before moving into decks, interiors, and water access."
     },
     ru: {
       label: "Обзор",
-      title: "Первое частное впечатление",
-      copy: "Первый экран должен сразу показать яхту, уровень и путь в медиа без контактного сценария."
+      title: "Claudia Z одним взглядом",
+      copy: "Сначала силуэт, масштаб и спокойное присутствие яхты на воде, затем палубы, интерьер и выход к воде."
     }
   },
   {
@@ -123,33 +123,110 @@ const zones = [
   },
   {
     id: "interior",
-    image: `${mediaBase}1-p1999373.jpg`,
+    image: `${mediaBase}72-p1999588.jpg`,
     focus: "50% 50%",
     en: {
       label: "Interior",
-      title: "Interior calm",
-      copy: "Interior media is grouped under saloon, master cabin, forward VIP, starboard guest, and port guest / children's cabin."
+      title: "Interior overview",
+      copy: "Interior media is organized as a clear route through the saloon, cabins, guest spaces, and private-use details."
     },
     ru: {
       label: "Интерьер",
-      title: "Спокойствие внутри",
-      copy: "Интерьер делится на салон, мастер-каюту, носовую VIP, правую гостевую и левую гостевую / детскую."
+      title: "Обзор интерьера",
+      copy: "Интерьер собран как понятный маршрут через салон, каюты, гостевые зоны и детали частного использования."
+    }
+  },
+  {
+    id: "saloon",
+    image: `${mediaBase}68-p1999580.jpg`,
+    focus: "50% 50%",
+    en: {
+      label: "Saloon",
+      title: "Main saloon",
+      copy: "The saloon should show seating, dining, light, circulation, and the way the main deck feels during a real conversation."
+    },
+    ru: {
+      label: "Салон",
+      title: "Главный салон",
+      copy: "Салон должен показывать посадку, обеденную зону, свет, движение и ощущение главной палубы в реальном разговоре."
+    }
+  },
+  {
+    id: "master_cabin",
+    image: `${mediaBase}1-p1999373.jpg`,
+    focus: "50% 52%",
+    en: {
+      label: "Master cabin",
+      title: "Owner's cabin",
+      copy: "Master cabin media should communicate privacy, proportions, storage, materials, and the calm of the principal sleeping space."
+    },
+    ru: {
+      label: "Мастер-каюта",
+      title: "Главная каюта",
+      copy: "Медиа мастер-каюты должно передавать приватность, пропорции, хранение, материалы и спокойствие главной спальной зоны."
+    }
+  },
+  {
+    id: "forward_vip",
+    image: `${mediaBase}38-p1999471.jpg`,
+    focus: "50% 52%",
+    en: {
+      label: "Forward VIP",
+      title: "Forward VIP cabin",
+      copy: "The forward VIP cabin should read as a complete guest space, not a leftover detail in the general interior gallery."
+    },
+    ru: {
+      label: "Носовая VIP",
+      title: "Носовая VIP-каюта",
+      copy: "Носовая VIP-каюта должна восприниматься как полноценное гостевое пространство, а не случайная деталь общей галереи."
+    }
+  },
+  {
+    id: "starboard_guest",
+    image: `${mediaBase}53-p1999532.jpg`,
+    focus: "50% 52%",
+    en: {
+      label: "Starboard guest",
+      title: "Starboard guest cabin",
+      copy: "This zone separates the starboard guest cabin for fast orientation when discussing accommodation layout."
+    },
+    ru: {
+      label: "Правая гостевая",
+      title: "Правая гостевая каюта",
+      copy: "Эта зона отдельно показывает правую гостевую каюту, чтобы быстро объяснять планировку размещения."
+    }
+  },
+  {
+    id: "port_guest",
+    image: `${mediaBase}55-p1999538.jpg`,
+    focus: "50% 52%",
+    en: {
+      label: "Port guest",
+      title: "Port guest / children's cabin",
+      copy: "The port cabin is kept separate so family or guest-use scenarios can be explained without overloading the main interior view."
+    },
+    ru: {
+      label: "Левая гостевая",
+      title: "Левая гостевая / детская",
+      copy: "Левая каюта ведется отдельно, чтобы семейный или гостевой сценарий объяснялся без перегруза общего раздела интерьера."
     }
   }
 ];
 
 const copy = {
   en: {
-    eyebrow: "Private yacht presentation",
+    eyebrow: "Controlled yacht presentation",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 arranged as a quiet visual guide: decks, interiors, details, and water-level zones in one controlled view.",
+    lead: "A 23.60 m Sunseeker 76 shown by deck, interior, water access, and tender so the yacht can be read quickly and studied in detail.",
     details: "Yacht details",
-    detailsTitle: "Yacht facts",
+    detailsTitle: "Specifications",
     length: "Length",
     beam: "Beam",
     draft: "Draft",
     engines: "Engines",
+    dryWeight: "Dry weight",
     fuel: "Fuel",
+    freshWater: "Fresh water",
     range: "Range",
     factLength: "23.60 m",
     factCabins: "4 cabins",
@@ -158,14 +235,16 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 как спокойный визуальный гид: палубы, интерьер, детали и зоны у воды в одном контролируемом просмотре.",
+    lead: "23.60-метровая Sunseeker 76 показана через палубы, интерьер, выход к воде и тендер: быстро для первого понимания, подробно для изучения.",
     details: "Детали яхты",
-    detailsTitle: "Факты о яхте",
+    detailsTitle: "Спецификация",
     length: "Длина",
     beam: "Ширина",
     draft: "Осадка",
     engines: "Двигатели",
+    dryWeight: "Сухой вес",
     fuel: "Топливо",
+    freshWater: "Пресная вода",
     range: "Запас хода",
     factLength: "23.60 м",
     factCabins: "4 каюты",
@@ -266,6 +345,9 @@ function toggleSheet(sheet, force) {
   const shouldOpen = typeof force === "boolean" ? force : !sheet.classList.contains("is-open");
   sheet.classList.toggle("is-open", shouldOpen);
   sheet.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
+  if (sheet === detailsSheet) {
+    document.body.classList.toggle("is-details-open", shouldOpen);
+  }
 }
 
 themeButton.addEventListener("click", () => {
