@@ -4,6 +4,10 @@
 
 Agent foundation and pre-build rules.
 
+## First Read
+
+Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for current rules, approved media, placeholders, and next-step protocol. Do not reread all docs or run broad scans for local section work unless `ACTIVE_CONTEXT.md` is insufficient.
+
 ## Active Direction
 
 - This is a controlled no-index yacht presentation tool, not a public sales or SEO website.
