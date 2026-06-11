@@ -218,6 +218,35 @@ button {
   padding: calc(92px + var(--safe-top)) 14px calc(154px + var(--safe-bottom));
 }
 
+.stage__content h1 {
+  display: none;
+}
+
+.stage__content--overview h1 {
+  display: block;
+}
+
+.stage-builder-mark {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 2px 0 4px;
+}
+
+.stage__content--overview .stage-builder-mark {
+  display: none;
+}
+
+.stage-builder-mark .sunseeker-mark {
+  width: clamp(132px, 17vw, 190px);
+  opacity: 0.88;
+}
+
+:root[data-theme="dark"] .sunseeker-mark--on-light,
+:root[data-theme="light"] .sunseeker-mark--on-dark {
+  display: none;
+}
+
 .eyebrow {
   margin: 0 0 10px;
   color: var(--accent);

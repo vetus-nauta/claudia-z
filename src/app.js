@@ -137,9 +137,7 @@ const zones = [
   {
     id: "aft_swim_platform",
     media: [
-      media("117-p1477608.jpg", "52% 54%"),
-      media("dji_0279_1.jpg", "50% 56%"),
-      media("dji_0280_1.jpg", "50% 56%")
+      localMedia("aft_swim_platform", "generated-platform-placeholder-stage.webp", "generated-platform-placeholder-full.webp", "generated-platform-placeholder-mobile.webp", "52% 53%")
     ],
     en: {
       label: "Aft Swim Platform",
@@ -344,6 +342,7 @@ const mediaGuard = document.querySelector("#mediaGuard");
 const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
 const themeButton = document.querySelector("#themeButton");
+const stageContent = document.querySelector(".stage__content");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
 const mediaCounter = document.querySelector("#mediaCounter");
@@ -481,6 +480,7 @@ function updateStageMedia(selectedMedia, altText) {
 function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
+  stageContent.classList.toggle("stage__content--overview", zone.id === "overview");
   updateStageMedia(selectedMedia, zone[state.lang].title);
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   zoneTitle.textContent = zone[state.lang].title;
