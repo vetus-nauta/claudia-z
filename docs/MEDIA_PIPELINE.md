@@ -14,6 +14,10 @@ Do not assume assets exist until the owner provides folders or links.
   - Contains two PNG logo/image candidates and two TXT source/prompt companion files.
   - Treat as a brand/hero-logo asset source, not as yacht photography.
   - Before implementation, inspect the PNGs for transparency, resolution, contrast on dark media, mobile legibility, and whether generated marks are suitable for use.
+- Sunseeker builder mark source: old WordPress media export.
+  - Public UI must use cleaned display derivatives only.
+  - Keep the mark secondary and visually quiet so it does not compete with the yacht identity or hero media.
+  - Do not expose old source filenames or unused extracted logo candidates in public markup.
 
 ## Classification
 

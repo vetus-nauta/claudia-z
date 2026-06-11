@@ -335,6 +335,37 @@ h1 {
   margin-bottom: 14px;
 }
 
+.builder-mark {
+  display: inline-flex;
+  align-items: center;
+  margin: -2px 0 16px;
+  border-radius: 6px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.sunseeker-mark {
+  display: block;
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.sunseeker-mark--light-theme {
+  display: none;
+}
+
+:root[data-theme="light"] .sunseeker-mark--dark-theme {
+  display: none;
+}
+
+:root[data-theme="light"] .sunseeker-mark--light-theme {
+  display: block;
+}
+
 .icon-button {
   width: 36px;
   height: 36px;
