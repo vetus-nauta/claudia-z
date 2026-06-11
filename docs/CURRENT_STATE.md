@@ -66,6 +66,8 @@
 - Prototype now includes a compact dark/light theme switcher.
 - Prototype includes basic casual photo-copy deterrents: no image drag, context-menu blocking on the stage, and a transparent media guard layer. This is not absolute protection.
 - Visible yacht-name treatment: show `Claudia Z` only on the main Overview state. Internal zones must not repeat the yacht name as the main stage headline; use the integrated transparent Sunseeker mark instead.
+- Stage copy now changes by zone: Overview uses the main yacht summary, while each internal zone shows its own concise `copy` plus a clamped two-line `detail` preview. The full zone detail remains in the details sheet.
+- Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar instead of overflowing horizontally.
 - Aft Swim Platform currently uses a generated temporary placeholder scene with a bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and a small fruit/champagne table. Replace it with owner-approved real media when supplied.
 - Photos will be supplied later as Google Drive folders/links on request.
 

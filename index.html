@@ -35,7 +35,8 @@
             <img class="sunseeker-mark sunseeker-mark--on-dark" src="assets/brand/sunseeker-mark-on-dark.png" alt="Sunseeker" draggable="false">
             <img class="sunseeker-mark sunseeker-mark--on-light" src="assets/brand/sunseeker-mark-on-light.png" alt="Sunseeker" draggable="false">
           </div>
-          <p class="lead" data-i18n="lead"></p>
+          <p class="lead" id="stageLead"></p>
+          <p class="stage-zone-detail" id="stageZoneDetail"></p>
 
           <div class="quickfacts" aria-label="Key facts">
             <span data-fact="length"></span>
@@ -53,6 +54,10 @@
         <div class="swipe-hint" id="swipeHint" data-i18n="swipeHint" aria-hidden="true"></div>
 
         <div class="command">
+          <button class="zone-menu-button" type="button" id="zoneMenuButton" aria-expanded="false" aria-controls="zoneRail">
+            <span class="zone-menu-button__icon" aria-hidden="true"></span>
+            <span id="currentZoneLabel"></span>
+          </button>
           <nav class="zone-rail" id="zoneRail" aria-label="Yacht zones"></nav>
           <div class="actions" aria-label="Presentation actions">
             <button class="action action--primary" type="button" id="detailsButton" data-i18n="details"></button>

@@ -181,6 +181,17 @@ Zone navigation should behave as quiet text tabs with subtle active state, facts
 Status:
 Approved
 
+## 2026-06-12 — Adaptive Navigation And Zone Copy
+
+Decision:
+Narrow viewports must not rely on a long horizontal zone rail that can run off screen. Use a compact hamburger-style menu with the current zone label and a scrollable section list.
+
+Impact:
+The stage should show concise zone-specific copy after a zone is selected, while fuller detail remains in the details sheet. This keeps the first screen informational without turning the experience into a text-heavy landing page.
+
+Status:
+Approved
+
 ## 2026-06-11 — Integrated Marks, Not Logo Stickers
 
 Decision:

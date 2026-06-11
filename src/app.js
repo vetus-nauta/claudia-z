@@ -274,6 +274,7 @@ const copy = {
     eyebrow: "Controlled yacht presentation",
     headline: "Claudia Z",
     lead: "Sunseeker 76 combines speed, volume, and maneuverability with quiet family cruising. Designed with taste for comfortable time on board. Built in 2020.",
+    menu: "Sections",
     details: "Yacht details",
     detailsTitle: "Specifications",
     length: "Length",
@@ -296,6 +297,7 @@ const copy = {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
     lead: "Sunseeker 76 - отличное сочетание скоростных показателей, вместительности и маневренности. Семейная круизная яхта, спроектированная со вкусом для комфортного отдыха. Год постройки 2020.",
+    menu: "Разделы",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
     length: "Длина",
@@ -334,9 +336,13 @@ const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
 const themeButton = document.querySelector("#themeButton");
 const stageContent = document.querySelector(".stage__content");
+const stageLead = document.querySelector("#stageLead");
+const stageZoneDetail = document.querySelector("#stageZoneDetail");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
 const zoneDetail = document.querySelector("#zoneDetail");
+const zoneMenuButton = document.querySelector("#zoneMenuButton");
+const currentZoneLabel = document.querySelector("#currentZoneLabel");
 const mediaCounter = document.querySelector("#mediaCounter");
 const previousMediaButton = document.querySelector("#prevMediaButton");
 const nextMediaButton = document.querySelector("#nextMediaButton");
@@ -388,11 +394,18 @@ function setTheme(theme) {
 
 function setZone(zoneId) {
   if (zoneId === state.zoneId) {
+    closeZoneMenu();
     return;
   }
   state.zoneId = zoneId;
   state.mediaIndex = 0;
+  closeZoneMenu();
   render();
+}
+
+function closeZoneMenu() {
+  document.body.classList.remove("is-zone-menu-open");
+  zoneMenuButton.setAttribute("aria-expanded", "false");
 }
 
 function setMediaIndex(index) {
@@ -429,6 +442,7 @@ function renderCopy() {
   document.querySelector('[data-fact="length"]').textContent = copy[state.lang].factLength;
   document.querySelector('[data-fact="cabins"]').textContent = copy[state.lang].factCabins;
   document.querySelector('[data-fact="speed"]').textContent = copy[state.lang].factSpeed;
+  zoneMenuButton.setAttribute("aria-label", copy[state.lang].menu);
 }
 
 function preloadAdjacentMedia() {
@@ -472,9 +486,14 @@ function updateStageMedia(selectedMedia, altText) {
 function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
-  stageContent.classList.toggle("stage__content--overview", zone.id === "overview");
+  const isOverview = zone.id === "overview";
+  stageContent.classList.toggle("stage__content--overview", isOverview);
   updateStageMedia(selectedMedia, zone[state.lang].title);
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
+  stageLead.textContent = isOverview ? copy[state.lang].lead : zone[state.lang].copy;
+  stageZoneDetail.textContent = isOverview ? "" : zone[state.lang].detail || "";
+  stageZoneDetail.hidden = isOverview || !zone[state.lang].detail;
+  currentZoneLabel.textContent = zone[state.lang].label;
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
   zoneDetail.textContent = zone[state.lang].detail || "";
@@ -512,6 +531,12 @@ themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");
 });
 
+zoneMenuButton.addEventListener("click", () => {
+  const shouldOpen = !document.body.classList.contains("is-zone-menu-open");
+  document.body.classList.toggle("is-zone-menu-open", shouldOpen);
+  zoneMenuButton.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+});
+
 previousMediaButton.addEventListener("click", () => {
   setMediaIndex(state.mediaIndex - 1);
 });
@@ -528,6 +553,7 @@ stage.addEventListener("pointerdown", (event) => {
   if (event.target.closest("button, .sheet, .zone-rail")) {
     return;
   }
+  closeZoneMenu();
   state.dragStartX = event.clientX;
   state.dragStartY = event.clientY;
 });
@@ -565,6 +591,7 @@ document.querySelectorAll("[data-close]").forEach((button) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
+    closeZoneMenu();
     toggleSheet(detailsSheet, false);
     toggleLightbox(false);
   }

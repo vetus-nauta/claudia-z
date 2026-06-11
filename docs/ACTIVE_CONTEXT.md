@@ -50,6 +50,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Overview identity uses cleaned transparent `Claudia Z` logo derivatives from Drive. Because the current hero is dark-framed media in both themes, the visible hero mark must stay light/readable regardless of selected theme. Do not return to a visible plain text hero title; keep text only for accessibility.
 - Navigation must read as restrained premium product material, not constructor UI: avoid pill/chip section buttons, oversized CTA blocks, and school-like gallery controls. Prefer text tabs, hairlines, quiet state changes, and mobile swipe behavior.
 - Details sheet includes transparent Sunseeker mark and specs.
+- Zone descriptions are now split into two UI layers: a short zone-specific text on the stage for immediate context, and fuller `detail` text in the details sheet. Overview keeps the main yacht summary instead of repeating a zone description.
 - Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
 
 ## WordPress Source Text Mapping
