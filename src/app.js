@@ -217,7 +217,7 @@ const copy = {
   en: {
     eyebrow: "Controlled yacht presentation",
     headline: "Claudia Z",
-    lead: "A 23.60 m Sunseeker 76 shown by deck, interior, water access, and tender so the yacht can be read quickly and studied in detail.",
+    lead: "A 23.60 m yacht shown by deck, interior, water access, and tender so it can be read quickly and studied in detail.",
     details: "Yacht details",
     detailsTitle: "Specifications",
     length: "Length",
@@ -235,7 +235,7 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "23.60-метровая Sunseeker 76 показана через палубы, интерьер, выход к воде и тендер: быстро для первого понимания, подробно для изучения.",
+    lead: "23.60-метровая яхта показана через палубы, интерьер, выход к воде и тендер: быстро для первого понимания, подробно для изучения.",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
     length: "Длина",

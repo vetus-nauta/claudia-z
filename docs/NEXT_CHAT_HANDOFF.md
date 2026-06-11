@@ -20,7 +20,7 @@ Agent foundation and pre-build rules.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Owner will provide media later through Google Drive folders/links on request.
 - Hero logo source folder is recorded: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, two PNG candidates plus two TXT companion files.
-- Sunseeker mark is available as cleaned dark/light UI derivatives and should remain a secondary builder mark, not a hero or primary identity element.
+- Sunseeker mark is available as cleaned transparent UI derivatives and should remain a secondary builder mark, not a hero, sticker, or primary identity element.
 - Old site source intake is complete enough to start architecture: four different WordPress XML files were read from Google Drive, including Russian pages, one English post, media attachments, and a full export.
 - Use extracted facts/specifications/zones only; old copy, WordPress theme data, header/footer/navigation, and old layout patterns are excluded.
 - Prototype media is temporary; final hero/zone media must pass content-aware crop review before approval.
@@ -42,6 +42,8 @@ Agent foundation and pre-build rules.
 - No unnecessary analytics or tracking.
 - No heavy 3D on first mobile view unless explicitly approved.
 - No unnecessary header/footer chrome, oversized cards, or oversized headings as default structure.
+- No visible duplicate names in the same UI state; remove repeated labels rather than shrinking them.
+- No white logo cards inside dark information panels; use integrated transparent marks.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
 - Do not allow inactive-language flash during initialization.

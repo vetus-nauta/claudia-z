@@ -143,13 +143,12 @@ button {
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
   padding: calc(12px + var(--safe-top)) 14px 10px;
   pointer-events: none;
 }
 
-.identity,
 .controls {
   display: flex;
   align-items: center;
@@ -160,31 +159,12 @@ button {
   pointer-events: auto;
 }
 
-.identity,
 .theme-button {
   border: 1px solid var(--line);
   background: var(--glass);
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   pointer-events: auto;
-}
-
-.identity {
-  gap: 10px;
-  max-width: min(68vw, 360px);
-  padding: 9px 11px;
-  border-radius: var(--radius);
-}
-
-.identity__name {
-  font-weight: 680;
-  white-space: nowrap;
-}
-
-.identity__meta {
-  color: var(--ink-soft);
-  font-size: 12px;
-  white-space: nowrap;
 }
 
 .theme-button {
@@ -375,32 +355,19 @@ h1 {
 .builder-mark {
   display: inline-flex;
   align-items: center;
-  margin: -2px 0 16px;
-  border-radius: 6px;
+  margin: -4px 0 16px;
   padding: 0;
-  overflow: hidden;
   background: transparent;
 }
 
 .sunseeker-mark {
   display: block;
-  width: 118px;
+  width: 116px;
   height: auto;
   object-fit: contain;
+  opacity: 0.82;
   -webkit-user-drag: none;
   user-select: none;
-}
-
-.sunseeker-mark--light-theme {
-  display: none;
-}
-
-:root[data-theme="light"] .sunseeker-mark--dark-theme {
-  display: none;
-}
-
-:root[data-theme="light"] .sunseeker-mark--light-theme {
-  display: block;
 }
 
 .icon-button {

@@ -158,3 +158,25 @@ Agents must define crop role, focal point, mobile/tablet/desktop behavior, and o
 
 Status:
 Approved
+
+## 2026-06-11 — No Visible Name Duplication
+
+Decision:
+Do not repeat the same brand, yacht, zone, or section name in multiple visible interface positions at the same time.
+
+Impact:
+If `Claudia Z` is the hero title, it should not also appear as a simultaneous topbar label. Supporting model/manufacturer context may appear where it adds meaning, but repeated labels must be removed rather than visually minimized.
+
+Status:
+Approved
+
+## 2026-06-11 — Integrated Marks, Not Logo Stickers
+
+Decision:
+Manufacturer marks inside dark information panels must be integrated as transparent/light marks, not placed on separate white logo cards.
+
+Impact:
+Use cleaned transparent derivatives for embedded marks. Avoid background boxes, sticker-like logo tiles, and any logo treatment that visually competes with the yacht identity or the panel content.
+
+Status:
+Approved
