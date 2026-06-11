@@ -92,6 +92,13 @@ Saloon, `assets/media/saloon/`:
 - User corrected filename uses Latin `P`: `94-P1477558`.
 - User-provided `94-P1477561` was not found in Drive; actual nearby Drive file is `95-P1477561`.
 
+Master cabin, `assets/media/master_cabin/`:
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Approved order: `2-P1999374`, `6-P1999381`, `12-P1477496`, `10-P1999413`, `15-P1999395`, `14-P1999393`, `18-P1477504`.
+- First four frames explain the bed, lounge/window side, storage/vanity, and cabin proportions.
+- Last three frames show the ensuite/bathroom as part of the master-cabin story.
+
 ## Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
@@ -113,7 +120,6 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 - `main_deck`
 - `interior`
-- `master_cabin`
 - `forward_vip`
 - `starboard_guest`
 - `port_guest`
