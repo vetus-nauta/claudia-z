@@ -1,7 +1,7 @@
 # Active Context
 
 Last updated: 2026-06-11
-Latest pushed commit: `0a2b6c4 Add approved forward VIP media derivatives`
+Latest pushed commit: `92bb923 Add approved port guest media derivatives`
 
 ## Work Rule
 
@@ -136,12 +136,11 @@ Tender, `assets/media/tender/`:
 - Used because owner requested a Williams 420-style placeholder; do not treat as confirmed final tender model or final yacht media.
 - Replace with owner-approved real tender media when supplied.
 
-## Still Placeholder / Not Final
+## Removed Standalone Placeholder Routes
 
-These zones still use old WordPress placeholder media in `src/app.js`:
-
-- `main_deck`
-- `interior`
+- `main_deck` is a category concept, not a standalone gallery. Foredeck, Cockpit, and Saloon carry that story.
+- `interior` overview is not needed. Interior is fully represented through Saloon, Master cabin, Forward VIP, Starboard guest, and Port guest / children's cabin.
+- Do not re-add these as generic overview sections unless the owner explicitly approves a new route structure.
 
 ## Media Intake Protocol
 
@@ -157,8 +156,7 @@ These zones still use old WordPress placeholder media in `src/app.js`:
 
 ## Next Likely Sections
 
-- Interior overview or cabins.
 - Real Aft Swim Platform media to replace generated placeholder.
 - Real Tender media to replace internet placeholder.
 
-Note: `main_deck` is a category/route concept, not the next standalone gallery. Foredeck and Cockpit are already in that route; Saloon is now filled separately.
+Note: all interior zones are now represented by specific sections; do not create a generic interior overview.

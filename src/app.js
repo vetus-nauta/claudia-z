@@ -1,13 +1,3 @@
-const mediaBase = "https://claudiazdotcom.wordpress.com/wp-content/uploads/2022/10/";
-
-function media(file, focus = "50% 50%") {
-  return {
-    src: `${mediaBase}${file}`,
-    fullSrc: `${mediaBase}${file}`,
-    focus
-  };
-}
-
 function localMedia(folder, stageFile, fullFile, mobileFile, focus = "50% 50%") {
   return {
     src: `assets/media/${folder}/${stageFile}`,
@@ -79,24 +69,6 @@ const zones = [
     }
   },
   {
-    id: "main_deck",
-    media: [
-      media("68-p1999580.jpg", "50% 50%"),
-      media("74-p1999594.jpg", "50% 50%"),
-      media("97-p1999617.jpg", "50% 50%")
-    ],
-    en: {
-      label: "Main deck",
-      title: "Saloon, dining, movement",
-      copy: "Main deck content connects saloon, dining, galley context, cockpit flow, and the nearly all-around view."
-    },
-    ru: {
-      label: "Главная палуба",
-      title: "Салон, обеденная зона, движение",
-      copy: "Главная палуба связывает салон, обеденную зону, камбуз, переход в кокпит и широкий обзор вокруг."
-    }
-  },
-  {
     id: "foredeck",
     media: [
       localMedia("foredeck", "142-p1477659-stage.webp", "142-p1477659-full.webp", "142-p1477659-mobile.webp", "50% 49%"),
@@ -164,24 +136,6 @@ const zones = [
       label: "Тендер",
       title: "Тендер и водные активности",
       copy: "Тендер ведется отдельной медиа-историей, даже если часть фото снята у кормовой платформы."
-    }
-  },
-  {
-    id: "interior",
-    media: [
-      media("72-p1999588.jpg", "50% 50%"),
-      media("89-p1999637.jpg", "50% 50%"),
-      media("99-p1999602.jpg", "50% 50%")
-    ],
-    en: {
-      label: "Interior",
-      title: "Interior overview",
-      copy: "Interior media is organized as a clear route through saloon, cabins, guest spaces, and private-use details."
-    },
-    ru: {
-      label: "Интерьер",
-      title: "Обзор интерьера",
-      copy: "Интерьер собран как понятный маршрут через салон, каюты, гостевые зоны и детали частного использования."
     }
   },
   {
