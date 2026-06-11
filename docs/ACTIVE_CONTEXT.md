@@ -1,7 +1,7 @@
 # Active Context
 
 Last updated: 2026-06-11
-Latest pushed commit: `93b0fc1 Ground zone copy in WordPress source facts`
+Latest pushed commit: current `main` HEAD after the last project push.
 
 ## Work Rule
 
