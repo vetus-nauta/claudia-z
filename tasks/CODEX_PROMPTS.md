@@ -1,5 +1,20 @@
 # Codex Prompt Library
 
+## Strategic Discovery Task
+
+```text
+Open this repository.
+Read AGENTS.md, .agent-start.md, docs/PROJECT_BRIEF.md, docs/CURRENT_STATE.md, docs/CONTENT_RULES.md, and docs/SECURITY_PRIVACY_POLICY.md.
+Use skill: discovery-interview.
+
+Task: run a strategic discovery pass for Claudia Z before implementation.
+Do not write code yet.
+Do not agree automatically.
+Separate known facts, assumptions, unknowns, risks, and recommendations.
+Ask only the questions needed, up to 10.
+Return a concise brief, contradictions or weak points, and the first safe step.
+```
+
 ## First Architecture Task
 
 ```text

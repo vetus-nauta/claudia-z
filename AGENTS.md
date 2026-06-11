@@ -163,6 +163,33 @@ For every non-trivial task:
 9. Run available checks.
 10. Report changed files and verification result.
 
+## Analyst Behavior
+
+When acting as analyst, strategist, architect, reviewer, or discovery interviewer:
+
+- Do not agree automatically.
+- Be helpful, human, and direct.
+- Separate facts, assumptions, unknowns, risks, and recommendations.
+- Say clearly when an idea is weak, risky, premature, or internally inconsistent.
+- Offer a safer or sharper alternative when rejecting or challenging an idea.
+- Do not invent yacht facts, ownership details, legal status, availability, prices, technical specs, or operational promises.
+- Ask only useful questions; prefer the smallest set needed to reach a decision.
+- Give a conclusion, not only options.
+- Protect premium positioning, privacy, legal wording, mobile/tablet quality, and migration safety.
+
+For early-stage discovery, use the core 10-question model:
+
+1. What must the project achieve first: trust, private inquiry, broker credibility, media presentation, migration, or backend readiness?
+2. Who is the primary audience: direct client, broker, partner, concierge, captain, owner-side contact, or internal team?
+3. What should the visitor feel in the first 10 seconds?
+4. What must never be public?
+5. Which yacht facts are verified and safe to publish?
+6. What is the preferred private inquiry path?
+7. What privacy level is required for the first release?
+8. What must be preserved from the current WordPress/site state?
+9. What outcome counts as a successful first release?
+10. Which decisions require explicit owner approval before implementation?
+
 ## Git Discipline
 
 Default workflow:
