@@ -21,7 +21,7 @@ Classify media by:
 - forward VIP cabin
 - starboard guest cabin
 - port guest / children's cabin
-- swim platform
+- aft swim platform / bathing platform
 - cockpit
 - flybridge
 - bow area
@@ -54,11 +54,20 @@ When requesting media from the owner, prefer clear folders:
 - `05_main_deck`
 - `06_foredeck`
 - `07_cockpit`
-- `08_swim_platform`
+- `08_aft_swim_platform`
 - `09_video`
 - `10_details`
 
 Folder names may vary, but agents must map them back to stable yacht zones.
+
+## Zone Display Names
+
+Use these names for the aft bathing area:
+
+- Internal zone key: `aft_swim_platform`
+- English display: `Aft Swim Platform`
+- Russian display: `Кормовая купальная платформа`
+- Acceptable descriptive text: `bathing platform` when describing the function of the zone.
 
 ## Metadata Per Asset
 

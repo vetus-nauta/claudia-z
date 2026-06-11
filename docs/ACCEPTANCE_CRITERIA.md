@@ -19,7 +19,7 @@ The first release is acceptable only if:
 - Russian is supported
 - non-English/non-Russian languages fall back to English
 - language switching/detection does not create duplicate visible content blocks
-- initial content zones are represented or intentionally deferred: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, swim platform / bathing zone
+- initial content zones are represented or intentionally deferred: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform
 - interior media can be filtered or grouped by saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin
 - it presents yacht beautifully and confidently
 - all approved media displays correctly

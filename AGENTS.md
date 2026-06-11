@@ -122,7 +122,7 @@ The first controlled presentation layer should include:
 - main deck zone
 - foredeck zone
 - cockpit zone
-- swim platform / bathing zone
+- aft swim platform / bathing platform
 - calm experience narrative
 - gallery / video layer
 - private inquiry entry

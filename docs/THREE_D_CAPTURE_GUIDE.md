@@ -9,7 +9,7 @@ Do not build the 3D model until source media and zone map are approved.
 ## Required Yacht Zones
 
 - exterior profile
-- swim platform
+- aft swim platform / bathing platform
 - cockpit
 - flybridge
 - bow area
