@@ -58,13 +58,25 @@ Old WordPress XML text is source material for facts only, not wording or layout.
 - Flybridge: large upper deck, social seating, bar/service context, grill/fridges/ice maker/acoustic system, shade/awning context. Avoid hard guest-count claims unless re-confirmed.
 - Cockpit: adaptable aft lounge, table/service, saloon transition, route toward stern water area.
 - Aft Swim Platform: bathing platform / mini beach-club use, tender boarding, SeaBob/SUP/water-toy context.
-- Tender: old WordPress mentions Williams 445; owner later requested a Williams 420-style placeholder. Do not display a specific tender model until owner confirms.
+- Tender: owner confirmed `Williams 420`; old WordPress mention of Williams 445 is superseded for public copy.
 - Saloon: main-deck interior, seating/dining, galley context, broad glazing, connection to cockpit.
 - Master cabin: lower-deck principal cabin, double berth, storage/wardrobe, work/lounge details, ensuite.
 - Forward VIP: lower-deck forward guest cabin, central berth, storage, light, ensuite.
 - Starboard guest: lower-deck guest cabin with double-berth arrangement, storage, ensuite.
 - Port guest / children's cabin: lower-deck flexible three-berth/family layout with ensuite.
-- Accessories from old text: SUP x2 and SeaBob are useful context for future platform/tender media, not primary claims until final media confirms.
+- Accessories from old text and owner confirmation: two SUP boards and SeaBob may be used in platform/tender copy.
+
+## Owner-Confirmed Copy Inputs
+
+- Public copy should use build year `2020`.
+- Public display length should be `24 m`; original technical source still listed `23.60 m / 77'5"`.
+- Tender model for presentation context: `Williams 420`.
+- Water toys / platform context may include all declared items: SeaBob, two SUP boards, tender, and water-level leisure setup.
+- Flybridge equipment: two refrigerators, one chilled storage box, ice maker, two sunpads, awning, sliding opening roof, and table seating for 10.
+- Foredeck equipment/use: table and sofas for 6-8 people, two refrigerators, music.
+- Cockpit equipment: refrigerator and ice maker.
+- Port guest / children's cabin configuration: can be three single berths, or one double/French berth plus an upper pullman berth.
+- Tone: family-oriented, quiet, unhurried, comfortable cruising; still capable of emotion and adrenaline when desired.
 
 ## Approved Real Media
 

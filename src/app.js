@@ -19,12 +19,14 @@ const zones = [
     en: {
       label: "Overview",
       title: "At a glance",
-      copy: "A Sunseeker 76 shown by exterior profile, open decks, lower-deck accommodation, water access, and tender context."
+      copy: "A 24 m Sunseeker 76 for quiet family cruising, open decks, and water-level leisure.",
+      detail: "Built in 2020, the yacht is presented through exterior profile, outdoor deck life, lower-deck accommodation, water access, and tender context. The tone stays family-oriented and unhurried, with enough performance and toys for more energetic days on the water."
     },
     ru: {
       label: "Обзор",
       title: "Одним взглядом",
-      copy: "Sunseeker 76 показана через внешний профиль, открытые палубы, размещение на нижней палубе, выход к воде и тендер."
+      copy: "24-метровая Sunseeker 76 для спокойного семейного путешествия, палуб и отдыха у воды.",
+      detail: "Яхта 2020 года показана через внешний профиль, жизнь на открытых палубах, размещение на нижней палубе, выход к воде и тендер. Тон остается семейным и неспешным, но с запасом эмоций и активности для более энергичных дней на воде."
     }
   },
   {
@@ -40,12 +42,14 @@ const zones = [
     en: {
       label: "Exterior",
       title: "Profile and proportions",
-      copy: "The deep-V hull, long glazing, deck volume, and waterline presence are shown without breaking the yacht into isolated details."
+      copy: "Deep-V profile, long glazing, and deck volume are kept readable as one complete yacht.",
+      detail: "The exterior sequence is for scale, stance, hull line, and the way the Sunseeker 76 sits on the water. It should support a fast broker conversation without cutting the yacht into decorative fragments."
     },
     ru: {
       label: "Экстерьер",
       title: "Профиль и пропорции",
-      copy: "Корпус deep-V, длинное остекление, объем палуб и посадка на воде показаны цельно, без дробления яхты на детали."
+      copy: "Профиль deep-V, длинное остекление и объем палуб считываются как цельная яхта.",
+      detail: "Экстерьер нужен для масштаба, посадки на воде, линии корпуса и общего силуэта Sunseeker 76. Он должен быстро помогать в разговоре с брокером, без декоративного дробления яхты на фрагменты."
     }
   },
   {
@@ -60,12 +64,14 @@ const zones = [
     en: {
       label: "Flybridge",
       title: "Open social deck",
-      copy: "A large upper deck with open seating, bar-service context, shade, and the elevated view that defines much of the outdoor use."
+      copy: "The upper deck is arranged for ten at the table, sun, shade, and easy service.",
+      detail: "Flybridge equipment includes two refrigerators, a chilled storage box, ice maker, two sunpads, awning, and a sliding opening roof. The space suits slow lunches, shaded cruising, and livelier days without changing the yacht's calm character."
     },
     ru: {
       label: "Флайбридж",
       title: "Открытая верхняя палуба",
-      copy: "Большая верхняя палуба с открытой посадкой, барной зоной, тенью и высоким обзором, который задает основной сценарий отдыха."
+      copy: "Верхняя палуба рассчитана на стол до 10 человек, солнце, тень и удобный сервис.",
+      detail: "На флайбридже предусмотрены два холодильника, охлаждаемый бокс, ледомат, два лежака, маркиза и сдвижная открывающаяся крыша. Пространство подходит для неспешных обедов, движения в тени и более живых дней без потери спокойного характера яхты."
     }
   },
   {
@@ -80,12 +86,14 @@ const zones = [
     en: {
       label: "Foredeck",
       title: "Forward lounge",
-      copy: "The foredeck adds a separate open-air lounge with large sunbeds, seating, and a quieter forward position."
+      copy: "A quieter bow lounge with sofas, table, refrigeration, music, and space for 6-8 people.",
+      detail: "The foredeck works as a separate open-air sitting area away from the cockpit and flybridge. Sofas, a table, two refrigerators, and music support calm anchorage time or a more private forward conversation while underway."
     },
     ru: {
       label: "Фордек",
       title: "Носовая лаунж-зона",
-      copy: "Фордек дает отдельную открытую лаунж-зону с крупными лежаками, посадкой и более спокойным носовым положением."
+      copy: "Спокойная носовая зона с диванами, столом, музыкой, двумя холодильниками и местом для 6-8 человек.",
+      detail: "Фордек работает как отдельная открытая зона посадки вдали от кокпита и флайбриджа. Диваны, стол, два холодильника и музыка поддерживают спокойное время на якоре или более приватный разговор на ходу."
     }
   },
   {
@@ -98,12 +106,14 @@ const zones = [
     en: {
       label: "Cockpit",
       title: "Aft lounge connection",
-      copy: "The cockpit links the saloon to aft outdoor living, with shade, seating, table service, and the route down to the water."
+      copy: "The cockpit links saloon, aft seating, table service, refrigeration, ice, and water access.",
+      detail: "This is the shaded transition between the main saloon and the stern. A refrigerator and ice maker support relaxed service at the table, while the layout keeps movement toward the swim platform simple."
     },
     ru: {
       label: "Кокпит",
       title: "Кормовая лаунж-связь",
-      copy: "Кокпит связывает салон с кормовой жизнью на открытом воздухе: тень, посадка, стол и маршрут вниз к воде."
+      copy: "Кокпит связывает салон, кормовую посадку, стол, холодильник, ледомат и выход к воде.",
+      detail: "Это защищенный переход между главным салоном и кормой. Холодильник и ледомат поддерживают спокойный сервис у стола, а планировка сохраняет простой маршрут к купальной платформе."
     }
   },
   {
@@ -114,12 +124,14 @@ const zones = [
     en: {
       label: "Aft Swim Platform",
       title: "Water access aft",
-      copy: "The aft platform is reserved for the sea-level setup: bathing access, tender boarding, SeaBob/SUP use, and stern leisure."
+      copy: "A sea-level stern setup for swimming, tender boarding, SeaBob, SUPs, and slow time by the water.",
+      detail: "Final platform media will replace the current placeholder. The intended story is water-level use: easy bathing access, tender transfer, SeaBob, two SUP boards, and relaxed stern lounging."
     },
     ru: {
       label: "Кормовая платформа",
       title: "Кормовой выход к воде",
-      copy: "Платформа отведена под сценарий у воды: купание, посадка с тендера, SeaBob/SUP и кормовой отдых у уровня моря."
+      copy: "Кормовая зона у воды для купания, посадки с тендера, SeaBob, SUP и спокойного отдыха.",
+      detail: "Финальные фото платформы позже заменят текущую заглушку. Смысл зоны: удобный выход к воде, трансфер с тендера, SeaBob, две SUP-доски и спокойный отдых на корме у уровня моря."
     }
   },
   {
@@ -130,12 +142,14 @@ const zones = [
     en: {
       label: "Tender",
       title: "Tender and water toys",
-      copy: "Tender context stays separate from the platform so transfer, toys, and storage logic can be discussed clearly."
+      copy: "Williams 420 tender context is kept separate from the platform for transfer and toy planning.",
+      detail: "This section remains a placeholder until owner-approved tender media is connected. It should support the conversation around transfer, water toys, and storage without overloading the aft-platform story."
     },
     ru: {
       label: "Тендер",
       title: "Тендер и водные активности",
-      copy: "Тендер отделен от платформы, чтобы отдельно обсуждать трансфер, игрушки и логику хранения."
+      copy: "Тендер Williams 420 отделен от платформы для понятного разговора о трансфере и игрушках.",
+      detail: "Раздел остается на заглушке до подключения утвержденных фото тендера. Его задача - отдельно поддержать разговор о трансфере, водных игрушках и хранении, не перегружая историю кормовой платформы."
     }
   },
   {
@@ -151,12 +165,14 @@ const zones = [
     en: {
       label: "Saloon",
       title: "Main saloon",
-      copy: "The main deck interior combines saloon seating, dining, galley context, broad glazing, and direct flow to the cockpit."
+      copy: "The saloon combines seating, dining, galley context, broad glazing, and direct cockpit flow.",
+      detail: "This is the calm interior center of the main deck: social seating, dining, natural light, and visual connection outward. It supports family cruising without feeling formal or separated from the aft deck."
     },
     ru: {
       label: "Салон",
       title: "Главный салон",
-      copy: "Интерьер главной палубы объединяет салон, обеденную зону, камбуз, широкое остекление и прямой выход в кокпит."
+      copy: "Салон объединяет посадку, обеденную зону, камбуз, широкое остекление и прямой выход в кокпит.",
+      detail: "Это спокойный интерьерный центр главной палубы: общая посадка, обеденная зона, естественный свет и визуальная связь наружу. Он поддерживает семейное путешествие без ощущения формальности или отрыва от кормовой палубы."
     }
   },
   {
@@ -173,12 +189,14 @@ const zones = [
     en: {
       label: "Master cabin",
       title: "Principal cabin",
-      copy: "The principal lower-deck cabin is shown through berth volume, lounge/storage details, materials, and its ensuite area."
+      copy: "The principal lower-deck cabin is shown through berth volume, storage, calm materials, and ensuite use.",
+      detail: "The master cabin is the quiet private part of the lower deck, with a double berth, storage and lounge/vanity context, and its own bathroom. The wording stays calm rather than hotel-like."
     },
     ru: {
       label: "Мастер-каюта",
       title: "Главная каюта",
-      copy: "Главная каюта нижней палубы показана через объем кровати, зону хранения/отдыха, материалы и собственную ванную."
+      copy: "Главная каюта нижней палубы показана через кровать, хранение, спокойные материалы и собственную ванную.",
+      detail: "Мастер-каюта - приватная спокойная часть нижней палубы: французская кровать, хранение, зона отдыха/туалетный столик и собственная ванная. Текст намеренно остается спокойным, без гостиничного пафоса."
     }
   },
   {
@@ -194,12 +212,14 @@ const zones = [
     en: {
       label: "Forward VIP",
       title: "Forward VIP cabin",
-      copy: "The forward guest cabin completes the accommodation plan with a central berth, storage, light, and its own bathroom."
+      copy: "The forward guest cabin adds a double berth, storage, natural light, and its own bathroom.",
+      detail: "Placed forward on the lower deck, this cabin gives guests a complete private space rather than an overflow berth. It works naturally within a family cruising plan or for selected guests."
     },
     ru: {
       label: "Носовая VIP",
       title: "Носовая VIP-каюта",
-      copy: "Носовая гостевая каюта завершает план размещения: центральная кровать, хранение, свет и собственная ванная."
+      copy: "Носовая гостевая каюта добавляет французскую кровать, хранение, свет и собственную ванную.",
+      detail: "Расположенная в носовой части нижней палубы, эта каюта дает гостям полноценное приватное пространство, а не дополнительное спальное место. Она естественно работает для семейного путешествия или выбранных гостей."
     }
   },
   {
@@ -215,12 +235,14 @@ const zones = [
     en: {
       label: "Starboard guest",
       title: "Starboard guest cabin",
-      copy: "A starboard guest cabin with a double-berth arrangement, storage, natural light, and private bathroom access."
+      copy: "A starboard guest cabin with a double berth, storage, natural light, and private bathroom access.",
+      detail: "This cabin keeps the accommodation plan balanced on the lower deck. It reads as a comfortable guest room with its own bathroom access, suitable for quiet family cruising or invited guests."
     },
     ru: {
       label: "Правая гостевая",
       title: "Правая гостевая каюта",
-      copy: "Правая гостевая каюта с двуспальным размещением, хранением, естественным светом и собственной ванной зоной."
+      copy: "Правая гостевая каюта с французской кроватью, хранением, естественным светом и ванной.",
+      detail: "Эта каюта балансирует план размещения на нижней палубе. Она воспринимается как комфортная гостевая с собственной ванной зоной, подходящая для семейного путешествия или приглашенных гостей."
     }
   },
   {
@@ -235,12 +257,14 @@ const zones = [
     en: {
       label: "Port guest",
       title: "Port guest / children's cabin",
-      copy: "A port-side cabin with a flexible three-berth family layout and its own bathroom, separated for quick orientation."
+      copy: "A flexible port-side cabin: three singles, or a double berth with an upper pullman.",
+      detail: "This is the most family-oriented cabin. It can be read as three single berths, or as one double berth with an upper pullman, with its own bathroom completing the lower-deck accommodation plan."
     },
     ru: {
       label: "Левая гостевая",
       title: "Левая гостевая / детская",
-      copy: "Левая каюта с гибким семейным размещением на три места и собственной ванной, вынесенная отдельно для ясности."
+      copy: "Гибкая левая каюта: три односпальных места или французская кровать с верхней откидной.",
+      detail: "Это самая семейная каюта. Ее можно воспринимать как три односпальных места или как одну французскую кровать с верхней откидной полкой; собственная ванная завершает план размещения нижней палубы."
     }
   }
 ];
@@ -249,7 +273,7 @@ const copy = {
   en: {
     eyebrow: "Controlled yacht presentation",
     headline: "Claudia Z",
-    lead: "A 23.60 m Sunseeker 76 presented through exterior lines, deck zones, guest accommodation, water access, and tender context.",
+    lead: "A 24 m Sunseeker 76 built in 2020, presented for quiet family cruising with open decks, guest accommodation, water access, and tender context.",
     details: "Yacht details",
     detailsTitle: "Specifications",
     length: "Length",
@@ -260,7 +284,7 @@ const copy = {
     fuel: "Fuel",
     freshWater: "Fresh water",
     range: "Range",
-    factLength: "23.60 m",
+    factLength: "24 m",
     factCabins: "4 cabins",
     factSpeed: "32 kn",
     previousMedia: "Previous image",
@@ -271,7 +295,7 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "23.60-метровая Sunseeker 76 показана через экстерьер, палубные зоны, гостевое размещение, выход к воде и тендер.",
+    lead: "24-метровая Sunseeker 76 2020 года для спокойного семейного путешествия: открытые палубы, гостевое размещение, выход к воде и тендер.",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
     length: "Длина",
@@ -282,7 +306,7 @@ const copy = {
     fuel: "Топливо",
     freshWater: "Пресная вода",
     range: "Запас хода",
-    factLength: "23.60 м",
+    factLength: "24 м",
     factCabins: "4 каюты",
     factSpeed: "32 уз.",
     previousMedia: "Предыдущее изображение",
@@ -312,6 +336,7 @@ const themeButton = document.querySelector("#themeButton");
 const stageContent = document.querySelector(".stage__content");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
+const zoneDetail = document.querySelector("#zoneDetail");
 const mediaCounter = document.querySelector("#mediaCounter");
 const previousMediaButton = document.querySelector("#prevMediaButton");
 const nextMediaButton = document.querySelector("#nextMediaButton");
@@ -452,6 +477,7 @@ function renderZone() {
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
+  zoneDetail.textContent = zone[state.lang].detail || "";
   preloadAdjacentMedia();
 }
 

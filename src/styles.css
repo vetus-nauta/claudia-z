@@ -604,6 +604,11 @@ h1 {
   font-weight: 700;
 }
 
+#zoneDetail {
+  margin-top: 10px;
+  color: var(--ink-muted);
+}
+
 @keyframes hintPulse {
   0%,
   100% {
