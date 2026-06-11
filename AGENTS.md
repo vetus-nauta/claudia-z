@@ -99,6 +99,8 @@ For CSS and layout work:
 - make the first mobile viewport feel like a complete premium experience, not the top of a generic landing page
 - prefer compact modern media patterns such as full-screen viewer, swipe gallery, media rail, zone gallery, drawer, or progressive reveal
 - avoid long stacked gallery pages when a focused interactive media experience is better
+- reserve the information architecture for a future 3D yacht guide: zones, hotspots, media mapping, and deck navigation must remain compatible
+- use `three-d-guide-preparation` whenever gallery, media zones, deck navigation, walkthrough, hotspots, or spatial guide decisions are involved
 - do not keep layering CSS overrides when the result is unstable
 - if CSS fixes start looping, stop, diagnose cascade/layout conflicts, clean the smallest affected area, and rebuild it according to the shared base
 - avoid casual `!important`, inline fixes, deep selectors, duplicated breakpoints, and one-off section styling
@@ -157,6 +159,8 @@ The project must be architecturally ready for a future 3D or interactive yacht g
 
 Do not build full 3D unless explicitly requested.
 
+Do not design media, gallery, navigation, or CSS in a way that blocks future 3D integration.
+
 Prepare for:
 
 - deck/zone structure
@@ -164,6 +168,9 @@ Prepare for:
 - walkthrough media mapping
 - video-based guide fallback
 - mobile-safe 3D loading
+- zone-based URLs or state where useful
+- 3D placeholder entry points in the media experience
+- graceful fallback when 3D is unavailable or too heavy for mobile
 
 ## Agent Workflow Discipline
 

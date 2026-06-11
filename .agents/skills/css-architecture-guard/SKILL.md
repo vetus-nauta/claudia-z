@@ -15,6 +15,7 @@ Use this skill with:
 
 - `premium-yacht-ux` for visual intent
 - `mobile-first-audit` for iPhone/iPad checks
+- `three-d-guide-preparation` for zone maps, hotspots, deck navigation, and future 3D placeholders
 - `safe-patch` for any file changes
 
 ## Base CSS Standard
@@ -26,6 +27,7 @@ Before building UI, define or preserve one shared CSS base:
 - component primitives: button, icon button, inquiry entry, gallery trigger, media viewer, caption
 - responsive breakpoints: mobile first, then tablet, then desktop
 - media rules: object-fit, aspect ratios, poster/fallback behavior, lazy loading
+- 3D-ready primitives: zone marker, hotspot trigger, deck switcher, walkthrough entry, fallback media panel
 
 Do not let each section create its own unrelated layout language.
 
@@ -44,6 +46,8 @@ The first screen may use:
 - swipe/tap gestures
 - bottom sheet or drawer
 - media rail or carousel
+- zone/deck switcher
+- 3D guide placeholder entry
 - progressive reveal
 
 Avoid starting with a generic landing page structure.
@@ -57,11 +61,33 @@ Prefer modern, compact media presentation over long stacked galleries:
 - horizontal media rail
 - story-like sequence
 - zone-based gallery
+- deck/zone map
+- hotspot-driven details
+- 3D guide placeholder with video/photo fallback
 - before/after or deck-zone navigation when relevant
 - video poster with tap-to-play
 - modal/drawer details instead of long repeated sections
 
 Media must not make mobile heavy or slow.
+
+## Future 3D Compatibility
+
+Every gallery, media, and navigation decision must preserve a path to a future 3D yacht guide.
+
+Do:
+
+- organize media by yacht zone, not only by visual mood
+- keep zone IDs stable enough to reuse for hotspots and walkthrough state
+- allow a future 3D entry point without redesigning the full public interface
+- provide photo/video fallback for zones where 3D is unavailable
+- keep mobile performance ahead of 3D ambition
+
+Do not:
+
+- hardcode gallery structure that cannot map to yacht zones
+- bury spatial navigation under unrelated marketing sections
+- require 3D to access core public content
+- load heavy 3D assets on first mobile view unless explicitly approved
 
 ## No Layering Rule
 
@@ -94,4 +120,5 @@ Avoid:
 4. Base standard to preserve or create
 5. Mobile first-screen impact
 6. Gallery/media impact
-7. Verification plan
+7. Future 3D compatibility
+8. Verification plan

@@ -43,11 +43,12 @@ Do not write code or commands yet. Return procedure and risks.
 ```text
 Open this repository.
 Read AGENTS.md, docs/PROJECT_BRIEF.md, and docs/CONTENT_RULES.md.
-Use skills: premium-yacht-ux, css-architecture-guard, mobile-first-audit, content-legal-guard.
+Use skills: premium-yacht-ux, css-architecture-guard, mobile-first-audit, content-legal-guard, three-d-guide-preparation.
 
 Task: propose the mobile-first homepage structure for a premium private yacht presentation.
 The first mobile viewport must feel like a complete premium experience, not a generic landing-page opener.
 Use a shared visual/CSS system and modern compact media patterns such as swipe gallery, media rail, full-screen viewer, drawer, or zone-based gallery where appropriate.
+Preserve future 3D guide compatibility through yacht zones, hotspot-ready media, and a lightweight guide entry/fallback plan.
 No prices. No public charter/rental/booking language. Do not write code yet.
 ```
 
