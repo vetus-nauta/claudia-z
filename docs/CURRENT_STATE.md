@@ -38,6 +38,14 @@
   - Hold/reference: `124-P1477648`, `137-P1999678`.
   - Reject from main Flybridge sequence: `125-P1477650`, `DJI_0269`, `DJI_0270`.
   - `DJI_0269` and `DJI_0270` may be considered later for aft platform, exterior, or deck overview only after a separate section-specific review.
+- Foredeck first real media pass:
+  - Source folder: GH5 Edited Google Drive folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+  - Requested/found sources: `142-P1477659`, `144-P1999698`, `146-P1999711`, `147-P1477682`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
+  - Approved Foredeck sequence: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
+  - Hold/reference: `144-P1999698`.
+  - Reject from main Foredeck sequence: `147-P1477682`, because it overlaps with `149-P1999723` while reading flatter and less elegant.
+  - `160-P1477679` is approved as a bow rail / anchorage detail closer, not as the primary forward-lounge explainer.
+  - Mobile derivatives use ambient background fill for horizontal frames to preserve deck geometry without black bars or hard pasted edges.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.

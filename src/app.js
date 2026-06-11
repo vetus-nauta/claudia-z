@@ -99,9 +99,11 @@ const zones = [
   {
     id: "foredeck",
     media: [
-      media("142-p1477659.jpg", "50% 50%"),
-      media("145-p1999709.jpg", "50% 50%"),
-      media("150-p1477686.jpg", "50% 52%")
+      localMedia("foredeck", "142-p1477659-stage.webp", "142-p1477659-full.webp", "142-p1477659-mobile.webp", "50% 49%"),
+      localMedia("foredeck", "146-p1999711-stage.webp", "146-p1999711-full.webp", "146-p1999711-mobile.webp", "49% 50%"),
+      localMedia("foredeck", "149-p1999723-stage.webp", "149-p1999723-full.webp", "149-p1999723-mobile.webp", "50% 49%"),
+      localMedia("foredeck", "156-p1999729-stage.webp", "156-p1999729-full.webp", "156-p1999729-mobile.webp", "48% 50%"),
+      localMedia("foredeck", "160-p1477679-stage.webp", "160-p1477679-full.webp", "160-p1477679-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Foredeck",

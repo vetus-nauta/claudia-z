@@ -130,6 +130,16 @@ Rules:
 - Rejected from the main Flybridge sequence: `125-P1477650`, `DJI_0269`, `DJI_0270`.
 - Public derivatives live in `assets/media/flybridge/`; source originals remain only in ignored `.media-source/flybridge/`.
 
+## Foredeck Media Pass 2026-06-11
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Intake scope: `142-P1477659`, `144-P1999698`, `146-P1999711`, `147-P1477682`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
+- Approved Foredeck order: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
+- Hold/reference: `144-P1999698`.
+- Rejected from the main Foredeck sequence: `147-P1477682`.
+- `160-P1477679` is a bow rail / anchorage detail closer, not the main forward-lounge explainer.
+- Public derivatives live in `assets/media/foredeck/`; source originals remain only in ignored `.media-source/foredeck/`.
+
 ## Motion And Feedback
 
 Use restrained motion to make browsing feel comfortable:
