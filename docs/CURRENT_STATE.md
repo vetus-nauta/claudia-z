@@ -18,6 +18,11 @@
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Prototype zone navigation now includes the required interior subzones with temporary old-media placeholders pending final owner-provided media.
 - Prototype media viewing now supports multi-image sequences per zone, previous/next controls, keyboard arrows, and mobile swipe. Current images are temporary old-media placeholders only.
+- Overview / General Plans first real media pass:
+  - Approved for public web derivatives: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`.
+  - Rejected from main overview: `DJI_0257_1` because top-down framing feels too technical and does not read as premium first-view media.
+  - Not used in main overview: `DJI_0252_1`; keep only as optional secondary/reference because it is still too drone-showcase for the first premium route.
+  - Mobile uses separate integrated derivatives to preserve the yacht shape without cutting bow/stern/hull/flybridge.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.

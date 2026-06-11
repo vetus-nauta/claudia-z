@@ -40,7 +40,9 @@
           <button class="step-button" type="button" id="prevMediaButton" data-i18n-aria="previousMedia">‹</button>
           <span class="media-stepper__count" id="mediaCounter" aria-live="polite"></span>
           <button class="step-button" type="button" id="nextMediaButton" data-i18n-aria="nextMedia">›</button>
+          <button class="step-button step-button--expand" type="button" id="openMediaButton" data-i18n-aria="openMedia">⤢</button>
         </div>
+        <div class="swipe-hint" id="swipeHint" data-i18n="swipeHint" aria-hidden="true"></div>
 
         <div class="command">
           <nav class="zone-rail" id="zoneRail" aria-label="Yacht zones"></nav>
@@ -75,6 +77,11 @@
           </div>
         </div>
       </aside>
+
+      <section class="lightbox" id="mediaLightbox" aria-hidden="true" aria-label="Media viewer">
+        <button class="icon-button lightbox__close" type="button" data-close="lightbox" aria-label="Close">×</button>
+        <img class="lightbox__image" id="lightboxImage" alt="" draggable="false">
+      </section>
 
     </main>
 

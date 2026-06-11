@@ -3,6 +3,16 @@ const mediaBase = "https://claudiazdotcom.wordpress.com/wp-content/uploads/2022/
 function media(file, focus = "50% 50%") {
   return {
     src: `${mediaBase}${file}`,
+    fullSrc: `${mediaBase}${file}`,
+    focus
+  };
+}
+
+function localMedia(stageFile, fullFile, mobileFile, focus = "50% 50%") {
+  return {
+    src: `assets/media/overview/${stageFile}`,
+    fullSrc: `assets/media/overview/${fullFile}`,
+    mobileSrc: `assets/media/overview/${mobileFile}`,
     focus
   };
 }
@@ -11,9 +21,10 @@ const zones = [
   {
     id: "overview",
     media: [
-      media("dji_0240.jpg", "50% 46%"),
-      media("dji_0248.jpg", "58% 44%"),
-      media("dji_0250.jpg", "50% 48%")
+      localMedia("dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
+      localMedia("dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
+      localMedia("dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
+      localMedia("dji_0258_1-stage.webp", "dji_0258_1-full.webp", "dji_0258_1-mobile.webp", "48% 52%")
     ],
     en: {
       label: "Overview",
@@ -281,7 +292,9 @@ const copy = {
     factCabins: "4 cabins",
     factSpeed: "32 kn",
     previousMedia: "Previous image",
-    nextMedia: "Next image"
+    nextMedia: "Next image",
+    openMedia: "Open image",
+    swipeHint: "Swipe sideways"
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
@@ -301,7 +314,9 @@ const copy = {
     factCabins: "4 каюты",
     factSpeed: "32 уз.",
     previousMedia: "Предыдущее изображение",
-    nextMedia: "Следующее изображение"
+    nextMedia: "Следующее изображение",
+    openMedia: "Открыть изображение",
+    swipeHint: "Свайп вбок"
   }
 };
 
@@ -327,6 +342,9 @@ const zoneCopy = document.querySelector("#zoneCopy");
 const mediaCounter = document.querySelector("#mediaCounter");
 const previousMediaButton = document.querySelector("#prevMediaButton");
 const nextMediaButton = document.querySelector("#nextMediaButton");
+const openMediaButton = document.querySelector("#openMediaButton");
+const mediaLightbox = document.querySelector("#mediaLightbox");
+const lightboxImage = document.querySelector("#lightboxImage");
 const stage = document.querySelector(".stage");
 
 function detectLanguage() {
@@ -357,6 +375,11 @@ function currentMedia() {
   return zone.media[state.mediaIndex] || zone.media[0];
 }
 
+function stageSourceFor(mediaItem) {
+  const isMobile = window.matchMedia("(max-width: 759px)").matches;
+  return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
+}
+
 function setTheme(theme) {
   state.theme = theme === "light" ? "light" : "dark";
   document.documentElement.dataset.theme = state.theme;
@@ -377,6 +400,10 @@ function setZone(zoneId) {
 function setMediaIndex(index) {
   const zone = currentZone();
   state.mediaIndex = (index + zone.media.length) % zone.media.length;
+  document.body.classList.remove("is-media-surfacing");
+  window.requestAnimationFrame(() => {
+    document.body.classList.add("is-media-surfacing");
+  });
   renderZone();
 }
 
@@ -412,15 +439,16 @@ function preloadAdjacentMedia() {
   const previous = zone.media[(state.mediaIndex - 1 + zone.media.length) % zone.media.length];
   [next, previous].forEach((item) => {
     const image = new Image();
-    image.src = item.src;
+    image.src = stageSourceFor(item);
   });
 }
 
 function updateStageMedia(selectedMedia, altText) {
+  const stageSrc = stageSourceFor(selectedMedia);
   const nextRequestId = state.mediaRequestId + 1;
   state.mediaRequestId = nextRequestId;
   mediaElement.alt = altText;
-  if (mediaElement.src === selectedMedia.src) {
+  if (mediaElement.src.endsWith(stageSrc)) {
     mediaElement.style.objectPosition = selectedMedia.focus;
     mediaElement.classList.remove("is-loading");
     return;
@@ -431,7 +459,7 @@ function updateStageMedia(selectedMedia, altText) {
     if (state.mediaRequestId !== nextRequestId) {
       return;
     }
-    mediaElement.src = selectedMedia.src;
+    mediaElement.src = stageSrc;
     mediaElement.style.objectPosition = selectedMedia.focus;
     mediaElement.classList.remove("is-loading");
   };
@@ -440,7 +468,7 @@ function updateStageMedia(selectedMedia, altText) {
       mediaElement.classList.remove("is-loading");
     }
   };
-  image.src = selectedMedia.src;
+  image.src = stageSrc;
 }
 
 function renderZone() {
@@ -468,6 +496,18 @@ function toggleSheet(sheet, force) {
   }
 }
 
+function toggleLightbox(force) {
+  const shouldOpen = typeof force === "boolean" ? force : !mediaLightbox.classList.contains("is-open");
+  if (shouldOpen) {
+    const selectedMedia = currentMedia();
+    lightboxImage.src = selectedMedia.fullSrc || selectedMedia.src;
+    lightboxImage.alt = currentZone()[state.lang].title;
+  }
+  mediaLightbox.classList.toggle("is-open", shouldOpen);
+  mediaLightbox.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
+  document.body.classList.toggle("is-lightbox-open", shouldOpen);
+}
+
 themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");
 });
@@ -478,6 +518,10 @@ previousMediaButton.addEventListener("click", () => {
 
 nextMediaButton.addEventListener("click", () => {
   setMediaIndex(state.mediaIndex + 1);
+});
+
+openMediaButton.addEventListener("click", () => {
+  toggleLightbox(true);
 });
 
 stage.addEventListener("pointerdown", (event) => {
@@ -494,7 +538,12 @@ stage.addEventListener("pointerup", (event) => {
   }
   const deltaX = event.clientX - state.dragStartX;
   const deltaY = event.clientY - state.dragStartY;
-  if (Math.abs(deltaX) < 44 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
+  const isSwipe = Math.abs(deltaX) >= 44 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.4;
+  if (!isSwipe) {
+    const isMobile = window.matchMedia("(max-width: 759px)").matches;
+    if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !event.target.closest(".stage__content, .topbar, .command")) {
+      toggleLightbox(true);
+    }
     return;
   }
   setMediaIndex(state.mediaIndex + (deltaX < 0 ? 1 : -1));
@@ -506,6 +555,10 @@ document.querySelector("#detailsButton").addEventListener("click", () => {
 
 document.querySelectorAll("[data-close]").forEach((button) => {
   button.addEventListener("click", () => {
+    if (button.dataset.close === "lightbox") {
+      toggleLightbox(false);
+      return;
+    }
     toggleSheet(detailsSheet, false);
   });
 });
@@ -513,6 +566,7 @@ document.querySelectorAll("[data-close]").forEach((button) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     toggleSheet(detailsSheet, false);
+    toggleLightbox(false);
   }
   if (event.key === "ArrowLeft") {
     setMediaIndex(state.mediaIndex - 1);
@@ -523,7 +577,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.addEventListener("contextmenu", (event) => {
-  if (event.target.closest(".stage")) {
+  if (event.target.closest(".stage, .lightbox")) {
     event.preventDefault();
   }
 });

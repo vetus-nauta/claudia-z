@@ -18,7 +18,7 @@ Agent foundation and pre-build rules.
 - English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.
 - Initial sections/zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
-- Media intake is section-by-section: agent names the next section/subsection, owner provides one Google Drive folder link plus exact filenames, agent downloads only named files and converts them into web derivatives for stage and full-size viewing.
+- Media intake is section-by-section: agent names the next section/subsection, owner provides one Google Drive folder link plus exact filenames, agent downloads only named files, runs a photo/art-direction composition gate, then converts approved files into web derivatives for stage and full-size viewing.
 - Hero logo source folder is recorded: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, two PNG candidates plus two TXT companion files.
 - Sunseeker mark is available as cleaned transparent UI derivatives and should remain a secondary builder mark, not a hero, sticker, or primary identity element.
 - Old site source intake is complete enough to start architecture: four different WordPress XML files were read from Google Drive, including Russian pages, one English post, media attachments, and a full export.
@@ -26,6 +26,9 @@ Agent foundation and pre-build rules.
 - Prototype media is temporary; final hero/zone media must pass content-aware crop review before approval.
 - Final media must be cut into stable common formats and displayed inside fixed-ratio containers; original photo proportions must not move the layout.
 - Prototype zone viewing now supports multi-image sequences, previous/next controls, keyboard arrows, and mobile swipe.
+- Mobile gallery behavior: no visible previous/next photo buttons; use horizontal swipe plus a minimal hint, with tap on free photo area for optimized full-size opening.
+- Overview / General Plans now uses approved real derivatives from owner-provided Drive photos: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
+- UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 
 ## Current Hard Rules
@@ -38,6 +41,7 @@ Agent foundation and pre-build rules.
 - No `private inquiry`, public contact form, or owner-contact path on the presentation site.
 - No owner identity or private client data.
 - No accidental media crops that cut bow, stern, hull line, flybridge, tender, or key deck geometry.
+- No final media placement without a composition/focal-point review by a photo/art-direction role or explicit equivalent pass.
 - No master photo originals in public presentation output unless explicitly approved.
 - Do not promise absolute browser photo protection; use practical deterrents and private originals.
 - No unnecessary analytics or tracking.
@@ -45,6 +49,7 @@ Agent foundation and pre-build rules.
 - No unnecessary header/footer chrome, oversized cards, or oversized headings as default structure.
 - No visible duplicate names in the same UI state; remove repeated labels rather than shrinking them.
 - No white logo cards inside dark information panels; use integrated transparent marks.
+- No school-like mobile photo navigation buttons; mobile galleries use iPhone-style swipe behavior.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
 - Do not allow inactive-language flash during initialization.

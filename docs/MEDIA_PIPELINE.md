@@ -60,8 +60,52 @@ Media intake is section-by-section, not all-at-once.
 1. The agent names the next section or subsection to fill.
 2. The owner provides one Google Drive folder link and the exact photo filenames to use for that section.
 3. The agent downloads only the named files.
-4. The agent converts them into public web derivatives and keeps master originals out of the public build.
-5. The agent connects the derivatives to the matching zone and verifies mobile, tablet, desktop, and full-size viewing.
+4. A photo/art-direction pass reviews the named files before any final crop assignment.
+5. The agent converts approved files into public web derivatives and keeps master originals out of the public build.
+6. The agent connects the derivatives to the matching zone and verifies mobile, tablet, desktop, and full-size viewing.
+
+Technical conversion is not media approval. Do not connect a photo as final merely because it downloaded and converted successfully.
+
+## Photo Art-Direction Gate
+
+Before assigning focal points, crop positions, or gallery order, run a composition review for the current section.
+
+The review must decide:
+
+- use / secondary / reject
+- whether the yacht reads professionally in the frame
+- whether top-down/drone geometry feels premium or too technical
+- mobile crop risk
+- desktop crop risk
+- focal point recommendation
+- gallery order recommendation
+- whether a full-size opening improves or weakens the impression
+
+If a кадр сверху / top-down shot makes the yacht feel flat, technical, or poorly positioned for a premium presentation, reject it for the main overview even if the file quality is high. Such кадры may be kept only as secondary detail/reference media when they add real information.
+
+## Mobile Gallery Behavior
+
+Mobile photo galleries must behave like a native iPhone-style viewer:
+
+- no visible previous/next photo buttons
+- horizontal swipe changes photos
+- show only a minimal swipe hint when needed
+- tap the free photo area to open the optimized full-size derivative
+- keep desktop controls separate from mobile behavior
+
+Do not add school-like arrow button UI to mobile galleries.
+
+## Motion And Feedback
+
+Use restrained motion to make browsing feel comfortable:
+
+- gentle media fade/brightness response during image changes
+- soft active-state glow for selected controls
+- subtle hint pulse for mobile swipe guidance
+- calm full-viewer opening
+- always respect `prefers-reduced-motion`
+
+Avoid loud animation, decorative orbs, gimmicks, bouncing controls, and anything that distracts from the yacht.
 
 For every selected photo, create web formats for:
 

@@ -9,6 +9,7 @@
 # Private exports / backups
 /private/
 /backups/
+.media-source/
 *.sql
 *.sql.gz
 *.tar.gz
