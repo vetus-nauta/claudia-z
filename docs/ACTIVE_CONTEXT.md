@@ -55,6 +55,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Overview identity uses cleaned transparent `Claudia Z` logo derivatives in both the welcome hall and the glass info popup. Use theme-appropriate transparent logo derivatives; do not return to a visible plain text hero title; keep text only for accessibility.
 - Internal zone info popups use the transparent Sunseeker mark instead of repeating the yacht name on the media surface.
 - Navigation must read as restrained premium product material, not constructor UI: avoid pill/chip section buttons, oversized CTA blocks, and school-like gallery controls. Prefer text tabs, hairlines, quiet state changes, and mobile swipe behavior.
+- Top controls (`Yacht details` and theme) must follow the same visual system as the bottom zone navigation: straight glass bar, hairline borders, quiet active/hover states, no rounded pill capsules.
 - Details sheet includes transparent Sunseeker mark and specs.
 - Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo.
 - Text placement: Overview carries the welcome hall copy. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.

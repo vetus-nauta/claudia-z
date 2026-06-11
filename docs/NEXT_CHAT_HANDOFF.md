@@ -37,6 +37,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
 - Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
 - Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar. Do not reintroduce a long horizontal zone rail that runs off screen.
+- Top controls (`Yacht details` and theme) intentionally match the lower navigation field: straight glass bar, hairline borders, restrained text/icon states, no separate pill/capsule styling.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
 - English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.

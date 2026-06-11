@@ -69,6 +69,7 @@
 - Copy placement: Overview uses a compact top-right masthead with yacht logo, restrained Sunseeker mark, the previous owner-approved description text, and key facts. It must not become a large card/panel over the photo sequence. Internal zones keep media clean; their concise `copy` and `detail` live in the top-right glass info popup.
 - Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar instead of overflowing horizontally.
+- Top controls now match the lower navigation language: straight glass bar, hairline borders, and quiet text/icon states rather than separate rounded pills.
 - Aft Swim Platform currently uses a generated temporary placeholder scene with a bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and a small fruit/champagne table. Replace it with owner-approved real media when supplied.
 - Photos will be supplied later as Google Drive folders/links on request.
 
