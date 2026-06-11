@@ -26,6 +26,7 @@ This file describes the intended repository structure.
       discovery-interview/
       safe-patch/
       premium-yacht-ux/
+      css-architecture-guard/
       mobile-first-audit/
       content-legal-guard/
       media-extraction-pipeline/

@@ -86,6 +86,23 @@ The first public website layer should include:
 - no prices
 - no direct booking language
 
+## CSS And Visual System Discipline
+
+The public site must use one shared visual system, not a set of unrelated page fragments.
+
+For CSS and layout work:
+
+- use `premium-yacht-ux`, `mobile-first-audit`, `css-architecture-guard`, and `safe-patch`
+- create or preserve a shared CSS base before adding complex sections
+- keep colors, typography, spacing, buttons, media frames, overlays, and gallery patterns consistent
+- design mobile first, then tablet, then desktop
+- make the first mobile viewport feel like a complete premium experience, not the top of a generic landing page
+- prefer compact modern media patterns such as full-screen viewer, swipe gallery, media rail, zone gallery, drawer, or progressive reveal
+- avoid long stacked gallery pages when a focused interactive media experience is better
+- do not keep layering CSS overrides when the result is unstable
+- if CSS fixes start looping, stop, diagnose cascade/layout conflicts, clean the smallest affected area, and rebuild it according to the shared base
+- avoid casual `!important`, inline fixes, deep selectors, duplicated breakpoints, and one-off section styling
+
 ## Private Panel / Future Backend Scope
 
 A future private panel may include:

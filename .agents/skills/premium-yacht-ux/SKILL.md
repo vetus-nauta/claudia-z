@@ -18,6 +18,8 @@ The interface must feel like a private digital salon, not a public charter marke
 5. No public price, no aggressive booking language.
 6. Calm inquiry flow.
 7. Cinematic media without performance damage.
+8. One shared visual system across all sections.
+9. First mobile viewport as a complete experience, not a generic landing-page opener.
 
 ## Avoid
 
@@ -29,6 +31,14 @@ The interface must feel like a private digital salon, not a public charter marke
 - Fake urgency
 - Cheap animations
 - Too many CTAs
+- Unrelated section-by-section design systems
+- Long stacked galleries when swipe, rail, drawer, or full-screen media would be better
+
+## CSS Coordination
+
+For CSS, layout, gallery, and responsive implementation, use `css-architecture-guard`.
+
+Do not solve visual inconsistency by adding more local overrides. If the design starts looking like unrelated blocks, return to the shared base: tokens, typography, spacing, buttons, media frames, overlays, and gallery patterns.
 
 ## Preferred Language
 
@@ -51,4 +61,5 @@ When reviewing or designing, provide:
 5. Animation notes
 6. Media usage notes
 7. Copy tone
-8. Risks
+8. CSS/system consistency notes
+9. Risks

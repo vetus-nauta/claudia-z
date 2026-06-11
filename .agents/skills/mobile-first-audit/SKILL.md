@@ -23,6 +23,9 @@ Always check:
 - no horizontal overflow
 - no tiny buttons
 - no desktop-only hover dependency
+- first screen feels complete on mobile
+- gallery/media interaction works without long landing-page scrolling
+- CSS system stays consistent across sections
 
 ## Premium Requirement
 
@@ -35,4 +38,5 @@ Mobile must feel intentional, not like a squeezed desktop page.
 3. Performance risks
 4. Media/crop risks
 5. Touch/navigation risks
-6. Required fixes
+6. CSS consistency risks
+7. Required fixes
