@@ -233,6 +233,7 @@ Before using media:
 - never accept accidental crops that cut the bow, stern, hull line, flybridge, tender, or key deck geometry unless the crop is an intentional approved detail shot
 - define a focal point and mobile/tablet crop for every hero or zone image
 - reject hero media that only works on desktop but damages the yacht shape on mobile
+- for vertical/mobile derivatives of horizontal yacht photos, preserve the yacht uncut and fill remaining space with color/tone-matched background extension or ambient fill; avoid bars and hard pasted edges
 - use video poster images
 - do not autoplay sound
 

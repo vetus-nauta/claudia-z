@@ -27,6 +27,7 @@ Agent foundation and pre-build rules.
 - Final media must be cut into stable common formats and displayed inside fixed-ratio containers; original photo proportions must not move the layout.
 - Prototype zone viewing now supports multi-image sequences, previous/next controls, keyboard arrows, and mobile swipe.
 - Mobile gallery behavior: no visible previous/next photo buttons; use horizontal swipe plus a minimal hint, with tap on free photo area for optimized full-size opening.
+- Vertical/mobile derivatives must preserve yacht geometry and fill remaining space with color/tone-matched background extension so the frame feels complete vertically.
 - Overview / General Plans now uses approved real derivatives from owner-provided Drive photos: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
@@ -42,6 +43,7 @@ Agent foundation and pre-build rules.
 - No owner identity or private client data.
 - No accidental media crops that cut bow, stern, hull line, flybridge, tender, or key deck geometry.
 - No final media placement without a composition/focal-point review by a photo/art-direction role or explicit equivalent pass.
+- No vertical yacht derivative with black/white bars, unrelated solid fill, or hard pasted-image edges; use ambient background fill / color-matched extension.
 - No master photo originals in public presentation output unless explicitly approved.
 - Do not promise absolute browser photo protection; use practical deterrents and private originals.
 - No unnecessary analytics or tracking.

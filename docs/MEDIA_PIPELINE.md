@@ -95,6 +95,25 @@ Mobile photo galleries must behave like a native iPhone-style viewer:
 
 Do not add school-like arrow button UI to mobile galleries.
 
+## Vertical Background Fill
+
+When a horizontal yacht photo is adapted to a vertical/mobile frame, preserve the yacht shape and fill the remaining vertical space with a color-and-tone-matched extension of the same photo.
+
+Use this technique to create a feeling of a full vertical image without cropping important yacht geometry. This may be called:
+
+- ambient background fill
+- background extension
+- color/tone-matched fill
+- blurred extended backdrop
+
+Rules:
+
+- The main yacht layer must remain sharp and uncut.
+- The filled background must match the photo's sea/sky/color tone.
+- Avoid hard horizontal edges that make the image feel pasted into a vertical canvas.
+- Avoid unrelated solid color bars, black bars, white bars, or generic gradients.
+- Use blur/soft feathering only to support the image, not as a decorative effect.
+
 ## Motion And Feedback
 
 Use restrained motion to make browsing feel comfortable:
