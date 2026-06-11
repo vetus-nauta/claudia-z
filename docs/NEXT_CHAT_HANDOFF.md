@@ -18,7 +18,7 @@ Agent foundation and pre-build rules.
 - English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.
 - Initial sections/zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
-- Owner will provide media later through Google Drive folders/links on request.
+- Media intake is section-by-section: agent names the next section/subsection, owner provides one Google Drive folder link plus exact filenames, agent downloads only named files and converts them into web derivatives for stage and full-size viewing.
 - Hero logo source folder is recorded: Google Drive folder `136czYRe4bUtwnfzaJt9WsGQZD8Wkqg54`, two PNG candidates plus two TXT companion files.
 - Sunseeker mark is available as cleaned transparent UI derivatives and should remain a secondary builder mark, not a hero, sticker, or primary identity element.
 - Old site source intake is complete enough to start architecture: four different WordPress XML files were read from Google Drive, including Russian pages, one English post, media attachments, and a full export.
@@ -60,4 +60,4 @@ Agent foundation and pre-build rules.
 
 ## Next Recommended Step
 
-Prepare the first controlled no-index, bilingual, mobile-first, media-first presentation architecture and request zone-specific media folders as needed.
+Request the next single section/subsection media folder and exact filenames, then convert approved files into optimized web derivatives and connect them to the matching zone.

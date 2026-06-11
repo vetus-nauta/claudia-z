@@ -53,6 +53,25 @@ Classify media by:
 - vertical mobile clips
 - horizontal cinematic clips
 
+## Owner Media Intake Workflow
+
+Media intake is section-by-section, not all-at-once.
+
+1. The agent names the next section or subsection to fill.
+2. The owner provides one Google Drive folder link and the exact photo filenames to use for that section.
+3. The agent downloads only the named files.
+4. The agent converts them into public web derivatives and keeps master originals out of the public build.
+5. The agent connects the derivatives to the matching zone and verifies mobile, tablet, desktop, and full-size viewing.
+
+For every selected photo, create web formats for:
+
+- stage/zone display
+- full-size viewer opening
+- mobile-safe crop when needed
+- fallback format if the primary optimized format is not supported
+
+Full-size viewing must look good, but it must still use optimized display derivatives rather than raw originals unless explicitly approved.
+
 ## Initial Requested Folder Logic
 
 When requesting media from the owner, prefer clear folders:
