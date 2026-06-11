@@ -15,7 +15,7 @@ Agent foundation and pre-build rules.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
-- English is primary/default; Russian is supported; every other language falls back to English.
+- English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.
 - Initial sections/zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Owner will provide media later through Google Drive folders/links on request.
@@ -42,6 +42,7 @@ Agent foundation and pre-build rules.
 - No unnecessary header/footer chrome, oversized cards, or oversized headings as default structure.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
+- Do not allow inactive-language flash during initialization.
 - Do not layer contradictory guidance; remove or rewrite superseded rules.
 
 ## Open Questions

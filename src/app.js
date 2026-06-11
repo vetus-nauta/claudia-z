@@ -179,6 +179,8 @@ const state = {
   zoneId: "overview"
 };
 
+document.documentElement.lang = state.lang;
+
 const media = document.querySelector("#zoneMedia");
 const mediaGuard = document.querySelector("#mediaGuard");
 const rail = document.querySelector("#zoneRail");
@@ -191,7 +193,11 @@ function detectLanguage() {
   const preferred = [navigator.language, ...(navigator.languages || [])]
     .filter(Boolean)
     .map((lang) => lang.toLowerCase());
-  return preferred.some((lang) => lang.startsWith("ru")) ? "ru" : "en";
+  const primaryLanguage = preferred[0] || "";
+  if (primaryLanguage.startsWith("ru")) {
+    return "ru";
+  }
+  return "en";
 }
 
 function detectTheme() {
@@ -204,12 +210,6 @@ function detectTheme() {
 
 function currentZone() {
   return zones.find((zone) => zone.id === state.zoneId) || zones[0];
-}
-
-function setLanguage(lang) {
-  state.lang = lang === "ru" ? "ru" : "en";
-  document.documentElement.lang = state.lang;
-  render();
 }
 
 function setTheme(theme) {
@@ -242,9 +242,6 @@ function renderCopy() {
     const key = node.dataset.i18n;
     node.textContent = copy[state.lang][key] || "";
   });
-  document.querySelectorAll(".language__button").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.lang === state.lang);
-  });
   document.querySelector('[data-fact="length"]').textContent = copy[state.lang].factLength;
   document.querySelector('[data-fact="cabins"]').textContent = copy[state.lang].factCabins;
   document.querySelector('[data-fact="speed"]').textContent = copy[state.lang].factSpeed;
@@ -270,10 +267,6 @@ function toggleSheet(sheet, force) {
   sheet.classList.toggle("is-open", shouldOpen);
   sheet.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
 }
-
-document.querySelectorAll(".language__button").forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
-});
 
 themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");

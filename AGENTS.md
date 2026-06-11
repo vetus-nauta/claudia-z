@@ -43,11 +43,12 @@ Supported languages for first release:
 Language behavior:
 
 - detect user/browser language when possible
-- show Russian only when the detected/preferred language is Russian
-- show English when the detected/preferred language is English
+- show Russian only when the primary detected/preferred language is Russian
+- show English when the primary detected/preferred language is English
 - fall back to English for every other language
-- keep language switching discreet and compact
+- do not show a language switcher in the presentation UI unless explicitly approved later
 - do not duplicate large blocks on screen; show one active language at a time
+- avoid any flash or temporary display of the inactive language during initialization
 - maintain content parity between `en` and `ru` for approved presentation content
 
 ## Main Devices

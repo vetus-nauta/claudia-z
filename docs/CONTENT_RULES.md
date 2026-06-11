@@ -33,6 +33,8 @@ Russian is supported as a secondary language.
 If the user's system/browser language is Russian, show Russian. If it is English, show English. For every other language, show English.
 
 Do not show both full languages at once in the main interface.
+Do not show a language switcher unless explicitly approved later.
+Do not allow the inactive language to flash during initialization.
 
 ## Controlled Presentation Must Not Say
 

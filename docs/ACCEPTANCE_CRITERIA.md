@@ -20,7 +20,9 @@ The first release is acceptable only if:
 - English is the primary/default language
 - Russian is supported
 - non-English/non-Russian languages fall back to English
+- no visible language switcher is present unless explicitly approved later
 - language switching/detection does not create duplicate visible content blocks
+- inactive-language content does not flash during initialization
 - initial content zones are represented or intentionally deferred: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender
 - interior media can be filtered or grouped by saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin
 - it presents yacht beautifully and confidently

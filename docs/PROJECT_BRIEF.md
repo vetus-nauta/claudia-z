@@ -62,7 +62,8 @@ Language behavior:
 - English users see English.
 - All other languages fall back to English.
 - Only one active language should be shown at a time.
-- Language controls must be compact and not consume first-screen space.
+- No language switcher should be shown in the presentation UI unless explicitly approved later.
+- The inactive language must not briefly flash during initialization.
 
 ## Initial Content Areas
 

@@ -85,7 +85,7 @@ Decision:
 English is the primary/default language. Russian is the secondary supported language. If the detected/preferred language is neither English nor Russian, the presentation opens in English.
 
 Impact:
-Implement compact language handling, show one active language at a time, and maintain content parity for approved `en` and `ru` content.
+Implement automatic language handling without a visible language switcher. Show one active language at a time, prevent inactive-language flash during initialization, and maintain content parity for approved `en` and `ru` content.
 
 Status:
 Approved

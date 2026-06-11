@@ -13,7 +13,7 @@
 - Primary audiences are selected brokers, trusted partners, and direct private clients.
 - GitHub is the source of truth.
 - Old site text will be provided by the owner and may be used only as directional reference, not copied or closely paraphrased.
-- Primary language is English; Russian is supported; all other detected languages fall back to English.
+- Primary language is English; Russian is supported; all other detected languages fall back to English. Language is automatic only; no visible language switcher in the presentation UI.
 - Initial media/content zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.

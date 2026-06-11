@@ -120,7 +120,6 @@ button {
 }
 
 .identity,
-.language,
 .controls {
   display: flex;
   align-items: center;
@@ -132,7 +131,6 @@ button {
 }
 
 .identity,
-.language,
 .theme-button {
   border: 1px solid var(--line);
   background: var(--glass);
@@ -157,26 +155,6 @@ button {
   color: var(--ink-soft);
   font-size: 12px;
   white-space: nowrap;
-}
-
-.language {
-  border-radius: 999px;
-  padding: 3px;
-}
-
-.language__button {
-  min-width: 38px;
-  min-height: 32px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink-muted);
-  cursor: pointer;
-}
-
-.language__button.is-active {
-  background: var(--ink);
-  color: var(--active-control-ink);
 }
 
 .theme-button {
