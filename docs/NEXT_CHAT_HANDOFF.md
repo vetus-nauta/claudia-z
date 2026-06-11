@@ -2,11 +2,26 @@
 
 ## Current Phase
 
-Agent foundation and pre-build rules.
+Working static prototype in `claudia-z`, with approved media batches, bilingual copy, hero branding, dark/light theme support, adaptive navigation, and project memory docs in place.
+
+Latest pushed implementation commits:
+
+- `756432e Add adaptive menu and zone stage copy`
+- `7d19ec3 Refine hero branding and premium controls`
+- `881e766 Adapt zone copy with owner-confirmed details`
 
 ## First Read
 
 Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for current rules, approved media, placeholders, and next-step protocol. Do not reread all docs or run broad scans for local section work unless `ACTIVE_CONTEXT.md` is insufficient.
+
+Minimum code read for most continuation work:
+
+- `docs/ACTIVE_CONTEXT.md`
+- target zone block in `src/app.js`
+- relevant target folder under `assets/media/`
+- `src/styles.css` only when changing layout/visual behavior
+
+Do not touch `/home/alexey/GitHub/Revoyacht`.
 
 ## Active Direction
 
@@ -17,6 +32,10 @@ Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for c
 - Namecheap `public_html` is only a publication target.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
+- The Overview hero identity uses cleaned transparent `Claudia Z` logo derivatives from the owner-provided Drive logo folder. The mark was refined to feel smaller and lighter; do not revert to the large heavy logo or visible plain-text title.
+- Internal zones must not repeat `Claudia Z` as the visible stage title. They use the transparent Sunseeker builder mark and zone-specific copy.
+- Stage copy is now zone-aware: Overview shows the main yacht summary; each internal zone shows its own concise `copy` plus a short clamped `detail` preview. The fuller detail remains in the details sheet.
+- Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar. Do not reintroduce a long horizontal zone rail that runs off screen.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
 - English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.
@@ -37,8 +56,15 @@ Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for c
 - Flybridge now uses approved real derivatives from DJI folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC` and GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`. The user's `1230-P1999658` was resolved to actual Drive filename `130-P1999658.jpg`.
 - Foredeck now uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`. `144-P1999698` is hold/reference; `147-P1477682` is rejected from the main Foredeck sequence. `160-P1477679` is the bow rail / anchorage detail closer.
 - Cockpit now uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `121-P1999653`, `113-P1477599`, `115-P1477604`.
+- Saloon uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `80-P1477573`, `89-P1999637`, `87-P1999629`, `85-P1999616`, `94-P1477558`, `98-P1999624`.
+- Interior is fully represented through individual subzones. Do not restore a generic `interior` overview route unless explicitly asked.
+- Main deck is a category concept only. Its public content is carried by Foredeck, Cockpit, and Saloon.
+- Master cabin, Forward VIP, Starboard guest, and Port guest / children's cabin have owner-provided media connected and zone copy in `src/app.js`.
+- Aft Swim Platform remains a generated placeholder until owner-approved platform media is supplied. It currently tells the intended story: bathing platform, SeaBob, two SUP boards, flexible loungers, small fruit/champagne table.
+- Tender remains a Williams SportJet-style placeholder for `Williams 420` context until owner-approved tender media is supplied.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
+- Public UI uses optimized derivatives only. Master source media remains under ignored `.media-source/`.
 
 ## Current Hard Rules
 
@@ -60,6 +86,8 @@ Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for c
 - No visible duplicate names in the same UI state; remove repeated labels rather than shrinking them.
 - No white logo cards inside dark information panels; use integrated transparent marks.
 - No school-like mobile photo navigation buttons; mobile galleries use iPhone-style swipe behavior.
+- No constructor-like pill navigation, oversized CTA blocks, or school-like gallery arrows. Use text tabs, hairlines, quiet state changes, and restrained controls.
+- No long non-adaptive bottom menu at narrow widths. Use the compact section menu.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
 - Do not allow inactive-language flash during initialization.
@@ -67,12 +95,18 @@ Read `docs/ACTIVE_CONTEXT.md` first. Use it as the compact source of truth for c
 
 ## Open Questions
 
-- Final brand architecture: Claudia Z, Bell Rock, Bell Rock Way, or mixed.
-- Final tech stack.
-- First release scope: static-only controlled presentation.
-- Exact media library and zone taxonomy.
-- Google Drive media folder links.
+- Final deployment target details and exact publication process for `claudia-z.com`.
+- Whether the current generated Aft Swim Platform placeholder should stay until real photos or be redesigned further.
+- Owner-approved real tender media still needed.
+- Final review of every mobile crop after all media is complete.
+- Whether a private access layer/password gate is required for the first deployment, beyond `noindex`.
 
 ## Next Recommended Step
 
-Request the next single section/subsection media folder and exact filenames, then convert approved files into optimized web derivatives and connect them to the matching zone.
+Do a focused QA pass before deployment:
+
+- verify mobile and narrow-width menu behavior in a real browser window
+- walk every zone and confirm stage copy, details text, media order, and no duplicate yacht-name labels
+- check dark/light theme contrast
+- confirm no public indexing files or SEO/public-sales mechanics exist
+- then prepare deployment instructions or deployment commit as requested
