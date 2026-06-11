@@ -88,6 +88,11 @@ button {
   -webkit-user-drag: none;
   user-select: none;
   pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.stage__media.is-loading {
+  opacity: 0.74;
 }
 
 .media-guard {
@@ -152,9 +157,6 @@ button {
 .controls {
   display: flex;
   align-items: center;
-}
-
-.controls {
   gap: 8px;
   pointer-events: auto;
 }
@@ -165,9 +167,6 @@ button {
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   pointer-events: auto;
-}
-
-.theme-button {
   position: relative;
   width: 40px;
   height: 40px;
@@ -242,6 +241,50 @@ h1 {
   color: var(--ink);
   font-size: 13px;
   backdrop-filter: blur(12px);
+}
+
+.media-stepper {
+  position: fixed;
+  right: 12px;
+  bottom: calc(120px + var(--safe-bottom));
+  z-index: 20;
+  display: inline-grid;
+  grid-template-columns: 34px auto 34px;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+  background: rgba(8, 11, 12, 0.34);
+  backdrop-filter: blur(16px);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.is-details-open .media-stepper {
+  transform: translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.step-button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: rgba(246, 241, 232, 0.12);
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.media-stepper__count {
+  min-width: 42px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .command {
@@ -449,6 +492,11 @@ h1 {
     border-radius: var(--radius);
     background: var(--command-panel);
     backdrop-filter: blur(18px);
+  }
+
+  .media-stepper {
+    right: 34px;
+    bottom: 112px;
   }
 
   .sheet {

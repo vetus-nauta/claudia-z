@@ -17,6 +17,7 @@
 - Initial media/content zones: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender.
 - Interior media subzones: saloon, master cabin, forward VIP cabin, starboard guest cabin, port guest / children's cabin.
 - Prototype zone navigation now includes the required interior subzones with temporary old-media placeholders pending final owner-provided media.
+- Prototype media viewing now supports multi-image sequences per zone, previous/next controls, keyboard arrows, and mobile swipe. Current images are temporary old-media placeholders only.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.
 - Final photos must be prepared as stable common-format display derivatives; original image proportions must not move or reshape the interface.

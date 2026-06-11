@@ -18,6 +18,9 @@ Do not assume assets exist until the owner provides folders or links.
   - Public UI must use cleaned display derivatives only.
   - Keep the mark secondary and visually quiet so it does not compete with the yacht identity or hero media.
   - Do not expose old source filenames or unused extracted logo candidates in public markup.
+- Current prototype zone galleries use selected old WordPress media only as temporary layout and interaction placeholders.
+  - Replace them with approved owner-provided Google Drive media before final publication.
+  - Each final zone should provide enough approved frames for previous/next and swipe navigation without repeating weak or near-duplicate images.
 
 ## Classification
 
@@ -111,6 +114,7 @@ For every selected asset, define:
 ## Performance Rules
 
 - Use optimized images.
+- Preload adjacent images only where it helps perceived speed and does not create mobile weight problems.
 - Use stable media containers with fixed approved aspect ratios; photos must never resize the layout according to their original proportions.
 - Create display derivatives for each approved use case instead of relying on browser-only cropping of master images.
 - Define the required crop format before production: hero, zone opener, gallery frame, detail frame, mobile portrait, tablet, and desktop.

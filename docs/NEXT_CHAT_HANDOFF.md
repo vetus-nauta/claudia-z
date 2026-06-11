@@ -25,6 +25,7 @@ Agent foundation and pre-build rules.
 - Use extracted facts/specifications/zones only; old copy, WordPress theme data, header/footer/navigation, and old layout patterns are excluded.
 - Prototype media is temporary; final hero/zone media must pass content-aware crop review before approval.
 - Final media must be cut into stable common formats and displayed inside fixed-ratio containers; original photo proportions must not move the layout.
+- Prototype zone viewing now supports multi-image sequences, previous/next controls, keyboard arrows, and mobile swipe.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 
 ## Current Hard Rules

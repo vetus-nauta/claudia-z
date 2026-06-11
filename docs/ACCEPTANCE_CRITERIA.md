@@ -25,6 +25,7 @@ The first release is acceptable only if:
 - inactive-language content does not flash during initialization
 - initial content zones are represented or intentionally deferred: general plans, exterior, interior, flybridge, main deck, foredeck, cockpit, aft swim platform / bathing platform, tender
 - interior media can be filtered or grouped by saloon, master cabin, forward VIP cabin, starboard guest cabin, and port guest / children's cabin
+- zone media sequences can be browsed without layout jumps by controls, keyboard arrows, and mobile swipe where supported
 - it presents yacht beautifully and confidently
 - all approved media displays correctly
 - approved hero and zone media do not accidentally crop off bow, stern, hull, flybridge, tender, or key deck geometry

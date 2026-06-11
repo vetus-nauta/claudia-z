@@ -1,29 +1,42 @@
 const mediaBase = "https://claudiazdotcom.wordpress.com/wp-content/uploads/2022/10/";
 
+function media(file, focus = "50% 50%") {
+  return {
+    src: `${mediaBase}${file}`,
+    focus
+  };
+}
+
 const zones = [
   {
     id: "overview",
-    image: `${mediaBase}dji_0240.jpg`,
-    focus: "50% 46%",
+    media: [
+      media("dji_0240.jpg", "50% 46%"),
+      media("dji_0248.jpg", "58% 44%"),
+      media("dji_0250.jpg", "50% 48%")
+    ],
     en: {
       label: "Overview",
-      title: "Claudia Z at a glance",
-      copy: "Start with the yacht's profile, scale, and calm presence on the water before moving into decks, interiors, and water access."
+      title: "At a glance",
+      copy: "Start with profile, scale, and calm presence on the water before moving into decks, interiors, and water access."
     },
     ru: {
       label: "Обзор",
-      title: "Claudia Z одним взглядом",
-      copy: "Сначала силуэт, масштаб и спокойное присутствие яхты на воде, затем палубы, интерьер и выход к воде."
+      title: "Одним взглядом",
+      copy: "Сначала силуэт, масштаб и спокойное присутствие на воде, затем палубы, интерьер и выход к воде."
     }
   },
   {
     id: "exterior",
-    image: `${mediaBase}dji_0248.jpg`,
-    focus: "58% 44%",
+    media: [
+      media("dji_0248.jpg", "58% 44%"),
+      media("dji_0264.jpg", "52% 50%"),
+      media("dji_0272.jpg", "50% 52%")
+    ],
     en: {
       label: "Exterior",
       title: "Profile and deck presence",
-      copy: "Exterior media should show the hull line, the deck proportions, and the yacht's presence at anchor or underway."
+      copy: "Exterior media should show the hull line, deck proportions, and presence at anchor or underway."
     },
     ru: {
       label: "Экстерьер",
@@ -33,8 +46,11 @@ const zones = [
   },
   {
     id: "flybridge",
-    image: `${mediaBase}164-p1477618_1.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("129-p1477663.jpg", "50% 54%"),
+      media("130-p1999658.jpg", "50% 52%"),
+      media("136-p1999672.jpg", "50% 52%")
+    ],
     en: {
       label: "Flybridge",
       title: "Open social deck",
@@ -48,12 +64,15 @@ const zones = [
   },
   {
     id: "main_deck",
-    image: `${mediaBase}main-deck.png`,
-    focus: "50% 50%",
+    media: [
+      media("68-p1999580.jpg", "50% 50%"),
+      media("74-p1999594.jpg", "50% 50%"),
+      media("97-p1999617.jpg", "50% 50%")
+    ],
     en: {
       label: "Main deck",
       title: "Saloon, dining, movement",
-      copy: "Main deck content should connect the saloon, dining, galley context, cockpit flow, and the nearly all-around view."
+      copy: "Main deck content connects saloon, dining, galley context, cockpit flow, and the nearly all-around view."
     },
     ru: {
       label: "Главная палуба",
@@ -63,12 +82,15 @@ const zones = [
   },
   {
     id: "foredeck",
-    image: `${mediaBase}167-p1477642.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("142-p1477659.jpg", "50% 50%"),
+      media("145-p1999709.jpg", "50% 50%"),
+      media("150-p1477686.jpg", "50% 52%")
+    ],
     en: {
       label: "Foredeck",
       title: "Forward lounge",
-      copy: "Foredeck media should make the forward sunbeds, seating, and quiet anchorage moments easy to understand."
+      copy: "Foredeck media should make the sunbeds, seating, and quiet anchorage moments easy to understand."
     },
     ru: {
       label: "Фордек",
@@ -78,8 +100,11 @@ const zones = [
   },
   {
     id: "cockpit",
-    image: `${mediaBase}170-p1999735_1.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("114-p1477600.jpg", "50% 52%"),
+      media("119-p1999646.jpg", "50% 52%"),
+      media("121-p1999653.jpg", "50% 52%")
+    ],
     en: {
       label: "Cockpit",
       title: "Aft lounge connection",
@@ -93,27 +118,33 @@ const zones = [
   },
   {
     id: "aft_swim_platform",
-    image: `${mediaBase}117-p1477608.jpg`,
-    focus: "52% 54%",
+    media: [
+      media("117-p1477608.jpg", "52% 54%"),
+      media("dji_0279_1.jpg", "50% 56%"),
+      media("dji_0280_1.jpg", "50% 56%")
+    ],
     en: {
       label: "Aft Swim Platform",
       title: "Water access aft",
-      copy: "This section is for the bathing platform, water access, boarding from the tender, and the beach-club style use of the stern."
+      copy: "This section is for the bathing platform, water access, tender boarding, and beach-club style stern use."
     },
     ru: {
-      label: "Кормовая купальная платформа",
+      label: "Кормовая платформа",
       title: "Кормовой выход к воде",
       copy: "Раздел для купальной платформы, выхода к воде, посадки с тендера и beach-club сценария на корме."
     }
   },
   {
     id: "tender",
-    image: `${mediaBase}168-p1477709_1.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("168-p1477709_1.jpg", "50% 50%"),
+      media("168-p1477709_1-1.jpg", "50% 50%"),
+      media("dji_0281_1.jpg", "50% 54%")
+    ],
     en: {
       label: "Tender",
       title: "Tender and water toys",
-      copy: "Tender is kept as a separate media story, even when the photos are physically connected to the aft platform."
+      copy: "Tender is kept as a separate media story, even when photos are physically connected to the aft platform."
     },
     ru: {
       label: "Тендер",
@@ -123,12 +154,15 @@ const zones = [
   },
   {
     id: "interior",
-    image: `${mediaBase}72-p1999588.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("72-p1999588.jpg", "50% 50%"),
+      media("89-p1999637.jpg", "50% 50%"),
+      media("99-p1999602.jpg", "50% 50%")
+    ],
     en: {
       label: "Interior",
       title: "Interior overview",
-      copy: "Interior media is organized as a clear route through the saloon, cabins, guest spaces, and private-use details."
+      copy: "Interior media is organized as a clear route through saloon, cabins, guest spaces, and private-use details."
     },
     ru: {
       label: "Интерьер",
@@ -138,38 +172,47 @@ const zones = [
   },
   {
     id: "saloon",
-    image: `${mediaBase}68-p1999580.jpg`,
-    focus: "50% 50%",
+    media: [
+      media("68-p1999580.jpg", "50% 50%"),
+      media("73-p1999590.jpg", "50% 50%"),
+      media("82-p1477580.jpg", "50% 50%")
+    ],
     en: {
       label: "Saloon",
       title: "Main saloon",
-      copy: "The saloon should show seating, dining, light, circulation, and the way the main deck feels during a real conversation."
+      copy: "The saloon should show seating, dining, light, circulation, and the way the main deck feels in conversation."
     },
     ru: {
       label: "Салон",
       title: "Главный салон",
-      copy: "Салон должен показывать посадку, обеденную зону, свет, движение и ощущение главной палубы в реальном разговоре."
+      copy: "Салон должен показывать посадку, обеденную зону, свет, движение и ощущение главной палубы в разговоре."
     }
   },
   {
     id: "master_cabin",
-    image: `${mediaBase}1-p1999373.jpg`,
-    focus: "50% 52%",
+    media: [
+      media("1-p1999373.jpg", "50% 52%"),
+      media("4-p1999377.jpg", "50% 52%"),
+      media("11-p1477508.jpg", "50% 50%")
+    ],
     en: {
       label: "Master cabin",
-      title: "Owner's cabin",
-      copy: "Master cabin media should communicate privacy, proportions, storage, materials, and the calm of the principal sleeping space."
+      title: "Principal cabin",
+      copy: "Master cabin media should communicate privacy, proportions, storage, materials, and the calm of the sleeping space."
     },
     ru: {
       label: "Мастер-каюта",
       title: "Главная каюта",
-      copy: "Медиа мастер-каюты должно передавать приватность, пропорции, хранение, материалы и спокойствие главной спальной зоны."
+      copy: "Медиа мастер-каюты должно передавать приватность, пропорции, хранение, материалы и спокойствие спальной зоны."
     }
   },
   {
     id: "forward_vip",
-    image: `${mediaBase}38-p1999471.jpg`,
-    focus: "50% 52%",
+    media: [
+      media("38-p1999471.jpg", "50% 52%"),
+      media("20-p1999426.jpg", "50% 52%"),
+      media("24-p1477514.jpg", "50% 50%")
+    ],
     en: {
       label: "Forward VIP",
       title: "Forward VIP cabin",
@@ -183,8 +226,11 @@ const zones = [
   },
   {
     id: "starboard_guest",
-    image: `${mediaBase}53-p1999532.jpg`,
-    focus: "50% 52%",
+    media: [
+      media("53-p1999532.jpg", "50% 52%"),
+      media("57-p1999545.jpg", "50% 52%"),
+      media("51-p1999521.jpg", "50% 50%")
+    ],
     en: {
       label: "Starboard guest",
       title: "Starboard guest cabin",
@@ -198,17 +244,20 @@ const zones = [
   },
   {
     id: "port_guest",
-    image: `${mediaBase}55-p1999538.jpg`,
-    focus: "50% 52%",
+    media: [
+      media("55-p1999538.jpg", "50% 52%"),
+      media("45-p1999492.jpg", "50% 52%"),
+      media("47-p1999506.jpg", "50% 50%")
+    ],
     en: {
       label: "Port guest",
       title: "Port guest / children's cabin",
-      copy: "The port cabin is kept separate so family or guest-use scenarios can be explained without overloading the main interior view."
+      copy: "The port cabin is kept separate so family or guest-use scenarios can be explained without overloading the main view."
     },
     ru: {
       label: "Левая гостевая",
       title: "Левая гостевая / детская",
-      copy: "Левая каюта ведется отдельно, чтобы семейный или гостевой сценарий объяснялся без перегруза общего раздела интерьера."
+      copy: "Левая каюта ведется отдельно, чтобы семейный или гостевой сценарий объяснялся без перегруза общего просмотра."
     }
   }
 ];
@@ -230,7 +279,9 @@ const copy = {
     range: "Range",
     factLength: "23.60 m",
     factCabins: "4 cabins",
-    factSpeed: "32 kn"
+    factSpeed: "32 kn",
+    previousMedia: "Previous image",
+    nextMedia: "Next image"
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
@@ -248,25 +299,35 @@ const copy = {
     range: "Запас хода",
     factLength: "23.60 м",
     factCabins: "4 каюты",
-    factSpeed: "32 уз."
+    factSpeed: "32 уз.",
+    previousMedia: "Предыдущее изображение",
+    nextMedia: "Следующее изображение"
   }
 };
 
 const state = {
   lang: detectLanguage(),
   theme: detectTheme(),
-  zoneId: "overview"
+  zoneId: "overview",
+  mediaIndex: 0,
+  mediaRequestId: 0,
+  dragStartX: 0,
+  dragStartY: 0
 };
 
 document.documentElement.lang = state.lang;
 
-const media = document.querySelector("#zoneMedia");
+const mediaElement = document.querySelector("#zoneMedia");
 const mediaGuard = document.querySelector("#mediaGuard");
 const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
 const themeButton = document.querySelector("#themeButton");
 const zoneTitle = document.querySelector("#zoneTitle");
 const zoneCopy = document.querySelector("#zoneCopy");
+const mediaCounter = document.querySelector("#mediaCounter");
+const previousMediaButton = document.querySelector("#prevMediaButton");
+const nextMediaButton = document.querySelector("#nextMediaButton");
+const stage = document.querySelector(".stage");
 
 function detectLanguage() {
   const preferred = [navigator.language, ...(navigator.languages || [])]
@@ -291,6 +352,11 @@ function currentZone() {
   return zones.find((zone) => zone.id === state.zoneId) || zones[0];
 }
 
+function currentMedia() {
+  const zone = currentZone();
+  return zone.media[state.mediaIndex] || zone.media[0];
+}
+
 function setTheme(theme) {
   state.theme = theme === "light" ? "light" : "dark";
   document.documentElement.dataset.theme = state.theme;
@@ -300,8 +366,18 @@ function setTheme(theme) {
 }
 
 function setZone(zoneId) {
+  if (zoneId === state.zoneId) {
+    return;
+  }
   state.zoneId = zoneId;
+  state.mediaIndex = 0;
   render();
+}
+
+function setMediaIndex(index) {
+  const zone = currentZone();
+  state.mediaIndex = (index + zone.media.length) % zone.media.length;
+  renderZone();
 }
 
 function renderRail() {
@@ -321,18 +397,60 @@ function renderCopy() {
     const key = node.dataset.i18n;
     node.textContent = copy[state.lang][key] || "";
   });
+  document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
+    const key = node.dataset.i18nAria;
+    node.setAttribute("aria-label", copy[state.lang][key] || "");
+  });
   document.querySelector('[data-fact="length"]').textContent = copy[state.lang].factLength;
   document.querySelector('[data-fact="cabins"]').textContent = copy[state.lang].factCabins;
   document.querySelector('[data-fact="speed"]').textContent = copy[state.lang].factSpeed;
 }
 
+function preloadAdjacentMedia() {
+  const zone = currentZone();
+  const next = zone.media[(state.mediaIndex + 1) % zone.media.length];
+  const previous = zone.media[(state.mediaIndex - 1 + zone.media.length) % zone.media.length];
+  [next, previous].forEach((item) => {
+    const image = new Image();
+    image.src = item.src;
+  });
+}
+
+function updateStageMedia(selectedMedia, altText) {
+  const nextRequestId = state.mediaRequestId + 1;
+  state.mediaRequestId = nextRequestId;
+  mediaElement.alt = altText;
+  if (mediaElement.src === selectedMedia.src) {
+    mediaElement.style.objectPosition = selectedMedia.focus;
+    mediaElement.classList.remove("is-loading");
+    return;
+  }
+  mediaElement.classList.add("is-loading");
+  const image = new Image();
+  image.onload = () => {
+    if (state.mediaRequestId !== nextRequestId) {
+      return;
+    }
+    mediaElement.src = selectedMedia.src;
+    mediaElement.style.objectPosition = selectedMedia.focus;
+    mediaElement.classList.remove("is-loading");
+  };
+  image.onerror = () => {
+    if (state.mediaRequestId === nextRequestId) {
+      mediaElement.classList.remove("is-loading");
+    }
+  };
+  image.src = selectedMedia.src;
+}
+
 function renderZone() {
   const zone = currentZone();
-  media.src = zone.image;
-  media.alt = zone[state.lang].title;
-  media.style.objectPosition = zone.focus;
+  const selectedMedia = currentMedia();
+  updateStageMedia(selectedMedia, zone[state.lang].title);
+  mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
+  preloadAdjacentMedia();
 }
 
 function render() {
@@ -354,6 +472,34 @@ themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");
 });
 
+previousMediaButton.addEventListener("click", () => {
+  setMediaIndex(state.mediaIndex - 1);
+});
+
+nextMediaButton.addEventListener("click", () => {
+  setMediaIndex(state.mediaIndex + 1);
+});
+
+stage.addEventListener("pointerdown", (event) => {
+  if (event.target.closest("button, .sheet, .zone-rail")) {
+    return;
+  }
+  state.dragStartX = event.clientX;
+  state.dragStartY = event.clientY;
+});
+
+stage.addEventListener("pointerup", (event) => {
+  if (event.target.closest("button, .sheet, .zone-rail")) {
+    return;
+  }
+  const deltaX = event.clientX - state.dragStartX;
+  const deltaY = event.clientY - state.dragStartY;
+  if (Math.abs(deltaX) < 44 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
+    return;
+  }
+  setMediaIndex(state.mediaIndex + (deltaX < 0 ? 1 : -1));
+});
+
 document.querySelector("#detailsButton").addEventListener("click", () => {
   toggleSheet(detailsSheet);
 });
@@ -368,6 +514,12 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     toggleSheet(detailsSheet, false);
   }
+  if (event.key === "ArrowLeft") {
+    setMediaIndex(state.mediaIndex - 1);
+  }
+  if (event.key === "ArrowRight") {
+    setMediaIndex(state.mediaIndex + 1);
+  }
 });
 
 document.addEventListener("contextmenu", (event) => {
@@ -377,7 +529,7 @@ document.addEventListener("contextmenu", (event) => {
 });
 
 document.addEventListener("dragstart", (event) => {
-  if (event.target === media || event.target === mediaGuard) {
+  if (event.target === mediaElement || event.target === mediaGuard) {
     event.preventDefault();
   }
 });
