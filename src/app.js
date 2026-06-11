@@ -119,9 +119,9 @@ const zones = [
   {
     id: "cockpit",
     media: [
-      media("114-p1477600.jpg", "50% 52%"),
-      media("119-p1999646.jpg", "50% 52%"),
-      media("121-p1999653.jpg", "50% 52%")
+      localMedia("cockpit", "121-p1999653-stage.webp", "121-p1999653-full.webp", "121-p1999653-mobile.webp", "50% 50%"),
+      localMedia("cockpit", "113-p1477599-stage.webp", "113-p1477599-full.webp", "113-p1477599-mobile.webp", "50% 50%"),
+      localMedia("cockpit", "115-p1477604-stage.webp", "115-p1477604-full.webp", "115-p1477604-mobile.webp", "47% 50%")
     ],
     en: {
       label: "Cockpit",

@@ -140,6 +140,16 @@ Rules:
 - `160-P1477679` is a bow rail / anchorage detail closer, not the main forward-lounge explainer.
 - Public derivatives live in `assets/media/foredeck/`; source originals remain only in ignored `.media-source/foredeck/`.
 
+## Cockpit Media Pass 2026-06-11
+
+- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
+- Intake scope: `113-P1477599`, `115-P1477604`, `121-P1999653`.
+- Approved Cockpit order: `121-P1999653`, `113-P1477599`, `115-P1477604`.
+- Use `121-P1999653` as the opener for the full cockpit, saloon glass, and flybridge stair context.
+- Use `113-P1477599` for aft seating and open-view reading.
+- Use `115-P1477604` for table/service and saloon transition.
+- Public derivatives live in `assets/media/cockpit/`; source originals remain only in ignored `.media-source/cockpit/`.
+
 ## Motion And Feedback
 
 Use restrained motion to make browsing feel comfortable:
