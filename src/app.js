@@ -396,6 +396,7 @@ const state = {
   zoneId: "overview",
   mediaIndex: 0,
   mediaRequestId: 0,
+  isDragging: false,
   dragStartX: 0,
   dragStartY: 0
 };
@@ -484,6 +485,13 @@ function closeZoneMenu() {
   zoneMenuButton.setAttribute("aria-expanded", "false");
 }
 
+function setAdjacentZone(direction) {
+  const currentIndex = zones.findIndex((zone) => zone.id === state.zoneId);
+  const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+  const nextIndex = (safeIndex + direction + zones.length) % zones.length;
+  setZone(zones[nextIndex].id);
+}
+
 function setMediaIndex(index) {
   const zone = currentZone();
   if (zone.media.length < 2) {
@@ -495,6 +503,14 @@ function setMediaIndex(index) {
     document.body.classList.add("is-media-surfacing");
   });
   renderZone();
+}
+
+function shiftStage(direction) {
+  if (currentZone().media.length > 1) {
+    setMediaIndex(state.mediaIndex + direction);
+    return;
+  }
+  setAdjacentZone(direction);
 }
 
 function renderRail() {
@@ -643,30 +659,70 @@ openMediaButton.addEventListener("click", () => {
   toggleLightbox(true);
 });
 
-stage.addEventListener("pointerdown", (event) => {
-  if (event.target.closest("button, .sheet, .zone-rail")) {
-    return;
-  }
-  closeZoneMenu();
-  state.dragStartX = event.clientX;
-  state.dragStartY = event.clientY;
-});
+function canHandleStageGesture(target) {
+  return !target.closest("button, .sheet, .zone-rail, .topbar, .command");
+}
 
-stage.addEventListener("pointerup", (event) => {
-  if (event.target.closest("button, .sheet, .zone-rail")) {
+function beginStageGesture(clientX, clientY, target) {
+  if (!canHandleStageGesture(target)) {
+    state.isDragging = false;
     return;
   }
-  const deltaX = event.clientX - state.dragStartX;
-  const deltaY = event.clientY - state.dragStartY;
-  const isSwipe = Math.abs(deltaX) >= 44 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.4;
+  state.dragStartX = clientX;
+  state.dragStartY = clientY;
+  state.isDragging = true;
+  closeZoneMenu();
+}
+
+function endStageGesture(clientX, clientY, target) {
+  if (!state.isDragging || !canHandleStageGesture(target)) {
+    state.isDragging = false;
+    return;
+  }
+  state.isDragging = false;
+  const deltaX = clientX - state.dragStartX;
+  const deltaY = clientY - state.dragStartY;
+  const isSwipe = Math.abs(deltaX) >= 28 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.12;
   if (!isSwipe) {
     const isMobile = window.matchMedia("(max-width: 759px)").matches;
-    if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !event.target.closest(".stage__content, .topbar, .command")) {
+    if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !target.closest(".stage__content")) {
       toggleLightbox(true);
     }
     return;
   }
-  setMediaIndex(state.mediaIndex + (deltaX < 0 ? 1 : -1));
+  shiftStage(deltaX < 0 ? 1 : -1);
+}
+
+stage.addEventListener("pointerdown", (event) => {
+  beginStageGesture(event.clientX, event.clientY, event.target);
+});
+
+stage.addEventListener("pointerup", (event) => {
+  endStageGesture(event.clientX, event.clientY, event.target);
+});
+
+stage.addEventListener("pointercancel", () => {
+  state.isDragging = false;
+});
+
+stage.addEventListener("touchstart", (event) => {
+  const touch = event.changedTouches[0];
+  if (!touch) {
+    return;
+  }
+  beginStageGesture(touch.clientX, touch.clientY, event.target);
+}, { passive: true });
+
+stage.addEventListener("touchend", (event) => {
+  const touch = event.changedTouches[0];
+  if (!touch) {
+    return;
+  }
+  endStageGesture(touch.clientX, touch.clientY, event.target);
+}, { passive: true });
+
+stage.addEventListener("touchcancel", () => {
+  state.isDragging = false;
 });
 
 detailsButton.addEventListener("click", () => {
