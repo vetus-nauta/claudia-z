@@ -6,6 +6,7 @@ Working static prototype in `claudia-z`, with approved media batches, bilingual 
 
 Latest pushed implementation commits:
 
+- `18d9491 Update next chat handoff`
 - `ada1ea3 Refine welcome top controls`
 - `6f77b24 Fix welcome navigation breakpoint`
 - `cfd45a6 Match controls and welcome text contrast`
