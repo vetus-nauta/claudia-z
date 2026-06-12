@@ -289,7 +289,7 @@ const copy = {
   en: {
     eyebrow: "Private yacht presentation",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 | Private Motor Yacht. A quiet first look at the yacht, its spaces, and the way it is used on the coast.",
+    lead: "Sunseeker 76 | Private Motor Yacht. A strong choice for family time and an active life on the water: speed, comfort, and technology.",
     menu: "Sections",
     details: "Yacht details",
     detailsTitle: "Specifications",
@@ -329,7 +329,7 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 | частная моторная яхта. Короткий первый взгляд на яхту, зоны на борту и жизнь у побережья.",
+    lead: "Sunseeker 76 | частная моторная яхта. Отличный выбор для семейного отдыха и активного образа жизни: скорость, комфорт и технологичность.",
     menu: "Разделы",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
