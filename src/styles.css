@@ -1219,6 +1219,29 @@ h1 {
     padding: 0 15px;
     text-align: center;
   }
+
+  .stage--welcome .zone-menu-button {
+    display: none;
+  }
+
+  .stage--welcome .zone-rail,
+  .is-zone-menu-open .stage--welcome .zone-rail {
+    position: static;
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 0;
+    padding: 4px 0 6px;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 @media (max-width: 759px) {
@@ -1286,8 +1309,12 @@ h1 {
     top: calc(74px + var(--safe-top));
     left: 0;
     right: auto;
+    z-index: 22;
+    display: block;
     width: min(72vw, 292px);
     padding: 12px 20px 13px;
+    opacity: 1;
+    visibility: visible;
   }
 
   .hero-wordmark {
@@ -1344,8 +1371,13 @@ h1 {
     left: 20px;
     right: 0;
     bottom: calc(16px + var(--safe-bottom));
+    z-index: 24;
+    display: grid;
     padding: 4px 20px 6px 0;
     background: transparent;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
   .stage--welcome .zone-menu-button {
