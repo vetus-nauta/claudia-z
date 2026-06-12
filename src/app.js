@@ -11,10 +11,7 @@ const zones = [
   {
     id: "overview",
     media: [
-      localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
-      localMedia("overview", "dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
-      localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
-      localMedia("overview", "dji_0258_1-stage.webp", "dji_0258_1-full.webp", "dji_0258_1-mobile.webp", "48% 52%")
+      localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Overview",
@@ -32,6 +29,10 @@ const zones = [
   {
     id: "exterior",
     media: [
+      localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
+      localMedia("overview", "dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
+      localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
+      localMedia("overview", "dji_0258_1-stage.webp", "dji_0258_1-full.webp", "dji_0258_1-mobile.webp", "48% 52%"),
       localMedia("exterior", "dji_0262-stage.webp", "dji_0262-full.webp", "dji_0262-mobile.webp", "50% 48%"),
       localMedia("exterior", "dji_0266-stage.webp", "dji_0266-full.webp", "dji_0266-mobile.webp", "50% 52%"),
       localMedia("exterior", "dji_0247-stage.webp", "dji_0247-full.webp", "dji_0247-mobile.webp", "50% 52%"),
@@ -273,7 +274,7 @@ const copy = {
   en: {
     eyebrow: "Private yacht presentation",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 combines speed, volume, and maneuverability with quiet family cruising. Designed with taste for comfortable time on board. Built in 2020.",
+    lead: "Sunseeker 76 | Private Motor Yacht. A refined presentation of design, comfort, and performance at sea.",
     menu: "Sections",
     details: "Yacht details",
     detailsTitle: "Specifications",
@@ -296,7 +297,7 @@ const copy = {
   ru: {
     eyebrow: "Закрытая презентация яхты",
     headline: "Claudia Z",
-    lead: "Sunseeker 76 - отличное сочетание скоростных показателей, вместительности и маневренности. Семейная круизная яхта, спроектированная со вкусом для комфортного отдыха. Год постройки 2020.",
+    lead: "Sunseeker 76 | частная моторная яхта. Сдержанная презентация дизайна, комфорта и ходовых качеств на воде.",
     menu: "Разделы",
     details: "Детали яхты",
     detailsTitle: "Спецификация",
@@ -381,6 +382,9 @@ function currentMedia() {
 }
 
 function stageSourceFor(mediaItem) {
+  if (currentZone().id === "overview") {
+    return mediaItem.src;
+  }
   const isMobile = window.matchMedia("(max-width: 759px)").matches;
   return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
 }
@@ -411,6 +415,9 @@ function closeZoneMenu() {
 
 function setMediaIndex(index) {
   const zone = currentZone();
+  if (zone.media.length < 2) {
+    return;
+  }
   state.mediaIndex = (index + zone.media.length) % zone.media.length;
   document.body.classList.remove("is-media-surfacing");
   window.requestAnimationFrame(() => {
@@ -488,6 +495,7 @@ function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
+  stage.classList.toggle("stage--welcome", isOverview);
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
   updateStageMedia(selectedMedia, zone[state.lang].title);

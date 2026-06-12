@@ -32,11 +32,11 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Namecheap `public_html` is only a publication target.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
-- The Overview hero now uses a compact top-right welcome masthead with Claudia Z logo, right-aligned Sunseeker mark scaled to feel deliberate, the previous owner-approved description text, and key facts. Description/facts align left inside the masthead. Do not turn it back into a large card/panel over the four overview photos.
+- The Overview route is now the one-screen Welcome Hall from the 2026-06-12 Drive handoff: no header/footer, no CTA clutter, Claudia Z logo and short HTML-derived main text on the left, Sunseeker as a separate top-right builder mark, contained yacht image on the right, and yacht-zone navigation along the bottom. Do not turn it back into a photo slideshow, top-right masthead, or large card/panel.
 - Internal zones must not repeat `Claudia Z` as the visible stage title. Their concise copy and details live in the top-right glass info popup, keeping zone media clean.
 - Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
 - Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
-- Narrow viewports use a compact hamburger-style zone menu with the current zone label. The full zone list opens as a scrollable panel above the command bar. Do not reintroduce a long horizontal zone rail that runs off screen.
+- Narrow Welcome Hall viewports use a compact horizontal bottom zone rail per the Drive handoff. Non-welcome gallery zones may still use the compact menu behavior if needed, but the first screen must show zone navigation without opening an extra panel.
 - Top controls (`Yacht details` and theme) intentionally match the lower navigation field: straight glass bar, hairline borders, restrained text/icon states, no separate pill/capsule styling.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
@@ -53,7 +53,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Prototype zone viewing now supports multi-image sequences, previous/next controls, keyboard arrows, and mobile swipe.
 - Mobile gallery behavior: no visible previous/next photo buttons; use horizontal swipe plus a minimal hint, with tap on free photo area for optimized full-size opening.
 - Vertical/mobile derivatives must preserve yacht geometry and fill remaining space with color/tone-matched background extension so the frame feels complete vertically.
-- Overview / General Plans now uses approved real derivatives from owner-provided Drive photos: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
+- Overview / Welcome Hall uses one static contained yacht image: `DJI_0266_1`. The former four-photo overview sequence (`DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`) has been merged into the `Exterior` gallery so the main screen no longer cycles general views. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
 - Exterior now uses approved real derivatives from owner-provided Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`. `DJI_0247` is intentionally retained as a distant scenic candidate with careful gentle zoom/crop. Hold/reject decisions are recorded in `docs/CURRENT_STATE.md`.
 - Flybridge now uses approved real derivatives from DJI folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC` and GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`. The user's `1230-P1999658` was resolved to actual Drive filename `130-P1999658.jpg`.
 - Foredeck now uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`. `144-P1999698` is hold/reference; `147-P1477682` is rejected from the main Foredeck sequence. `160-P1477679` is the bow rail / anchorage detail closer.
@@ -89,7 +89,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - No white logo cards inside dark information panels; use integrated transparent marks.
 - No school-like mobile photo navigation buttons; mobile galleries use iPhone-style swipe behavior.
 - No constructor-like pill navigation, oversized CTA blocks, or school-like gallery arrows. Use text tabs, hairlines, quiet state changes, and restrained controls.
-- No long non-adaptive bottom menu at narrow widths. Use the compact section menu.
+- No hidden first-screen navigation on mobile Welcome Hall. Use a compact horizontal bottom zone rail; keep it visually restrained and scrollable.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
 - Do not allow inactive-language flash during initialization.

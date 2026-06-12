@@ -47,7 +47,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Static frontend in `index.html`, `src/app.js`, `src/styles.css`.
 - Theme switcher exists.
 - Stage uses `localMedia(folder, stage, full, mobile, focus)`.
-- Overview has a compact top-right welcome masthead: yacht logo, Sunseeker mark scaled close enough to feel intentional, owner-approved previous description text, and key facts. The description/facts align left inside the masthead; logos align right. It must not use a large card/panel or block the four overview photos.
+- Overview is the one-screen Welcome Hall from the 2026-06-12 Drive handoff: Claudia Z logo plus short HTML-derived main text on the left, Sunseeker as a separate top-right builder mark, one contained full-yacht image on the right, and bottom zone navigation. It must not be a four-photo slideshow, top-right masthead, card, or text panel over photography.
 - Internal zones do not keep permanent text over the media surface; their details remain in the top-right glass info popup so zone photos stay primary.
 - Yacht information now opens from the compact top-right glass trigger into a semi-transparent glass popup pinned to the upper-right corner.
 - The info trigger uses a restrained animated cue; keep motion soft, premium, and non-playful.
@@ -58,7 +58,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Top controls (`Yacht details` and theme) must follow the same visual system as the bottom zone navigation: straight glass bar, hairline borders, quiet active/hover states, no rounded pill capsules.
 - Details sheet includes transparent Sunseeker mark and specs.
 - Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo.
-- Text placement: Overview carries the welcome hall copy. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.
+- Text placement: Overview carries only the short Welcome Hall copy from the supplied HTML direction. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.
 - Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
 
 ## WordPress Source Text Mapping
@@ -91,7 +91,12 @@ Old WordPress XML text is source material for facts only, not wording or layout.
 
 ## Approved Real Media
 
-Overview / General Plans, `assets/media/overview/`:
+Overview / Welcome Hall, `assets/media/overview/`:
+
+- Active first-screen image: `DJI_0266_1` only.
+- Former overview sequence `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1` has been merged into `Exterior`; do not restore cycling general views on the main screen.
+
+Former General Plans source notes:
 
 - Order: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`.
 - Rejected main overview: `DJI_0257_1`.

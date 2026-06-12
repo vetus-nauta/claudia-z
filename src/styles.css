@@ -112,6 +112,20 @@ button {
   min-height: 100dvh;
   isolation: isolate;
   overflow: hidden;
+  background: var(--page);
+}
+
+.stage--welcome {
+  min-height: 100svh;
+  background:
+    radial-gradient(880px 560px at 70% 48%, rgba(55, 139, 166, 0.18), transparent 64%),
+    linear-gradient(110deg, #02070c 0%, #06111a 42%, #0a2430 100%);
+}
+
+:root[data-theme="light"] .stage--welcome {
+  background:
+    radial-gradient(880px 560px at 76% 48%, rgba(46, 130, 168, 0.16), transparent 64%),
+    linear-gradient(110deg, #fffaf1 0%, #f6f1e8 45%, #e8f4f8 100%);
 }
 
 .stage__media {
@@ -128,6 +142,22 @@ button {
   user-select: none;
   pointer-events: none;
   transition: opacity 240ms ease, filter 320ms ease, transform 420ms ease;
+}
+
+.stage--welcome .stage__media {
+  inset: auto clamp(28px, 3.8vw, 70px) calc(124px + var(--safe-bottom)) auto;
+  z-index: 2;
+  width: min(60vw, 1040px);
+  height: min(64vh, 660px);
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  transform: rotate(-0.35deg);
+  filter: drop-shadow(0 34px 46px rgba(0, 0, 0, 0.48)) saturate(1.03) contrast(1.03);
+}
+
+:root[data-theme="light"] .stage--welcome .stage__media {
+  filter: drop-shadow(0 28px 42px rgba(56, 74, 78, 0.2)) saturate(1.02) contrast(0.98);
 }
 
 .stage__media.is-loading {
@@ -196,6 +226,19 @@ button {
   background: var(--scrim);
 }
 
+.stage--welcome .stage__scrim {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(2, 7, 12, 0.88), rgba(2, 7, 12, 0.46) 31%, rgba(2, 7, 12, 0.03) 66%),
+    linear-gradient(180deg, rgba(2, 7, 12, 0.2), rgba(2, 7, 12, 0.03) 45%, rgba(2, 7, 12, 0.34));
+}
+
+:root[data-theme="light"] .stage--welcome .stage__scrim {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 241, 0.9), rgba(255, 250, 241, 0.55) 32%, rgba(255, 250, 241, 0.04) 68%),
+    linear-gradient(180deg, rgba(255, 250, 241, 0.22), rgba(255, 250, 241, 0.03) 48%, rgba(255, 250, 241, 0.26));
+}
+
 .topbar {
   position: fixed;
   top: 0;
@@ -208,6 +251,10 @@ button {
   gap: 12px;
   padding: calc(12px + var(--safe-top)) 14px 10px;
   pointer-events: none;
+}
+
+.stage--welcome .topbar {
+  justify-content: flex-start;
 }
 
 .controls {
@@ -364,10 +411,33 @@ button {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
+.stage--welcome .stage__content {
+  top: clamp(150px, 22vh, 255px);
+  right: auto;
+  left: clamp(30px, 4.6vw, 76px);
+  width: min(42vw, 620px);
+  max-height: none;
+  color: var(--ink);
+  text-align: left;
+  text-shadow: var(--welcome-shadow);
+}
+
+.stage--welcome .stage__content--overview {
+  transform: none;
+}
+
+.stage--welcome .stage__content::before {
+  display: none;
+}
+
 .hero-wordmark {
   display: none;
-  width: min(190px, 54vw);
-  margin: 0 0 6px auto;
+  width: min(390px, 39vw);
+  margin: 0 0 0;
+}
+
+.stage--welcome .hero-wordmark {
+  width: min(390px, 39vw);
 }
 
 .stage__content--overview .hero-wordmark {
@@ -398,9 +468,22 @@ button {
   display: inline-flex;
 }
 
+.stage--welcome .stage-builder-mark {
+  position: fixed;
+  top: calc(28px + var(--safe-top));
+  right: clamp(24px, 4vw, 68px);
+  z-index: 21;
+  width: min(210px, 28vw);
+  margin: 0;
+}
+
 .stage-builder-mark .sunseeker-mark {
-  width: min(170px, 48vw);
+  width: 100%;
   opacity: 0.82;
+}
+
+.stage--welcome .eyebrow {
+  display: none;
 }
 
 :root[data-theme="dark"] .sunseeker-mark--on-light,
@@ -424,6 +507,29 @@ button {
   display: none;
 }
 
+:root[data-theme="light"] .stage__content .claudia-wordmark--on-dark,
+:root[data-theme="light"] .stage__content .sunseeker-mark--on-dark,
+:root[data-theme="light"] .sheet .claudia-wordmark--on-dark,
+:root[data-theme="light"] .sheet .sunseeker-mark--on-dark {
+  display: none;
+}
+
+:root[data-theme="light"] .stage__content .claudia-wordmark--on-light,
+:root[data-theme="light"] .stage__content .sunseeker-mark--on-light,
+:root[data-theme="light"] .sheet .claudia-wordmark--on-light,
+:root[data-theme="light"] .sheet .sunseeker-mark--on-light {
+  display: block;
+}
+
+.stage--welcome .hero-wordmark::after {
+  content: "";
+  display: block;
+  width: 92px;
+  height: 1px;
+  margin: 34px 0 0;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: rgba(215, 183, 120, 0.96);
@@ -444,13 +550,21 @@ h1 {
 }
 
 .lead {
-  max-width: 16.5rem;
-  margin: 12px 0 0;
+  max-width: 32rem;
+  margin: 30px 0 0;
   color: rgba(247, 242, 232, 0.8);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.36;
+  font-size: clamp(18px, 1.55vw, 27px);
+  font-weight: 330;
+  line-height: 1.43;
   text-align: left;
+}
+
+.stage--welcome .lead {
+  max-width: 24rem;
+}
+
+:root[data-theme="light"] .lead {
+  color: rgba(25, 35, 38, 0.68);
 }
 
 .stage-zone-detail {
@@ -478,6 +592,10 @@ h1 {
   border-bottom: 1px solid var(--hairline);
   width: fit-content;
   max-width: 100%;
+}
+
+.stage--welcome .quickfacts {
+  display: none;
 }
 
 .quickfacts span {
@@ -573,6 +691,11 @@ h1 {
   animation: hintPulse 3200ms ease-in-out infinite;
   transition: opacity 180ms ease;
   pointer-events: none;
+}
+
+.stage--welcome .media-stepper,
+.stage--welcome .swipe-hint {
+  display: none;
 }
 
 .is-details-open .swipe-hint,
@@ -955,6 +1078,13 @@ h1 {
 }
 
 @media (max-width: 1119px) {
+  .stage--welcome .stage__media {
+    right: -10px;
+    bottom: calc(126px + var(--safe-bottom));
+    width: min(66vw, 860px);
+    height: min(62vh, 560px);
+  }
+
   .command {
     grid-template-columns: minmax(0, 1fr);
     align-items: end;
@@ -1008,6 +1138,51 @@ h1 {
     display: none;
   }
 
+  .stage--welcome {
+    min-height: 100svh;
+    background: linear-gradient(160deg, #02070c 0%, #06111a 44%, #0a2a3b 100%);
+  }
+
+  :root[data-theme="light"] .stage--welcome {
+    background: linear-gradient(160deg, #fffaf2 0%, #f6f1e8 45%, #eaf5f8 100%);
+  }
+
+  .stage--welcome .topbar {
+    max-width: calc(100vw - 128px);
+    padding-top: calc(14px + var(--safe-top));
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .stage--welcome .controls {
+    min-height: 38px;
+  }
+
+  .stage--welcome .info-trigger {
+    height: 36px;
+    padding: 0 10px;
+  }
+
+  .stage--welcome .info-trigger__hint {
+    font-size: 10px;
+  }
+
+  .stage--welcome .theme-button {
+    width: 38px;
+    height: 36px;
+  }
+
+  .stage--welcome .stage__media {
+    top: 42svh;
+    right: 10px;
+    bottom: auto;
+    left: 26px;
+    width: calc(100vw - 36px);
+    height: auto;
+    max-width: calc(100vw - 36px);
+    max-height: 32svh;
+  }
+
   .stage__content {
     top: calc(68px + var(--safe-top));
     right: 14px;
@@ -1018,14 +1193,43 @@ h1 {
     padding: 0;
   }
 
+  .stage--welcome .stage__content {
+    top: calc(124px + var(--safe-top));
+    left: 24px;
+    right: 22px;
+    width: auto;
+  }
+
   .hero-wordmark {
     width: min(158px, 42vw);
+  }
+
+  .stage--welcome .hero-wordmark {
+    width: min(70vw, 330px);
+  }
+
+  .stage--welcome .hero-wordmark::after {
+    width: 74px;
+    margin-top: 20px;
+  }
+
+  .stage--welcome .stage-builder-mark {
+    top: calc(21px + var(--safe-top));
+    right: 18px;
+    width: min(104px, 28vw);
   }
 
   .lead {
     max-width: 13.5rem;
     font-size: 11px;
     line-height: 1.32;
+  }
+
+  .stage--welcome .lead {
+    max-width: 315px;
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 1.45;
   }
 
   .quickfacts {
@@ -1046,9 +1250,61 @@ h1 {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .stage--welcome .command {
+    padding-bottom: calc(12px + var(--safe-bottom));
+  }
+
+  .stage--welcome .zone-menu-button {
+    display: none;
+  }
+
+  .stage--welcome .zone-rail {
+    position: static;
+    display: flex;
+    grid-template-columns: none;
+    gap: 18px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 0;
+    padding: 0 0 5px;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .zone-rail {
     grid-template-columns: 1fr;
     max-height: min(38dvh, 320px);
+  }
+}
+
+@media (max-height: 760px) and (max-width: 759px) {
+  .stage--welcome .stage__content {
+    top: calc(104px + var(--safe-top));
+  }
+
+  .stage--welcome .hero-wordmark {
+    width: min(58vw, 300px);
+  }
+
+  .stage--welcome .hero-wordmark::after {
+    margin-top: 16px;
+  }
+
+  .stage--welcome .lead {
+    max-width: 300px;
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.38;
+  }
+
+  .stage--welcome .stage__media {
+    top: 41svh;
+    max-height: 30svh;
   }
 }
 
