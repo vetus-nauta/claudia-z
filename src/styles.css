@@ -35,7 +35,7 @@
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
   --welcome-text-ink: #fff8ec;
   --welcome-text-soft: rgba(255, 248, 236, 0.78);
-  --welcome-local-glass: linear-gradient(90deg, rgba(5, 9, 11, 0.24), rgba(5, 9, 11, 0.08) 68%, rgba(5, 9, 11, 0));
+  --welcome-local-glass: linear-gradient(104deg, rgba(5, 9, 11, 0.58), rgba(5, 9, 11, 0.42) 58%, rgba(5, 9, 11, 0.08) 82%, rgba(5, 9, 11, 0));
   --radius: 8px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -78,8 +78,8 @@
   --nav-popover-bg: rgba(250, 250, 244, 0.94);
   --shadow: 0 28px 80px rgba(25, 35, 38, 0.18);
   --welcome-text-ink: #10191c;
-  --welcome-text-soft: rgba(16, 25, 28, 0.74);
-  --welcome-local-glass: linear-gradient(90deg, rgba(255, 250, 241, 0.36), rgba(255, 250, 241, 0.14) 68%, rgba(255, 250, 241, 0));
+  --welcome-text-soft: rgba(12, 19, 21, 0.88);
+  --welcome-local-glass: linear-gradient(104deg, rgba(255, 252, 246, 0.82), rgba(255, 252, 246, 0.58) 58%, rgba(255, 252, 246, 0.16) 82%, rgba(255, 252, 246, 0));
 }
 
 * {
@@ -270,38 +270,38 @@ button {
 .controls {
   display: flex;
   align-items: center;
-  gap: 0;
-  min-height: 42px;
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  background: var(--top-control-bg);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
+  gap: 10px;
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
   pointer-events: auto;
 }
 
 .info-trigger,
 .theme-button {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+  border: 1px solid var(--line);
+  background: var(--zone-card-bg);
+  box-shadow: var(--zone-card-shadow);
+  backdrop-filter: blur(18px) saturate(1.04);
   pointer-events: auto;
   position: relative;
-  height: 40px;
+  min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0;
+  border-radius: 999px;
   color: var(--ink);
   cursor: pointer;
-  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .info-trigger {
   width: auto;
   min-width: 0;
-  padding: 0 14px;
-  gap: 8px;
+  padding: 0 17px;
+  gap: 10px;
   overflow: hidden;
 }
 
@@ -314,7 +314,7 @@ button {
   position: absolute;
   left: 14px;
   right: 14px;
-  bottom: 7px;
+  bottom: 8px;
   height: 1px;
   background: currentColor;
   opacity: 0;
@@ -326,8 +326,10 @@ button {
 
 .info-trigger:hover,
 .info-trigger[aria-expanded="true"] {
+  border-color: var(--accent);
   color: var(--accent);
-  background: rgba(215, 183, 120, 0.08);
+  background: var(--zone-card-bg);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), var(--zone-card-shadow);
 }
 
 .info-trigger[aria-expanded="true"]::before {
@@ -359,13 +361,14 @@ button {
 }
 
 .theme-button {
-  width: 42px;
-  border-left: 1px solid var(--hairline);
+  width: 46px;
+  min-width: 46px;
 }
 
 .theme-button:hover {
+  border-color: var(--accent);
   color: var(--accent);
-  background: rgba(215, 183, 120, 0.08);
+  background: var(--zone-card-bg);
 }
 
 .theme-button:active {
@@ -574,6 +577,7 @@ h1 {
   max-width: 23rem;
   color: var(--welcome-text-soft);
   font-size: clamp(16px, 1.35vw, 21px);
+  font-weight: 420;
   line-height: 1.46;
 }
 
@@ -1241,12 +1245,13 @@ h1 {
   }
 
   .stage--welcome .controls {
+    gap: 8px;
     min-height: 38px;
   }
 
   .stage--welcome .info-trigger {
-    height: 36px;
-    padding: 0 10px;
+    min-height: 38px;
+    padding: 0 12px;
   }
 
   .stage--welcome .info-trigger__hint {
@@ -1255,7 +1260,8 @@ h1 {
 
   .stage--welcome .theme-button {
     width: 38px;
-    height: 36px;
+    min-width: 38px;
+    min-height: 38px;
   }
 
   .stage--welcome .stage__media {
