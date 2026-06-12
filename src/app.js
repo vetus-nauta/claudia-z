@@ -396,6 +396,7 @@ const state = {
   zoneId: "overview",
   mediaIndex: 0,
   mediaRequestId: 0,
+  lightboxRequestId: 0,
   isDragging: false,
   dragStartX: 0,
   dragStartY: 0
@@ -627,10 +628,23 @@ function toggleLightbox(force) {
   if (shouldOpen && currentZone().id === "overview") {
     return;
   }
+  state.lightboxRequestId += 1;
   if (shouldOpen) {
+    const nextRequestId = state.lightboxRequestId;
     const selectedMedia = currentMedia();
-    lightboxImage.src = selectedMedia.fullSrc || selectedMedia.src;
+    const previewSrc = stageSourceFor(selectedMedia);
+    const fullSrc = selectedMedia.fullSrc || previewSrc;
+    lightboxImage.src = previewSrc;
     lightboxImage.alt = currentZone()[state.lang].title;
+    if (fullSrc !== previewSrc) {
+      const image = new Image();
+      image.onload = () => {
+        if (state.lightboxRequestId === nextRequestId && mediaLightbox.classList.contains("is-open")) {
+          lightboxImage.src = fullSrc;
+        }
+      };
+      image.src = fullSrc;
+    }
   }
   mediaLightbox.classList.toggle("is-open", shouldOpen);
   mediaLightbox.setAttribute("aria-hidden", shouldOpen ? "false" : "true");

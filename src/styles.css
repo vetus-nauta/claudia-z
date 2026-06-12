@@ -14,16 +14,16 @@
   --command-panel: rgba(8, 11, 12, 0.5);
   --zone-card-bg: rgba(8, 17, 25, 0.54);
   --zone-card-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
-  --sheet-bg: rgba(13, 17, 19, 0.62);
+  --sheet-bg: rgba(13, 17, 19, 0.9);
   --sheet-border: rgba(246, 241, 232, 0.22);
   --welcome-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-  --scrim: linear-gradient(180deg, rgba(7, 10, 12, 0.22), rgba(7, 10, 12, 0.02) 42%, rgba(7, 10, 12, 0.34) 100%);
+  --scrim: none;
   --panel-solid: #121619;
   --accent: #d7b778;
   --accent-ink: #16120b;
   --active-control-ink: #0d1113;
   --sea: #6eb0bf;
-  --media-filter: brightness(0.92) saturate(1) contrast(1);
+  --media-filter: none;
   --control-hover: rgba(8, 11, 12, 0.5);
   --step-bg: rgba(8, 11, 12, 0.16);
   --step-hover-bg: rgba(8, 11, 12, 0.28);
@@ -40,7 +40,7 @@
   --welcome-control-shadow: 0 14px 28px rgba(0, 0, 0, 0.34);
   --welcome-text-ink: #fff8ec;
   --welcome-text-soft: rgba(255, 248, 236, 0.78);
-  --welcome-local-glass: rgba(7, 11, 13, 0.62);
+  --welcome-local-glass: linear-gradient(104deg, rgba(5, 9, 11, 0.58), rgba(5, 9, 11, 0.42) 58%, rgba(5, 9, 11, 0.08) 82%, rgba(5, 9, 11, 0));
   --radius: 8px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -63,10 +63,10 @@
   --command-panel: rgba(250, 248, 239, 0.7);
   --zone-card-bg: rgba(255, 250, 242, 0.66);
   --zone-card-shadow: 0 14px 28px rgba(63, 49, 34, 0.12);
-  --sheet-bg: rgba(250, 248, 239, 0.74);
+  --sheet-bg: rgba(250, 248, 239, 0.92);
   --sheet-border: rgba(25, 35, 38, 0.2);
   --welcome-shadow: 0 1px 14px rgba(255, 255, 255, 0.42);
-  --scrim: linear-gradient(180deg, rgba(246, 247, 244, 0.12), rgba(246, 247, 244, 0.02) 42%, rgba(246, 247, 244, 0.2) 100%);
+  --scrim: none;
   --panel-solid: #f7f5ee;
   --accent: #8d6b2f;
   --accent-ink: #fff8e8;
@@ -89,7 +89,7 @@
   --welcome-control-shadow: 0 14px 28px rgba(8, 20, 24, 0.18);
   --welcome-text-ink: #10191c;
   --welcome-text-soft: rgba(12, 19, 21, 0.88);
-  --welcome-local-glass: rgba(246, 247, 244, 0.78);
+  --welcome-local-glass: linear-gradient(104deg, rgba(255, 252, 246, 0.82), rgba(255, 252, 246, 0.58) 58%, rgba(255, 252, 246, 0.16) 82%, rgba(255, 252, 246, 0));
 }
 
 * {
@@ -139,7 +139,6 @@ button {
 .stage--welcome {
   min-height: 100svh;
   background-color: #071115;
-  background-image: url("../assets/media/overview/dji_0279-stage.webp");
   background-position: center;
   background-size: cover;
 }
@@ -181,24 +180,16 @@ button {
 }
 
 .stage__media.is-loading {
-  opacity: 0.8;
-  filter: saturate(0.92) brightness(0.86);
+  opacity: 1;
+  filter: none;
 }
 
 .stage::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  z-index: -1;
-  height: 48%;
-  background: radial-gradient(ellipse at 50% 82%, rgba(215, 183, 120, 0.14), rgba(215, 183, 120, 0) 62%);
-  opacity: 0.18;
-  pointer-events: none;
-  transition: opacity 260ms ease;
+  content: none;
 }
 
 .is-media-surfacing .stage::after {
-  opacity: 0.28;
+  opacity: 0;
 }
 
 .media-guard {
@@ -219,12 +210,12 @@ button {
 
 .stage--welcome .stage__scrim {
   z-index: 1;
-  background: linear-gradient(180deg, rgba(3, 8, 10, 0.04), rgba(3, 8, 10, 0) 48%, rgba(3, 8, 10, 0.18));
+  background: none;
   pointer-events: none;
 }
 
 :root[data-theme="light"] .stage--welcome .stage__scrim {
-  background: linear-gradient(180deg, rgba(246, 247, 244, 0.1), rgba(246, 247, 244, 0) 48%, rgba(246, 247, 244, 0.16));
+  background: none;
 }
 
 .topbar {
@@ -461,6 +452,12 @@ button {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
+.stage:not(.stage--welcome) .stage__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
 .stage--welcome .stage__content {
   top: clamp(132px, 18vh, 206px);
   right: auto;
@@ -504,15 +501,19 @@ button {
   max-height: min(17vh, 112px);
   object-fit: contain;
   object-position: right center;
-  filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.32));
+  filter: none;
   pointer-events: none;
   user-select: none;
 }
 
 .stage-builder-mark {
-  display: none;
+  position: fixed;
+  display: inline-flex;
   align-items: center;
   justify-content: flex-end;
+  top: calc(19px + var(--safe-top));
+  right: clamp(24px, 4.2vw, 72px);
+  z-index: 21;
   width: fit-content;
   margin: 2px 0 0 auto;
 }
@@ -522,23 +523,31 @@ button {
 }
 
 .stage--welcome .stage-builder-mark {
-  position: fixed;
   display: inline-flex;
-  top: calc(19px + var(--safe-top));
-  right: clamp(24px, 4.2vw, 72px);
-  z-index: 21;
   width: min(148px, 16vw);
   margin: 0;
 }
 
 .stage-builder-mark .sunseeker-mark {
   width: 100%;
-  opacity: 0.78;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.24));
+  opacity: 0.86;
+  filter: none;
 }
 
 .stage--welcome .eyebrow {
   display: none;
+}
+
+.is-details-open .info-trigger {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.is-details-open .stage-builder-mark {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 :root[data-theme="dark"] .sunseeker-mark--on-light,
@@ -766,7 +775,7 @@ h1 {
   display: grid;
   place-items: center;
   padding: calc(18px + var(--safe-top)) 14px calc(18px + var(--safe-bottom));
-  background: rgba(5, 8, 9, 0.94);
+  background: var(--page);
   opacity: 0;
   pointer-events: none;
   transition: opacity 220ms ease;
@@ -1043,15 +1052,16 @@ h1 {
 }
 
 .sheet-identity {
-  display: none;
+  display: block;
   width: min(260px, 68vw);
-  margin: -3px 0 16px;
+  margin: -3px auto 18px;
 }
 
 .sheet.sheet--overview .sheet-identity {
   display: block;
 }
 
+.sheet .builder-mark,
 .sheet.sheet--overview .builder-mark {
   display: none;
 }
@@ -1334,7 +1344,6 @@ h1 {
 
   .stage--welcome {
     min-height: 100svh;
-    background-image: url("../assets/media/overview/dji_0279-mobile.webp");
     background-position: center;
     background-size: cover;
   }
@@ -1613,7 +1622,7 @@ h1 {
   }
 }
 
-.is-details-open .stage__content {
+.is-details-open .stage .stage__content {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
