@@ -270,6 +270,21 @@ const zones = [
   }
 ];
 
+const zoneIcons = {
+  overview: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M12 4v16M6.5 6.5l11 11M17.5 6.5l-11 11" stroke-width="1.45"/></svg>',
+  exterior: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15c4.5-4.2 11.2-4.5 18-2.2M5 15.4h13.5l2.5-2.8M7 12.2l3.4-3.1h5.2l3.2 3.1M6 17.7h14" stroke-width="1.5"/></svg>',
+  flybridge: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18M8 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0z" stroke-width="1.35"/></svg>',
+  foredeck: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c4 4 6 8 6 12a6 6 0 0 1-12 0c0-4 2-8 6-12zM8 14h8M9.5 17h5" stroke-width="1.5"/></svg>',
+  cockpit: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 11h14v8H5zM7 5h10v6H7zM4 19h16" stroke-width="1.5"/></svg>',
+  aft_swim_platform: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4v11M17 4v11M7 8h10M7 12h10M4 18c2 2 4 2 6 0s4-2 6 0 4 2 6 0" stroke-width="1.5"/></svg>',
+  tender: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 14h16l-2.5 4H7L4 14zM7 14l2-4h6l2 4M9 10V6h6v4" stroke-width="1.5"/></svg>',
+  saloon: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4M4 13h16v6H4zM7 19v2M17 19v2" stroke-width="1.5"/></svg>',
+  master_cabin: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10h16v8M4 18V7M20 18v-5a3 3 0 0 0-3-3H4M7 10V8h5v2" stroke-width="1.5"/></svg>',
+  forward_vip: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18 6 8l5 5 5-8 2 8 2-5v10H4zM4 21h16" stroke-width="1.45"/></svg>',
+  starboard_guest: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16.5 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 21a5 5 0 0 1 10 0M12.5 21a4.5 4.5 0 0 1 8.5 0" stroke-width="1.45"/></svg>',
+  port_guest: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM16.5 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 21a5 5 0 0 1 10 0M12.5 21a4.5 4.5 0 0 1 8.5 0" stroke-width="1.45"/></svg>'
+};
+
 const copy = {
   en: {
     eyebrow: "Private yacht presentation",
@@ -432,7 +447,13 @@ function renderRail() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `zone-button${zone.id === state.zoneId ? " is-active" : ""}`;
-    button.textContent = zone[state.lang].label;
+    const icon = document.createElement("span");
+    icon.className = "zone-button__icon";
+    icon.innerHTML = zoneIcons[zone.id] || zoneIcons.overview;
+    const label = document.createElement("span");
+    label.className = "zone-button__label";
+    label.textContent = zone[state.lang].label;
+    button.append(icon, label);
     button.addEventListener("click", () => setZone(zone.id));
     rail.append(button);
   });

@@ -12,6 +12,8 @@
   --top-control-bg: rgba(8, 11, 12, 0.34);
   --command-bg: linear-gradient(180deg, rgba(8, 11, 12, 0), rgba(8, 11, 12, 0.78) 20%, rgba(8, 11, 12, 0.92));
   --command-panel: rgba(8, 11, 12, 0.5);
+  --zone-card-bg: rgba(8, 17, 25, 0.54);
+  --zone-card-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
   --sheet-bg: rgba(13, 17, 19, 0.62);
   --sheet-border: rgba(246, 241, 232, 0.22);
   --welcome-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
@@ -54,6 +56,8 @@
   --top-control-bg: rgba(250, 248, 239, 0.72);
   --command-bg: linear-gradient(180deg, rgba(250, 250, 244, 0), rgba(248, 247, 239, 0.68) 26%, rgba(248, 247, 239, 0.9));
   --command-panel: rgba(250, 248, 239, 0.7);
+  --zone-card-bg: rgba(255, 250, 242, 0.66);
+  --zone-card-shadow: 0 14px 28px rgba(63, 49, 34, 0.12);
   --sheet-bg: rgba(250, 248, 239, 0.74);
   --sheet-border: rgba(25, 35, 38, 0.2);
   --welcome-shadow: 0 1px 14px rgba(255, 255, 255, 0.42);
@@ -768,14 +772,18 @@ h1 {
 }
 
 .stage--welcome .command {
-  left: clamp(18px, 4vw, 56px);
-  right: clamp(18px, 4vw, 56px);
-  bottom: calc(18px + var(--safe-bottom));
-  padding: 12px 14px 10px;
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  background: var(--command-panel);
-  backdrop-filter: blur(18px) saturate(1.05);
+  left: clamp(24px, 3.9vw, 64px);
+  right: clamp(24px, 3.9vw, 64px);
+  bottom: calc(26px + var(--safe-bottom));
+  padding: 4px 0 6px;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.stage--welcome .zone-rail {
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 34px), transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 34px), transparent 100%);
 }
 
 .is-details-open .command {
@@ -792,9 +800,11 @@ h1 {
 
 .zone-rail {
   display: flex;
-  gap: 22px;
+  gap: 12px;
   overflow-x: auto;
-  padding: 1px 0 5px;
+  overscroll-behavior-x: contain;
+  padding: 4px 0 6px;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
 
@@ -849,40 +859,66 @@ h1 {
 
 .zone-button {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   flex: 0 0 auto;
-  min-height: 32px;
-  border: 0;
-  border-radius: 0;
-  padding: 5px 0 9px;
-  background: transparent !important;
-  box-shadow: none;
-  backdrop-filter: none;
+  min-width: 116px;
+  min-height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 0 17px;
+  background: var(--zone-card-bg);
+  box-shadow: var(--zone-card-shadow);
+  backdrop-filter: blur(18px) saturate(1.04);
   color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 680;
+  letter-spacing: 0.045em;
+  line-height: 1;
+  scroll-snap-align: start;
+  text-transform: uppercase;
   white-space: nowrap;
-  transition: color 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease, background 180ms ease;
 }
 
 .zone-button::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transform: scaleX(0.55);
-  transform-origin: left center;
-  transition: opacity 180ms ease, transform 180ms ease;
+  content: none;
+}
+
+.zone-button:hover {
+  border-color: color-mix(in srgb, var(--accent) 56%, var(--line));
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.zone-button__icon {
+  display: inline-grid;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  place-items: center;
+}
+
+.zone-button__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.zone-button__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .zone-button.is-active {
+  border-color: var(--accent);
   color: var(--accent);
-}
-
-.zone-button.is-active::after {
-  opacity: 1;
-  transform: scaleX(1);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), var(--zone-card-shadow);
 }
 
 .zone-button:active,
@@ -1092,6 +1128,10 @@ h1 {
     left: clamp(24px, 4vw, 56px);
     right: clamp(24px, 4vw, 56px);
     bottom: calc(20px + var(--safe-bottom));
+    padding: 4px 0 6px;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
   }
 
   .media-stepper {
@@ -1172,8 +1212,8 @@ h1 {
 
   .zone-button {
     min-height: 42px;
-    padding: 11px 0 10px;
-    text-align: left;
+    padding: 0 15px;
+    text-align: center;
   }
 }
 
@@ -1295,10 +1335,11 @@ h1 {
   }
 
   .stage--welcome .command {
-    left: 12px;
-    right: 12px;
-    bottom: calc(12px + var(--safe-bottom));
-    padding: 9px 10px 7px;
+    left: 20px;
+    right: 0;
+    bottom: calc(16px + var(--safe-bottom));
+    padding: 4px 20px 6px 0;
+    background: transparent;
   }
 
   .stage--welcome .zone-menu-button {
@@ -1309,18 +1350,45 @@ h1 {
     position: static;
     display: flex;
     grid-template-columns: none;
-    gap: 18px;
+    gap: 12px;
     max-height: none;
     overflow-x: auto;
     overflow-y: hidden;
     border: 0;
-    padding: 0 0 5px;
+    padding: 4px 0 6px;
     background: transparent;
     box-shadow: none;
     transform: none;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+
+  .stage--welcome .zone-button {
+    flex: 0 0 95px;
+    min-width: 95px;
+    min-height: 104px;
+    flex-direction: column;
+    gap: 9px;
+    border-radius: 20px;
+    padding: 10px 8px;
+    font-size: 10px;
+    line-height: 1.16;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .stage--welcome .zone-button__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stage--welcome .zone-button__label {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: clip;
   }
 
   .zone-rail {
