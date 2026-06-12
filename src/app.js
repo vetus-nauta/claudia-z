@@ -550,6 +550,9 @@ function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
+  if (isOverview) {
+    toggleLightbox(false);
+  }
   stage.classList.toggle("stage--welcome", isOverview);
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
@@ -583,6 +586,9 @@ function toggleSheet(sheet, force) {
 
 function toggleLightbox(force) {
   const shouldOpen = typeof force === "boolean" ? force : !mediaLightbox.classList.contains("is-open");
+  if (shouldOpen && currentZone().id === "overview") {
+    return;
+  }
   if (shouldOpen) {
     const selectedMedia = currentMedia();
     lightboxImage.src = selectedMedia.fullSrc || selectedMedia.src;
