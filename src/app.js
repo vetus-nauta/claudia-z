@@ -292,6 +292,17 @@ const copy = {
     lead: "Sunseeker 76 | Private Motor Yacht. A strong choice for family time and an active life on the water: speed, comfort, and technology.",
     menu: "Sections",
     details: "Yacht details",
+    theme: "Theme",
+    switchToDark: "Switch to dark theme",
+    switchToLight: "Switch to light theme",
+    presentationAria: "Private yacht presentation",
+    controlsAria: "Presentation controls",
+    keyFactsAria: "Key facts",
+    mediaControlsAria: "Media controls",
+    zonesAria: "Yacht zones",
+    detailsDialogAria: "Yacht details",
+    close: "Close",
+    mediaViewerAria: "Media viewer",
     detailsTitle: "Specifications",
     model: "Model",
     year: "Year",
@@ -332,6 +343,17 @@ const copy = {
     lead: "Sunseeker 76 | частная моторная яхта. Отличный выбор для семейного отдыха и активного образа жизни: скорость, комфорт и технологичность.",
     menu: "Разделы",
     details: "Детали яхты",
+    theme: "Тема",
+    switchToDark: "Переключить на темную тему",
+    switchToLight: "Переключить на светлую тему",
+    presentationAria: "Закрытая презентация яхты",
+    controlsAria: "Управление презентацией",
+    keyFactsAria: "Ключевые данные",
+    mediaControlsAria: "Управление фотографиями",
+    zonesAria: "Зоны яхты",
+    detailsDialogAria: "Детали яхты",
+    close: "Закрыть",
+    mediaViewerAria: "Просмотр фотографий",
     detailsTitle: "Спецификация",
     model: "Модель",
     year: "Год",
@@ -443,7 +465,7 @@ function setTheme(theme) {
   document.documentElement.dataset.theme = state.theme;
   window.localStorage.setItem("claudia-z-theme", state.theme);
   themeButton.setAttribute("aria-pressed", state.theme === "light" ? "true" : "false");
-  themeButton.setAttribute("aria-label", state.theme === "light" ? "Switch to dark theme" : "Switch to light theme");
+  themeButton.setAttribute("aria-label", state.theme === "light" ? copy[state.lang].switchToDark : copy[state.lang].switchToLight);
 }
 
 function setZone(zoneId) {

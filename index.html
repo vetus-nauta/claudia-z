@@ -11,18 +11,19 @@
   </head>
   <body>
     <main class="presentation" aria-live="polite">
-      <section class="stage" aria-label="Private yacht presentation">
+      <section class="stage" data-i18n-aria="presentationAria">
         <img class="stage__media" id="zoneMedia" src="assets/media/overview/dji_0279-stage.webp" alt="" decoding="async" fetchpriority="high" draggable="false">
         <div class="media-guard" id="mediaGuard" aria-hidden="true"></div>
         <div class="stage__scrim" aria-hidden="true"></div>
 
-        <div class="topbar" aria-label="Presentation controls">
+        <div class="topbar" data-i18n-aria="controlsAria">
           <div class="controls">
             <button class="info-trigger" type="button" id="detailsButton" aria-expanded="false" aria-controls="detailsSheet">
               <span class="info-trigger__mark" aria-hidden="true">i</span>
               <span class="info-trigger__hint" data-i18n="details"></span>
             </button>
-            <button class="theme-button" type="button" id="themeButton" aria-label="Switch theme" aria-pressed="false">
+            <button class="theme-button" type="button" id="themeButton" aria-pressed="false">
+              <span class="theme-button__label" data-i18n="theme"></span>
               <span class="theme-button__icon" aria-hidden="true"></span>
             </button>
           </div>
@@ -43,14 +44,14 @@
           <p class="lead" id="stageLead"></p>
           <p class="stage-zone-detail" id="stageZoneDetail"></p>
 
-          <div class="quickfacts" aria-label="Key facts">
+          <div class="quickfacts" data-i18n-aria="keyFactsAria">
             <span data-fact="length"></span>
             <span data-fact="cabins"></span>
             <span data-fact="speed"></span>
           </div>
         </div>
 
-        <div class="media-stepper" aria-label="Media controls">
+        <div class="media-stepper" data-i18n-aria="mediaControlsAria">
           <button class="step-button" type="button" id="prevMediaButton" data-i18n-aria="previousMedia">‹</button>
           <span class="media-stepper__count" id="mediaCounter" aria-live="polite"></span>
           <button class="step-button" type="button" id="nextMediaButton" data-i18n-aria="nextMedia">›</button>
@@ -63,14 +64,14 @@
             <span class="zone-menu-button__icon" aria-hidden="true"></span>
             <span id="currentZoneLabel"></span>
           </button>
-          <nav class="zone-rail" id="zoneRail" aria-label="Yacht zones"></nav>
+          <nav class="zone-rail" id="zoneRail" data-i18n-aria="zonesAria"></nav>
         </div>
       </section>
 
-      <aside class="sheet" id="detailsSheet" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Yacht details">
+      <aside class="sheet" id="detailsSheet" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-aria="detailsDialogAria">
         <div class="sheet__bar">
           <strong data-i18n="detailsTitle"></strong>
-          <button class="icon-button" type="button" data-close="details" aria-label="Close">×</button>
+          <button class="icon-button" type="button" data-close="details" data-i18n-aria="close">×</button>
         </div>
         <div class="sheet-identity" aria-hidden="true">
           <img class="claudia-wordmark claudia-wordmark--on-dark" src="assets/brand/claudia-z-logo-on-dark.webp" alt="" draggable="false">
@@ -109,8 +110,8 @@
         </div>
       </aside>
 
-      <section class="lightbox" id="mediaLightbox" aria-hidden="true" aria-label="Media viewer">
-        <button class="icon-button lightbox__close" type="button" data-close="lightbox" aria-label="Close">×</button>
+      <section class="lightbox" id="mediaLightbox" aria-hidden="true" data-i18n-aria="mediaViewerAria">
+        <button class="icon-button lightbox__close" type="button" data-close="lightbox" data-i18n-aria="close">×</button>
         <img class="lightbox__image" id="lightboxImage" alt="" draggable="false">
       </section>
 
