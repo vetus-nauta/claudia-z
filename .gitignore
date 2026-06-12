@@ -10,6 +10,7 @@
 /private/
 /backups/
 .media-source/
+.wordpress-source/
 *.sql
 *.sql.gz
 *.tar.gz
