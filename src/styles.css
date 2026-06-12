@@ -835,6 +835,12 @@ h1 {
   mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 34px), transparent 100%);
 }
 
+.stage--welcome .zone-button {
+  flex: 0 0 clamp(112px, 10vw, 138px);
+  min-width: 0;
+  padding-inline: 14px;
+}
+
 .is-details-open .command {
   transform: translateY(calc(100% + 18px));
   opacity: 0;
@@ -1472,13 +1478,13 @@ h1 {
   }
 
   .stage--welcome .zone-button {
-    flex: 0 0 95px;
-    min-width: 95px;
-    min-height: 104px;
+    flex: 0 0 104px;
+    min-width: 0;
+    min-height: 116px;
     flex-direction: column;
-    gap: 9px;
+    gap: 10px;
     border-radius: 20px;
-    padding: 10px 8px;
+    padding: 11px 9px;
     font-size: 10px;
     line-height: 1.16;
     text-align: center;
@@ -1486,8 +1492,8 @@ h1 {
   }
 
   .stage--welcome .zone-button__icon {
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
   }
 
   .stage--welcome .zone-button__label {
