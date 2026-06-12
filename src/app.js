@@ -291,7 +291,7 @@ const copy = {
     headline: "Claudia Z",
     lead: "Sunseeker 76 | Private Motor Yacht. A strong choice for family time and an active life on the water: speed, comfort, and technology.",
     menu: "Sections",
-    details: "Yacht details",
+    details: "Zone details",
     theme: "Theme",
     switchToDark: "Switch to dark theme",
     switchToLight: "Switch to light theme",
@@ -300,10 +300,10 @@ const copy = {
     keyFactsAria: "Key facts",
     mediaControlsAria: "Media controls",
     zonesAria: "Yacht zones",
-    detailsDialogAria: "Yacht details",
+    detailsDialogAria: "Zone details",
     close: "Close",
     mediaViewerAria: "Media viewer",
-    detailsTitle: "Specifications",
+    detailsTitle: "Zone details",
     model: "Model",
     year: "Year",
     length: "Length",
@@ -342,7 +342,7 @@ const copy = {
     headline: "Claudia Z",
     lead: "Sunseeker 76 | частная моторная яхта. Отличный выбор для семейного отдыха и активного образа жизни: скорость, комфорт и технологичность.",
     menu: "Разделы",
-    details: "Детали яхты",
+    details: "Детали зоны",
     theme: "Тема",
     switchToDark: "Переключить на темную тему",
     switchToLight: "Переключить на светлую тему",
@@ -351,10 +351,10 @@ const copy = {
     keyFactsAria: "Ключевые данные",
     mediaControlsAria: "Управление фотографиями",
     zonesAria: "Зоны яхты",
-    detailsDialogAria: "Детали яхты",
+    detailsDialogAria: "Детали зоны",
     close: "Закрыть",
     mediaViewerAria: "Просмотр фотографий",
-    detailsTitle: "Спецификация",
+    detailsTitle: "Детали зоны",
     model: "Модель",
     year: "Год",
     length: "Длина",
@@ -598,8 +598,8 @@ function renderZone() {
   updateStageMedia(selectedMedia, zone[state.lang].title);
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   stageLead.textContent = isOverview ? copy[state.lang].lead : zone[state.lang].copy;
-  stageZoneDetail.textContent = isOverview ? "" : zone[state.lang].detail || "";
-  stageZoneDetail.hidden = isOverview || !zone[state.lang].detail;
+  stageZoneDetail.textContent = "";
+  stageZoneDetail.hidden = true;
   currentZoneLabel.textContent = zone[state.lang].label;
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
