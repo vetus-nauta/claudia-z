@@ -6,9 +6,14 @@ Working static prototype in `claudia-z`, with approved media batches, bilingual 
 
 Latest pushed implementation commits:
 
-- `756432e Add adaptive menu and zone stage copy`
-- `7d19ec3 Refine hero branding and premium controls`
-- `881e766 Adapt zone copy with owner-confirmed details`
+- `ada1ea3 Refine welcome top controls`
+- `6f77b24 Fix welcome navigation breakpoint`
+- `cfd45a6 Match controls and welcome text contrast`
+- `2534950 Apply reference zone navigation style`
+- `942ab75 Use provided mobile welcome crop`
+- `016f82d Correct welcome yacht framing`
+- `9827ebd Use DJI 0279 for welcome hall`
+- `3e74e0f Refine welcome hall composition`
 
 ## First Read
 
@@ -33,11 +38,19 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - First UX standard: Interface-Light Media-First with maximum meaningful information and minimum non-meaningful fields.
 - Dark and light theme support is required through one shared visual system and a compact switcher.
 - The Overview route is now the one-screen Welcome Hall from the 2026-06-12 Drive handoff: no header/footer, no CTA clutter, full-screen photographic `DJI_0279` welcome frame, Claudia Z logo and short HTML-derived main text compact on the left, Sunseeker as a separate top-right builder mark, and yacht-zone navigation along the bottom. Do not turn it back into a photo slideshow, top-right masthead, artificial gradient scene, contained cutout yacht, tiny original-scale drone object, or large card/panel.
+- Current local check URL used in review: `http://127.0.0.1:4173/?v=ada1ea3`. Server was running from the repo on port `4173`; if it is gone, restart a simple static server from `/home/alexey/GitHub/claudia-z`.
+- The user caught a real breakpoint bug at about `1009x927`: `max-width:1119px` had kept the old opened grid/popover zone menu over the photo. Commit `6f77b24` fixes Welcome Hall so that this breakpoint uses the same horizontal glass zone rail as desktop/mobile. Do not restore the old two-column popover on the Welcome Hall.
+- Welcome top controls were redesigned in `ada1ea3`: `Детали яхты` is now a rounded rectangle, the theme control is a readable switch with `ТЕМА`, and both functions align horizontally with the Sunseeker logo. They should not be reverted to circular/oval pills or to a lone icon-only theme button.
+- In mobile view, top controls must remain compact and readable. Regression screenshots from the latest pass:
+  - `/tmp/claudia-toprow2-360.png`
+  - `/tmp/claudia-toprow2-390.png`
+  - `/tmp/claudia-toprow2-1009.png`
 - Internal zones must not repeat `Claudia Z` as the visible stage title. Their concise copy and details live in the top-right glass info popup, keeping zone media clean.
 - Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
 - Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
-- Narrow Welcome Hall viewports use a compact horizontal bottom zone rail per the Drive handoff. Non-welcome gallery zones may still use the compact menu behavior if needed, but the first screen must show zone navigation without opening an extra panel.
-- Top controls (`Yacht details` and theme) intentionally match the lower navigation field: straight glass bar, hairline borders, restrained text/icon states, no separate pill/capsule styling.
+- Narrow and intermediate Welcome Hall viewports use a compact horizontal bottom zone rail per the Drive/HTML handoff. Non-welcome gallery zones may still use the compact menu behavior if needed, but the first screen must show zone navigation without opening an extra panel.
+- Top controls (`Yacht details` and theme) intentionally match the lower navigation field: glass, hairline border, rounded-rectangle shape, restrained text/icon states. Avoid oversized ovals/capsules and avoid icon-only theme controls.
+- Reference HTML from Drive file `1NgN3gkZlDmkWwzJQmr8HLn_ZJawMQnsm` was downloaded as `.media-source/reference/front-style-reference`; it contains the style direction for zone buttons: glass cards/tiles, uppercase labels, icons, gold active state, and horizontal scrolling. This is a reference, not a replacement app.
 - Future 3D guide compatibility is mandatory for media, gallery, CSS, and navigation decisions.
 - Old site text is directional reference only; do not copy wording, close paraphrases, design, UX, layout rhythm, SEO tactics, or marketing mechanics.
 - English is primary/default; Russian is supported; every other language falls back to English. Language is automatic only; no visible language switcher.
@@ -53,7 +66,9 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Prototype zone viewing now supports multi-image sequences, previous/next controls, keyboard arrows, and mobile swipe.
 - Mobile gallery behavior: no visible previous/next photo buttons; use horizontal swipe plus a minimal hint, with tap on free photo area for optimized full-size opening.
 - Vertical/mobile derivatives must preserve yacht geometry and fill remaining space with color/tone-matched background extension so the frame feels complete vertically.
-- Overview / Welcome Hall uses one static full-screen photographic frame: `DJI_0279`, with screen-aware derivatives for desktop and mobile so the yacht remains readable. The former four-photo overview sequence (`DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`) has been merged into the `Exterior` gallery so the main screen no longer cycles general views. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
+- Overview / Welcome Hall uses one static full-screen photographic frame: `DJI_0279`, with screen-aware derivatives for desktop and mobile so the yacht remains readable. The current mobile derivative uses the owner-provided crop from Drive file `1VoCmNPanI2Gbe227GCt2ACZ6E5UhMcVA`, downloaded as `.media-source/overview/DJI_0279-mobile-user.jpg`, then side-cropped only to `1080x2340`. Do not reintroduce a blurred/composited vertical background for this mobile frame unless explicitly asked.
+- The desktop `DJI_0279` framing was corrected around the visual mass of the yacht, not the roof. If further changes are made, verify desktop, `1009x927`, `390x844`, and `360x740` screenshots before pushing.
+- The former four-photo overview sequence (`DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`) has been merged into the `Exterior` gallery so the main screen no longer cycles general views. `DJI_0257_1` is rejected for main overview; `DJI_0252_1` is not used in main overview.
 - Exterior now uses approved real derivatives from owner-provided Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`. `DJI_0247` is intentionally retained as a distant scenic candidate with careful gentle zoom/crop. Hold/reject decisions are recorded in `docs/CURRENT_STATE.md`.
 - Flybridge now uses approved real derivatives from DJI folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC` and GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`. The user's `1230-P1999658` was resolved to actual Drive filename `130-P1999658.jpg`.
 - Foredeck now uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`. `144-P1999698` is hold/reference; `147-P1477682` is rejected from the main Foredeck sequence. `160-P1477679` is the bow rail / anchorage detail closer.
@@ -90,6 +105,9 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - No school-like mobile photo navigation buttons; mobile galleries use iPhone-style swipe behavior.
 - No constructor-like pill navigation, oversized CTA blocks, or school-like gallery arrows. Use text tabs, hairlines, quiet state changes, and restrained controls.
 - No hidden first-screen navigation on mobile Welcome Hall. Use a compact horizontal bottom zone rail; keep it visually restrained and scrollable.
+- No old Welcome Hall zone popover/grid at `max-width:1119px`; the user explicitly rejected it after seeing it overlay the yacht.
+- No huge top controls on mobile. Keep `Детали яхты`, the theme switch, and Sunseeker in one readable horizontal line.
+- No unreadable text on sea backgrounds. Welcome copy needs sufficient local glass/contrast while avoiding a heavy rectangular blur card.
 - Do not use old-site wording or visual/interaction approaches.
 - Show one active language at a time.
 - Do not allow inactive-language flash during initialization.
@@ -105,9 +123,10 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 
 ## Next Recommended Step
 
-Do a focused QA pass before deployment:
+Do a focused QA pass before deployment or before further visual changes:
 
-- verify mobile and narrow-width menu behavior in a real browser window
+- verify mobile, narrow-width, and intermediate-width menu behavior in a real browser window, especially `1009x927`, `390x844`, and `360x740`
+- confirm the Welcome Hall top controls remain in one horizontal line with Sunseeker and do not become oversized on mobile
 - walk every zone and confirm stage copy, details text, media order, and no duplicate yacht-name labels
 - check dark/light theme contrast
 - confirm no public indexing files or SEO/public-sales mechanics exist
