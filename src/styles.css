@@ -299,10 +299,21 @@ button {
 
 .stage--welcome .info-trigger,
 .stage--welcome .theme-button {
-  border-color: rgba(18, 32, 37, 0.2);
-  background: rgba(238, 244, 242, 0.82);
   color: #122025;
-  box-shadow: 0 14px 28px rgba(8, 20, 24, 0.18);
+}
+
+.stage--welcome .info-trigger {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(238, 244, 242, 0.56);
+  box-shadow: 0 14px 28px rgba(8, 20, 24, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(1.12);
+}
+
+.stage--welcome .theme-button {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .info-trigger {
@@ -369,10 +380,14 @@ button {
 }
 
 .theme-button {
-  width: 92px;
-  min-width: 92px;
+  width: auto;
+  min-width: 0;
   gap: 9px;
-  padding: 0 11px;
+  border-color: transparent;
+  padding: 0 2px;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   justify-content: space-between;
 }
 
@@ -384,17 +399,21 @@ button {
 }
 
 .theme-button:hover {
-  border-color: var(--accent);
   color: var(--accent);
-  background: var(--zone-card-bg);
+  background: transparent;
 }
 
 .stage--welcome .info-trigger:hover,
-.stage--welcome .info-trigger[aria-expanded="true"],
-.stage--welcome .theme-button:hover {
+.stage--welcome .info-trigger[aria-expanded="true"] {
   border-color: var(--accent);
   color: #8d6b2f;
-  background: rgba(246, 248, 244, 0.9);
+  background: rgba(246, 248, 244, 0.68);
+}
+
+.stage--welcome .theme-button:hover {
+  border-color: transparent;
+  color: #8d6b2f;
+  background: transparent;
 }
 
 .theme-button:active {
