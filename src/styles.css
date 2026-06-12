@@ -33,7 +33,7 @@
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
   --welcome-text-ink: #fff8ec;
   --welcome-text-soft: rgba(255, 248, 236, 0.78);
-  --welcome-local-glass: transparent;
+  --welcome-local-glass: linear-gradient(90deg, rgba(5, 9, 11, 0.24), rgba(5, 9, 11, 0.08) 68%, rgba(5, 9, 11, 0));
   --radius: 8px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -75,7 +75,7 @@
   --shadow: 0 28px 80px rgba(25, 35, 38, 0.18);
   --welcome-text-ink: #10191c;
   --welcome-text-soft: rgba(16, 25, 28, 0.74);
-  --welcome-local-glass: transparent;
+  --welcome-local-glass: linear-gradient(90deg, rgba(255, 250, 241, 0.36), rgba(255, 250, 241, 0.14) 68%, rgba(255, 250, 241, 0));
 }
 
 * {
@@ -124,7 +124,7 @@ button {
 .stage--welcome {
   min-height: 100svh;
   background-color: #071115;
-  background-image: url("../assets/media/overview/dji_0266_1-stage.webp");
+  background-image: url("../assets/media/overview/dji_0279-stage.webp");
   background-position: center;
   background-size: cover;
 }
@@ -421,7 +421,7 @@ button {
   top: clamp(132px, 18vh, 206px);
   right: auto;
   left: 0;
-  width: min(43vw, 560px);
+  width: min(39vw, 500px);
   max-height: none;
   padding: clamp(18px, 2.2vw, 30px) clamp(28px, 4.4vw, 72px) clamp(20px, 2.4vw, 34px);
   color: var(--welcome-text-ink);
@@ -1184,7 +1184,7 @@ h1 {
 
   .stage--welcome {
     min-height: 100svh;
-    background-image: url("../assets/media/overview/dji_0266_1-mobile.webp");
+    background-image: url("../assets/media/overview/dji_0279-mobile.webp");
     background-position: center;
     background-size: cover;
   }
@@ -1237,11 +1237,11 @@ h1 {
   }
 
   .stage--welcome .stage__content {
-    top: calc(88px + var(--safe-top));
+    top: calc(74px + var(--safe-top));
     left: 0;
     right: auto;
-    width: min(78vw, 330px);
-    padding: 14px 22px 16px;
+    width: min(72vw, 292px);
+    padding: 12px 20px 13px;
   }
 
   .hero-wordmark {
@@ -1249,12 +1249,12 @@ h1 {
   }
 
   .stage--welcome .hero-wordmark {
-    width: min(60vw, 250px);
+    width: min(52vw, 214px);
   }
 
   .stage--welcome .hero-wordmark::after {
-    width: 74px;
-    margin-top: 20px;
+    width: 62px;
+    margin-top: 13px;
   }
 
   .stage--welcome .stage-builder-mark {
@@ -1270,10 +1270,10 @@ h1 {
   }
 
   .stage--welcome .lead {
-    max-width: 285px;
-    margin-top: 14px;
-    font-size: 14px;
-    line-height: 1.38;
+    max-width: 252px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.28;
   }
 
   .quickfacts {

@@ -11,7 +11,7 @@ const zones = [
   {
     id: "overview",
     media: [
-      localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 50%")
+      localMedia("overview", "dji_0279-stage.webp", "dji_0279-full.webp", "dji_0279-mobile.webp", "52% 50%")
     ],
     en: {
       label: "Overview",

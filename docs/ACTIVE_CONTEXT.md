@@ -93,8 +93,9 @@ Old WordPress XML text is source material for facts only, not wording or layout.
 
 Overview / Welcome Hall, `assets/media/overview/`:
 
-- Active first-screen image: `DJI_0266_1` only.
-- Welcome Hall must use `DJI_0266_1` as a full-screen photographic frame with compact left typography and separate top-right Sunseeker mark. Do not rebuild it as a contained cutout yacht on an artificial gradient background.
+- Active first-screen image: `DJI_0279` only.
+- Welcome Hall must use `DJI_0279` as a full-screen photographic frame with compact left typography and separate top-right Sunseeker mark. The yacht object is intentionally sized for screen readability on desktop and mobile; do not rebuild it as a tiny original-scale drone image, a contained cutout yacht, or an artificial gradient background.
+- Previous first-screen image `DJI_0266_1` is retained in the Exterior gallery sequence, not as the active Welcome Hall.
 - Former overview sequence `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1` has been merged into `Exterior`; do not restore cycling general views on the main screen.
 
 Former General Plans source notes:

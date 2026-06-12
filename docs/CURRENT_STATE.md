@@ -19,6 +19,9 @@
 - Prototype zone navigation now includes the required interior subzones with temporary old-media placeholders pending final owner-provided media.
 - Prototype media viewing now supports multi-image sequences per zone, previous/next controls, keyboard arrows, and mobile swipe. Current images are temporary old-media placeholders only.
 - Overview / General Plans first real media pass:
+  - Active Welcome Hall source: `DJI_0279.jpg` from Google Drive file `1tzsZi4qpouB1Xpj6CtTzWAh7H5H1Jzl9`.
+  - Active Welcome Hall derivatives: `dji_0279-stage.webp`, `dji_0279-full.webp`, `dji_0279-mobile.webp`.
+  - Desktop derivative is cropped around the yacht's visual mass/metacenter rather than the bow or roof. Mobile derivative preserves the full yacht object without cutting stern or bow.
   - Approved for public web derivatives: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`.
   - Rejected from main overview: `DJI_0257_1` because top-down framing feels too technical and does not read as premium first-view media.
   - Not used in main overview: `DJI_0252_1`; keep only as optional secondary/reference because it is still too drone-showcase for the first premium route.
