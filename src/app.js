@@ -459,7 +459,7 @@ function stageSourceFor(mediaItem) {
   if (currentZone().id === "overview") {
     return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
   }
-  return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
+  return mediaItem.src;
 }
 
 function setTheme(theme) {

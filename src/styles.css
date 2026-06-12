@@ -1367,6 +1367,12 @@ h1 {
     object-position: 50% 54%;
   }
 
+  .stage:not(.stage--welcome) .stage__media {
+    object-fit: contain;
+    background: transparent;
+    transform: none;
+  }
+
   .stage__content {
     top: calc(68px + var(--safe-top));
     right: 14px;
