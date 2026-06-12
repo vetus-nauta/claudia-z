@@ -239,14 +239,10 @@ button {
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 12px;
   padding: calc(18px + var(--safe-top)) clamp(18px, 4.2vw, 72px) 10px;
   pointer-events: none;
-}
-
-.stage--welcome .topbar {
-  justify-content: flex-start;
 }
 
 .controls {
@@ -1352,29 +1348,29 @@ h1 {
     background-color: #edf5f4;
   }
 
-  .stage--welcome .topbar {
+  .topbar {
     max-width: calc(100vw - 112px);
     padding-top: calc(14px + var(--safe-top));
     padding-left: 14px;
     padding-right: 0;
   }
 
-  .stage--welcome .controls {
+  .controls {
     gap: 7px;
     min-height: 36px;
   }
 
-  .stage--welcome .info-trigger {
+  .info-trigger {
     min-height: 36px;
     border-radius: 12px;
     padding: 0 10px;
   }
 
-  .stage--welcome .info-trigger__hint {
+  .info-trigger__hint {
     font-size: 10px;
   }
 
-  .stage--welcome .theme-button {
+  .theme-button {
     width: 74px;
     min-width: 74px;
     min-height: 36px;
@@ -1382,24 +1378,24 @@ h1 {
     padding: 0 8px;
   }
 
-  .stage--welcome .theme-button::before {
+  .theme-button::before {
     font-size: 8px;
     letter-spacing: 0.035em;
   }
 
-  .stage--welcome .theme-button__icon {
+  .theme-button__icon {
     width: 28px;
     height: 18px;
   }
 
-  .stage--welcome .theme-button__icon::before {
+  .theme-button__icon::before {
     top: 3px;
     left: 3px;
     width: 10px;
     height: 10px;
   }
 
-  :root[data-theme="light"] .stage--welcome .theme-button__icon::before {
+  :root[data-theme="light"] .theme-button__icon::before {
     transform: translateX(12px);
   }
 
