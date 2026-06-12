@@ -382,10 +382,10 @@ function currentMedia() {
 }
 
 function stageSourceFor(mediaItem) {
-  if (currentZone().id === "overview") {
-    return mediaItem.src;
-  }
   const isMobile = window.matchMedia("(max-width: 759px)").matches;
+  if (currentZone().id === "overview") {
+    return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
+  }
   return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
 }
 

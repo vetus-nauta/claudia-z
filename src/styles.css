@@ -9,12 +9,12 @@
   --glass: rgba(8, 11, 12, 0.44);
   --chip: rgba(8, 11, 12, 0.38);
   --control: rgba(14, 18, 20, 0.56);
-  --top-control-bg: rgba(8, 11, 12, 0.28);
+  --top-control-bg: rgba(8, 11, 12, 0.34);
   --command-bg: linear-gradient(180deg, rgba(8, 11, 12, 0), rgba(8, 11, 12, 0.78) 20%, rgba(8, 11, 12, 0.92));
   --command-panel: rgba(8, 11, 12, 0.5);
-  --sheet-bg: rgba(18, 22, 25, 0.68);
+  --sheet-bg: rgba(13, 17, 19, 0.62);
   --sheet-border: rgba(246, 241, 232, 0.22);
-  --welcome-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+  --welcome-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   --scrim: linear-gradient(180deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.12) 30%, rgba(8, 11, 12, 0.78) 100%),
     linear-gradient(90deg, rgba(8, 11, 12, 0.62), rgba(8, 11, 12, 0.1) 58%, rgba(8, 11, 12, 0.34));
   --panel-solid: #121619;
@@ -22,7 +22,7 @@
   --accent-ink: #16120b;
   --active-control-ink: #0d1113;
   --sea: #6eb0bf;
-  --media-filter: brightness(0.82) saturate(0.94);
+  --media-filter: brightness(0.78) saturate(0.96) contrast(1.02);
   --control-hover: rgba(8, 11, 12, 0.5);
   --step-bg: rgba(8, 11, 12, 0.16);
   --step-hover-bg: rgba(8, 11, 12, 0.28);
@@ -31,6 +31,9 @@
   --hint-ink: rgba(246, 241, 232, 0.76);
   --nav-popover-bg: rgba(8, 11, 12, 0.97);
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  --welcome-text-ink: #fff8ec;
+  --welcome-text-soft: rgba(255, 248, 236, 0.78);
+  --welcome-local-glass: transparent;
   --radius: 8px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -48,12 +51,12 @@
   --glass: rgba(250, 250, 244, 0.58);
   --chip: rgba(250, 250, 244, 0.52);
   --control: rgba(250, 250, 244, 0.62);
-  --top-control-bg: rgba(250, 250, 244, 0.58);
-  --command-bg: linear-gradient(180deg, rgba(250, 250, 244, 0), rgba(250, 250, 244, 0.58) 26%, rgba(250, 250, 244, 0.82));
-  --command-panel: rgba(250, 250, 244, 0.56);
-  --sheet-bg: rgba(250, 250, 244, 0.76);
-  --sheet-border: rgba(25, 35, 38, 0.18);
-  --welcome-shadow: 0 2px 18px rgba(255, 255, 255, 0.52);
+  --top-control-bg: rgba(250, 248, 239, 0.72);
+  --command-bg: linear-gradient(180deg, rgba(250, 250, 244, 0), rgba(248, 247, 239, 0.68) 26%, rgba(248, 247, 239, 0.9));
+  --command-panel: rgba(250, 248, 239, 0.7);
+  --sheet-bg: rgba(250, 248, 239, 0.74);
+  --sheet-border: rgba(25, 35, 38, 0.2);
+  --welcome-shadow: 0 1px 14px rgba(255, 255, 255, 0.42);
   --scrim: linear-gradient(180deg, rgba(250, 250, 244, 0.18), rgba(250, 250, 244, 0.03) 34%, rgba(250, 250, 244, 0.34) 100%),
     linear-gradient(90deg, rgba(250, 250, 244, 0.2), rgba(250, 250, 244, 0.02) 58%, rgba(250, 250, 244, 0.12));
   --panel-solid: #f7f5ee;
@@ -61,7 +64,7 @@
   --accent-ink: #fff8e8;
   --active-control-ink: #192326;
   --sea: #2c7887;
-  --media-filter: brightness(1.03) saturate(1.04) contrast(0.98);
+  --media-filter: brightness(1.04) saturate(1.03) contrast(1);
   --control-hover: rgba(250, 250, 244, 0.82);
   --step-bg: rgba(250, 250, 244, 0.5);
   --step-hover-bg: rgba(250, 250, 244, 0.72);
@@ -70,6 +73,9 @@
   --hint-ink: rgba(25, 35, 38, 0.62);
   --nav-popover-bg: rgba(250, 250, 244, 0.94);
   --shadow: 0 28px 80px rgba(25, 35, 38, 0.18);
+  --welcome-text-ink: #10191c;
+  --welcome-text-soft: rgba(16, 25, 28, 0.74);
+  --welcome-local-glass: transparent;
 }
 
 * {
@@ -117,15 +123,14 @@ button {
 
 .stage--welcome {
   min-height: 100svh;
-  background:
-    radial-gradient(880px 560px at 70% 48%, rgba(55, 139, 166, 0.18), transparent 64%),
-    linear-gradient(110deg, #02070c 0%, #06111a 42%, #0a2430 100%);
+  background-color: #071115;
+  background-image: url("../assets/media/overview/dji_0266_1-stage.webp");
+  background-position: center;
+  background-size: cover;
 }
 
 :root[data-theme="light"] .stage--welcome {
-  background:
-    radial-gradient(880px 560px at 76% 48%, rgba(46, 130, 168, 0.16), transparent 64%),
-    linear-gradient(110deg, #fffaf1 0%, #f6f1e8 45%, #e8f4f8 100%);
+  background-color: #edf5f4;
 }
 
 .stage__media {
@@ -145,15 +150,15 @@ button {
 }
 
 .stage--welcome .stage__media {
-  inset: auto clamp(28px, 3.8vw, 70px) calc(124px + var(--safe-bottom)) auto;
-  z-index: 2;
-  width: min(60vw, 1040px);
-  height: min(64vh, 660px);
-  object-fit: contain;
-  object-position: center;
-  background: transparent;
-  transform: rotate(-0.35deg);
-  filter: drop-shadow(0 34px 46px rgba(0, 0, 0, 0.48)) saturate(1.03) contrast(1.03);
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  background: #0a252e;
+  transform: none;
+  filter: var(--media-filter);
 }
 
 :root[data-theme="light"] .stage--welcome .stage__media {
@@ -229,14 +234,15 @@ button {
 .stage--welcome .stage__scrim {
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(2, 7, 12, 0.88), rgba(2, 7, 12, 0.46) 31%, rgba(2, 7, 12, 0.03) 66%),
-    linear-gradient(180deg, rgba(2, 7, 12, 0.2), rgba(2, 7, 12, 0.03) 45%, rgba(2, 7, 12, 0.34));
+    linear-gradient(90deg, rgba(3, 8, 10, 0.18), rgba(3, 8, 10, 0.04) 33%, rgba(3, 8, 10, 0) 62%),
+    linear-gradient(180deg, rgba(3, 8, 10, 0), rgba(3, 8, 10, 0) 52%, rgba(3, 8, 10, 0.24));
+  pointer-events: none;
 }
 
 :root[data-theme="light"] .stage--welcome .stage__scrim {
   background:
-    linear-gradient(90deg, rgba(255, 250, 241, 0.9), rgba(255, 250, 241, 0.55) 32%, rgba(255, 250, 241, 0.04) 68%),
-    linear-gradient(180deg, rgba(255, 250, 241, 0.22), rgba(255, 250, 241, 0.03) 48%, rgba(255, 250, 241, 0.26));
+    linear-gradient(90deg, rgba(255, 250, 241, 0.2), rgba(255, 250, 241, 0.05) 34%, rgba(255, 250, 241, 0) 64%),
+    linear-gradient(180deg, rgba(255, 250, 241, 0), rgba(255, 250, 241, 0) 52%, rgba(255, 250, 241, 0.16));
 }
 
 .topbar {
@@ -412,14 +418,17 @@ button {
 }
 
 .stage--welcome .stage__content {
-  top: clamp(150px, 22vh, 255px);
+  top: clamp(132px, 18vh, 206px);
   right: auto;
-  left: clamp(30px, 4.6vw, 76px);
-  width: min(42vw, 620px);
+  left: 0;
+  width: min(43vw, 560px);
   max-height: none;
-  color: var(--ink);
+  padding: clamp(18px, 2.2vw, 30px) clamp(28px, 4.4vw, 72px) clamp(20px, 2.4vw, 34px);
+  color: var(--welcome-text-ink);
+  background: var(--welcome-local-glass);
   text-align: left;
   text-shadow: var(--welcome-shadow);
+  pointer-events: none;
 }
 
 .stage--welcome .stage__content--overview {
@@ -437,7 +446,7 @@ button {
 }
 
 .stage--welcome .hero-wordmark {
-  width: min(390px, 39vw);
+  width: min(330px, 30vw);
 }
 
 .stage__content--overview .hero-wordmark {
@@ -448,7 +457,7 @@ button {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(21vh, 132px);
+  max-height: min(17vh, 112px);
   object-fit: contain;
   object-position: right center;
   filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.32));
@@ -457,7 +466,7 @@ button {
 }
 
 .stage-builder-mark {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: flex-end;
   width: fit-content;
@@ -470,16 +479,18 @@ button {
 
 .stage--welcome .stage-builder-mark {
   position: fixed;
-  top: calc(28px + var(--safe-top));
-  right: clamp(24px, 4vw, 68px);
+  display: inline-flex;
+  top: calc(30px + var(--safe-top));
+  right: clamp(24px, 4.2vw, 72px);
   z-index: 21;
-  width: min(210px, 28vw);
+  width: min(164px, 18vw);
   margin: 0;
 }
 
 .stage-builder-mark .sunseeker-mark {
   width: 100%;
-  opacity: 0.82;
+  opacity: 0.78;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.24));
 }
 
 .stage--welcome .eyebrow {
@@ -493,29 +504,25 @@ button {
   display: none;
 }
 
-.stage__content .claudia-wordmark--on-dark,
-:root[data-theme="light"] .stage__content .claudia-wordmark--on-dark,
-.stage__content .sunseeker-mark--on-dark,
-:root[data-theme="light"] .stage__content .sunseeker-mark--on-dark {
+:root[data-theme="dark"] .stage__content .claudia-wordmark--on-dark,
+:root[data-theme="dark"] .stage-builder-mark .sunseeker-mark--on-dark {
   display: block;
 }
 
-.stage__content .claudia-wordmark--on-light,
-:root[data-theme="light"] .stage__content .claudia-wordmark--on-light,
-.stage__content .sunseeker-mark--on-light,
-:root[data-theme="light"] .stage__content .sunseeker-mark--on-light {
+:root[data-theme="dark"] .stage__content .claudia-wordmark--on-light,
+:root[data-theme="dark"] .stage-builder-mark .sunseeker-mark--on-light {
   display: none;
 }
 
 :root[data-theme="light"] .stage__content .claudia-wordmark--on-dark,
-:root[data-theme="light"] .stage__content .sunseeker-mark--on-dark,
+:root[data-theme="light"] .stage-builder-mark .sunseeker-mark--on-dark,
 :root[data-theme="light"] .sheet .claudia-wordmark--on-dark,
 :root[data-theme="light"] .sheet .sunseeker-mark--on-dark {
   display: none;
 }
 
 :root[data-theme="light"] .stage__content .claudia-wordmark--on-light,
-:root[data-theme="light"] .stage__content .sunseeker-mark--on-light,
+:root[data-theme="light"] .stage-builder-mark .sunseeker-mark--on-light,
 :root[data-theme="light"] .sheet .claudia-wordmark--on-light,
 :root[data-theme="light"] .sheet .sunseeker-mark--on-light {
   display: block;
@@ -526,7 +533,7 @@ button {
   display: block;
   width: 92px;
   height: 1px;
-  margin: 34px 0 0;
+  margin: 26px 0 0;
   background: linear-gradient(90deg, var(--accent), transparent);
 }
 
@@ -560,7 +567,10 @@ h1 {
 }
 
 .stage--welcome .lead {
-  max-width: 24rem;
+  max-width: 23rem;
+  color: var(--welcome-text-soft);
+  font-size: clamp(16px, 1.35vw, 21px);
+  line-height: 1.46;
 }
 
 :root[data-theme="light"] .lead {
@@ -757,10 +767,27 @@ h1 {
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
+.stage--welcome .command {
+  left: clamp(18px, 4vw, 56px);
+  right: clamp(18px, 4vw, 56px);
+  bottom: calc(18px + var(--safe-bottom));
+  padding: 12px 14px 10px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--command-panel);
+  backdrop-filter: blur(18px) saturate(1.05);
+}
+
 .is-details-open .command {
   transform: translateY(calc(100% + 18px));
   opacity: 0;
   pointer-events: none;
+}
+
+.is-details-open .stage--welcome .command {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .zone-rail {
@@ -883,6 +910,12 @@ h1 {
   opacity: 0;
   pointer-events: none;
   transition: transform 260ms cubic-bezier(0.2, 0.78, 0.18, 1), opacity 220ms ease;
+}
+
+.sheet.sheet--overview {
+  top: calc(18px + var(--safe-top));
+  right: 18px;
+  width: min(390px, calc(100vw - 36px));
 }
 
 .sheet.is-open {
@@ -1055,6 +1088,12 @@ h1 {
     backdrop-filter: blur(18px);
   }
 
+  .stage--welcome .command {
+    left: clamp(24px, 4vw, 56px);
+    right: clamp(24px, 4vw, 56px);
+    bottom: calc(20px + var(--safe-bottom));
+  }
+
   .media-stepper {
     right: 34px;
     bottom: 112px;
@@ -1072,6 +1111,12 @@ h1 {
     width: min(520px, calc(100vw - 48px));
   }
 
+  .sheet.sheet--overview {
+    top: calc(20px + var(--safe-top));
+    right: 24px;
+    width: min(390px, calc(100vw - 48px));
+  }
+
   .sheet__grid {
     grid-template-columns: 1fr;
   }
@@ -1079,10 +1124,9 @@ h1 {
 
 @media (max-width: 1119px) {
   .stage--welcome .stage__media {
-    right: -10px;
-    bottom: calc(126px + var(--safe-bottom));
-    width: min(66vw, 860px);
-    height: min(62vh, 560px);
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .command {
@@ -1140,15 +1184,17 @@ h1 {
 
   .stage--welcome {
     min-height: 100svh;
-    background: linear-gradient(160deg, #02070c 0%, #06111a 44%, #0a2a3b 100%);
+    background-image: url("../assets/media/overview/dji_0266_1-mobile.webp");
+    background-position: center;
+    background-size: cover;
   }
 
   :root[data-theme="light"] .stage--welcome {
-    background: linear-gradient(160deg, #fffaf2 0%, #f6f1e8 45%, #eaf5f8 100%);
+    background-color: #edf5f4;
   }
 
   .stage--welcome .topbar {
-    max-width: calc(100vw - 128px);
+    max-width: calc(100vw - 116px);
     padding-top: calc(14px + var(--safe-top));
     padding-left: 14px;
     padding-right: 14px;
@@ -1173,14 +1219,11 @@ h1 {
   }
 
   .stage--welcome .stage__media {
-    top: 42svh;
-    right: 10px;
-    bottom: auto;
-    left: 26px;
-    width: calc(100vw - 36px);
-    height: auto;
-    max-width: calc(100vw - 36px);
-    max-height: 32svh;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 54%;
   }
 
   .stage__content {
@@ -1194,10 +1237,11 @@ h1 {
   }
 
   .stage--welcome .stage__content {
-    top: calc(124px + var(--safe-top));
-    left: 24px;
-    right: 22px;
-    width: auto;
+    top: calc(88px + var(--safe-top));
+    left: 0;
+    right: auto;
+    width: min(78vw, 330px);
+    padding: 14px 22px 16px;
   }
 
   .hero-wordmark {
@@ -1205,7 +1249,7 @@ h1 {
   }
 
   .stage--welcome .hero-wordmark {
-    width: min(70vw, 330px);
+    width: min(60vw, 250px);
   }
 
   .stage--welcome .hero-wordmark::after {
@@ -1214,9 +1258,9 @@ h1 {
   }
 
   .stage--welcome .stage-builder-mark {
-    top: calc(21px + var(--safe-top));
-    right: 18px;
-    width: min(104px, 28vw);
+    top: calc(24px + var(--safe-top));
+    right: 16px;
+    width: min(104px, 26vw);
   }
 
   .lead {
@@ -1226,10 +1270,10 @@ h1 {
   }
 
   .stage--welcome .lead {
-    max-width: 315px;
-    margin-top: 18px;
-    font-size: 17px;
-    line-height: 1.45;
+    max-width: 285px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.38;
   }
 
   .quickfacts {
@@ -1251,7 +1295,10 @@ h1 {
   }
 
   .stage--welcome .command {
-    padding-bottom: calc(12px + var(--safe-bottom));
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + var(--safe-bottom));
+    padding: 9px 10px 7px;
   }
 
   .stage--welcome .zone-menu-button {
@@ -1284,11 +1331,11 @@ h1 {
 
 @media (max-height: 760px) and (max-width: 759px) {
   .stage--welcome .stage__content {
-    top: calc(104px + var(--safe-top));
+    top: calc(76px + var(--safe-top));
   }
 
   .stage--welcome .hero-wordmark {
-    width: min(58vw, 300px);
+    width: min(54vw, 226px);
   }
 
   .stage--welcome .hero-wordmark::after {
@@ -1296,15 +1343,15 @@ h1 {
   }
 
   .stage--welcome .lead {
-    max-width: 300px;
-    margin-top: 14px;
-    font-size: 15px;
-    line-height: 1.38;
+    max-width: 270px;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.34;
   }
 
   .stage--welcome .stage__media {
-    top: 41svh;
-    max-height: 30svh;
+    inset: 0;
+    max-height: none;
   }
 }
 
