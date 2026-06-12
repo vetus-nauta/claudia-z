@@ -899,17 +899,19 @@ h1 {
 .zone-menu-button {
   display: none;
   min-width: 0;
-  min-height: 40px;
-  border-width: 1px 0;
-  border-color: var(--hairline);
-  border-radius: 0;
-  padding: 9px 4px;
-  background: transparent;
-  color: var(--accent);
+  min-height: 48px;
+  border-color: var(--line);
+  border-radius: 16px;
+  padding: 0 16px;
+  background: var(--zone-card-bg);
+  box-shadow: var(--zone-card-shadow);
+  backdrop-filter: blur(18px) saturate(1.06);
+  color: var(--ink);
   font-weight: 700;
   text-align: left;
   gap: 10px;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .zone-menu-button__icon {
@@ -1254,23 +1256,24 @@ h1 {
 
   .zone-rail {
     position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    bottom: calc(100% + 10px);
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 18px;
-    max-height: min(34dvh, 250px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-height: min(42dvh, 360px);
     overflow: auto;
     overscroll-behavior: contain;
-    border-top: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
-    padding: 12px 4px;
-    background: var(--nav-popover-bg);
-    backdrop-filter: blur(22px);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
-    transform: translateY(10px);
+    border: 1px solid var(--sheet-border);
+    border-radius: 20px;
+    padding: 12px;
+    background: color-mix(in srgb, var(--nav-popover-bg) 82%, transparent);
+    backdrop-filter: blur(24px) saturate(1.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(12px) scale(0.985);
+    transform-origin: bottom center;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -1285,9 +1288,22 @@ h1 {
   }
 
   .zone-button {
-    min-height: 42px;
-    padding: 0 15px;
+    min-width: 0;
+    min-height: 64px;
+    border-radius: 16px;
+    padding: 0 12px;
     text-align: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .zone-button__icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .zone-button__label {
+    min-width: 0;
   }
 
   .stage--welcome .zone-menu-button {
@@ -1311,6 +1327,13 @@ h1 {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+
+  .stage--welcome .zone-button {
+    min-height: 54px;
+    border-radius: 22px;
+    padding: 0 14px;
+    justify-content: center;
   }
 }
 
@@ -1507,6 +1530,7 @@ h1 {
     font-size: 10px;
     line-height: 1.16;
     text-align: center;
+    justify-content: center;
     white-space: normal;
   }
 
@@ -1524,8 +1548,27 @@ h1 {
   }
 
   .zone-rail {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     max-height: min(38dvh, 320px);
+  }
+
+  .zone-menu-button {
+    min-height: 50px;
+    border-radius: 17px;
+    padding: 0 14px;
+  }
+
+  .zone-button {
+    min-height: 68px;
+    gap: 9px;
+    padding: 0 10px;
+    font-size: 10px;
+    letter-spacing: 0.035em;
+  }
+
+  .zone-button__icon {
+    width: 25px;
+    height: 25px;
   }
 }
 
