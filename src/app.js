@@ -292,6 +292,8 @@ const copy = {
     lead: "Sunseeker 76 | Private Motor Yacht. A strong choice for family time and an active life on the water: speed, comfort, and technology.",
     menu: "Sections",
     details: "Zone details",
+    yachtDetails: "Yacht details",
+    zoneDetails: "Zone details",
     theme: "Theme",
     switchToDark: "Switch to dark theme",
     switchToLight: "Switch to light theme",
@@ -301,9 +303,13 @@ const copy = {
     mediaControlsAria: "Media controls",
     zonesAria: "Yacht zones",
     detailsDialogAria: "Zone details",
+    yachtDetailsDialogAria: "Yacht details",
+    zoneDetailsDialogAria: "Zone details",
     close: "Close",
     mediaViewerAria: "Media viewer",
     detailsTitle: "Zone details",
+    yachtDetailsTitle: "Specifications",
+    zoneDetailsTitle: "Zone details",
     model: "Model",
     year: "Year",
     length: "Length",
@@ -343,6 +349,8 @@ const copy = {
     lead: "Sunseeker 76 | частная моторная яхта. Отличный выбор для семейного отдыха и активного образа жизни: скорость, комфорт и технологичность.",
     menu: "Разделы",
     details: "Детали зоны",
+    yachtDetails: "Детали яхты",
+    zoneDetails: "Детали зоны",
     theme: "Тема",
     switchToDark: "Переключить на темную тему",
     switchToLight: "Переключить на светлую тему",
@@ -352,9 +360,13 @@ const copy = {
     mediaControlsAria: "Управление фотографиями",
     zonesAria: "Зоны яхты",
     detailsDialogAria: "Детали зоны",
+    yachtDetailsDialogAria: "Детали яхты",
+    zoneDetailsDialogAria: "Детали зоны",
     close: "Закрыть",
     mediaViewerAria: "Просмотр фотографий",
     detailsTitle: "Детали зоны",
+    yachtDetailsTitle: "Характеристики",
+    zoneDetailsTitle: "Детали зоны",
     model: "Модель",
     year: "Год",
     length: "Длина",
@@ -425,6 +437,8 @@ const openMediaButton = document.querySelector("#openMediaButton");
 const mediaLightbox = document.querySelector("#mediaLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const stage = document.querySelector(".stage");
+const detailsButtonLabel = detailsButton.querySelector("[data-i18n]");
+const detailsTitle = detailsSheet.querySelector("[data-i18n='detailsTitle']");
 
 function detectLanguage() {
   const preferred = [navigator.language, ...(navigator.languages || [])]
@@ -595,6 +609,10 @@ function renderZone() {
   stage.classList.toggle("stage--welcome", isOverview);
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
+  const detailMode = isOverview ? "yacht" : "zone";
+  detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
+  detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
+  detailsSheet.setAttribute("aria-label", copy[state.lang][`${detailMode}DetailsDialogAria`]);
   updateStageMedia(selectedMedia, zone[state.lang].title);
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   stageLead.textContent = isOverview ? copy[state.lang].lead : zone[state.lang].copy;

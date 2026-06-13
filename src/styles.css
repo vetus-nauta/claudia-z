@@ -1024,7 +1024,7 @@ h1 {
 .sheet.sheet--overview {
   top: 50%;
   right: auto;
-  width: min(440px, calc(100vw - 32px));
+  width: min(560px, calc(100vw - 32px));
 }
 
 .sheet.is-open {
@@ -1062,6 +1062,60 @@ h1 {
 .sheet__grid {
   display: grid;
   gap: 16px;
+}
+
+.sheet-builder-mark {
+  display: none;
+  justify-content: center;
+  margin: 2px 0 18px;
+}
+
+.sheet.sheet--overview .sheet-builder-mark {
+  display: flex;
+}
+
+.sheet.sheet--overview .zone-note {
+  display: none;
+}
+
+.sheet:not(.sheet--overview) .specs {
+  display: none;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+}
+
+.specs div {
+  display: grid;
+  gap: 4px;
+  min-height: 56px;
+  border-top: 1px solid var(--hairline);
+  padding: 10px 12px 10px 0;
+}
+
+.specs div:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 12px;
+}
+
+.specs dt {
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 720;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.specs dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 620;
+  line-height: 1.25;
 }
 
 .zone-note {
@@ -1371,6 +1425,16 @@ h1 {
     object-fit: contain;
     background: transparent;
     transform: none;
+  }
+
+  .specs {
+    grid-template-columns: 1fr;
+  }
+
+  .specs div,
+  .specs div:nth-child(2n) {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .stage__content {
