@@ -1245,6 +1245,14 @@ document.addEventListener("dragstart", (event) => {
   }
 });
 
+function preventFullscreenOverscroll(event) {
+  if (document.body.classList.contains("is-gallery-mode-open") || document.body.classList.contains("is-lightbox-open")) {
+    event.preventDefault();
+  }
+}
+
+galleryMode.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
+mediaLightbox.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
 galleryViewport.addEventListener("touchstart", beginGalleryGesture, { passive: false });
 galleryViewport.addEventListener("touchmove", moveGalleryGesture, { passive: false });
 galleryViewport.addEventListener("touchend", endGalleryGesture, { passive: false });

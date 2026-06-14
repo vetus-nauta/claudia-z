@@ -102,6 +102,16 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
+  overscroll-behavior-y: none;
+}
+
+html:has(body.is-lightbox-open),
+html:has(body.is-gallery-mode-open),
+body.is-lightbox-open,
+body.is-gallery-mode-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 button {
@@ -824,6 +834,8 @@ h1 {
   background: var(--page);
   opacity: 0;
   pointer-events: none;
+  overscroll-behavior: none;
+  touch-action: none;
   transition: opacity 220ms ease;
 }
 
@@ -863,6 +875,8 @@ h1 {
   background: #050708;
   opacity: 0;
   pointer-events: none;
+  overscroll-behavior: none;
+  touch-action: none;
   transition: opacity 180ms ease;
 }
 
@@ -881,6 +895,7 @@ h1 {
   gap: 12px;
   overflow: hidden;
   padding: calc(54px + var(--safe-top)) 14px calc(18px + var(--safe-bottom));
+  overscroll-behavior: none;
   touch-action: none;
   user-select: none;
 }
