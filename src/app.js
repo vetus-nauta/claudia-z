@@ -788,6 +788,11 @@ function toggleLightbox(force) {
   mediaLightbox.classList.toggle("is-open", shouldOpen);
   mediaLightbox.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
   document.body.classList.toggle("is-lightbox-open", shouldOpen);
+  if (shouldOpen) {
+    requestViewerFullscreen(mediaLightbox);
+  } else {
+    exitViewerFullscreen(mediaLightbox);
+  }
 }
 
 function resetGalleryTransform() {
@@ -845,6 +850,45 @@ function preloadAdjacentGalleryMedia() {
     const image = new Image();
     image.src = gallerySourceFor(item);
   });
+}
+
+function fullscreenElement() {
+  return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function requestViewerFullscreen(element) {
+  const isTouchViewport = window.matchMedia("(pointer: coarse)").matches;
+  const isPhoneLandscapeSize = window.matchMedia("(max-height: 540px), (max-width: 960px)").matches;
+  if (!isTouchViewport || !isPhoneLandscapeSize || fullscreenElement()) {
+    return;
+  }
+  const request = element.requestFullscreen || element.webkitRequestFullscreen;
+  if (!request) {
+    return;
+  }
+  try {
+    const result = request.call(element);
+    if (result && typeof result.catch === "function") {
+      result.catch(() => {});
+    }
+  } catch (_) {}
+}
+
+function exitViewerFullscreen(element) {
+  const activeElement = fullscreenElement();
+  if (!activeElement || (activeElement !== element && !element.contains(activeElement))) {
+    return;
+  }
+  const exit = document.exitFullscreen || document.webkitExitFullscreen;
+  if (!exit) {
+    return;
+  }
+  try {
+    const result = exit.call(document);
+    if (result && typeof result.catch === "function") {
+      result.catch(() => {});
+    }
+  } catch (_) {}
 }
 
 function renderGalleryMode(direction = 0) {
@@ -943,6 +987,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
   galleryMode.setAttribute("aria-hidden", "false");
   document.body.classList.add("is-gallery-mode-open");
   document.body.classList.toggle("is-horizontal-gallery-open", !syncStage);
+  requestViewerFullscreen(galleryMode);
   closeZoneMenu();
 }
 
@@ -963,6 +1008,7 @@ function closeGalleryMode() {
   galleryCaption.textContent = "";
   galleryCaption.hidden = true;
   resetGalleryTransform();
+  exitViewerFullscreen(galleryMode);
 }
 
 function shiftGallery(direction) {
