@@ -111,17 +111,15 @@ Exterior, `assets/media/exterior/`:
 
 Flybridge, `assets/media/flybridge/`:
 
-- Order: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`.
-- User typo `1230-P1999658` resolves to actual `130-P1999658.jpg`.
-- Hold/reference: `124-P1477648`, `137-P1999678`.
-- Rejected main flybridge: `125-P1477650`, `DJI_0269`, `DJI_0270`.
+- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Flybridge` / `1MNeG7yyMHfcLiBDMTXDHyKGE_k3XOLH4`.
+- Main order: `IMG_3318`, `IMG_3319`, `IMG_3320`, `IMG_3321`, `IMG_3413`, `IMG_3425`, `IMG_3426`, `IMG_3427`, `IMG_3428`, `IMG_3429`, `IMG_3430`.
+- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`.
 
 Foredeck, `assets/media/foredeck/`:
 
-- Order: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
-- Hold/reference: `144-P1999698`.
-- Rejected main foredeck: `147-P1477682`.
-- `160-P1477679` is bow rail / anchorage detail closer, not main lounge explainer.
+- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Foredeck` / `1am7lX14F0SSm8_ir5vobngU4CCsp368N`.
+- Main order starts with the strongest foredeck frames, then access/context frames: `IMG_3416`, `IMG_3417`, `IMG_3418`, `IMG_3419`, `IMG_3420`, `IMG_3421`, `IMG_3422`, `IMG_3423`, `IMG_3424`, `IMG_3414`, `IMG_3413`.
+- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
 
 Cockpit, `assets/media/cockpit/`:
 
@@ -132,12 +130,9 @@ Cockpit, `assets/media/cockpit/`:
 
 Saloon, `assets/media/saloon/`:
 
-- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
-- Approved order: `80-P1477573`, `89-P1999637`, `87-P1999629`, `85-P1999616`, `94-P1477558`, `98-P1999624`.
-- Hold/reference: `81-P1477579`, `82-P1477580`, `88-P1999632`, `90-P1999642`, `95-P1477561`.
-- Not Saloon main sequence: `56-P1999540` is cabin/bunk content; `99-P1999602`, `100-P1999606`, `101-P1999607` are helm / pilot station content.
-- User corrected filename uses Latin `P`: `94-P1477558`.
-- User-provided `94-P1477561` was not found in Drive; actual nearby Drive file is `95-P1477561`.
+- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Saloon` / `1EKA3m-nzh0ZtgPcdze-zjd2uupsoHiUh`.
+- Main order starts with the broadest saloon read, then seating/dining/helm context: `IMG_3404`, `IMG_3411`, `IMG_3410`, `IMG_3409`, `IMG_3408`, `IMG_3406`, `IMG_3400`, `IMG_3401`, `IMG_3402`, `IMG_3403`, `IMG_3405`.
+- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `80-P1477573`, `89-P1999637`, `87-P1999629`, `85-P1999616`, `94-P1477558`, `98-P1999624`.
 
 Master cabin, `assets/media/master_cabin/`:
 

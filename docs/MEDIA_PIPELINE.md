@@ -213,15 +213,24 @@ Use these names for the tender:
 
 ## Section Gallery Template
 
-Use this template for owner-supplied vertical iPhone/photo sets such as `aft_swim_platform` and `tender`.
+Use this template for owner-supplied vertical iPhone/photo sets such as `flybridge`, `foredeck`, `aft_swim_platform`, `tender`, and `saloon`.
 
 - Public derivatives per source frame: `thumb`, `stage`, `mobile`, and `full` WebP.
 - Source originals stay in `.media-source/<zone>/` and are not uploaded.
 - The stage opens the controlled gallery overlay, never the original image file.
 - Two-finger pinch zoom and left/right swipe must work in the full-screen gallery.
 - The browser/page pull-refresh gesture should not fight the gallery or main stage swipe.
-- A horizontal gallery button may be shown from vertical-gallery zones; it opens only approved horizontal site media and excludes vertical-only section-gallery zones.
+- A horizontal gallery button may be shown from vertical-gallery zones; it opens approved horizontal site media.
+- If a zone changes from horizontal media to a vertical section gallery, keep the previous approved horizontal frames in `horizontalMedia` only when they should remain available in the separate horizontal gallery.
+- Zones without `horizontalMedia` and with vertical-only media stay out of the horizontal gallery.
 - When real media replaces a placeholder, delete the placeholder derivatives and update this document plus `ACTIVE_CONTEXT.md`.
+
+## Vertical Section Pass 2026-06-14
+
+- Parent source folder: Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`.
+- Updated zones: `Flybridge`, `Foredeck`, `Saloon`.
+- All three updated zones use vertical iPhone media as their main section gallery.
+- Previous approved horizontal frames for these zones are retained in `horizontalMedia` for the separate horizontal gallery, not as the main zone sequence.
 
 ## Metadata Per Asset
 

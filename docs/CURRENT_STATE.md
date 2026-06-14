@@ -73,6 +73,7 @@
 - Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow Welcome Hall viewports use a compact horizontal bottom zone rail. The compact hamburger-style zone menu may still be used outside the Welcome Hall if needed for dense gallery navigation.
 - Top controls now match the lower navigation language: straight glass bar, hairline borders, and quiet text/icon states rather than separate rounded pills.
+- Flybridge, Foredeck, and Saloon now use owner-provided vertical iPhone media in the reusable section-gallery template. Their previous approved horizontal frames are retained in `horizontalMedia` for the separate horizontal gallery.
 - Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template.
 - Tender uses owner-provided vertical iPhone media in the same section-gallery template. Its first/opening frame is pinned from the separate Drive file link and is not duplicated when present in the folder.
 - Future photos will be supplied section-by-section as Google Drive folders/links.

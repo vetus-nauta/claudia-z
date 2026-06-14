@@ -18,7 +18,7 @@ function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
   };
 }
 
-const SECTION_GALLERY_ZONE_IDS = new Set(["aft_swim_platform", "tender"]);
+const SECTION_GALLERY_ZONE_IDS = new Set(["flybridge", "foredeck", "aft_swim_platform", "tender", "saloon"]);
 
 const zones = [
   {
@@ -69,6 +69,19 @@ const zones = [
   {
     id: "flybridge",
     media: [
+      localGalleryMedia("flybridge", "01-flybridge-img-3318", "50% 50%"),
+      localGalleryMedia("flybridge", "02-flybridge-img-3319", "50% 50%"),
+      localGalleryMedia("flybridge", "03-flybridge-img-3320", "50% 50%"),
+      localGalleryMedia("flybridge", "04-flybridge-img-3321", "50% 50%"),
+      localGalleryMedia("flybridge", "05-flybridge-img-3413", "50% 50%"),
+      localGalleryMedia("flybridge", "06-flybridge-img-3425", "50% 50%"),
+      localGalleryMedia("flybridge", "07-flybridge-img-3426", "50% 50%"),
+      localGalleryMedia("flybridge", "08-flybridge-img-3427", "50% 50%"),
+      localGalleryMedia("flybridge", "09-flybridge-img-3428", "50% 50%"),
+      localGalleryMedia("flybridge", "10-flybridge-img-3429", "50% 50%"),
+      localGalleryMedia("flybridge", "11-flybridge-img-3430", "50% 50%")
+    ],
+    horizontalMedia: [
       localMedia("flybridge", "130-p1999658-stage.webp", "130-p1999658-full.webp", "130-p1999658-mobile.webp", "50% 48%"),
       localMedia("flybridge", "dji_0276-stage.webp", "dji_0276-full.webp", "dji_0276-mobile.webp", "50% 48%"),
       localMedia("flybridge", "129-p1477663-stage.webp", "129-p1477663-full.webp", "129-p1477663-mobile.webp", "48% 48%"),
@@ -91,6 +104,19 @@ const zones = [
   {
     id: "foredeck",
     media: [
+      localGalleryMedia("foredeck", "01-foredeck-img-3416", "50% 50%"),
+      localGalleryMedia("foredeck", "02-foredeck-img-3417", "50% 50%"),
+      localGalleryMedia("foredeck", "03-foredeck-img-3418", "50% 50%"),
+      localGalleryMedia("foredeck", "04-foredeck-img-3419", "50% 50%"),
+      localGalleryMedia("foredeck", "05-foredeck-img-3420", "50% 50%"),
+      localGalleryMedia("foredeck", "06-foredeck-img-3421", "50% 50%"),
+      localGalleryMedia("foredeck", "07-foredeck-img-3422", "50% 50%"),
+      localGalleryMedia("foredeck", "08-foredeck-img-3423", "50% 50%"),
+      localGalleryMedia("foredeck", "09-foredeck-img-3424", "50% 50%"),
+      localGalleryMedia("foredeck", "10-foredeck-img-3414", "50% 50%"),
+      localGalleryMedia("foredeck", "11-foredeck-img-3413", "50% 50%")
+    ],
+    horizontalMedia: [
       localMedia("foredeck", "142-p1477659-stage.webp", "142-p1477659-full.webp", "142-p1477659-mobile.webp", "50% 49%"),
       localMedia("foredeck", "146-p1999711-stage.webp", "146-p1999711-full.webp", "146-p1999711-mobile.webp", "49% 50%"),
       localMedia("foredeck", "149-p1999723-stage.webp", "149-p1999723-full.webp", "149-p1999723-mobile.webp", "50% 49%"),
@@ -188,6 +214,19 @@ const zones = [
   {
     id: "saloon",
     media: [
+      localGalleryMedia("saloon", "01-saloon-img-3404", "50% 50%"),
+      localGalleryMedia("saloon", "02-saloon-img-3411", "50% 50%"),
+      localGalleryMedia("saloon", "03-saloon-img-3410", "50% 50%"),
+      localGalleryMedia("saloon", "04-saloon-img-3409", "50% 50%"),
+      localGalleryMedia("saloon", "05-saloon-img-3408", "50% 50%"),
+      localGalleryMedia("saloon", "06-saloon-img-3406", "50% 50%"),
+      localGalleryMedia("saloon", "07-saloon-img-3400", "50% 50%"),
+      localGalleryMedia("saloon", "08-saloon-img-3401", "50% 50%"),
+      localGalleryMedia("saloon", "09-saloon-img-3402", "50% 50%"),
+      localGalleryMedia("saloon", "10-saloon-img-3403", "50% 50%"),
+      localGalleryMedia("saloon", "11-saloon-img-3405", "50% 50%")
+    ],
+    horizontalMedia: [
       localMedia("saloon", "80-p1477573-stage.webp", "80-p1477573-full.webp", "80-p1477573-mobile.webp", "50% 50%"),
       localMedia("saloon", "89-p1999637-stage.webp", "89-p1999637-full.webp", "89-p1999637-mobile.webp", "50% 50%"),
       localMedia("saloon", "87-p1999629-stage.webp", "87-p1999629-full.webp", "87-p1999629-mobile.webp", "50% 50%"),
@@ -304,14 +343,16 @@ const zones = [
 
 function horizontalGalleryItems() {
   return zones
-    .filter((zone) => !SECTION_GALLERY_ZONE_IDS.has(zone.id))
-    .flatMap((zone) => zone.media.map((mediaItem) => ({
-      ...mediaItem,
-      galleryLabel: {
-        en: zone.en.label,
-        ru: zone.ru.label
-      }
-    })));
+    .flatMap((zone) => {
+      const mediaItems = zone.horizontalMedia || (SECTION_GALLERY_ZONE_IDS.has(zone.id) ? [] : zone.media);
+      return mediaItems.map((mediaItem) => ({
+        ...mediaItem,
+        galleryLabel: {
+          en: zone.en.label,
+          ru: zone.ru.label
+        }
+      }));
+    });
 }
 
 const zoneIcons = {
