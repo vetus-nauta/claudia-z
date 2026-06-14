@@ -790,12 +790,23 @@ function resetGalleryTransform() {
   state.gallery.scale = 1;
   state.gallery.translateX = 0;
   state.gallery.translateY = 0;
+  galleryImage.style.transition = "";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 }
 
 function applyGalleryTransform() {
+  galleryImage.style.transition = "none";
   galleryImage.style.transform = `translate3d(${state.gallery.translateX}px, ${state.gallery.translateY}px, 0) scale(${state.gallery.scale})`;
+}
+
+function settleGalleryTransform() {
+  state.gallery.scale = 1;
+  state.gallery.translateX = 0;
+  state.gallery.translateY = 0;
+  galleryImage.style.transition = "";
+  galleryImage.style.opacity = "1";
+  galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 }
 
 function renderGalleryMode(direction = 0) {
@@ -805,33 +816,39 @@ function renderGalleryMode(direction = 0) {
   galleryCaption.hidden = !captionText;
   const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canAnimate) {
+    const enterX = direction > 0 ? "28%" : "-28%";
+    const exitX = direction > 0 ? "-28%" : "28%";
     const ghost = galleryImage.cloneNode(false);
     ghost.removeAttribute("id");
     ghost.alt = "";
     ghost.className = "gallery-mode__image gallery-mode__image-ghost";
+    ghost.style.transition = "";
     ghost.style.opacity = "1";
-    ghost.style.transform = "translate3d(0, 0, 0) scale(1)";
+    ghost.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
     galleryViewport.append(ghost);
     window.requestAnimationFrame(() => {
-      ghost.style.opacity = "0";
-      ghost.style.transform = `translate3d(${direction > 0 ? "-7%" : "7%"}, 0, 0) scale(1)`;
+      ghost.style.opacity = "0.42";
+      ghost.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
     });
     window.setTimeout(() => {
       ghost.remove();
     }, 440);
 
-    galleryImage.style.opacity = "0.82";
-    galleryImage.style.transform = `translate3d(${direction > 0 ? "7%" : "-7%"}, 0, 0) scale(1)`;
+    galleryImage.style.transition = "none";
+    galleryImage.style.opacity = "0.9";
+    galleryImage.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
     galleryImage.src = gallerySourceFor(mediaItem);
     galleryImage.alt = currentZone()[state.lang].title;
     galleryImage.getBoundingClientRect();
     window.requestAnimationFrame(() => {
+      galleryImage.style.transition = "";
       galleryImage.style.opacity = "1";
       galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
     });
     return;
   }
 
+  galleryImage.style.transition = "";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
   galleryImage.src = gallerySourceFor(mediaItem);
@@ -881,7 +898,9 @@ function shiftGallery(direction) {
       state.mediaIndex = state.gallery.index;
       renderZone();
     }
-    resetGalleryTransform();
+    state.gallery.scale = 1;
+    state.gallery.translateX = 0;
+    state.gallery.translateY = 0;
     renderGalleryMode(direction);
   }
 }
@@ -965,6 +984,14 @@ function moveGalleryGesture(event) {
     clampGalleryPan();
     applyGalleryTransform();
     event.preventDefault();
+    return;
+  }
+  if (Math.abs(deltaX) > Math.abs(deltaY) * 1.05) {
+    const dragX = deltaX * 0.82;
+    galleryImage.style.transition = "none";
+    galleryImage.style.opacity = String(Math.max(0.78, 1 - Math.abs(deltaX) / Math.max(1, galleryViewport.clientWidth) * 0.18));
+    galleryImage.style.transform = `translate3d(${dragX}px, 0px, 0) scale(1)`;
+    event.preventDefault();
   }
 }
 
@@ -982,6 +1009,10 @@ function endGalleryGesture(event) {
   state.gallery.isPanning = false;
   if (state.gallery.scale <= 1 && Math.abs(deltaX) >= 34 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.1) {
     shiftGallery(deltaX < 0 ? 1 : -1);
+    return;
+  }
+  if (state.gallery.scale <= 1) {
+    settleGalleryTransform();
   }
 }
 
