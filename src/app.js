@@ -462,6 +462,7 @@ const state = {
     index: 0,
     syncStage: true,
     requestId: 0,
+    isTransitioning: false,
     scale: 1,
     translateX: 0,
     translateY: 0,
@@ -792,6 +793,7 @@ function resetGalleryTransform() {
   state.gallery.translateX = 0;
   state.gallery.translateY = 0;
   galleryImage.style.transition = "";
+  galleryImage.style.visibility = "visible";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 }
@@ -806,8 +808,15 @@ function settleGalleryTransform() {
   state.gallery.translateX = 0;
   state.gallery.translateY = 0;
   galleryImage.style.transition = "";
+  galleryImage.style.visibility = "visible";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+}
+
+function cleanupGalleryTransitionLayers() {
+  galleryViewport.querySelectorAll(".gallery-mode__image-transition").forEach((node) => {
+    node.remove();
+  });
 }
 
 function setGalleryCaption(mediaItem) {
@@ -850,39 +859,67 @@ function renderGalleryMode(direction = 0) {
       if (state.gallery.requestId !== nextRequestId || !state.gallery.isOpen) {
         return;
       }
-      const ghost = galleryImage.cloneNode(false);
-      ghost.removeAttribute("id");
-      ghost.alt = "";
-      ghost.className = "gallery-mode__image gallery-mode__image-ghost";
-      ghost.style.transition = "";
-      ghost.style.opacity = "1";
-      ghost.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
-      galleryViewport.append(ghost);
-      window.requestAnimationFrame(() => {
-        ghost.style.opacity = "0";
-        ghost.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
-      });
-      window.setTimeout(() => {
-        ghost.remove();
-      }, 440);
+      state.gallery.isTransitioning = true;
+      cleanupGalleryTransitionLayers();
+      const outgoing = galleryImage.cloneNode(false);
+      outgoing.removeAttribute("id");
+      outgoing.alt = "";
+      outgoing.className = "gallery-mode__image gallery-mode__image-ghost gallery-mode__image-transition";
+      outgoing.style.transition = "";
+      outgoing.style.opacity = "1";
+      outgoing.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
+
+      const incoming = galleryImage.cloneNode(false);
+      incoming.removeAttribute("id");
+      incoming.className = "gallery-mode__image gallery-mode__image-ghost gallery-mode__image-transition";
+      incoming.src = nextSrc;
+      incoming.alt = nextAlt;
+      incoming.style.transition = "none";
+      incoming.style.opacity = "0.98";
+      incoming.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
+      galleryViewport.append(outgoing, incoming);
 
       galleryImage.style.transition = "none";
-      galleryImage.style.opacity = "0.96";
-      galleryImage.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
-      galleryImage.src = nextSrc;
-      galleryImage.alt = nextAlt;
+      galleryImage.style.visibility = "hidden";
+      galleryImage.style.opacity = "0";
+      galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
       setGalleryCaption(mediaItem);
-      galleryImage.getBoundingClientRect();
+      incoming.getBoundingClientRect();
+
       window.requestAnimationFrame(() => {
-        galleryImage.style.transition = "";
-        galleryImage.style.opacity = "1";
-        galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+        outgoing.style.opacity = "0";
+        outgoing.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
+        incoming.style.transition = "";
+        incoming.style.opacity = "1";
+        incoming.style.transform = "translate3d(0px, 0px, 0) scale(1)";
       });
+      window.setTimeout(() => {
+        if (state.gallery.requestId !== nextRequestId || !state.gallery.isOpen) {
+          outgoing.remove();
+          incoming.remove();
+          state.gallery.isTransitioning = false;
+          return;
+        }
+        galleryImage.style.transition = "none";
+        galleryImage.src = nextSrc;
+        galleryImage.alt = nextAlt;
+        galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+        galleryImage.style.opacity = "1";
+        galleryImage.style.visibility = "visible";
+        galleryImage.getBoundingClientRect();
+        window.requestAnimationFrame(() => {
+          cleanupGalleryTransitionLayers();
+          state.gallery.isTransitioning = false;
+          galleryImage.style.transition = "";
+        });
+      }, 430);
     });
     return;
   }
 
+  cleanupGalleryTransitionLayers();
   galleryImage.style.transition = "";
+  galleryImage.style.visibility = "visible";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
   galleryImage.src = nextSrc;
@@ -917,6 +954,8 @@ function closeGalleryMode() {
   state.gallery.syncStage = true;
   state.gallery.isPanning = false;
   state.gallery.requestId += 1;
+  state.gallery.isTransitioning = false;
+  cleanupGalleryTransitionLayers();
   galleryMode.classList.remove("is-open");
   galleryMode.setAttribute("aria-hidden", "true");
   document.body.classList.remove("is-gallery-mode-open");
@@ -926,6 +965,9 @@ function closeGalleryMode() {
 }
 
 function shiftGallery(direction) {
+  if (state.gallery.isTransitioning) {
+    return;
+  }
   const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
   if (items.length > 1) {
     state.gallery.index = (state.gallery.index + direction + items.length) % items.length;
@@ -969,7 +1011,7 @@ function clampGalleryPan() {
 }
 
 function beginGalleryGesture(event) {
-  if (!state.gallery.isOpen) {
+  if (!state.gallery.isOpen || state.gallery.isTransitioning) {
     return;
   }
   if (event.touches.length === 2) {
@@ -996,7 +1038,7 @@ function beginGalleryGesture(event) {
 }
 
 function moveGalleryGesture(event) {
-  if (!state.gallery.isOpen) {
+  if (!state.gallery.isOpen || state.gallery.isTransitioning) {
     return;
   }
   if (event.touches.length === 2) {
@@ -1034,7 +1076,7 @@ function moveGalleryGesture(event) {
 }
 
 function endGalleryGesture(event) {
-  if (!state.gallery.isOpen || event.touches.length > 0) {
+  if (!state.gallery.isOpen || state.gallery.isTransitioning || event.touches.length > 0) {
     return;
   }
   const touch = event.changedTouches[0];
