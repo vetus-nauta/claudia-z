@@ -73,8 +73,9 @@
 - Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow Welcome Hall viewports use a compact horizontal bottom zone rail. The compact hamburger-style zone menu may still be used outside the Welcome Hall if needed for dense gallery navigation.
 - Top controls now match the lower navigation language: straight glass bar, hairline borders, and quiet text/icon states rather than separate rounded pills.
-- Aft Swim Platform currently uses a generated temporary placeholder scene with a bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and a small fruit/champagne table. Replace it with owner-approved real media when supplied.
-- Photos will be supplied later as Google Drive folders/links on request.
+- Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template.
+- Tender uses owner-provided vertical iPhone media in the same section-gallery template. Its first/opening frame is pinned from the separate Drive file link and is not duplicated when present in the folder.
+- Future photos will be supplied section-by-section as Google Drive folders/links.
 
 ## Source Intake 2026-06-11
 

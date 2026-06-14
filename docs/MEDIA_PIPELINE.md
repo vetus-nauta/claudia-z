@@ -18,8 +18,8 @@ Do not assume assets exist until the owner provides folders or links.
   - Public UI must use cleaned display derivatives only.
   - Keep the mark secondary and visually quiet so it does not compete with the yacht identity or hero media.
   - Do not expose old source filenames or unused extracted logo candidates in public markup.
-- Current prototype zone galleries use selected old WordPress media only as temporary layout and interaction placeholders.
-  - Replace them with approved owner-provided Google Drive media before final publication.
+- Zone galleries use approved owner-provided media where available.
+  - Replace remaining temporary or old-media sections as owner folders arrive.
   - Each final zone should provide enough approved frames for previous/next and swipe navigation without repeating weak or near-duplicate images.
 
 ## Classification
@@ -58,11 +58,12 @@ Classify media by:
 Media intake is section-by-section, not all-at-once.
 
 1. The agent names the next section or subsection to fill.
-2. The owner provides one Google Drive folder link and the exact photo filenames to use for that section.
-3. The agent downloads only the named files.
+2. The owner provides one Google Drive folder link. If they also provide one file link, treat that file as the required first/opening frame.
+3. The agent downloads only that section's media into `.media-source/<zone>/`. If the first file also appears in the folder, keep it once and order it first.
 4. A photo/art-direction pass reviews the named files before any final crop assignment.
 5. The agent converts approved files into public web derivatives and keeps master originals out of the public build.
-6. The agent connects the derivatives to the matching zone and verifies mobile, tablet, desktop, and full-size viewing.
+6. The agent connects the derivatives to the matching zone and verifies mobile, tablet, desktop, localization, section gallery, horizontal gallery, and full-size viewing.
+7. The agent removes replaced placeholders, stale public media, and obsolete public references for that zone.
 
 Technical conversion is not media approval. Do not connect a photo as final merely because it downloaded and converted successfully.
 
@@ -209,6 +210,18 @@ Use these names for the tender:
 - English display: `Tender`
 - Russian display: `Тендер`
 - Treat tender as its own media section even when tender photos are physically connected to the aft swim platform.
+
+## Section Gallery Template
+
+Use this template for owner-supplied vertical iPhone/photo sets such as `aft_swim_platform` and `tender`.
+
+- Public derivatives per source frame: `thumb`, `stage`, `mobile`, and `full` WebP.
+- Source originals stay in `.media-source/<zone>/` and are not uploaded.
+- The stage opens the controlled gallery overlay, never the original image file.
+- Two-finger pinch zoom and left/right swipe must work in the full-screen gallery.
+- The browser/page pull-refresh gesture should not fight the gallery or main stage swipe.
+- A horizontal gallery button may be shown from vertical-gallery zones; it opens only approved horizontal site media and excludes vertical-only section-gallery zones.
+- When real media replaces a placeholder, delete the placeholder derivatives and update this document plus `ACTIVE_CONTEXT.md`.
 
 ## Metadata Per Asset
 

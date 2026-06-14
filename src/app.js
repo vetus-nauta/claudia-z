@@ -18,7 +18,7 @@ function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
   };
 }
 
-const EXPERIMENTAL_GALLERY_ZONE_ID = "aft_swim_platform";
+const SECTION_GALLERY_ZONE_IDS = new Set(["aft_swim_platform", "tender"]);
 
 const zones = [
   {
@@ -162,7 +162,15 @@ const zones = [
   {
     id: "tender",
     media: [
-      localMedia("tender", "williams-sportjet-placeholder-stage.webp", "williams-sportjet-placeholder-full.webp", "williams-sportjet-placeholder-mobile.webp", "45% 52%")
+      localGalleryMedia("tender", "01-tender-primary", "50% 50%"),
+      localGalleryMedia("tender", "02-tender-img-3370", "50% 50%"),
+      localGalleryMedia("tender", "03-tender-img-3393", "50% 50%"),
+      localGalleryMedia("tender", "04-tender-img-3394", "50% 50%"),
+      localGalleryMedia("tender", "05-tender-img-3395", "50% 50%"),
+      localGalleryMedia("tender", "06-tender-img-3396", "50% 50%"),
+      localGalleryMedia("tender", "07-tender-img-3397", "50% 50%"),
+      localGalleryMedia("tender", "08-tender-img-3399", "50% 50%"),
+      localGalleryMedia("tender", "09-tender-img-3433", "50% 50%")
     ],
     en: {
       label: "Tender",
@@ -296,7 +304,7 @@ const zones = [
 
 function horizontalGalleryItems() {
   return zones
-    .filter((zone) => zone.id !== EXPERIMENTAL_GALLERY_ZONE_ID && zone.id !== "tender")
+    .filter((zone) => !SECTION_GALLERY_ZONE_IDS.has(zone.id))
     .flatMap((zone) => zone.media.map((mediaItem) => ({
       ...mediaItem,
       galleryLabel: {
@@ -380,7 +388,7 @@ const copy = {
     swipeHint: "Swipe sideways",
     horizontalGallery: "Section: horizontal gallery",
     horizontalGalleryAria: "Open horizontal gallery",
-    platformGalleryAria: "Platform gallery"
+    sectionGalleryAria: "Section gallery"
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
@@ -440,7 +448,7 @@ const copy = {
     swipeHint: "Свайп вбок",
     horizontalGallery: "Раздел: горизонтальная галерея",
     horizontalGalleryAria: "Открыть горизонтальную галерею",
-    platformGalleryAria: "Галерея платформы"
+    sectionGalleryAria: "Галерея раздела"
   }
 };
 
@@ -539,8 +547,8 @@ function currentMedia() {
   return zone.media[state.mediaIndex] || zone.media[0];
 }
 
-function isExperimentalGalleryZone() {
-  return currentZone().id === EXPERIMENTAL_GALLERY_ZONE_ID;
+function isSectionGalleryZone() {
+  return SECTION_GALLERY_ZONE_IDS.has(currentZone().id);
 }
 
 function stageSourceFor(mediaItem) {
@@ -548,7 +556,7 @@ function stageSourceFor(mediaItem) {
   if (currentZone().id === "overview") {
     return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
   }
-  if (isExperimentalGalleryZone()) {
+  if (isSectionGalleryZone()) {
     return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
   }
   return mediaItem.src;
@@ -720,16 +728,16 @@ function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
-  const isPlatform = isExperimentalGalleryZone();
+  const hasSectionGallery = isSectionGalleryZone();
   if (isOverview) {
     toggleLightbox(false);
   }
   stage.classList.toggle("stage--welcome", isOverview);
-  stage.classList.toggle("stage--platform", isPlatform);
+  stage.classList.toggle("stage--gallery-zone", hasSectionGallery);
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
-  detailsSheet.classList.toggle("sheet--platform", isPlatform);
-  horizontalGalleryButton.hidden = !isPlatform;
+  detailsSheet.classList.toggle("sheet--gallery-zone", hasSectionGallery);
+  horizontalGalleryButton.hidden = !hasSectionGallery;
   const detailMode = isOverview ? "yacht" : "zone";
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
   detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
@@ -894,7 +902,7 @@ function exitViewerFullscreen(element) {
 function renderGalleryMode(direction = 0) {
   const mediaItem = state.gallery.media || currentMedia();
   const nextSrc = gallerySourceFor(mediaItem);
-  const nextAlt = currentZone()[state.lang].title;
+  const nextAlt = mediaItem.galleryLabel ? mediaItem.galleryLabel[state.lang] : currentZone()[state.lang].title;
   const nextRequestId = state.gallery.requestId + 1;
   state.gallery.requestId = nextRequestId;
   const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -971,7 +979,7 @@ function renderGalleryMode(direction = 0) {
 }
 
 function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media, index = state.mediaIndex, syncStage = true) {
-  if (!isExperimentalGalleryZone()) {
+  if (!isSectionGalleryZone()) {
     toggleLightbox(true);
     return;
   }
@@ -1158,7 +1166,7 @@ nextMediaButton.addEventListener("click", () => {
 });
 
 openMediaButton.addEventListener("click", () => {
-  if (isExperimentalGalleryZone()) {
+  if (isSectionGalleryZone()) {
     openGalleryMode();
     return;
   }
@@ -1199,7 +1207,7 @@ function endStageGesture(clientX, clientY, target) {
   if (!isSwipe) {
     const isMobile = window.matchMedia("(max-width: 759px)").matches;
     if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !target.closest(".stage__content")) {
-      if (isExperimentalGalleryZone()) {
+      if (isSectionGalleryZone()) {
         openGalleryMode();
         return;
       }

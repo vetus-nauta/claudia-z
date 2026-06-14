@@ -168,20 +168,21 @@ Port guest / children's cabin, `assets/media/port_guest/`:
 - `60-P1999557` and `62-P1999562` are ensuite/bathroom frames.
 - User-provided `60-P1999575` was not found in Drive; treated as a mistaken merge of existing `58-P1999575` and `60-P1999557`, not used as a separate asset.
 
-## Platform And Temporary Placeholder Media
+## Section Gallery Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
 
-- Experimental platform gallery uses owner-provided vertical iPhone media from Drive.
+- Section gallery uses owner-provided vertical iPhone media from Drive.
 - Generated platform placeholder media was removed after the real platform gallery was connected.
 - Keep the horizontal platform gallery layer sourced only from existing approved horizontal site media until dedicated horizontal platform photos are supplied.
 
 Tender, `assets/media/tender/`:
 
-- Internet placeholder only: `williams-sportjet-placeholder`.
-- Source: Williams Tenders USA official photo library / SportJet image.
-- Used because owner requested a Williams 420-style placeholder; do not treat as confirmed final tender model or final yacht media.
-- Replace with owner-approved real tender media when supplied.
+- Section gallery uses owner-provided vertical iPhone media from Drive folder `1aI7ahmOw-m8g631kMmTi43O-Uu2UdiXI`.
+- First/opening frame is pinned by Drive file `1B0_8J9qHKzXjj9zP_A1mLc4Yy74-ed1Y`, downloaded as `.media-source/tender/IMG_3434.PNG` and published as `01-tender-primary`.
+- Remaining tender frames follow source filename order: `IMG_3370`, `IMG_3393`, `IMG_3394`, `IMG_3395`, `IMG_3396`, `IMG_3397`, `IMG_3399`, `IMG_3433`.
+- The former temporary Williams reference image and its source were removed after real tender media was connected.
+- Tender stays excluded from the horizontal gallery while its approved media is vertical-only.
 
 ## Removed Standalone Placeholder Routes
 
@@ -192,18 +193,19 @@ Tender, `assets/media/tender/`:
 ## Media Intake Protocol
 
 1. Name the next section/subsection to fill.
-2. Owner provides one Google Drive folder link and exact filenames.
-3. Download only named files into `.media-source/<zone>/`.
+2. Owner provides one Google Drive folder link. If they also provide a single file link, treat it as the required first/opening frame and do not duplicate it if it also exists in the folder.
+3. Download only the target section media into `.media-source/<zone>/`.
 4. Run photo/media composition gate: use / hold / reject, crop risks, order, role.
-5. Create `stage`, `full`, `mobile` WebP derivatives.
+5. For vertical iPhone/photo sets, use the reusable section-gallery template: `thumb`, `stage`, `mobile`, and `full` WebP derivatives, source originals outside public build, no direct source opening.
 6. Connect only approved derivatives to `src/app.js`.
-7. Verify mobile, desktop, language behavior, lightbox.
-8. Update `ACTIVE_CONTEXT.md` plus deeper docs only when logic changes.
-9. Commit and push.
+7. Remove superseded placeholders and stale public references for that zone.
+8. Verify mobile, desktop, localization, section gallery, horizontal gallery, and full-screen behavior.
+9. Update `ACTIVE_CONTEXT.md` plus deeper docs when rules or behavior change.
+10. Commit and push.
 
 ## Next Likely Sections
 
-- Real Aft Swim Platform media to replace generated placeholder.
-- Real Tender media to replace internet placeholder.
+- Continue converting future owner-supplied vertical photo zones to the section-gallery template.
+- Review final mobile crops after each new zone is connected.
 
 Note: all interior zones are now represented by specific sections; do not create a generic interior overview.

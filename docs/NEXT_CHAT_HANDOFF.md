@@ -78,8 +78,8 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Interior is fully represented through individual subzones. Do not restore a generic `interior` overview route unless explicitly asked.
 - Main deck is a category concept only. Its public content is carried by Foredeck, Cockpit, and Saloon.
 - Master cabin, Forward VIP, Starboard guest, and Port guest / children's cabin have owner-provided media connected and zone copy in `src/app.js`.
-- Aft Swim Platform remains a generated placeholder until owner-approved platform media is supplied. It currently tells the intended story: bathing platform, SeaBob, two SUP boards, flexible loungers, small fruit/champagne table.
-- Tender remains a Williams SportJet-style placeholder for `Williams 420` context until owner-approved tender media is supplied.
+- Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template.
+- Tender uses owner-provided vertical iPhone media from Drive folder `1aI7ahmOw-m8g631kMmTi43O-Uu2UdiXI`; opening frame is file `1B0_8J9qHKzXjj9zP_A1mLc4Yy74-ed1Y` / public base `01-tender-primary`.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 - Public UI uses optimized derivatives only. Master source media remains under ignored `.media-source/`.
@@ -117,8 +117,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 ## Open Questions
 
 - Final deployment target details and exact publication process for `claudia-z.com`.
-- Whether the current generated Aft Swim Platform placeholder should stay until real photos or be redesigned further.
-- Owner-approved real tender media still needed.
+- Apply the section-gallery template to future owner-supplied vertical photo zones.
 - Final review of every mobile crop after all media is complete.
 - Whether a private access layer/password gate is required for the first deployment, beyond `noindex`.
 
