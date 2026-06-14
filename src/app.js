@@ -7,6 +7,19 @@ function localMedia(folder, stageFile, fullFile, mobileFile, focus = "50% 50%") 
   };
 }
 
+function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
+  return {
+    src: `assets/media/${folder}/${baseFile}-stage.webp`,
+    fullSrc: `assets/media/${folder}/${baseFile}-full.webp`,
+    mobileSrc: `assets/media/${folder}/${baseFile}-mobile.webp`,
+    thumbSrc: `assets/media/${folder}/${baseFile}-thumb.webp`,
+    gallerySrc: `assets/media/${folder}/${baseFile}-full.webp`,
+    focus
+  };
+}
+
+const EXPERIMENTAL_GALLERY_ZONE_ID = "aft_swim_platform";
+
 const zones = [
   {
     id: "overview",
@@ -120,19 +133,30 @@ const zones = [
   {
     id: "aft_swim_platform",
     media: [
-      localMedia("aft_swim_platform", "generated-platform-placeholder-stage.webp", "generated-platform-placeholder-full.webp", "generated-platform-placeholder-mobile.webp", "52% 53%")
+      localGalleryMedia("aft_swim_platform", "01-platform-iphone-primary", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "02-platform-iphone-26290316", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "03-platform-iphone-42e39c65", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "05-platform-iphone-58e2ff53", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "06-platform-iphone-bddff6cc", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "07-platform-iphone-c1312fd5", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "08-platform-iphone-c32af275", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "09-platform-iphone-d175137d", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "10-platform-iphone-d364fbb6", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "11-platform-iphone-d9cc07d5", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "12-platform-iphone-edd7c0f8", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "13-platform-iphone-img-3432", "50% 50%")
     ],
     en: {
       label: "Aft Swim Platform",
       title: "Water access aft",
-      copy: "Water access, tender boarding, and the slowest part of the day aft.",
-      detail: "Final media is still pending. The section should cover bathing access, tender transfer, SeaBob, two SUP boards, and relaxed stern lounging."
+      copy: "The stern platform becomes a private beach area at water level.",
+      detail: "The submersible platform adjusts in height and can lower up to 40 cm below the surface. A ladder makes getting in and out of the water easier for children, older guests, and guests with reduced mobility.\n\nThe platform can be set with sun loungers and a small table, with two freshwater showers close at hand. Underwater lighting, step lighting, and integrated accent lights support the evening setting without making it feel staged.\n\nThe grill area serves relaxed evenings by the stern and can also support service into the cockpit. The onboard setup includes 2 SUP boards, a SeaBob, a tender with a towable inflatable, masks, and fins, giving the yacht independence from shore facilities."
     },
     ru: {
       label: "Кормовая платформа",
       title: "Кормовой выход к воде",
-      copy: "Выход к воде, посадка с тендера и самый спокойный ритм на корме.",
-      detail: "Финальные фото еще нужны. За этим разделом остаются купание, трансфер с тендера, SeaBob, две SUP-доски и спокойный отдых у воды."
+      copy: "Кормовая платформа работает как собственная пляжная зона у воды.",
+      detail: "Погружная платформа регулируется по высоте и может опускаться до 40 см под воду. Лестница делает вход и выход из воды спокойнее для детей, пожилых гостей и людей с ограниченной мобильностью.\n\nНа платформе можно разместить шезлонги и столик; рядом предусмотрены два душа с пресной водой. Подсветка под водой, на ступенях и отдельных элементах поддерживает вечерний сценарий без лишней декоративности.\n\nГриль-зона работает для пляжного досуга у кормы и подачи в кокпит. На борту есть 2 SUP, SeaBob, тендер с надувной плюшкой, маски и ласты, поэтому отдых у воды не зависит от береговой инфраструктуры."
     }
   },
   {
@@ -143,14 +167,14 @@ const zones = [
     en: {
       label: "Tender",
       title: "Tender and water toys",
-      copy: "Williams 420 context for transfer, shore runs, and water-toy use.",
-      detail: "Final tender media is still pending. Keep this section practical: tender movement and toy planning, not a second story about the aft platform."
+      copy: "Williams 420 support for transfers, shore runs, and towable water-toy use.",
+      detail: "This section stays practical: movement between yacht and shore, towable inflatable use, and planning around the aft platform."
     },
     ru: {
       label: "Тендер",
       title: "Тендер и водные активности",
-      copy: "Контекст Williams 420 для трансфера, выхода на берег и водных активностей.",
-      detail: "Финальные фото тендера еще нужны. Раздел лучше держать практичным: движение тендера и водные игрушки, а не повтор кормовой платформы."
+      copy: "Williams 420 для трансфера, выхода на берег и буксируемых водных активностей.",
+      detail: "Раздел остается практичным: движение между яхтой и берегом, надувная плюшка и сценарии вокруг кормовой платформы."
     }
   },
   {
@@ -341,7 +365,8 @@ const copy = {
     previousMedia: "Previous image",
     nextMedia: "Next image",
     openMedia: "Open image",
-    swipeHint: "Swipe sideways"
+    swipeHint: "Swipe sideways",
+    platformGalleryAria: "Platform gallery"
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
@@ -398,7 +423,8 @@ const copy = {
     previousMedia: "Предыдущее изображение",
     nextMedia: "Следующее изображение",
     openMedia: "Открыть изображение",
-    swipeHint: "Свайп вбок"
+    swipeHint: "Свайп вбок",
+    platformGalleryAria: "Галерея платформы"
   }
 };
 
@@ -411,7 +437,23 @@ const state = {
   lightboxRequestId: 0,
   isDragging: false,
   dragStartX: 0,
-  dragStartY: 0
+  dragStartY: 0,
+  gallery: {
+    isOpen: false,
+    media: null,
+    scale: 1,
+    translateX: 0,
+    translateY: 0,
+    startScale: 1,
+    startTranslateX: 0,
+    startTranslateY: 0,
+    startDistance: 0,
+    startMidX: 0,
+    startMidY: 0,
+    dragStartX: 0,
+    dragStartY: 0,
+    isPanning: false
+  }
 };
 
 document.documentElement.lang = state.lang;
@@ -436,6 +478,9 @@ const nextMediaButton = document.querySelector("#nextMediaButton");
 const openMediaButton = document.querySelector("#openMediaButton");
 const mediaLightbox = document.querySelector("#mediaLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
+const galleryMode = document.querySelector("#galleryMode");
+const galleryViewport = document.querySelector("#galleryViewport");
+const galleryImage = document.querySelector("#galleryImage");
 const stage = document.querySelector(".stage");
 const detailsButtonLabel = detailsButton.querySelector("[data-i18n]");
 const detailsTitle = detailsSheet.querySelector("[data-i18n='detailsTitle']");
@@ -468,12 +513,23 @@ function currentMedia() {
   return zone.media[state.mediaIndex] || zone.media[0];
 }
 
+function isExperimentalGalleryZone() {
+  return currentZone().id === EXPERIMENTAL_GALLERY_ZONE_ID;
+}
+
 function stageSourceFor(mediaItem) {
   const isMobile = window.matchMedia("(max-width: 759px)").matches;
   if (currentZone().id === "overview") {
     return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
   }
+  if (isExperimentalGalleryZone()) {
+    return isMobile && mediaItem.mobileSrc ? mediaItem.mobileSrc : mediaItem.src;
+  }
   return mediaItem.src;
+}
+
+function gallerySourceFor(mediaItem) {
+  return mediaItem.gallerySrc || mediaItem.fullSrc || stageSourceFor(mediaItem);
 }
 
 function setTheme(theme) {
@@ -489,6 +545,7 @@ function setZone(zoneId) {
     closeZoneMenu();
     return;
   }
+  closeGalleryMode();
   state.zoneId = zoneId;
   state.mediaIndex = 0;
   closeZoneMenu();
@@ -582,6 +639,10 @@ function updateStageMedia(selectedMedia, altText) {
     return;
   }
   mediaElement.classList.add("is-loading");
+  if (isExperimentalGalleryZone() && selectedMedia.thumbSrc && !mediaElement.src.endsWith(selectedMedia.thumbSrc)) {
+    mediaElement.src = selectedMedia.thumbSrc;
+    mediaElement.style.objectPosition = selectedMedia.focus;
+  }
   const image = new Image();
   image.onload = () => {
     if (state.mediaRequestId !== nextRequestId) {
@@ -607,8 +668,10 @@ function renderZone() {
     toggleLightbox(false);
   }
   stage.classList.toggle("stage--welcome", isOverview);
+  stage.classList.toggle("stage--platform", isExperimentalGalleryZone());
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
+  detailsSheet.classList.toggle("sheet--platform", isExperimentalGalleryZone());
   const detailMode = isOverview ? "yacht" : "zone";
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
   detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
@@ -669,6 +732,156 @@ function toggleLightbox(force) {
   document.body.classList.toggle("is-lightbox-open", shouldOpen);
 }
 
+function resetGalleryTransform() {
+  state.gallery.scale = 1;
+  state.gallery.translateX = 0;
+  state.gallery.translateY = 0;
+  galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+}
+
+function applyGalleryTransform() {
+  galleryImage.style.transform = `translate3d(${state.gallery.translateX}px, ${state.gallery.translateY}px, 0) scale(${state.gallery.scale})`;
+}
+
+function renderGalleryMode() {
+  const mediaItem = state.gallery.media || currentMedia();
+  galleryImage.src = gallerySourceFor(mediaItem);
+  galleryImage.alt = currentZone()[state.lang].title;
+}
+
+function openGalleryMode(mediaItem = currentMedia()) {
+  if (!isExperimentalGalleryZone()) {
+    toggleLightbox(true);
+    return;
+  }
+  state.gallery.media = mediaItem;
+  state.gallery.isOpen = true;
+  resetGalleryTransform();
+  renderGalleryMode();
+  galleryMode.classList.add("is-open");
+  galleryMode.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-gallery-mode-open");
+  closeZoneMenu();
+}
+
+function closeGalleryMode() {
+  state.gallery.isOpen = false;
+  state.gallery.media = null;
+  state.gallery.isPanning = false;
+  galleryMode.classList.remove("is-open");
+  galleryMode.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-gallery-mode-open");
+  resetGalleryTransform();
+}
+
+function shiftGallery(direction) {
+  if (currentZone().media.length > 1) {
+    setMediaIndex(state.mediaIndex + direction);
+    state.gallery.media = currentMedia();
+    resetGalleryTransform();
+    renderGalleryMode();
+  }
+}
+
+function touchDistance(touches) {
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(dx, dy);
+}
+
+function touchMidpoint(touches) {
+  return {
+    x: (touches[0].clientX + touches[1].clientX) / 2,
+    y: (touches[0].clientY + touches[1].clientY) / 2
+  };
+}
+
+function clampGalleryPan() {
+  if (state.gallery.scale <= 1) {
+    state.gallery.translateX = 0;
+    state.gallery.translateY = 0;
+    return;
+  }
+  const maxX = galleryViewport.clientWidth * (state.gallery.scale - 1) * 0.5;
+  const maxY = galleryViewport.clientHeight * (state.gallery.scale - 1) * 0.5;
+  state.gallery.translateX = Math.max(-maxX, Math.min(maxX, state.gallery.translateX));
+  state.gallery.translateY = Math.max(-maxY, Math.min(maxY, state.gallery.translateY));
+}
+
+function beginGalleryGesture(event) {
+  if (!state.gallery.isOpen) {
+    return;
+  }
+  if (event.touches.length === 2) {
+    const midpoint = touchMidpoint(event.touches);
+    state.gallery.startDistance = touchDistance(event.touches);
+    state.gallery.startScale = state.gallery.scale;
+    state.gallery.startTranslateX = state.gallery.translateX;
+    state.gallery.startTranslateY = state.gallery.translateY;
+    state.gallery.startMidX = midpoint.x;
+    state.gallery.startMidY = midpoint.y;
+    state.gallery.isPanning = false;
+    event.preventDefault();
+    return;
+  }
+  const touch = event.touches[0];
+  if (!touch) {
+    return;
+  }
+  state.gallery.dragStartX = touch.clientX;
+  state.gallery.dragStartY = touch.clientY;
+  state.gallery.startTranslateX = state.gallery.translateX;
+  state.gallery.startTranslateY = state.gallery.translateY;
+  state.gallery.isPanning = true;
+}
+
+function moveGalleryGesture(event) {
+  if (!state.gallery.isOpen) {
+    return;
+  }
+  if (event.touches.length === 2) {
+    const midpoint = touchMidpoint(event.touches);
+    const nextScale = state.gallery.startScale * (touchDistance(event.touches) / Math.max(1, state.gallery.startDistance));
+    state.gallery.scale = Math.max(1, Math.min(4, nextScale));
+    state.gallery.translateX = state.gallery.startTranslateX + (midpoint.x - state.gallery.startMidX);
+    state.gallery.translateY = state.gallery.startTranslateY + (midpoint.y - state.gallery.startMidY);
+    clampGalleryPan();
+    applyGalleryTransform();
+    event.preventDefault();
+    return;
+  }
+  const touch = event.touches[0];
+  if (!touch || !state.gallery.isPanning) {
+    return;
+  }
+  const deltaX = touch.clientX - state.gallery.dragStartX;
+  const deltaY = touch.clientY - state.gallery.dragStartY;
+  if (state.gallery.scale > 1) {
+    state.gallery.translateX = state.gallery.startTranslateX + deltaX;
+    state.gallery.translateY = state.gallery.startTranslateY + deltaY;
+    clampGalleryPan();
+    applyGalleryTransform();
+    event.preventDefault();
+  }
+}
+
+function endGalleryGesture(event) {
+  if (!state.gallery.isOpen || event.touches.length > 0) {
+    return;
+  }
+  const touch = event.changedTouches[0];
+  if (!touch) {
+    state.gallery.isPanning = false;
+    return;
+  }
+  const deltaX = touch.clientX - state.gallery.dragStartX;
+  const deltaY = touch.clientY - state.gallery.dragStartY;
+  state.gallery.isPanning = false;
+  if (state.gallery.scale <= 1 && Math.abs(deltaX) >= 34 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.1) {
+    shiftGallery(deltaX < 0 ? 1 : -1);
+  }
+}
+
 themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");
 });
@@ -688,6 +901,10 @@ nextMediaButton.addEventListener("click", () => {
 });
 
 openMediaButton.addEventListener("click", () => {
+  if (isExperimentalGalleryZone()) {
+    openGalleryMode();
+    return;
+  }
   toggleLightbox(true);
 });
 
@@ -718,6 +935,10 @@ function endStageGesture(clientX, clientY, target) {
   if (!isSwipe) {
     const isMobile = window.matchMedia("(max-width: 759px)").matches;
     if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !target.closest(".stage__content")) {
+      if (isExperimentalGalleryZone()) {
+        openGalleryMode();
+        return;
+      }
       toggleLightbox(true);
     }
     return;
@@ -763,6 +984,10 @@ detailsButton.addEventListener("click", () => {
 
 document.querySelectorAll("[data-close]").forEach((button) => {
   button.addEventListener("click", () => {
+    if (button.dataset.close === "gallery") {
+      closeGalleryMode();
+      return;
+    }
     if (button.dataset.close === "lightbox") {
       toggleLightbox(false);
       return;
@@ -773,29 +998,45 @@ document.querySelectorAll("[data-close]").forEach((button) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
+    closeGalleryMode();
     closeZoneMenu();
     toggleSheet(detailsSheet, false);
     toggleLightbox(false);
   }
   if (event.key === "ArrowLeft") {
+    if (state.gallery.isOpen) {
+      shiftGallery(-1);
+      return;
+    }
     setMediaIndex(state.mediaIndex - 1);
   }
   if (event.key === "ArrowRight") {
+    if (state.gallery.isOpen) {
+      shiftGallery(1);
+      return;
+    }
     setMediaIndex(state.mediaIndex + 1);
   }
 });
 
 document.addEventListener("contextmenu", (event) => {
-  if (event.target.closest(".stage, .lightbox")) {
+  if (event.target.closest(".stage, .lightbox, .gallery-mode")) {
     event.preventDefault();
   }
 });
 
 document.addEventListener("dragstart", (event) => {
-  if (event.target === mediaElement || event.target === mediaGuard) {
+  if (event.target === mediaElement || event.target === mediaGuard || event.target === galleryImage) {
     event.preventDefault();
   }
 });
+
+galleryViewport.addEventListener("touchstart", beginGalleryGesture, { passive: false });
+galleryViewport.addEventListener("touchmove", moveGalleryGesture, { passive: false });
+galleryViewport.addEventListener("touchend", endGalleryGesture, { passive: false });
+galleryViewport.addEventListener("touchcancel", () => {
+  state.gallery.isPanning = false;
+}, { passive: false });
 
 setTheme(state.theme);
 render();

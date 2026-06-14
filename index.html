@@ -66,6 +66,7 @@
           </button>
           <nav class="zone-rail" id="zoneRail" data-i18n-aria="zonesAria"></nav>
         </div>
+
       </section>
 
       <aside class="sheet zone-sheet" id="detailsSheet" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-aria="detailsDialogAria">
@@ -109,6 +110,13 @@
       <section class="lightbox" id="mediaLightbox" aria-hidden="true" data-i18n-aria="mediaViewerAria">
         <button class="icon-button lightbox__close" type="button" data-close="lightbox" data-i18n-aria="close">×</button>
         <img class="lightbox__image" id="lightboxImage" alt="" draggable="false">
+      </section>
+
+      <section class="gallery-mode" id="galleryMode" aria-hidden="true" role="dialog" data-i18n-aria="platformGalleryAria">
+        <button class="icon-button gallery-mode__close" type="button" data-close="gallery" data-i18n-aria="close">×</button>
+        <div class="gallery-mode__viewport" id="galleryViewport">
+          <img class="gallery-mode__image" id="galleryImage" alt="" draggable="false">
+        </div>
       </section>
 
     </main>
