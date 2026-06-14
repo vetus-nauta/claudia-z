@@ -1930,3 +1930,68 @@ h1 {
   pointer-events: none;
   transform: translate3d(-10px, 0, 0);
 }
+
+.error-page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: #090e0f;
+  color: #f6f1e8;
+}
+
+.error-page__shell {
+  width: min(420px, 100%);
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  text-align: center;
+}
+
+.error-page__logo {
+  width: min(260px, 76vw);
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.error-page__code {
+  margin: 12px 0 0;
+  color: rgba(214, 193, 146, 0.78);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.error-page h1 {
+  margin: 0;
+  font-size: clamp(26px, 8vw, 42px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.error-page p {
+  max-width: 32ch;
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.error-page__link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(214, 193, 146, 0.42);
+  border-radius: 999px;
+  padding: 0 18px;
+  color: #f6f1e8;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  font-weight: 560;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}

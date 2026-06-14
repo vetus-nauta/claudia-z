@@ -1,0 +1,20 @@
+{
+  "name": "Claudia Z",
+  "short_name": "Claudia Z",
+  "description": "Private no-index yacht presentation.",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#090e0f",
+  "background_color": "#090e0f",
+  "display": "standalone"
+}

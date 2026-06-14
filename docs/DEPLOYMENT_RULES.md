@@ -7,15 +7,38 @@ Namecheap `public_html` is the publication target, not the project memory.
 
 ## Deployment Procedure
 
-1. Build and test in GitHub/dev/staging.
-2. Review on smartphone and tablet.
-3. Backup current production files.
-4. Backup database if WordPress still exists.
-5. Deploy only approved build.
-6. Verify domain and HTTPS.
-7. Verify no-index controls: robots, meta robots, sitemap absence, and headers where available.
-8. Verify media and confirm no public contact forms exist.
-9. Keep rollback backup.
+1. Build and test locally from `/home/alexey/GitHub/claudia-z`.
+2. Run `npm run check`.
+3. Verify all `localMedia` and `localGalleryMedia` paths exist.
+4. Verify public files do not contain Drive links or `.media-source` paths.
+5. Verify no-index controls: `robots.txt`, meta robots, sitemap absence, and `X-Robots-Tag`.
+6. Verify the changed zones in a browser before deployment.
+7. Commit and push to GitHub before FTP upload.
+8. Deploy only public files: `index.html`, `404.html`, `robots.txt`, `.htaccess`, `site.webmanifest`, `favicon.ico`, `apple-touch-icon.png`, `src/`, `assets/`.
+9. Do not deploy `docs/`, `.media-source/`, source exports, temporary test folders, or private notes.
+10. After FTP upload, compare live hashes for changed public files.
+11. Smoke-test the live site on HTTPS.
+12. Keep the previous Git commit hash as the rollback point.
+
+## Rollback Procedure
+
+FTP has no clean transactional deploy. Rollback is Git-driven:
+
+1. Identify the last good commit.
+2. Check out or archive the public files from that commit.
+3. Upload the last-good public files back to the same server paths.
+4. Re-run live hash checks for `index.html`, `src/app.js`, `src/styles.css`, and changed media.
+5. Re-run the live browser smoke test.
+
+For large media releases, keep the previous live media files on the server unless the replacement has passed live hash checks. Delete stale media only when it has been intentionally superseded.
+
+## Current Static Deployment Baseline
+
+- `index.html` and `404.html` are `noindex` and should not be cached.
+- CSS and JS are loaded with query-string versions from HTML.
+- Static assets may use long cache headers when their filename or HTML query version changes.
+- `favicon.ico`, `apple-touch-icon.png`, and `site.webmanifest` are part of the public root.
+- Security headers live in `.htaccess`: noindex, nosniff, no-referrer, frame deny, HSTS, permissions policy, and CSP.
 
 ## Do Not
 
@@ -31,7 +54,7 @@ Namecheap `public_html` is the publication target, not the project memory.
 Likely production target:
 
 ```text
-Namecheap hosting / public_html
+Namecheap hosting / claudia-z.com
 ```
 
-But actual server path must be discovered and recorded before deployment.
+Actual FTP path used in deployment: `/claudia-z.com`.
