@@ -13,6 +13,17 @@ AddType application/manifest+json .webmanifest
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
 </IfModule>
 
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/manifest+json "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
 <FilesMatch "\\.(html|webmanifest)$">
   <IfModule mod_headers.c>
     Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
@@ -25,17 +36,6 @@ AddType application/manifest+json .webmanifest
     Header always set Cache-Control "public, max-age=31536000, immutable"
   </IfModule>
 </FilesMatch>
-
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/html "access plus 0 seconds"
-  ExpiresByType application/manifest+json "access plus 0 seconds"
-  ExpiresByType text/css "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-</IfModule>
 
 <IfModule mod_authz_core.c>
   <FilesMatch "(^\\.|^(AGENTS|README|README_FIRST|package)\\.(md|json)$|\\.(sql|sqlite|db|log|bak|zip|tar|gz|pem|key|p12|pfx|env)$)">
