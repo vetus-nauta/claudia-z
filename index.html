@@ -60,12 +60,13 @@
         <div class="swipe-hint" id="swipeHint" data-i18n="swipeHint" aria-hidden="true"></div>
 
         <div class="command">
+          <span class="zone-current-label" id="currentZoneLabel"></span>
           <button class="zone-menu-button" type="button" id="zoneMenuButton" aria-expanded="false" aria-controls="zoneRail">
             <span class="zone-menu-button__icon" aria-hidden="true"></span>
-            <span id="currentZoneLabel"></span>
           </button>
-          <button class="platform-gallery-button" type="button" id="horizontalGalleryButton" data-i18n="horizontalGallery" data-i18n-aria="horizontalGalleryAria" hidden></button>
-          <nav class="zone-rail" id="zoneRail" data-i18n-aria="zonesAria"></nav>
+          <nav class="zone-rail" id="zoneRail" data-i18n-aria="zonesAria">
+            <button class="platform-gallery-button" type="button" id="horizontalGalleryButton" data-i18n="horizontalGallery" data-i18n-aria="horizontalGalleryAria" hidden></button>
+          </nav>
         </div>
 
       </section>
@@ -117,6 +118,7 @@
         <button class="icon-button gallery-mode__close" type="button" data-close="gallery" data-i18n-aria="close">×</button>
         <div class="gallery-mode__viewport" id="galleryViewport">
           <img class="gallery-mode__image" id="galleryImage" alt="" draggable="false">
+          <p class="gallery-mode__caption" id="galleryCaption"></p>
         </div>
       </section>
 

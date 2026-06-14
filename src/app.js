@@ -294,14 +294,17 @@ const zones = [
   }
 ];
 
-const platformHorizontalMedia = [
-  localMedia("cockpit", "121-p1999653-stage.webp", "121-p1999653-full.webp", "121-p1999653-mobile.webp", "50% 50%"),
-  localMedia("cockpit", "113-p1477599-stage.webp", "113-p1477599-full.webp", "113-p1477599-mobile.webp", "50% 50%"),
-  localMedia("cockpit", "115-p1477604-stage.webp", "115-p1477604-full.webp", "115-p1477604-mobile.webp", "47% 50%"),
-  localMedia("exterior", "dji_0247-stage.webp", "dji_0247-full.webp", "dji_0247-mobile.webp", "50% 52%"),
-  localMedia("exterior", "dji_0267-stage.webp", "dji_0267-full.webp", "dji_0267-mobile.webp", "52% 50%"),
-  localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%")
-];
+function horizontalGalleryItems() {
+  return zones
+    .filter((zone) => zone.id !== EXPERIMENTAL_GALLERY_ZONE_ID && zone.id !== "tender")
+    .flatMap((zone) => zone.media.map((mediaItem) => ({
+      ...mediaItem,
+      galleryLabel: {
+        en: zone.en.label,
+        ru: zone.ru.label
+      }
+    })));
+}
 
 const zoneIcons = {
   overview: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M12 4v16M6.5 6.5l11 11M17.5 6.5l-11 11" stroke-width="1.45"/></svg>',
@@ -375,8 +378,8 @@ const copy = {
     nextMedia: "Next image",
     openMedia: "Open image",
     swipeHint: "Swipe sideways",
-    horizontalGallery: "Horizontal photos",
-    horizontalGalleryAria: "Open horizontal platform photos",
+    horizontalGallery: "Section: horizontal gallery",
+    horizontalGalleryAria: "Open horizontal gallery",
     platformGalleryAria: "Platform gallery"
   },
   ru: {
@@ -435,8 +438,8 @@ const copy = {
     nextMedia: "Следующее изображение",
     openMedia: "Открыть изображение",
     swipeHint: "Свайп вбок",
-    horizontalGallery: "Горизонтальные фото",
-    horizontalGalleryAria: "Открыть горизонтальные фото платформы",
+    horizontalGallery: "Раздел: горизонтальная галерея",
+    horizontalGalleryAria: "Открыть горизонтальную галерею",
     platformGalleryAria: "Галерея платформы"
   }
 };
@@ -499,6 +502,7 @@ const lightboxImage = document.querySelector("#lightboxImage");
 const galleryMode = document.querySelector("#galleryMode");
 const galleryViewport = document.querySelector("#galleryViewport");
 const galleryImage = document.querySelector("#galleryImage");
+const galleryCaption = document.querySelector("#galleryCaption");
 const stage = document.querySelector(".stage");
 const detailsButtonLabel = detailsButton.querySelector("[data-i18n]");
 const detailsTitle = detailsSheet.querySelector("[data-i18n='detailsTitle']");
@@ -607,6 +611,7 @@ function shiftStage(direction) {
 
 function renderRail() {
   rail.innerHTML = "";
+  rail.append(horizontalGalleryButton);
   zones.forEach((zone) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -795,6 +800,9 @@ function applyGalleryTransform() {
 
 function renderGalleryMode(direction = 0) {
   const mediaItem = state.gallery.media || currentMedia();
+  const captionText = mediaItem.galleryLabel ? mediaItem.galleryLabel[state.lang] : "";
+  galleryCaption.textContent = captionText;
+  galleryCaption.hidden = !captionText;
   const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canAnimate) {
     const ghost = galleryImage.cloneNode(false);
@@ -858,6 +866,8 @@ function closeGalleryMode() {
   galleryMode.classList.remove("is-open");
   galleryMode.setAttribute("aria-hidden", "true");
   document.body.classList.remove("is-gallery-mode-open");
+  galleryCaption.textContent = "";
+  galleryCaption.hidden = true;
   resetGalleryTransform();
 }
 
@@ -1002,7 +1012,10 @@ openMediaButton.addEventListener("click", () => {
 });
 
 horizontalGalleryButton.addEventListener("click", () => {
-  openGalleryMode(platformHorizontalMedia[0], platformHorizontalMedia, 0, false);
+  const items = horizontalGalleryItems();
+  if (items.length) {
+    openGalleryMode(items[0], items, 0, false);
+  }
 });
 
 function canHandleStageGesture(target) {
