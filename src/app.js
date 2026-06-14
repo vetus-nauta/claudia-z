@@ -942,6 +942,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
   galleryMode.classList.add("is-open");
   galleryMode.setAttribute("aria-hidden", "false");
   document.body.classList.add("is-gallery-mode-open");
+  document.body.classList.toggle("is-horizontal-gallery-open", !syncStage);
   closeZoneMenu();
 }
 
@@ -958,6 +959,7 @@ function closeGalleryMode() {
   galleryMode.classList.remove("is-open");
   galleryMode.setAttribute("aria-hidden", "true");
   document.body.classList.remove("is-gallery-mode-open");
+  document.body.classList.remove("is-horizontal-gallery-open");
   galleryCaption.textContent = "";
   galleryCaption.hidden = true;
   resetGalleryTransform();

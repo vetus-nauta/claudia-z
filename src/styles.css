@@ -950,6 +950,29 @@ h1 {
   display: none;
 }
 
+@media (orientation: landscape) and (max-height: 540px) {
+  .is-horizontal-gallery-open .gallery-mode__viewport {
+    grid-template-rows: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .is-horizontal-gallery-open .gallery-mode__image {
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  .is-horizontal-gallery-open .gallery-mode__caption {
+    grid-row: 1;
+    align-self: end;
+    z-index: 2;
+    margin-bottom: calc(10px + var(--safe-bottom));
+  }
+}
+
 .gallery-mode__close {
   position: absolute;
   top: calc(14px + var(--safe-top));
