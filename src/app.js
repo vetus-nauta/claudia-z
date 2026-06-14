@@ -853,8 +853,7 @@ function renderGalleryMode(direction = 0) {
   state.gallery.requestId = nextRequestId;
   const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canAnimate) {
-    const enterX = direction > 0 ? "28%" : "-28%";
-    const exitX = direction > 0 ? "-28%" : "28%";
+    const transitionMs = 260;
     preloadGallerySource(nextSrc, () => {
       if (state.gallery.requestId !== nextRequestId || !state.gallery.isOpen) {
         return;
@@ -867,7 +866,7 @@ function renderGalleryMode(direction = 0) {
       outgoing.className = "gallery-mode__image gallery-mode__image-ghost gallery-mode__image-transition";
       outgoing.style.transition = "";
       outgoing.style.opacity = "1";
-      outgoing.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
+      outgoing.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 
       const incoming = galleryImage.cloneNode(false);
       incoming.removeAttribute("id");
@@ -875,8 +874,8 @@ function renderGalleryMode(direction = 0) {
       incoming.src = nextSrc;
       incoming.alt = nextAlt;
       incoming.style.transition = "none";
-      incoming.style.opacity = "0.98";
-      incoming.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
+      incoming.style.opacity = "0";
+      incoming.style.transform = "translate3d(0px, 0px, 0) scale(1)";
       galleryViewport.append(outgoing, incoming);
 
       galleryImage.style.transition = "none";
@@ -888,10 +887,8 @@ function renderGalleryMode(direction = 0) {
 
       window.requestAnimationFrame(() => {
         outgoing.style.opacity = "0";
-        outgoing.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
         incoming.style.transition = "";
         incoming.style.opacity = "1";
-        incoming.style.transform = "translate3d(0px, 0px, 0) scale(1)";
       });
       window.setTimeout(() => {
         if (state.gallery.requestId !== nextRequestId || !state.gallery.isOpen) {
@@ -912,7 +909,7 @@ function renderGalleryMode(direction = 0) {
           state.gallery.isTransitioning = false;
           galleryImage.style.transition = "";
         });
-      }, 430);
+      }, transitionMs + 30);
     });
     return;
   }
@@ -1067,10 +1064,6 @@ function moveGalleryGesture(event) {
     return;
   }
   if (Math.abs(deltaX) > Math.abs(deltaY) * 1.05) {
-    const dragX = deltaX * 0.82;
-    galleryImage.style.transition = "none";
-    galleryImage.style.opacity = String(Math.max(0.78, 1 - Math.abs(deltaX) / Math.max(1, galleryViewport.clientWidth) * 0.18));
-    galleryImage.style.transform = `translate3d(${dragX}px, 0px, 0) scale(1)`;
     event.preventDefault();
   }
 }
