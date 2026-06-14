@@ -455,6 +455,8 @@ const state = {
   isDragging: false,
   dragStartX: 0,
   dragStartY: 0,
+  touchStartX: 0,
+  touchStartY: 0,
   gallery: {
     isOpen: false,
     media: null,
@@ -1245,12 +1247,67 @@ document.addEventListener("dragstart", (event) => {
   }
 });
 
+function rememberGlobalTouch(event) {
+  const touch = event.touches[0];
+  if (!touch) {
+    return;
+  }
+  state.touchStartX = touch.clientX;
+  state.touchStartY = touch.clientY;
+}
+
+function scrollableAncestorFor(target) {
+  let node = target instanceof Element ? target : target.parentElement;
+  while (node && node !== document.body) {
+    const style = window.getComputedStyle(node);
+    const canScroll = /(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 1;
+    if (canScroll) {
+      return node;
+    }
+    node = node.parentElement;
+  }
+  return null;
+}
+
+function canUseInternalScroll(target, deltaY) {
+  const scroller = scrollableAncestorFor(target);
+  if (!scroller) {
+    return false;
+  }
+  if (deltaY > 0) {
+    return scroller.scrollTop > 0;
+  }
+  if (deltaY < 0) {
+    return scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 1;
+  }
+  return true;
+}
+
+function preventPageOverscroll(event) {
+  const touch = event.touches[0];
+  if (!touch) {
+    return;
+  }
+  const deltaX = touch.clientX - state.touchStartX;
+  const deltaY = touch.clientY - state.touchStartY;
+  const isVertical = Math.abs(deltaY) > Math.abs(deltaX) * 1.05;
+  if (!isVertical) {
+    return;
+  }
+  if (canUseInternalScroll(event.target, deltaY)) {
+    return;
+  }
+  event.preventDefault();
+}
+
 function preventFullscreenOverscroll(event) {
   if (document.body.classList.contains("is-gallery-mode-open") || document.body.classList.contains("is-lightbox-open")) {
     event.preventDefault();
   }
 }
 
+document.addEventListener("touchstart", rememberGlobalTouch, { passive: true });
+document.addEventListener("touchmove", preventPageOverscroll, { passive: false });
 galleryMode.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
 mediaLightbox.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
 galleryViewport.addEventListener("touchstart", beginGalleryGesture, { passive: false });
