@@ -149,14 +149,14 @@ const zones = [
     en: {
       label: "Aft Swim Platform",
       title: "Water access aft",
-      copy: "The stern platform becomes a private beach area at water level.",
-      detail: "The submersible platform adjusts in height and can lower up to 40 cm below the surface. A ladder makes getting in and out of the water easier for children, older guests, and guests with reduced mobility.\n\nThe platform can be set with sun loungers and a small table, with two freshwater showers close at hand. Underwater lighting, step lighting, and integrated accent lights support the evening setting without making it feel staged.\n\nThe grill area serves relaxed evenings by the stern and can also support service into the cockpit. The onboard setup includes 2 SUP boards, a SeaBob, a tender with a towable inflatable, masks, and fins, giving the yacht independence from shore facilities."
+      copy: "The aft submersible platform works as a beach area by the water.",
+      detail: "On the Sunseeker 76, the aft submersible swim platform is arranged in an original and practical way. It can be used as a beach area with sun loungers and a small table, while the platform height can be adjusted for comfortable entry into the water and exit from it. A ladder is provided for getting into the water.\n\nThese options allow young children, older guests, and people with reduced mobility to enjoy the sea and the beach area comfortably. The platform can lower up to 40 cm below the water, creating a conditional pool area beside the yacht.\n\nTwo showers on the platform supply fresh water at any time and prevent queues. For evening time by the water, the platform includes a grill area: a practical solution for grill gatherings on the platform beach area and for serving grilled dishes to the cockpit table.\n\nTogether with underwater lighting, step lighting, and other lighting elements, this gives comfort, independence from shore infrastructure, and a calm sense of rest by the water. For active time on board there are 2 SUP boards, a SeaBob, a tender with a towable inflatable, masks, and fins."
     },
     ru: {
       label: "Кормовая платформа",
       title: "Кормовой выход к воде",
-      copy: "Кормовая платформа работает как собственная пляжная зона у воды.",
-      detail: "Погружная платформа регулируется по высоте и может опускаться до 40 см под воду. Лестница делает вход и выход из воды спокойнее для детей, пожилых гостей и людей с ограниченной мобильностью.\n\nНа платформе можно разместить шезлонги и столик; рядом предусмотрены два душа с пресной водой. Подсветка под водой, на ступенях и отдельных элементах поддерживает вечерний сценарий без лишней декоративности.\n\nГриль-зона работает для пляжного досуга у кормы и подачи в кокпит. На борту есть 2 SUP, SeaBob, тендер с надувной плюшкой, маски и ласты, поэтому отдых у воды не зависит от береговой инфраструктуры."
+      copy: "Кормовая погружная платформа работает как пляжная зона у воды.",
+      detail: "В Sunseeker 76 кормовая погружная купальная платформа устроена оригинально и удобно. Ее можно использовать как пляжную зону с шезлонгами и столиком, регулируя высоту платформы относительно воды для комфортного входа в воду и выхода из нее. Для спуска в воду предусмотрена лестница.\n\nЭти опции позволяют маленьким детям, людям в возрасте и людям с ограниченной мобильностью комфортно наслаждаться морем и пляжной зоной. Платформа может опускаться до 40 см под воду, создавая у борта зону условного бассейна.\n\nДва душа на платформе обеспечивают пресной водой в любой момент и не создают очередей. Для вечернего отдыха у воды на платформе организована гриль-зона: удобное решение для гриль-вечеринок на пляжной зоне платформы и подачи блюд с гриля к столу в кокпит.\n\nВместе с подсветкой подводной части, ступеней и других элементов это дает уют, независимость от береговой инфраструктуры и спокойное ощущение отдыха у воды. Для активного отдыха на яхте есть 2 SUP, SeaBob, тендер с надувной плюшкой, маски для ныряния и ласты."
     }
   },
   {
@@ -294,6 +294,15 @@ const zones = [
   }
 ];
 
+const platformHorizontalMedia = [
+  localMedia("cockpit", "121-p1999653-stage.webp", "121-p1999653-full.webp", "121-p1999653-mobile.webp", "50% 50%"),
+  localMedia("cockpit", "113-p1477599-stage.webp", "113-p1477599-full.webp", "113-p1477599-mobile.webp", "50% 50%"),
+  localMedia("cockpit", "115-p1477604-stage.webp", "115-p1477604-full.webp", "115-p1477604-mobile.webp", "47% 50%"),
+  localMedia("exterior", "dji_0247-stage.webp", "dji_0247-full.webp", "dji_0247-mobile.webp", "50% 52%"),
+  localMedia("exterior", "dji_0267-stage.webp", "dji_0267-full.webp", "dji_0267-mobile.webp", "52% 50%"),
+  localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%")
+];
+
 const zoneIcons = {
   overview: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M12 4v16M6.5 6.5l11 11M17.5 6.5l-11 11" stroke-width="1.45"/></svg>',
   exterior: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 15c4.5-4.2 11.2-4.5 18-2.2M5 15.4h13.5l2.5-2.8M7 12.2l3.4-3.1h5.2l3.2 3.1M6 17.7h14" stroke-width="1.5"/></svg>',
@@ -366,6 +375,8 @@ const copy = {
     nextMedia: "Next image",
     openMedia: "Open image",
     swipeHint: "Swipe sideways",
+    horizontalGallery: "Horizontal photos",
+    horizontalGalleryAria: "Open horizontal platform photos",
     platformGalleryAria: "Platform gallery"
   },
   ru: {
@@ -424,6 +435,8 @@ const copy = {
     nextMedia: "Следующее изображение",
     openMedia: "Открыть изображение",
     swipeHint: "Свайп вбок",
+    horizontalGallery: "Горизонтальные фото",
+    horizontalGalleryAria: "Открыть горизонтальные фото платформы",
     platformGalleryAria: "Галерея платформы"
   }
 };
@@ -433,6 +446,7 @@ const state = {
   theme: detectTheme(),
   zoneId: "overview",
   mediaIndex: 0,
+  mediaDirection: 0,
   mediaRequestId: 0,
   lightboxRequestId: 0,
   isDragging: false,
@@ -441,6 +455,9 @@ const state = {
   gallery: {
     isOpen: false,
     media: null,
+    items: [],
+    index: 0,
+    syncStage: true,
     scale: 1,
     translateX: 0,
     translateY: 0,
@@ -476,6 +493,7 @@ const mediaCounter = document.querySelector("#mediaCounter");
 const previousMediaButton = document.querySelector("#prevMediaButton");
 const nextMediaButton = document.querySelector("#nextMediaButton");
 const openMediaButton = document.querySelector("#openMediaButton");
+const horizontalGalleryButton = document.querySelector("#horizontalGalleryButton");
 const mediaLightbox = document.querySelector("#mediaLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const galleryMode = document.querySelector("#galleryMode");
@@ -548,6 +566,7 @@ function setZone(zoneId) {
   closeGalleryMode();
   state.zoneId = zoneId;
   state.mediaIndex = 0;
+  state.mediaDirection = 0;
   closeZoneMenu();
   render();
 }
@@ -564,11 +583,12 @@ function setAdjacentZone(direction) {
   setZone(zones[nextIndex].id);
 }
 
-function setMediaIndex(index) {
+function setMediaIndex(index, direction = 0) {
   const zone = currentZone();
   if (zone.media.length < 2) {
     return;
   }
+  state.mediaDirection = direction;
   state.mediaIndex = (index + zone.media.length) % zone.media.length;
   document.body.classList.remove("is-media-surfacing");
   window.requestAnimationFrame(() => {
@@ -579,7 +599,7 @@ function setMediaIndex(index) {
 
 function shiftStage(direction) {
   if (currentZone().media.length > 1) {
-    setMediaIndex(state.mediaIndex + direction);
+    setMediaIndex(state.mediaIndex + direction, direction);
     return;
   }
   setAdjacentZone(direction);
@@ -628,6 +648,38 @@ function preloadAdjacentMedia() {
   });
 }
 
+function transitionStageMedia(nextSrc, focus) {
+  const direction = state.mediaDirection;
+  const canAnimate = direction !== 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (canAnimate && mediaElement.getAttribute("src")) {
+    const ghost = mediaElement.cloneNode(false);
+    ghost.removeAttribute("id");
+    ghost.alt = "";
+    ghost.className = `stage__media stage__media-ghost stage__media-ghost--${direction > 0 ? "next" : "previous"}`;
+    ghost.style.objectPosition = mediaElement.style.objectPosition || focus;
+    stage.append(ghost);
+    window.requestAnimationFrame(() => {
+      ghost.classList.add("is-leaving");
+    });
+    window.setTimeout(() => {
+      ghost.remove();
+    }, 520);
+
+    const enterClass = direction > 0 ? "stage__media--enter-from-next" : "stage__media--enter-from-previous";
+    mediaElement.classList.add(enterClass);
+    mediaElement.src = nextSrc;
+    mediaElement.style.objectPosition = focus;
+    mediaElement.getBoundingClientRect();
+    window.requestAnimationFrame(() => {
+      mediaElement.classList.remove(enterClass);
+    });
+    return;
+  }
+
+  mediaElement.src = nextSrc;
+  mediaElement.style.objectPosition = focus;
+}
+
 function updateStageMedia(selectedMedia, altText) {
   const stageSrc = stageSourceFor(selectedMedia);
   const nextRequestId = state.mediaRequestId + 1;
@@ -639,17 +691,12 @@ function updateStageMedia(selectedMedia, altText) {
     return;
   }
   mediaElement.classList.add("is-loading");
-  if (isExperimentalGalleryZone() && selectedMedia.thumbSrc && !mediaElement.src.endsWith(selectedMedia.thumbSrc)) {
-    mediaElement.src = selectedMedia.thumbSrc;
-    mediaElement.style.objectPosition = selectedMedia.focus;
-  }
   const image = new Image();
   image.onload = () => {
     if (state.mediaRequestId !== nextRequestId) {
       return;
     }
-    mediaElement.src = stageSrc;
-    mediaElement.style.objectPosition = selectedMedia.focus;
+    transitionStageMedia(stageSrc, selectedMedia.focus);
     mediaElement.classList.remove("is-loading");
   };
   image.onerror = () => {
@@ -664,14 +711,16 @@ function renderZone() {
   const zone = currentZone();
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
+  const isPlatform = isExperimentalGalleryZone();
   if (isOverview) {
     toggleLightbox(false);
   }
   stage.classList.toggle("stage--welcome", isOverview);
-  stage.classList.toggle("stage--platform", isExperimentalGalleryZone());
+  stage.classList.toggle("stage--platform", isPlatform);
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
-  detailsSheet.classList.toggle("sheet--platform", isExperimentalGalleryZone());
+  detailsSheet.classList.toggle("sheet--platform", isPlatform);
+  horizontalGalleryButton.hidden = !isPlatform;
   const detailMode = isOverview ? "yacht" : "zone";
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
   detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
@@ -736,6 +785,7 @@ function resetGalleryTransform() {
   state.gallery.scale = 1;
   state.gallery.translateX = 0;
   state.gallery.translateY = 0;
+  galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 }
 
@@ -743,18 +793,52 @@ function applyGalleryTransform() {
   galleryImage.style.transform = `translate3d(${state.gallery.translateX}px, ${state.gallery.translateY}px, 0) scale(${state.gallery.scale})`;
 }
 
-function renderGalleryMode() {
+function renderGalleryMode(direction = 0) {
   const mediaItem = state.gallery.media || currentMedia();
+  const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (canAnimate) {
+    const ghost = galleryImage.cloneNode(false);
+    ghost.removeAttribute("id");
+    ghost.alt = "";
+    ghost.className = "gallery-mode__image gallery-mode__image-ghost";
+    ghost.style.opacity = "1";
+    ghost.style.transform = "translate3d(0, 0, 0) scale(1)";
+    galleryViewport.append(ghost);
+    window.requestAnimationFrame(() => {
+      ghost.style.opacity = "0";
+      ghost.style.transform = `translate3d(${direction > 0 ? "-7%" : "7%"}, 0, 0) scale(1)`;
+    });
+    window.setTimeout(() => {
+      ghost.remove();
+    }, 440);
+
+    galleryImage.style.opacity = "0.82";
+    galleryImage.style.transform = `translate3d(${direction > 0 ? "7%" : "-7%"}, 0, 0) scale(1)`;
+    galleryImage.src = gallerySourceFor(mediaItem);
+    galleryImage.alt = currentZone()[state.lang].title;
+    galleryImage.getBoundingClientRect();
+    window.requestAnimationFrame(() => {
+      galleryImage.style.opacity = "1";
+      galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+    });
+    return;
+  }
+
+  galleryImage.style.opacity = "1";
+  galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
   galleryImage.src = gallerySourceFor(mediaItem);
   galleryImage.alt = currentZone()[state.lang].title;
 }
 
-function openGalleryMode(mediaItem = currentMedia()) {
+function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media, index = state.mediaIndex, syncStage = true) {
   if (!isExperimentalGalleryZone()) {
     toggleLightbox(true);
     return;
   }
   state.gallery.media = mediaItem;
+  state.gallery.items = items;
+  state.gallery.index = index;
+  state.gallery.syncStage = syncStage;
   state.gallery.isOpen = true;
   resetGalleryTransform();
   renderGalleryMode();
@@ -767,6 +851,9 @@ function openGalleryMode(mediaItem = currentMedia()) {
 function closeGalleryMode() {
   state.gallery.isOpen = false;
   state.gallery.media = null;
+  state.gallery.items = [];
+  state.gallery.index = 0;
+  state.gallery.syncStage = true;
   state.gallery.isPanning = false;
   galleryMode.classList.remove("is-open");
   galleryMode.setAttribute("aria-hidden", "true");
@@ -775,11 +862,17 @@ function closeGalleryMode() {
 }
 
 function shiftGallery(direction) {
-  if (currentZone().media.length > 1) {
-    setMediaIndex(state.mediaIndex + direction);
-    state.gallery.media = currentMedia();
+  const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
+  if (items.length > 1) {
+    state.gallery.index = (state.gallery.index + direction + items.length) % items.length;
+    state.gallery.media = items[state.gallery.index];
+    if (state.gallery.syncStage) {
+      state.mediaDirection = direction;
+      state.mediaIndex = state.gallery.index;
+      renderZone();
+    }
     resetGalleryTransform();
-    renderGalleryMode();
+    renderGalleryMode(direction);
   }
 }
 
@@ -893,11 +986,11 @@ zoneMenuButton.addEventListener("click", () => {
 });
 
 previousMediaButton.addEventListener("click", () => {
-  setMediaIndex(state.mediaIndex - 1);
+  shiftStage(-1);
 });
 
 nextMediaButton.addEventListener("click", () => {
-  setMediaIndex(state.mediaIndex + 1);
+  shiftStage(1);
 });
 
 openMediaButton.addEventListener("click", () => {
@@ -906,6 +999,10 @@ openMediaButton.addEventListener("click", () => {
     return;
   }
   toggleLightbox(true);
+});
+
+horizontalGalleryButton.addEventListener("click", () => {
+  openGalleryMode(platformHorizontalMedia[0], platformHorizontalMedia, 0, false);
 });
 
 function canHandleStageGesture(target) {
@@ -1008,14 +1105,14 @@ document.addEventListener("keydown", (event) => {
       shiftGallery(-1);
       return;
     }
-    setMediaIndex(state.mediaIndex - 1);
+    shiftStage(-1);
   }
   if (event.key === "ArrowRight") {
     if (state.gallery.isOpen) {
       shiftGallery(1);
       return;
     }
-    setMediaIndex(state.mediaIndex + 1);
+    shiftStage(1);
   }
 });
 

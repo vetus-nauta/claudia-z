@@ -168,13 +168,13 @@ Port guest / children's cabin, `assets/media/port_guest/`:
 - `60-P1999557` and `62-P1999562` are ensuite/bathroom frames.
 - User-provided `60-P1999575` was not found in Drive; treated as a mistaken merge of existing `58-P1999575` and `60-P1999557`, not used as a separate asset.
 
-## Temporary Placeholder Media
+## Platform And Temporary Placeholder Media
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
 
-- Generated placeholder only: `generated-platform-placeholder`.
-- Scene includes bathing platform, SeaBob, two SUP boards, two flexible lounger mattresses, and small fruit/champagne table.
-- Replace with owner-approved real media when supplied.
+- Experimental platform gallery uses owner-provided vertical iPhone media from Drive.
+- Generated platform placeholder media was removed after the real platform gallery was connected.
+- Keep the horizontal platform gallery layer sourced only from existing approved horizontal site media until dedicated horizontal platform photos are supplied.
 
 Tender, `assets/media/tender/`:
 
