@@ -1,6 +1,7 @@
 Options -Indexes
 
 ErrorDocument 404 /404.html
+AddType application/manifest+json .webmanifest
 
 <IfModule mod_headers.c>
   Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
@@ -10,15 +11,20 @@ ErrorDocument 404 /404.html
   Header always set Strict-Transport-Security "max-age=31536000"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
-
-  <FilesMatch "\\.(html|webmanifest)$">
-    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-  </FilesMatch>
-
-  <FilesMatch "\\.(css|js|png|webp|ico)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
 </IfModule>
+
+<FilesMatch "\\.(html|webmanifest)$">
+  <IfModule mod_headers.c>
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+  </IfModule>
+</FilesMatch>
+
+<FilesMatch "\\.(css|js|png|webp|ico)$">
+  <IfModule mod_headers.c>
+    Header always set Cache-Control "public, max-age=31536000, immutable"
+  </IfModule>
+</FilesMatch>
 
 <IfModule mod_expires.c>
   ExpiresActive On
