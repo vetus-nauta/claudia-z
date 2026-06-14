@@ -461,6 +461,7 @@ const state = {
     items: [],
     index: 0,
     syncStage: true,
+    requestId: 0,
     scale: 1,
     translateX: 0,
     translateY: 0,
@@ -809,41 +810,74 @@ function settleGalleryTransform() {
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
 }
 
-function renderGalleryMode(direction = 0) {
-  const mediaItem = state.gallery.media || currentMedia();
+function setGalleryCaption(mediaItem) {
   const captionText = mediaItem.galleryLabel ? mediaItem.galleryLabel[state.lang] : "";
   galleryCaption.textContent = captionText;
   galleryCaption.hidden = !captionText;
+}
+
+function preloadGallerySource(src, onReady) {
+  const image = new Image();
+  image.onload = onReady;
+  image.onerror = onReady;
+  image.src = src;
+}
+
+function preloadAdjacentGalleryMedia() {
+  const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
+  if (!state.gallery.isOpen || items.length < 2) {
+    return;
+  }
+  const next = items[(state.gallery.index + 1) % items.length];
+  const previous = items[(state.gallery.index - 1 + items.length) % items.length];
+  [next, previous].forEach((item) => {
+    const image = new Image();
+    image.src = gallerySourceFor(item);
+  });
+}
+
+function renderGalleryMode(direction = 0) {
+  const mediaItem = state.gallery.media || currentMedia();
+  const nextSrc = gallerySourceFor(mediaItem);
+  const nextAlt = currentZone()[state.lang].title;
+  const nextRequestId = state.gallery.requestId + 1;
+  state.gallery.requestId = nextRequestId;
   const canAnimate = direction !== 0 && galleryImage.getAttribute("src") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canAnimate) {
     const enterX = direction > 0 ? "28%" : "-28%";
     const exitX = direction > 0 ? "-28%" : "28%";
-    const ghost = galleryImage.cloneNode(false);
-    ghost.removeAttribute("id");
-    ghost.alt = "";
-    ghost.className = "gallery-mode__image gallery-mode__image-ghost";
-    ghost.style.transition = "";
-    ghost.style.opacity = "1";
-    ghost.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
-    galleryViewport.append(ghost);
-    window.requestAnimationFrame(() => {
-      ghost.style.opacity = "0.42";
-      ghost.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
-    });
-    window.setTimeout(() => {
-      ghost.remove();
-    }, 440);
+    preloadGallerySource(nextSrc, () => {
+      if (state.gallery.requestId !== nextRequestId || !state.gallery.isOpen) {
+        return;
+      }
+      const ghost = galleryImage.cloneNode(false);
+      ghost.removeAttribute("id");
+      ghost.alt = "";
+      ghost.className = "gallery-mode__image gallery-mode__image-ghost";
+      ghost.style.transition = "";
+      ghost.style.opacity = "1";
+      ghost.style.transform = galleryImage.style.transform || "translate3d(0, 0, 0) scale(1)";
+      galleryViewport.append(ghost);
+      window.requestAnimationFrame(() => {
+        ghost.style.opacity = "0";
+        ghost.style.transform = `translate3d(${exitX}, 0, 0) scale(1)`;
+      });
+      window.setTimeout(() => {
+        ghost.remove();
+      }, 440);
 
-    galleryImage.style.transition = "none";
-    galleryImage.style.opacity = "0.9";
-    galleryImage.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
-    galleryImage.src = gallerySourceFor(mediaItem);
-    galleryImage.alt = currentZone()[state.lang].title;
-    galleryImage.getBoundingClientRect();
-    window.requestAnimationFrame(() => {
-      galleryImage.style.transition = "";
-      galleryImage.style.opacity = "1";
-      galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+      galleryImage.style.transition = "none";
+      galleryImage.style.opacity = "0.96";
+      galleryImage.style.transform = `translate3d(${enterX}, 0, 0) scale(1)`;
+      galleryImage.src = nextSrc;
+      galleryImage.alt = nextAlt;
+      setGalleryCaption(mediaItem);
+      galleryImage.getBoundingClientRect();
+      window.requestAnimationFrame(() => {
+        galleryImage.style.transition = "";
+        galleryImage.style.opacity = "1";
+        galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
+      });
     });
     return;
   }
@@ -851,8 +885,9 @@ function renderGalleryMode(direction = 0) {
   galleryImage.style.transition = "";
   galleryImage.style.opacity = "1";
   galleryImage.style.transform = "translate3d(0px, 0px, 0) scale(1)";
-  galleryImage.src = gallerySourceFor(mediaItem);
-  galleryImage.alt = currentZone()[state.lang].title;
+  galleryImage.src = nextSrc;
+  galleryImage.alt = nextAlt;
+  setGalleryCaption(mediaItem);
 }
 
 function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media, index = state.mediaIndex, syncStage = true) {
@@ -867,6 +902,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
   state.gallery.isOpen = true;
   resetGalleryTransform();
   renderGalleryMode();
+  preloadAdjacentGalleryMedia();
   galleryMode.classList.add("is-open");
   galleryMode.setAttribute("aria-hidden", "false");
   document.body.classList.add("is-gallery-mode-open");
@@ -880,6 +916,7 @@ function closeGalleryMode() {
   state.gallery.index = 0;
   state.gallery.syncStage = true;
   state.gallery.isPanning = false;
+  state.gallery.requestId += 1;
   galleryMode.classList.remove("is-open");
   galleryMode.setAttribute("aria-hidden", "true");
   document.body.classList.remove("is-gallery-mode-open");
@@ -902,6 +939,7 @@ function shiftGallery(direction) {
     state.gallery.translateX = 0;
     state.gallery.translateY = 0;
     renderGalleryMode(direction);
+    preloadAdjacentGalleryMedia();
   }
 }
 
