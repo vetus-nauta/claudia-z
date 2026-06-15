@@ -123,10 +123,10 @@ Foredeck, `assets/media/foredeck/`:
 
 Cockpit, `assets/media/cockpit/`:
 
-- Order: `121-P1999653`, `113-P1477599`, `115-P1477604`.
-- `121-P1999653` is opener: full aft lounge, table, seating, saloon glass, flybridge stair.
-- `113-P1477599`: aft seating and open-view reading.
-- `115-P1477604`: table/service and saloon transition.
+- Main section gallery uses vertical iPhone media from Drive folder `1kXizi05ES6YikGJVQW1KYh798BoSN4nv`.
+- Main order: `IMG_3447`, `IMG_3448`, `IMG_3449`, `IMG_3450`, `IMG_3451`, `IMG_3452`, `IMG_3453`, `IMG_3454`, `IMG_3456`, `IMG_3457`, `IMG_3458`.
+- Horizontal cockpit gallery uses horizontal media from the same Drive folder: `IMG_3470`, `IMG_3471`, `IMG_3472`, `IMG_3473`.
+- Previous GH5 cockpit derivatives (`121-P1999653`, `113-P1477599`, `115-P1477604`) are superseded in public navigation by the new cockpit media.
 
 Saloon, `assets/media/saloon/`:
 

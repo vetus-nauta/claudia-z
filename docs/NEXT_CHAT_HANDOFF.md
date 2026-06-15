@@ -73,7 +73,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Exterior now uses approved real derivatives from owner-provided Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`. `DJI_0247` is intentionally retained as a distant scenic candidate with careful gentle zoom/crop. Hold/reject decisions are recorded in `docs/CURRENT_STATE.md`.
 - Flybridge now uses vertical iPhone media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Flybridge` as its main section gallery. Previous horizontal flybridge frames remain in `horizontalMedia`.
 - Foredeck now uses vertical iPhone media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Foredeck` as its main section gallery. Previous horizontal foredeck frames remain in `horizontalMedia`.
-- Cockpit now uses approved real derivatives from GH5 Edited folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`: `121-P1999653`, `113-P1477599`, `115-P1477604`.
+- Cockpit now uses vertical iPhone media from Drive folder `1kXizi05ES6YikGJVQW1KYh798BoSN4nv` as its main section gallery. Horizontal cockpit frames from the same folder remain in `horizontalMedia`.
 - Saloon now uses vertical iPhone media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Saloon` as its main section gallery. Previous horizontal saloon frames remain in `horizontalMedia`.
 - Interior is fully represented through individual subzones. Do not restore a generic `interior` overview route unless explicitly asked.
 - Main deck is a category concept only. Its public content is carried by Foredeck, Cockpit, and Saloon.

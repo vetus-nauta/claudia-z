@@ -49,13 +49,11 @@
   - Reject from main Foredeck sequence: `147-P1477682`, because it overlaps with `149-P1999723` while reading flatter and less elegant.
   - `160-P1477679` is approved as a bow rail / anchorage detail closer, not as the primary forward-lounge explainer.
   - Mobile derivatives use ambient background fill for horizontal frames to preserve deck geometry without black bars or hard pasted edges.
-- Cockpit first real media pass:
-  - Source folder: GH5 Edited Google Drive folder `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
-  - Requested/found sources: `113-P1477599`, `115-P1477604`, `121-P1999653`.
-  - Approved Cockpit sequence: `121-P1999653`, `113-P1477599`, `115-P1477604`.
-  - `121-P1999653` is the cockpit opener because it shows the full aft lounge, table, seating, saloon glass, and flybridge stair context.
-  - `113-P1477599` supports the aft seating and open-water/client-view reading.
-  - `115-P1477604` supports table/service and the transition toward the saloon.
+- Cockpit media pass:
+  - Source folder: Google Drive `1kXizi05ES6YikGJVQW1KYh798BoSN4nv`.
+  - Main zone uses vertical iPhone media in the section-gallery template.
+  - Horizontal cockpit media from the same folder is retained in `horizontalMedia` for the separate horizontal gallery.
+  - Previous GH5 cockpit sequence `121-P1999653`, `113-P1477599`, `115-P1477604` is superseded for public cockpit navigation.
   - Mobile derivatives use ambient background fill for horizontal frames to keep the table, sofas, aft rail, and saloon connection readable.
 - The current presentation site must not include private inquiry, public contact, or owner-contact paths.
 - Current WordPress media used in the prototype is temporary layout material only; final media requires designer-level crop and content review.

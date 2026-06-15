@@ -141,14 +141,14 @@ Rules:
 - `160-P1477679` is a bow rail / anchorage detail closer, not the main forward-lounge explainer.
 - Public derivatives live in `assets/media/foredeck/`; source originals remain only in ignored `.media-source/foredeck/`.
 
-## Cockpit Media Pass 2026-06-11
+## Cockpit Media Pass 2026-06-15
 
-- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
-- Intake scope: `113-P1477599`, `115-P1477604`, `121-P1999653`.
-- Approved Cockpit order: `121-P1999653`, `113-P1477599`, `115-P1477604`.
-- Use `121-P1999653` as the opener for the full cockpit, saloon glass, and flybridge stair context.
-- Use `113-P1477599` for aft seating and open-view reading.
-- Use `115-P1477604` for table/service and saloon transition.
+- Source folder: Google Drive `1kXizi05ES6YikGJVQW1KYh798BoSN4nv`.
+- Main vertical section gallery order: `IMG_3447`, `IMG_3448`, `IMG_3449`, `IMG_3450`, `IMG_3451`, `IMG_3452`, `IMG_3453`, `IMG_3454`, `IMG_3456`, `IMG_3457`, `IMG_3458`.
+- Horizontal cockpit gallery order: `IMG_3470`, `IMG_3471`, `IMG_3472`, `IMG_3473`.
+- Use the vertical cockpit frames as the main zone sequence.
+- Keep the horizontal cockpit frames in `horizontalMedia` for the separate horizontal gallery.
+- Previous GH5 cockpit frames `121-P1999653`, `113-P1477599`, and `115-P1477604` are superseded for public cockpit navigation.
 - Public derivatives live in `assets/media/cockpit/`; source originals remain only in ignored `.media-source/cockpit/`.
 
 ## Motion And Feedback
@@ -213,7 +213,7 @@ Use these names for the tender:
 
 ## Section Gallery Template
 
-Use this template for owner-supplied vertical iPhone/photo sets such as `flybridge`, `foredeck`, `aft_swim_platform`, `tender`, and `saloon`.
+Use this template for owner-supplied vertical iPhone/photo sets such as `flybridge`, `foredeck`, `cockpit`, `aft_swim_platform`, `tender`, and `saloon`.
 
 - Public derivatives per source frame: `thumb`, `stage`, `mobile`, and `full` WebP.
 - Source originals stay in `.media-source/<zone>/` and are not uploaded.

@@ -18,7 +18,7 @@ function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
   };
 }
 
-const SECTION_GALLERY_ZONE_IDS = new Set(["flybridge", "foredeck", "aft_swim_platform", "tender", "saloon"]);
+const SECTION_GALLERY_ZONE_IDS = new Set(["flybridge", "foredeck", "cockpit", "aft_swim_platform", "tender", "saloon"]);
 
 const zones = [
   {
@@ -139,9 +139,23 @@ const zones = [
   {
     id: "cockpit",
     media: [
-      localMedia("cockpit", "121-p1999653-stage.webp", "121-p1999653-full.webp", "121-p1999653-mobile.webp", "50% 50%"),
-      localMedia("cockpit", "113-p1477599-stage.webp", "113-p1477599-full.webp", "113-p1477599-mobile.webp", "50% 50%"),
-      localMedia("cockpit", "115-p1477604-stage.webp", "115-p1477604-full.webp", "115-p1477604-mobile.webp", "47% 50%")
+      localGalleryMedia("cockpit", "01-cockpit-img-3447", "50% 50%"),
+      localGalleryMedia("cockpit", "02-cockpit-img-3448", "50% 50%"),
+      localGalleryMedia("cockpit", "03-cockpit-img-3449", "50% 50%"),
+      localGalleryMedia("cockpit", "04-cockpit-img-3450", "50% 50%"),
+      localGalleryMedia("cockpit", "05-cockpit-img-3451", "50% 50%"),
+      localGalleryMedia("cockpit", "06-cockpit-img-3452", "50% 50%"),
+      localGalleryMedia("cockpit", "07-cockpit-img-3453", "50% 50%"),
+      localGalleryMedia("cockpit", "08-cockpit-img-3454", "50% 50%"),
+      localGalleryMedia("cockpit", "09-cockpit-img-3456", "50% 50%"),
+      localGalleryMedia("cockpit", "10-cockpit-img-3457", "50% 50%"),
+      localGalleryMedia("cockpit", "11-cockpit-img-3458", "50% 50%")
+    ],
+    horizontalMedia: [
+      localMedia("cockpit", "h01-cockpit-img-3470-stage.webp", "h01-cockpit-img-3470-full.webp", "h01-cockpit-img-3470-mobile.webp", "50% 50%"),
+      localMedia("cockpit", "h02-cockpit-img-3471-stage.webp", "h02-cockpit-img-3471-full.webp", "h02-cockpit-img-3471-mobile.webp", "50% 50%"),
+      localMedia("cockpit", "h03-cockpit-img-3472-stage.webp", "h03-cockpit-img-3472-full.webp", "h03-cockpit-img-3472-mobile.webp", "50% 50%"),
+      localMedia("cockpit", "h04-cockpit-img-3473-stage.webp", "h04-cockpit-img-3473-full.webp", "h04-cockpit-img-3473-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Cockpit",
