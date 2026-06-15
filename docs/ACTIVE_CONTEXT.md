@@ -106,8 +106,9 @@ Former General Plans source notes:
 
 Exterior, `assets/media/exterior/`:
 
-- Order: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
-- `DJI_0247` intentionally retained as distant scenic candidate with gentle crop.
+- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Exterior` / `1q1tw3qlgjmyyVtQHNLoHOk-nu8nEJcMT`.
+- Main order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`.
+- Previous horizontal/general exterior order is preserved in `horizontalMedia` for the separate horizontal gallery: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`, `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
 - Russian zone detail text is inserted verbatim from Google Drive `Claudia-z` / `Описания` / `sunseeker_76_exterior_description.txt`.
 
 Flybridge, `assets/media/flybridge/`:

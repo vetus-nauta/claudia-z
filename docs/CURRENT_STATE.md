@@ -26,10 +26,14 @@
   - Rejected from main overview: `DJI_0257_1` because top-down framing feels too technical and does not read as premium first-view media.
   - Not used in main overview: `DJI_0252_1`; keep only as optional secondary/reference because it is still too drone-showcase for the first premium route.
   - Mobile uses separate integrated derivatives to preserve the yacht shape without cutting bow/stern/hull/flybridge.
-- Exterior first real media pass:
+- Exterior current media pass:
+  - Main zone now uses vertical iPhone media from Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Exterior` in the reusable section-gallery template.
+  - Main vertical order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`.
+  - Previous overview/general and drone exterior frames are retained only in `horizontalMedia` for the separate horizontal gallery.
+- Exterior horizontal media pass:
   - Source folder: Google Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`.
   - Requested/found source range: `DJI_0240` through `DJI_0252` excluding missing `DJI_0242` and `DJI_0249`; `DJI_0258` through `DJI_0270` with missing `DJI_0260`, `DJI_0263`, and `DJI_0265`.
-  - Approved Exterior sequence: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
+  - Approved horizontal Exterior sequence: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
   - `DJI_0247` is the approved distant scenic candidate and may use a careful gentle zoom/crop; do not reject it simply because the yacht is farther away.
   - Hold as alternates/reference: `DJI_0240`, `DJI_0245`, `DJI_0246`, `DJI_0258`, `DJI_0259`, `DJI_0264`.
   - Reject from main Exterior sequence: `DJI_0241`, `DJI_0243`, `DJI_0244`, `DJI_0248`, `DJI_0250`, `DJI_0251`, `DJI_0252`, `DJI_0268`, `DJI_0269`.
@@ -71,7 +75,7 @@
 - Editorial role: `.agents/skills/editorial-copy-chief` is the project copy role for bilingual review, AI-slop cleanup, and removal of photo-caption prose.
 - Narrow Welcome Hall viewports use a compact horizontal bottom zone rail. The compact hamburger-style zone menu may still be used outside the Welcome Hall if needed for dense gallery navigation.
 - Top controls now match the lower navigation language: straight glass bar, hairline borders, and quiet text/icon states rather than separate rounded pills.
-- Flybridge, Foredeck, and Saloon now use owner-provided vertical iPhone media in the reusable section-gallery template. Flybridge also includes the nested `Flybridge/More` set: the GPT-edited people PNG is first, additional vertical frames are appended, and additional horizontal frames are appended to `horizontalMedia`. Previous approved horizontal frames are retained in `horizontalMedia` for the separate horizontal gallery.
+- Exterior, Flybridge, Foredeck, and Saloon now use owner-provided vertical iPhone media in the reusable section-gallery template. Exterior retains previous overview/general and drone exterior frames in `horizontalMedia`. Flybridge also includes the nested `Flybridge/More` set: the GPT-edited people PNG is first, additional vertical frames are appended, and additional horizontal frames are appended to `horizontalMedia`. Previous approved horizontal frames are retained in `horizontalMedia` for the separate horizontal gallery.
 - Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template. Its first frame remains pinned; the nested `Swimming platform/More` set adds appended vertical frames and a dedicated platform `horizontalMedia` layer.
 - Tender uses owner-provided vertical iPhone media in the same section-gallery template. Its first/opening frame is pinned from the separate Drive file link and is not duplicated when present in the folder.
 - Mobile stage navigation now supports vertical swipe as an alternate photo-changing gesture. The main stage uses a one-time vertical air/glass hint, and horizontal fullscreen galleries keep their existing behavior with a matching horizontal hint.

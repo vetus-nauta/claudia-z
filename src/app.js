@@ -18,7 +18,7 @@ function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
   };
 }
 
-const SECTION_GALLERY_ZONE_IDS = new Set(["flybridge", "foredeck", "cockpit", "aft_swim_platform", "tender", "saloon"]);
+const SECTION_GALLERY_ZONE_IDS = new Set(["exterior", "flybridge", "foredeck", "cockpit", "aft_swim_platform", "tender", "saloon"]);
 
 const zones = [
   {
@@ -42,6 +42,16 @@ const zones = [
   {
     id: "exterior",
     media: [
+      localGalleryMedia("exterior", "01-exterior-img-3348", "50% 50%"),
+      localGalleryMedia("exterior", "02-exterior-img-3347", "50% 50%"),
+      localGalleryMedia("exterior", "03-exterior-img-3349", "50% 50%"),
+      localGalleryMedia("exterior", "04-exterior-img-3350", "50% 50%"),
+      localGalleryMedia("exterior", "05-exterior-img-3362", "50% 50%"),
+      localGalleryMedia("exterior", "06-exterior-img-3363", "50% 50%"),
+      localGalleryMedia("exterior", "07-exterior-img-3355", "50% 50%"),
+      localGalleryMedia("exterior", "08-exterior-img-3358", "50% 50%")
+    ],
+    horizontalMedia: [
       localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
       localMedia("overview", "dji_0261_1-stage.webp", "dji_0261_1-full.webp", "dji_0261_1-mobile.webp", "54% 50%"),
       localMedia("overview", "dji_0269_1-stage.webp", "dji_0269_1-full.webp", "dji_0269_1-mobile.webp", "50% 54%"),
