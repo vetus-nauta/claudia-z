@@ -241,6 +241,14 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - All three updated zones use vertical iPhone media as their main section gallery.
 - Previous approved horizontal frames for these zones are retained in `horizontalMedia` for the separate horizontal gallery, not as the main zone sequence.
 
+## Master Cabin Media Pass 2026-06-15
+
+- Source folder: Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Master` / `1UdGdoPGAyBqU3CsL4sHnY6kDLQ7pvQ9P`.
+- Main vertical section gallery order: `052E1749`, `681D9FD3`, `A4681BF8`, `CD3BDD7E`, `BC2F637F`, `672FA126`.
+- Use the vertical master cabin frames as the main zone sequence.
+- Keep the previous approved horizontal master cabin frames in `horizontalMedia` for the separate horizontal gallery.
+- Public derivatives live in `assets/media/master_cabin/`; source originals remain only in ignored `.media-source/master_cabin_new/`.
+
 ## Flybridge More Pass 2026-06-15
 
 - Nested source folder: Google Drive `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W`.

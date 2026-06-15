@@ -140,10 +140,9 @@ Saloon, `assets/media/saloon/`:
 
 Master cabin, `assets/media/master_cabin/`:
 
-- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
-- Approved order: `2-P1999374`, `6-P1999381`, `12-P1477496`, `10-P1999413`, `15-P1999395`, `14-P1999393`, `18-P1477504`.
-- First four frames explain the bed, lounge/window side, storage/vanity, and cabin proportions.
-- Last three frames show the ensuite/bathroom as part of the master-cabin story.
+- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Master` / `1UdGdoPGAyBqU3CsL4sHnY6kDLQ7pvQ9P`.
+- Main order: `052E1749`, `681D9FD3`, `A4681BF8`, `CD3BDD7E`, `BC2F637F`, `672FA126`.
+- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `2-P1999374`, `6-P1999381`, `12-P1477496`, `10-P1999413`, `15-P1999395`, `14-P1999393`, `18-P1477504`.
 
 Starboard guest cabin, `assets/media/starboard_guest/`:
 
