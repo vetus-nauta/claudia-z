@@ -81,7 +81,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Exterior and Flybridge Russian `detail` text was inserted verbatim from Google Drive `Claudia-z` / `Описания` (`sunseeker_76_exterior_description.txt`, `sunseeker_76_flybridge_description.txt`). User explicitly requested no editing.
 - Interior is fully represented through individual subzones. Do not restore a generic `interior` overview route unless explicitly asked.
 - Main deck is a category concept only. Its public content is carried by Foredeck, Cockpit, and Saloon.
-- Master cabin now uses vertical media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Master` as its main section gallery. Previous approved master cabin frames remain in `horizontalMedia`. Forward VIP, Starboard guest, and Port guest / children's cabin still use their earlier connected media and zone copy in `src/app.js`.
+- Master cabin uses vertical media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Master` as its main section gallery. Starboard guest uses vertical media from the same parent folder / subfolder `Starboard` as its main section gallery. Previous approved master and starboard frames remain in `horizontalMedia`. Forward VIP and Port guest / children's cabin still use their earlier connected media and zone copy in `src/app.js`.
 - Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template.
 - Tender uses owner-provided vertical iPhone media from Drive folder `1aI7ahmOw-m8g631kMmTi43O-Uu2UdiXI`; opening frame is file `1B0_8J9qHKzXjj9zP_A1mLc4Yy74-ed1Y` / public base `01-tender-primary`.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.

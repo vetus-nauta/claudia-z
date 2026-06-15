@@ -249,6 +249,14 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - Keep the previous approved horizontal master cabin frames in `horizontalMedia` for the separate horizontal gallery.
 - Public derivatives live in `assets/media/master_cabin/`; source originals remain only in ignored `.media-source/master_cabin_new/`.
 
+## Starboard Guest Cabin Media Pass 2026-06-15
+
+- Source folder: Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Starboard` / `17iV8GQmqldypmVUlPneLilYL38moKfpV`.
+- Main vertical section gallery order: `E4B83691`, `2531ED23`, `842682AF`, `DB0F5A67`, `86FE2922`, `ED9DD0AB`.
+- Use the vertical starboard guest cabin frames as the main zone sequence.
+- Keep the previous approved horizontal starboard guest cabin frames in `horizontalMedia` for the separate horizontal gallery.
+- Public derivatives live in `assets/media/starboard_guest/`; source originals remain only in ignored `.media-source/starboard_guest_new/`.
+
 ## Flybridge More Pass 2026-06-15
 
 - Nested source folder: Google Drive `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W`.
