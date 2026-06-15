@@ -69,6 +69,7 @@ const zones = [
   {
     id: "flybridge",
     media: [
+      localGalleryMedia("flybridge", "00-flybridge-gpt-people", "50% 50%"),
       localGalleryMedia("flybridge", "01-flybridge-img-3318", "50% 50%"),
       localGalleryMedia("flybridge", "02-flybridge-img-3319", "50% 50%"),
       localGalleryMedia("flybridge", "03-flybridge-img-3320", "50% 50%"),
@@ -79,14 +80,37 @@ const zones = [
       localGalleryMedia("flybridge", "08-flybridge-img-3427", "50% 50%"),
       localGalleryMedia("flybridge", "09-flybridge-img-3428", "50% 50%"),
       localGalleryMedia("flybridge", "10-flybridge-img-3429", "50% 50%"),
-      localGalleryMedia("flybridge", "11-flybridge-img-3430", "50% 50%")
+      localGalleryMedia("flybridge", "11-flybridge-img-3430", "50% 50%"),
+      localGalleryMedia("flybridge", "12-flybridge-img-3477", "50% 50%"),
+      localGalleryMedia("flybridge", "13-flybridge-img-3480", "50% 50%"),
+      localGalleryMedia("flybridge", "14-flybridge-img-3481", "50% 50%"),
+      localGalleryMedia("flybridge", "15-flybridge-img-3482", "50% 50%"),
+      localGalleryMedia("flybridge", "16-flybridge-img-3484", "50% 50%"),
+      localGalleryMedia("flybridge", "17-flybridge-img-3485", "50% 50%"),
+      localGalleryMedia("flybridge", "18-flybridge-img-3492", "50% 50%"),
+      localGalleryMedia("flybridge", "19-flybridge-img-3494", "50% 50%"),
+      localGalleryMedia("flybridge", "20-flybridge-img-3498", "50% 50%"),
+      localGalleryMedia("flybridge", "21-flybridge-img-3499", "50% 50%"),
+      localGalleryMedia("flybridge", "22-flybridge-img-3500", "50% 50%")
     ],
     horizontalMedia: [
       localMedia("flybridge", "130-p1999658-stage.webp", "130-p1999658-full.webp", "130-p1999658-mobile.webp", "50% 48%"),
       localMedia("flybridge", "dji_0276-stage.webp", "dji_0276-full.webp", "dji_0276-mobile.webp", "50% 48%"),
       localMedia("flybridge", "129-p1477663-stage.webp", "129-p1477663-full.webp", "129-p1477663-mobile.webp", "48% 48%"),
       localMedia("flybridge", "132-p1999663-stage.webp", "132-p1999663-full.webp", "132-p1999663-mobile.webp", "45% 50%"),
-      localMedia("flybridge", "126-p1477652-stage.webp", "126-p1477652-full.webp", "126-p1477652-mobile.webp", "50% 50%")
+      localMedia("flybridge", "126-p1477652-stage.webp", "126-p1477652-full.webp", "126-p1477652-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h06-flybridge-img-3486-stage.webp", "h06-flybridge-img-3486-full.webp", "h06-flybridge-img-3486-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h07-flybridge-img-3487-stage.webp", "h07-flybridge-img-3487-full.webp", "h07-flybridge-img-3487-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h08-flybridge-img-3488-stage.webp", "h08-flybridge-img-3488-full.webp", "h08-flybridge-img-3488-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h09-flybridge-img-3489-stage.webp", "h09-flybridge-img-3489-full.webp", "h09-flybridge-img-3489-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h10-flybridge-img-3490-stage.webp", "h10-flybridge-img-3490-full.webp", "h10-flybridge-img-3490-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h11-flybridge-img-3491-stage.webp", "h11-flybridge-img-3491-full.webp", "h11-flybridge-img-3491-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h12-flybridge-img-3495-stage.webp", "h12-flybridge-img-3495-full.webp", "h12-flybridge-img-3495-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h13-flybridge-img-3496-stage.webp", "h13-flybridge-img-3496-full.webp", "h13-flybridge-img-3496-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h14-flybridge-img-3497-stage.webp", "h14-flybridge-img-3497-full.webp", "h14-flybridge-img-3497-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h15-flybridge-img-3501-stage.webp", "h15-flybridge-img-3501-full.webp", "h15-flybridge-img-3501-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h16-flybridge-img-3502-stage.webp", "h16-flybridge-img-3502-full.webp", "h16-flybridge-img-3502-mobile.webp", "50% 50%"),
+      localMedia("flybridge", "h17-flybridge-img-3503-stage.webp", "h17-flybridge-img-3503-full.webp", "h17-flybridge-img-3503-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Flybridge",

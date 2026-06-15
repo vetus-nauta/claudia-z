@@ -232,6 +232,14 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - All three updated zones use vertical iPhone media as their main section gallery.
 - Previous approved horizontal frames for these zones are retained in `horizontalMedia` for the separate horizontal gallery, not as the main zone sequence.
 
+## Flybridge More Pass 2026-06-15
+
+- Nested source folder: Google Drive `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W`.
+- Added public derivatives to `assets/media/flybridge/`.
+- The GPT-edited people frame `9BA2E70D-E6E2-4053-85A2-DA0D6807C86F.png` is the first main flybridge frame.
+- Additional vertical frames are appended after the prior approved flybridge vertical order.
+- Additional horizontal frames are appended after the prior approved flybridge `horizontalMedia` order.
+
 ## Metadata Per Asset
 
 For every selected asset, define:
