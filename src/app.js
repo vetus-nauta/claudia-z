@@ -391,6 +391,7 @@ const zones = [
 
 function horizontalGalleryItems() {
   return zones
+    .filter((zone) => zone.id !== "overview")
     .flatMap((zone) => {
       const mediaItems = zone.horizontalMedia || (SECTION_GALLERY_ZONE_IDS.has(zone.id) ? [] : zone.media);
       return mediaItems.map((mediaItem) => ({
@@ -916,14 +917,18 @@ function transitionStageMedia(nextSrc, focus) {
   mediaElement.style.objectPosition = focus;
 }
 
-function updateStageMedia(selectedMedia, altText) {
+function updateStageMedia(selectedMedia, altText, options = {}) {
   const stageSrc = stageSourceFor(selectedMedia);
   const nextRequestId = state.mediaRequestId + 1;
   state.mediaRequestId = nextRequestId;
   mediaElement.alt = altText;
+  if (options.hideCurrent) {
+    mediaElement.classList.add("stage__media--handoff");
+  }
   if (mediaElement.src.endsWith(stageSrc)) {
     mediaElement.style.objectPosition = selectedMedia.focus;
     mediaElement.classList.remove("is-loading");
+    mediaElement.classList.remove("stage__media--handoff");
     return;
   }
   mediaElement.classList.add("is-loading");
@@ -934,10 +939,14 @@ function updateStageMedia(selectedMedia, altText) {
     }
     transitionStageMedia(stageSrc, selectedMedia.focus);
     mediaElement.classList.remove("is-loading");
+    window.requestAnimationFrame(() => {
+      mediaElement.classList.remove("stage__media--handoff");
+    });
   };
   image.onerror = () => {
     if (state.mediaRequestId === nextRequestId) {
       mediaElement.classList.remove("is-loading");
+      mediaElement.classList.remove("stage__media--handoff");
     }
   };
   image.src = stageSrc;
@@ -948,6 +957,7 @@ function renderZone() {
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
   const hasSectionGallery = isSectionGalleryZone();
+  const isLeavingOverview = stage.classList.contains("stage--welcome") && !isOverview;
   if (isOverview) {
     toggleLightbox(false);
   }
@@ -961,7 +971,7 @@ function renderZone() {
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
   detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
   detailsSheet.setAttribute("aria-label", copy[state.lang][`${detailMode}DetailsDialogAria`]);
-  updateStageMedia(selectedMedia, zone[state.lang].title);
+  updateStageMedia(selectedMedia, zone[state.lang].title, { hideCurrent: isLeavingOverview });
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
   stageLead.textContent = isOverview ? copy[state.lang].lead : zone[state.lang].copy;
   stageZoneDetail.textContent = "";

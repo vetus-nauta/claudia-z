@@ -260,6 +260,10 @@ button {
   filter: none;
 }
 
+.stage__media.stage__media--handoff {
+  opacity: 0;
+}
+
 .stage::after {
   content: none;
 }

@@ -172,6 +172,7 @@ Mobile gesture guidance:
 - The main stage shows a textless vertical air/glass arrow-trail hint once on touch devices, then stores the seen state in `localStorage`.
 - If a touch user later swipes the main stage sideways, a short vertical nudge may be shown once per session; horizontal swipe still works.
 - Fullscreen horizontal gallery behavior remains horizontal; it only gains a textless horizontal air/glass arrow-trail hint.
+- The Welcome Hall / `overview` hero frame must not appear as an item or flash frame when entering zone galleries; the old hero image is suppressed during the first handoff from `overview`.
 - Hints must use `pointer-events: none`, avoid text/tooltips/buttons, and honor `prefers-reduced-motion`.
 
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
