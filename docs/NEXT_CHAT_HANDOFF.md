@@ -47,7 +47,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
   - `/tmp/claudia-toprow2-390.png`
   - `/tmp/claudia-toprow2-1009.png`
 - Internal zones must not repeat `Claudia Z` as the visible stage title. Their concise copy and details live in the top-right glass info popup, keeping zone media clean.
-- Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text.
+- Use `.agents/skills/editorial-copy-chief` for all copy review and rewrites. The role exists to remove AI cadence, brochure filler, and photo-caption prose. Prefer shorter human wording over long descriptive text. If the user asks to insert a supplied text, insert it in source form without creative rewriting unless they explicitly request editing.
 - Dark/light themes now behave as distinct interface systems: dark glass/light type vs pale glass/dark type, with theme-specific controls and navigation tones.
 - Narrow and intermediate Welcome Hall viewports use a compact horizontal bottom zone rail per the Drive/HTML handoff. Non-welcome gallery zones may still use the compact menu behavior if needed, but the first screen must show zone navigation without opening an extra panel.
 - Top controls (`Yacht details` and theme) intentionally match the lower navigation field: glass, hairline border, rounded-rectangle shape, restrained text/icon states. Avoid oversized ovals/capsules and avoid icon-only theme controls.

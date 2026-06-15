@@ -4,6 +4,8 @@
 
 Old site text may be used only as directional reference.
 
+When the owner asks to insert a supplied text, insert that text in its source form. Do not rewrite, shorten, translate, reorder, summarize, split into a different meaning, or add creative copy unless the owner explicitly asks for editing or adaptation.
+
 Allowed:
 
 - facts

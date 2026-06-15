@@ -57,7 +57,7 @@ Do not spam the chat with long tool outputs. Summarize decisions and verificatio
 - Navigation must read as restrained premium product material, not constructor UI: avoid pill/chip section buttons, oversized CTA blocks, and school-like gallery controls. Prefer text tabs, hairlines, quiet state changes, and mobile swipe behavior.
 - Top controls (`Yacht details` and theme) must follow the same visual system as the bottom zone navigation: straight glass bar, hairline borders, quiet active/hover states, no rounded pill capsules.
 - Details sheet includes transparent Sunseeker mark and specs.
-- Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo.
+- Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo. If the user asks to insert supplied text, insert the source text as-is unless they explicitly request editing, rewriting, shortening, translation, or adaptation.
 - Text placement: Overview carries only the short Welcome Hall copy from the supplied HTML direction. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.
 - Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
 
