@@ -85,6 +85,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template.
 - Tender uses owner-provided vertical iPhone media from Drive folder `1aI7ahmOw-m8g631kMmTi43O-Uu2UdiXI`; opening frame is file `1B0_8J9qHKzXjj9zP_A1mLc4Yy74-ed1Y` / public base `01-tender-primary`.
 - UI now has restrained motion/feedback: gentle media surfacing, soft active glow, subtle mobile swipe hint, and calm full-viewer opening.
+- Runtime media loading is deliberately conservative for mobile smoothness: first Overview image has responsive `srcset`; zone and fullscreen gallery neighbors are preloaded only after the current image settles, with low priority and a simple source cache. Keep this behavior unless a measured QA pass proves a different bottleneck.
 - Prototype has dark/light theme switching and basic photo-copy deterrents; do not describe these deterrents as absolute photo protection.
 - Public UI uses optimized derivatives only. Master source media remains under ignored `.media-source/`.
 

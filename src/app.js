@@ -638,6 +638,29 @@ const state = {
   }
 };
 
+const preloadedImageSources = new Set();
+let adjacentStagePreloadTimer = 0;
+let adjacentGalleryPreloadTimer = 0;
+
+function runWhenIdle(callback, timeout = 1800) {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(callback, { timeout });
+    return;
+  }
+  window.setTimeout(callback, 0);
+}
+
+function preloadImageSource(src) {
+  if (!src || preloadedImageSources.has(src)) {
+    return;
+  }
+  preloadedImageSources.add(src);
+  const image = new Image();
+  image.decoding = "async";
+  image.fetchPriority = "low";
+  image.src = src;
+}
+
 document.documentElement.lang = state.lang;
 
 const mediaElement = document.querySelector("#zoneMedia");
@@ -925,14 +948,28 @@ function renderCopy() {
   zoneMenuButton.setAttribute("aria-label", copy[state.lang].menu);
 }
 
-function preloadAdjacentMedia() {
-  const zone = currentZone();
-  const next = zone.media[(state.mediaIndex + 1) % zone.media.length];
-  const previous = zone.media[(state.mediaIndex - 1 + zone.media.length) % zone.media.length];
-  [next, previous].forEach((item) => {
-    const image = new Image();
-    image.src = stageSourceFor(item);
-  });
+function scheduleAdjacentMediaPreload() {
+  window.clearTimeout(adjacentStagePreloadTimer);
+  const requestId = state.mediaRequestId;
+  adjacentStagePreloadTimer = window.setTimeout(() => {
+    runWhenIdle(() => {
+      if (requestId !== state.mediaRequestId || state.gallery.isOpen) {
+        return;
+      }
+      const zone = currentZone();
+      if (zone.media.length < 2) {
+        return;
+      }
+      const next = zone.media[(state.mediaIndex + 1) % zone.media.length];
+      const previous = zone.media[(state.mediaIndex - 1 + zone.media.length) % zone.media.length];
+      preloadImageSource(stageSourceFor(next));
+      window.setTimeout(() => {
+        if (requestId === state.mediaRequestId && !state.gallery.isOpen) {
+          preloadImageSource(stageSourceFor(previous));
+        }
+      }, 700);
+    });
+  }, 450);
 }
 
 function transitionStageMedia(nextSrc, focus) {
@@ -973,14 +1010,20 @@ function updateStageMedia(selectedMedia, altText, options = {}) {
   const stageSrc = stageSourceFor(selectedMedia);
   const nextRequestId = state.mediaRequestId + 1;
   state.mediaRequestId = nextRequestId;
+  if (currentZone().id !== "overview" && mediaElement.hasAttribute("srcset")) {
+    mediaElement.removeAttribute("srcset");
+    mediaElement.removeAttribute("sizes");
+  }
   mediaElement.alt = altText;
   if (options.hideCurrent) {
     mediaElement.classList.add("stage__media--handoff");
   }
-  if (mediaElement.src.endsWith(stageSrc)) {
+  const activeStageSrc = mediaElement.currentSrc || mediaElement.src;
+  if (activeStageSrc.endsWith(stageSrc)) {
     mediaElement.style.objectPosition = selectedMedia.focus;
     mediaElement.classList.remove("is-loading");
     mediaElement.classList.remove("stage__media--handoff");
+    scheduleAdjacentMediaPreload();
     return;
   }
   mediaElement.classList.add("is-loading");
@@ -994,11 +1037,13 @@ function updateStageMedia(selectedMedia, altText, options = {}) {
     window.requestAnimationFrame(() => {
       mediaElement.classList.remove("stage__media--handoff");
     });
+    scheduleAdjacentMediaPreload();
   };
   image.onerror = () => {
     if (state.mediaRequestId === nextRequestId) {
       mediaElement.classList.remove("is-loading");
       mediaElement.classList.remove("stage__media--handoff");
+      scheduleAdjacentMediaPreload();
     }
   };
   image.src = stageSrc;
@@ -1032,7 +1077,6 @@ function renderZone() {
   zoneTitle.textContent = zone[state.lang].title;
   zoneCopy.textContent = zone[state.lang].copy;
   zoneDetail.textContent = zone[state.lang].detail || "";
-  preloadAdjacentMedia();
   maybeShowStageSwipeHint();
 }
 
@@ -1124,22 +1168,34 @@ function setGalleryCaption(mediaItem) {
 
 function preloadGallerySource(src, onReady) {
   const image = new Image();
+  image.decoding = "async";
   image.onload = onReady;
   image.onerror = onReady;
   image.src = src;
 }
 
-function preloadAdjacentGalleryMedia() {
+function scheduleAdjacentGalleryMediaPreload() {
+  window.clearTimeout(adjacentGalleryPreloadTimer);
   const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
   if (!state.gallery.isOpen || items.length < 2) {
     return;
   }
-  const next = items[(state.gallery.index + 1) % items.length];
-  const previous = items[(state.gallery.index - 1 + items.length) % items.length];
-  [next, previous].forEach((item) => {
-    const image = new Image();
-    image.src = gallerySourceFor(item);
-  });
+  const requestId = state.gallery.requestId;
+  adjacentGalleryPreloadTimer = window.setTimeout(() => {
+    runWhenIdle(() => {
+      if (!state.gallery.isOpen || requestId !== state.gallery.requestId) {
+        return;
+      }
+      const next = items[(state.gallery.index + 1) % items.length];
+      const previous = items[(state.gallery.index - 1 + items.length) % items.length];
+      preloadImageSource(gallerySourceFor(next));
+      window.setTimeout(() => {
+        if (state.gallery.isOpen && requestId === state.gallery.requestId) {
+          preloadImageSource(gallerySourceFor(previous));
+        }
+      }, 700);
+    });
+  }, 550);
 }
 
 function fullscreenElement() {
@@ -1272,7 +1328,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
   state.gallery.isOpen = true;
   resetGalleryTransform();
   renderGalleryMode();
-  preloadAdjacentGalleryMedia();
+  scheduleAdjacentGalleryMediaPreload();
   galleryMode.classList.add("is-open");
   galleryMode.setAttribute("aria-hidden", "false");
   document.body.classList.add("is-gallery-mode-open");
@@ -1283,6 +1339,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
 }
 
 function closeGalleryMode() {
+  window.clearTimeout(adjacentGalleryPreloadTimer);
   state.gallery.isOpen = false;
   state.gallery.media = null;
   state.gallery.items = [];
@@ -1321,7 +1378,7 @@ function shiftGallery(direction) {
     state.gallery.translateX = 0;
     state.gallery.translateY = 0;
     renderGalleryMode(direction);
-    preloadAdjacentGalleryMedia();
+    scheduleAdjacentGalleryMediaPreload();
   }
 }
 
