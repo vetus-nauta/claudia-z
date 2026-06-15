@@ -152,10 +152,9 @@ Starboard guest cabin, `assets/media/starboard_guest/`:
 
 Forward VIP cabin, `assets/media/forward_vip/`:
 
-- Source folder: Google Drive `1lowYgW5ivaZHCncr6pQ7jCEpJQBB7EZA`.
-- Approved order: `38-P1999471`, `45-P1999492`, `43-P1999484`, `44-P1999491`, `47-P1999506`, `49-P1999515`.
-- First four frames explain berth symmetry, cabin volume, storage, and vanity.
-- `47-P1999506` and `49-P1999515` are ensuite/bathroom frames.
+- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `VIP` / `1jmn2TmYjWPu6crnG5c_uETCJAQDfa_CY`.
+- Main order: `431820E4`, `8CB19509`, `9333A7F2`, `F9D44235`, `78092E16`, `DEDA1DCF`.
+- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `38-P1999471`, `45-P1999492`, `43-P1999484`, `44-P1999491`, `47-P1999506`, `49-P1999515`.
 
 Port guest / children's cabin, `assets/media/port_guest/`:
 
