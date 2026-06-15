@@ -18,7 +18,7 @@ function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
   };
 }
 
-const SECTION_GALLERY_ZONE_IDS = new Set(["exterior", "flybridge", "foredeck", "cockpit", "aft_swim_platform", "tender", "saloon", "master_cabin", "forward_vip", "starboard_guest"]);
+const SECTION_GALLERY_ZONE_IDS = new Set(["exterior", "flybridge", "foredeck", "cockpit", "aft_swim_platform", "tender", "saloon", "master_cabin", "forward_vip", "starboard_guest", "port_guest"]);
 
 const zones = [
   {
@@ -410,6 +410,14 @@ const zones = [
   {
     id: "port_guest",
     media: [
+      localGalleryMedia("port_guest", "01-port-img-3580", "50% 50%"),
+      localGalleryMedia("port_guest", "02-port-img-8fd19da7", "50% 50%"),
+      localGalleryMedia("port_guest", "03-port-img-3574", "50% 50%"),
+      localGalleryMedia("port_guest", "04-port-img-3577", "50% 50%"),
+      localGalleryMedia("port_guest", "05-port-img-3579", "50% 50%"),
+      localGalleryMedia("port_guest", "06-port-img-3578", "50% 50%")
+    ],
+    horizontalMedia: [
       localMedia("port_guest", "58-p1999575-stage.webp", "58-p1999575-full.webp", "58-p1999575-mobile.webp", "50% 50%"),
       localMedia("port_guest", "54-p1999537-stage.webp", "54-p1999537-full.webp", "54-p1999537-mobile.webp", "50% 50%"),
       localMedia("port_guest", "53-p1999532-stage.webp", "53-p1999532-full.webp", "53-p1999532-mobile.webp", "50% 50%"),

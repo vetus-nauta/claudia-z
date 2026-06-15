@@ -265,6 +265,14 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - Keep the previous approved horizontal forward VIP frames in `horizontalMedia` for the separate horizontal gallery.
 - Public derivatives live in `assets/media/forward_vip/`; source originals remain only in ignored `.media-source/forward_vip_new/`.
 
+## Port Guest Cabin Media Pass 2026-06-15
+
+- Source folder: Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Port` / `1igCIT8J8Ks_PqYns4cG4w76aZYuCzQkB`.
+- Main vertical section gallery order: `IMG_3580`, `8FD19DA7`, `IMG_3574`, `IMG_3577`, `IMG_3579`, `IMG_3578`.
+- Use the vertical port guest / children's cabin frames as the main zone sequence.
+- Keep the previous approved horizontal port guest frames in `horizontalMedia` for the separate horizontal gallery.
+- Public derivatives live in `assets/media/port_guest/`; source originals remain only in ignored `.media-source/port_guest_new/`.
+
 ## Flybridge More Pass 2026-06-15
 
 - Nested source folder: Google Drive `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W`.
