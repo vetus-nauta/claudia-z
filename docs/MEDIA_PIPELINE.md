@@ -271,7 +271,9 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - Main vertical section gallery order: `IMG_3580`, `8FD19DA7`, `IMG_3574`, `IMG_3577`, `IMG_3579`, `IMG_3578`.
 - Use the vertical port guest / children's cabin frames as the main zone sequence.
 - Keep the previous approved horizontal port guest frames in `horizontalMedia` for the separate horizontal gallery.
+- Append the new horizontal Drive frames `IMG_3583` and `IMG_3584` to `horizontalMedia`.
 - Public derivatives live in `assets/media/port_guest/`; source originals remain only in ignored `.media-source/port_guest_new/`.
+- Additional horizontal source originals remain only in ignored `.media-source/port_guest_more/`.
 
 ## Flybridge More Pass 2026-06-15
 

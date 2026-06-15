@@ -161,6 +161,7 @@ Port guest / children's cabin, `assets/media/port_guest/`:
 - Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Port` / `1igCIT8J8Ks_PqYns4cG4w76aZYuCzQkB`.
 - Main order: `IMG_3580`, `8FD19DA7`, `IMG_3574`, `IMG_3577`, `IMG_3579`, `IMG_3578`.
 - Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `58-P1999575`, `54-P1999537`, `53-P1999532`, `60-P1999557`, `62-P1999562`.
+- Additional horizontal Drive frames `IMG_3583` and `IMG_3584` are appended to the Port horizontal gallery.
 
 ## Section Gallery Media
 
