@@ -240,6 +240,14 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - Additional vertical frames are appended after the prior approved flybridge vertical order.
 - Additional horizontal frames are appended after the prior approved flybridge `horizontalMedia` order.
 
+## Aft Swim Platform More Pass 2026-06-15
+
+- Nested source folder: Google Drive `Swimming platform` / `More` / `19ANdFWQgVGdmNHVaabozp6UX_1zrs66t`.
+- Added public derivatives to `assets/media/aft_swim_platform/`.
+- The current first platform frame `01-platform-iphone-primary` remains first.
+- Additional vertical frames are appended after the prior approved platform order.
+- Additional horizontal frames are connected through the platform `horizontalMedia` order.
+
 ## Metadata Per Asset
 
 For every selected asset, define:

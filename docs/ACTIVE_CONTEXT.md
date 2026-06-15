@@ -170,7 +170,10 @@ Aft Swim Platform, `assets/media/aft_swim_platform/`:
 
 - Section gallery uses owner-provided vertical iPhone media from Drive.
 - Generated platform placeholder media was removed after the real platform gallery was connected.
-- Keep the horizontal platform gallery layer sourced only from existing approved horizontal site media until dedicated horizontal platform photos are supplied.
+- The first/opening frame remains `01-platform-iphone-primary`.
+- Additional media from nested Drive folder `Swimming platform` / `More` / `19ANdFWQgVGdmNHVaabozp6UX_1zrs66t` is appended to the same zone.
+- New vertical frames appended after the prior approved order: `12A52A1A`, `28F215BB`, `48D5CD2C`, `99A0CF94`, `82D20F3D`.
+- New horizontal platform frames are connected through `horizontalMedia`: `EA4BEFFD`, `81B6C017`, `9EF043F8`.
 
 Tender, `assets/media/tender/`:
 

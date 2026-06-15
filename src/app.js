@@ -208,7 +208,17 @@ const zones = [
       localGalleryMedia("aft_swim_platform", "10-platform-iphone-d364fbb6", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "11-platform-iphone-d9cc07d5", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "12-platform-iphone-edd7c0f8", "50% 50%"),
-      localGalleryMedia("aft_swim_platform", "13-platform-iphone-img-3432", "50% 50%")
+      localGalleryMedia("aft_swim_platform", "13-platform-iphone-img-3432", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "14-platform-more-12a52a1a", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "15-platform-more-28f215bb", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "16-platform-more-48d5cd2c", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "17-platform-more-99a0cf94", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "18-platform-more-82d20f3d", "50% 50%")
+    ],
+    horizontalMedia: [
+      localMedia("aft_swim_platform", "h01-platform-more-ea4beffd-stage.webp", "h01-platform-more-ea4beffd-full.webp", "h01-platform-more-ea4beffd-mobile.webp", "50% 50%"),
+      localMedia("aft_swim_platform", "h02-platform-more-81b6c017-stage.webp", "h02-platform-more-81b6c017-full.webp", "h02-platform-more-81b6c017-mobile.webp", "50% 50%"),
+      localMedia("aft_swim_platform", "h03-platform-more-9ef043f8-stage.webp", "h03-platform-more-9ef043f8-full.webp", "h03-platform-more-9ef043f8-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Aft Swim Platform",
