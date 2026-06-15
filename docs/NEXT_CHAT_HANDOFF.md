@@ -78,6 +78,7 @@ Do not touch `/home/alexey/GitHub/Revoyacht`.
 - Saloon now uses vertical iPhone media from Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / subfolder `Saloon` as its main section gallery. Previous horizontal saloon frames remain in `horizontalMedia`.
 - Mobile gesture rule: main stage accepts vertical swipe as an alternate photo navigation gesture and shows a textless vertical air/glass arrow hint once. If a touch user later swipes the main stage sideways, a short vertical nudge may show once per session. Horizontal fullscreen galleries keep horizontal swipe behavior and show only a horizontal version of the same hint.
 - The `overview` hero image is intentionally excluded from horizontal gallery items and suppressed during the first stage handoff from Welcome Hall into zones; do not restore the old behavior where the start-page image appears as a transient gallery frame.
+- Exterior and Flybridge Russian `detail` text was inserted verbatim from Google Drive `Claudia-z` / `Описания` (`sunseeker_76_exterior_description.txt`, `sunseeker_76_flybridge_description.txt`). User explicitly requested no editing.
 - Interior is fully represented through individual subzones. Do not restore a generic `interior` overview route unless explicitly asked.
 - Main deck is a category concept only. Its public content is carried by Foredeck, Cockpit, and Saloon.
 - Master cabin, Forward VIP, Starboard guest, and Port guest / children's cabin have owner-provided media connected and zone copy in `src/app.js`.

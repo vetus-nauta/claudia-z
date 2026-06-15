@@ -108,6 +108,7 @@ Exterior, `assets/media/exterior/`:
 
 - Order: `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`.
 - `DJI_0247` intentionally retained as distant scenic candidate with gentle crop.
+- Russian zone detail text is inserted verbatim from Google Drive `Claudia-z` / `Описания` / `sunseeker_76_exterior_description.txt`.
 
 Flybridge, `assets/media/flybridge/`:
 
@@ -115,6 +116,7 @@ Flybridge, `assets/media/flybridge/`:
 - Additional media from nested Drive folder `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W` is added to the same zone.
 - Main order starts with the GPT-edited people frame `9BA2E70D-E6E2-4053-85A2-DA0D6807C86F.png`, then keeps the previous approved vertical order `IMG_3318`, `IMG_3319`, `IMG_3320`, `IMG_3321`, `IMG_3413`, `IMG_3425`, `IMG_3426`, `IMG_3427`, `IMG_3428`, `IMG_3429`, `IMG_3430`, then appends `IMG_3477`, `IMG_3480`, `IMG_3481`, `IMG_3482`, `IMG_3484`, `IMG_3485`, `IMG_3492`, `IMG_3494`, `IMG_3498`, `IMG_3499`, `IMG_3500`.
 - Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`; new `More` horizontal frames are appended in filename order: `IMG_3486`, `IMG_3487`, `IMG_3488`, `IMG_3489`, `IMG_3490`, `IMG_3491`, `IMG_3495`, `IMG_3496`, `IMG_3497`, `IMG_3501`, `IMG_3502`, `IMG_3503`.
+- Russian zone detail text is inserted verbatim from Google Drive `Claudia-z` / `Описания` / `sunseeker_76_flybridge_description.txt`.
 
 Foredeck, `assets/media/foredeck/`:
 
