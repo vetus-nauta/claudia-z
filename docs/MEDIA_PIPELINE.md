@@ -118,10 +118,11 @@ Rules:
 ## Exterior Media Pass 2026-06-15
 
 - Source folder: Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Exterior` / `1q1tw3qlgjmyyVtQHNLoHOk-nu8nEJcMT`.
-- Main vertical section gallery order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`.
+- Main vertical section gallery order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`, then AI-processed vertical PNGs `B7161A52`, `6ABF4DF0`, `7C94AD0A`, `0A786325`.
 - Use the vertical exterior frames as the main zone sequence.
 - Keep the previous horizontal/general exterior frames in `horizontalMedia` for the separate horizontal gallery.
-- Public derivatives live in `assets/media/exterior/`; source originals remain only in ignored `.media-source/exterior_new/`.
+- Additional unprocessed horizontal DJI frames `DJI_0248`, `DJI_0250`, `DJI_0252`, and `DJI_0257` are connected at the end of Exterior `horizontalMedia`.
+- Public derivatives live in `assets/media/exterior/`; source originals remain only in ignored `.media-source/exterior_new/` and `.media-source/exterior_more/`.
 
 ## Exterior Horizontal Media Pass 2026-06-11
 

@@ -28,8 +28,8 @@
   - Mobile uses separate integrated derivatives to preserve the yacht shape without cutting bow/stern/hull/flybridge.
 - Exterior current media pass:
   - Main zone now uses vertical iPhone media from Google Drive `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1` / `Exterior` in the reusable section-gallery template.
-  - Main vertical order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`.
-  - Previous overview/general and drone exterior frames are retained only in `horizontalMedia` for the separate horizontal gallery.
+  - Main vertical order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`, then AI-processed vertical PNGs `B7161A52`, `6ABF4DF0`, `7C94AD0A`, `0A786325`.
+  - Previous overview/general and drone exterior frames are retained only in `horizontalMedia` for the separate horizontal gallery. Newly supplied unprocessed horizontals `DJI_0248`, `DJI_0250`, `DJI_0252`, and `DJI_0257` are appended there.
 - Exterior horizontal media pass:
   - Source folder: Google Drive folder `11xkeqgy1vXEHUCM8XtnUhwW-BSjc0teC`.
   - Requested/found source range: `DJI_0240` through `DJI_0252` excluding missing `DJI_0242` and `DJI_0249`; `DJI_0258` through `DJI_0270` with missing `DJI_0260`, `DJI_0263`, and `DJI_0265`.

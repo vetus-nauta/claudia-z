@@ -49,7 +49,11 @@ const zones = [
       localGalleryMedia("exterior", "05-exterior-img-3362", "50% 50%"),
       localGalleryMedia("exterior", "06-exterior-img-3363", "50% 50%"),
       localGalleryMedia("exterior", "07-exterior-img-3355", "50% 50%"),
-      localGalleryMedia("exterior", "08-exterior-img-3358", "50% 50%")
+      localGalleryMedia("exterior", "08-exterior-img-3358", "50% 50%"),
+      localGalleryMedia("exterior", "09-exterior-ai-b7161a52", "50% 50%"),
+      localGalleryMedia("exterior", "10-exterior-ai-6abf4df0", "50% 50%"),
+      localGalleryMedia("exterior", "11-exterior-ai-7c94ad0a", "50% 50%"),
+      localGalleryMedia("exterior", "12-exterior-ai-0a786325", "50% 50%")
     ],
     horizontalMedia: [
       localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
@@ -61,7 +65,11 @@ const zones = [
       localMedia("exterior", "dji_0247-stage.webp", "dji_0247-full.webp", "dji_0247-mobile.webp", "50% 52%"),
       localMedia("exterior", "dji_0267-stage.webp", "dji_0267-full.webp", "dji_0267-mobile.webp", "52% 50%"),
       localMedia("exterior", "dji_0261-stage.webp", "dji_0261-full.webp", "dji_0261-mobile.webp", "50% 50%"),
-      localMedia("exterior", "dji_0270-stage.webp", "dji_0270-full.webp", "dji_0270-mobile.webp", "50% 50%")
+      localMedia("exterior", "dji_0270-stage.webp", "dji_0270-full.webp", "dji_0270-mobile.webp", "50% 50%"),
+      localMedia("exterior", "h11-exterior-dji-0248-stage.webp", "h11-exterior-dji-0248-full.webp", "h11-exterior-dji-0248-mobile.webp", "50% 50%"),
+      localMedia("exterior", "h12-exterior-dji-0250-stage.webp", "h12-exterior-dji-0250-full.webp", "h12-exterior-dji-0250-mobile.webp", "50% 50%"),
+      localMedia("exterior", "h13-exterior-dji-0252-stage.webp", "h13-exterior-dji-0252-full.webp", "h13-exterior-dji-0252-mobile.webp", "50% 50%"),
+      localMedia("exterior", "h14-exterior-dji-0257-stage.webp", "h14-exterior-dji-0257-full.webp", "h14-exterior-dji-0257-mobile.webp", "50% 50%")
     ],
     en: {
       label: "Exterior",
