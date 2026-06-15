@@ -74,6 +74,7 @@
 - Flybridge, Foredeck, and Saloon now use owner-provided vertical iPhone media in the reusable section-gallery template. Flybridge also includes the nested `Flybridge/More` set: the GPT-edited people PNG is first, additional vertical frames are appended, and additional horizontal frames are appended to `horizontalMedia`. Previous approved horizontal frames are retained in `horizontalMedia` for the separate horizontal gallery.
 - Aft Swim Platform uses owner-provided vertical iPhone media in the reusable section-gallery template. Its first frame remains pinned; the nested `Swimming platform/More` set adds appended vertical frames and a dedicated platform `horizontalMedia` layer.
 - Tender uses owner-provided vertical iPhone media in the same section-gallery template. Its first/opening frame is pinned from the separate Drive file link and is not duplicated when present in the folder.
+- Mobile stage navigation now supports vertical swipe as an alternate photo-changing gesture. The main stage uses a one-time vertical air/glass hint, and horizontal fullscreen galleries keep their existing behavior with a matching horizontal hint.
 - Future photos will be supplied section-by-section as Google Drive folders/links.
 
 ## Source Intake 2026-06-11

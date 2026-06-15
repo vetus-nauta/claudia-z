@@ -248,6 +248,15 @@ Use this template for owner-supplied vertical iPhone/photo sets such as `flybrid
 - Additional vertical frames are appended after the prior approved platform order.
 - Additional horizontal frames are connected through the platform `horizontalMedia` order.
 
+## Mobile Gesture Hint Pass 2026-06-15
+
+- Source UX handoff: Google Drive `Claudia-z` / `air_arrow_trail_scroll_hint_handoff.md`.
+- The implementation adapts the handoff from scrollable sections to gallery navigation.
+- Main stage media accepts vertical swipe on touch devices as an alternate way to change photos.
+- Main stage hint is vertical, textless, air/glass, one-time per browser via `localStorage`, with a one-session reactive nudge after a sideways stage swipe.
+- Horizontal fullscreen gallery behavior stays horizontal; only a horizontal air/glass hint is added.
+- Hints must not block gestures and must respect `prefers-reduced-motion`.
+
 ## Metadata Per Asset
 
 For every selected asset, define:

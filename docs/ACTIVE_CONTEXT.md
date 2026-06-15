@@ -166,6 +166,14 @@ Port guest / children's cabin, `assets/media/port_guest/`:
 
 ## Section Gallery Media
 
+Mobile gesture guidance:
+
+- Main stage media accepts vertical swipe as an alternate photo navigation gesture on touch devices; swipe up moves forward, swipe down moves back.
+- The main stage shows a textless vertical air/glass arrow-trail hint once on touch devices, then stores the seen state in `localStorage`.
+- If a touch user later swipes the main stage sideways, a short vertical nudge may be shown once per session; horizontal swipe still works.
+- Fullscreen horizontal gallery behavior remains horizontal; it only gains a textless horizontal air/glass arrow-trail hint.
+- Hints must use `pointer-events: none`, avoid text/tooltips/buttons, and honor `prefers-reduced-motion`.
+
 Aft Swim Platform, `assets/media/aft_swim_platform/`:
 
 - Section gallery uses owner-provided vertical iPhone media from Drive.

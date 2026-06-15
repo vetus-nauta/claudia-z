@@ -547,6 +547,7 @@ const state = {
   zoneId: "overview",
   mediaIndex: 0,
   mediaDirection: 0,
+  mediaAxis: "x",
   mediaRequestId: 0,
   lightboxRequestId: 0,
   isDragging: false,
@@ -574,6 +575,13 @@ const state = {
     dragStartX: 0,
     dragStartY: 0,
     isPanning: false
+  },
+  hints: {
+    stage: null,
+    gallery: null,
+    timers: new Map(),
+    listeners: new Map(),
+    stageHorizontalNudgeShown: false
   }
 };
 
@@ -640,6 +648,124 @@ function isSectionGalleryZone() {
   return SECTION_GALLERY_ZONE_IDS.has(currentZone().id);
 }
 
+function isTouchDevice() {
+  return window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
+function createAirHint(container, key, orientation = "vertical") {
+  const existing = state.hints[key];
+  if (existing) {
+    existing.classList.toggle("air-arrow-trail--horizontal", orientation === "horizontal");
+    existing.classList.toggle("air-arrow-trail--vertical", orientation !== "horizontal");
+    return existing;
+  }
+  const hint = document.createElement("div");
+  hint.className = `air-arrow-trail air-arrow-trail--${orientation === "horizontal" ? "horizontal" : "vertical"}`;
+  hint.setAttribute("data-air-arrow-trail", "");
+  hint.setAttribute("aria-hidden", "true");
+  hint.innerHTML = `
+    <div class="air-arrow-trail__move air-arrow-trail__move--back">
+      <div class="air-arrow-trail__arrow"></div>
+      <div class="air-arrow-trail__trace"></div>
+    </div>
+    <div class="air-arrow-trail__move air-arrow-trail__move--forward">
+      <div class="air-arrow-trail__arrow"></div>
+      <div class="air-arrow-trail__trace"></div>
+    </div>
+  `;
+  container.append(hint);
+  state.hints[key] = hint;
+  return hint;
+}
+
+function clearAirHintTimer(key) {
+  const timer = state.hints.timers.get(key);
+  if (timer) {
+    window.clearTimeout(timer);
+    state.hints.timers.delete(key);
+  }
+}
+
+function hideAirHint(key, storageKey) {
+  const hint = state.hints[key];
+  if (hint) {
+    hint.classList.remove("is-visible");
+  }
+  clearAirHintTimer(key);
+  const listener = state.hints.listeners.get(key);
+  if (listener) {
+    listener.container.removeEventListener("touchstart", listener.hide);
+    listener.container.removeEventListener("pointerdown", listener.hide);
+    listener.container.removeEventListener("scroll", listener.hide);
+    state.hints.listeners.delete(key);
+  }
+  if (storageKey) {
+    window.localStorage.setItem(storageKey, "1");
+  }
+}
+
+function showAirHint({
+  key,
+  container,
+  orientation = "vertical",
+  storageKey,
+  force = false,
+  showDelay = 450,
+  autoHideDelay = 5600
+}) {
+  if (!container || !isTouchDevice()) {
+    return;
+  }
+  if (!force && storageKey && window.localStorage.getItem(storageKey) === "1") {
+    return;
+  }
+  const hint = createAirHint(container, key, orientation);
+  hideAirHint(key);
+  const hide = () => hideAirHint(key, force ? null : storageKey);
+  state.hints.listeners.set(key, { container, hide });
+  container.addEventListener("touchstart", hide, { passive: true });
+  container.addEventListener("pointerdown", hide, { passive: true });
+  container.addEventListener("scroll", hide, { passive: true });
+  const timer = window.setTimeout(() => {
+    hint.classList.add("is-visible");
+    state.hints.timers.set(key, window.setTimeout(hide, autoHideDelay));
+  }, showDelay);
+  state.hints.timers.set(key, timer);
+}
+
+function maybeShowStageSwipeHint(force = false) {
+  if (document.body.classList.contains("is-details-open") || document.body.classList.contains("is-gallery-mode-open")) {
+    return;
+  }
+  const zone = currentZone();
+  if (zone.id === "overview" || zone.media.length < 2) {
+    return;
+  }
+  showAirHint({
+    key: "stage",
+    container: stage,
+    orientation: "vertical",
+    storageKey: "claudia_z_stage_vertical_swipe_hint_seen",
+    force,
+    showDelay: force ? 80 : 650,
+    autoHideDelay: force ? 3600 : 5600
+  });
+}
+
+function maybeShowHorizontalGalleryHint() {
+  if (!state.gallery.isOpen || state.gallery.syncStage) {
+    return;
+  }
+  showAirHint({
+    key: "gallery",
+    container: galleryViewport,
+    orientation: "horizontal",
+    storageKey: "claudia_z_horizontal_gallery_swipe_hint_seen",
+    showDelay: 520,
+    autoHideDelay: 5600
+  });
+}
+
 function stageSourceFor(mediaItem) {
   const isMobile = window.matchMedia("(max-width: 759px)").matches;
   if (currentZone().id === "overview") {
@@ -672,6 +798,7 @@ function setZone(zoneId) {
   state.zoneId = zoneId;
   state.mediaIndex = 0;
   state.mediaDirection = 0;
+  state.mediaAxis = "x";
   closeZoneMenu();
   render();
 }
@@ -688,12 +815,13 @@ function setAdjacentZone(direction) {
   setZone(zones[nextIndex].id);
 }
 
-function setMediaIndex(index, direction = 0) {
+function setMediaIndex(index, direction = 0, axis = "x") {
   const zone = currentZone();
   if (zone.media.length < 2) {
     return;
   }
   state.mediaDirection = direction;
+  state.mediaAxis = axis === "y" ? "y" : "x";
   state.mediaIndex = (index + zone.media.length) % zone.media.length;
   document.body.classList.remove("is-media-surfacing");
   window.requestAnimationFrame(() => {
@@ -702,9 +830,9 @@ function setMediaIndex(index, direction = 0) {
   renderZone();
 }
 
-function shiftStage(direction) {
+function shiftStage(direction, axis = "x") {
   if (currentZone().media.length > 1) {
-    setMediaIndex(state.mediaIndex + direction, direction);
+    setMediaIndex(state.mediaIndex + direction, direction, axis);
     return;
   }
   setAdjacentZone(direction);
@@ -756,12 +884,13 @@ function preloadAdjacentMedia() {
 
 function transitionStageMedia(nextSrc, focus) {
   const direction = state.mediaDirection;
+  const axis = state.mediaAxis === "y" ? "y" : "x";
   const canAnimate = direction !== 0 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canAnimate && mediaElement.getAttribute("src")) {
     const ghost = mediaElement.cloneNode(false);
     ghost.removeAttribute("id");
     ghost.alt = "";
-    ghost.className = `stage__media stage__media-ghost stage__media-ghost--${direction > 0 ? "next" : "previous"}`;
+    ghost.className = `stage__media stage__media-ghost stage__media-ghost--${direction > 0 ? "next" : "previous"} stage__media-ghost--axis-${axis}`;
     ghost.style.objectPosition = mediaElement.style.objectPosition || focus;
     stage.append(ghost);
     window.requestAnimationFrame(() => {
@@ -772,12 +901,13 @@ function transitionStageMedia(nextSrc, focus) {
     }, 520);
 
     const enterClass = direction > 0 ? "stage__media--enter-from-next" : "stage__media--enter-from-previous";
-    mediaElement.classList.add(enterClass);
+    const axisClass = `stage__media--enter-axis-${axis}`;
+    mediaElement.classList.add(enterClass, axisClass);
     mediaElement.src = nextSrc;
     mediaElement.style.objectPosition = focus;
     mediaElement.getBoundingClientRect();
     window.requestAnimationFrame(() => {
-      mediaElement.classList.remove(enterClass);
+      mediaElement.classList.remove(enterClass, axisClass);
     });
     return;
   }
@@ -841,6 +971,7 @@ function renderZone() {
   zoneCopy.textContent = zone[state.lang].copy;
   zoneDetail.textContent = zone[state.lang].detail || "";
   preloadAdjacentMedia();
+  maybeShowStageSwipeHint();
 }
 
 function render() {
@@ -1086,6 +1217,7 @@ function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media
   document.body.classList.toggle("is-horizontal-gallery-open", !syncStage);
   requestViewerFullscreen(galleryMode);
   closeZoneMenu();
+  maybeShowHorizontalGalleryHint();
 }
 
 function closeGalleryMode() {
@@ -1104,6 +1236,7 @@ function closeGalleryMode() {
   document.body.classList.remove("is-horizontal-gallery-open");
   galleryCaption.textContent = "";
   galleryCaption.hidden = true;
+  hideAirHint("gallery");
   resetGalleryTransform();
   exitViewerFullscreen(galleryMode);
 }
@@ -1118,6 +1251,7 @@ function shiftGallery(direction) {
     state.gallery.media = items[state.gallery.index];
     if (state.gallery.syncStage) {
       state.mediaDirection = direction;
+      state.mediaAxis = "x";
       state.mediaIndex = state.gallery.index;
       renderZone();
     }
@@ -1247,11 +1381,11 @@ zoneMenuButton.addEventListener("click", () => {
 });
 
 previousMediaButton.addEventListener("click", () => {
-  shiftStage(-1);
+  shiftStage(-1, "x");
 });
 
 nextMediaButton.addEventListener("click", () => {
-  shiftStage(1);
+  shiftStage(1, "x");
 });
 
 openMediaButton.addEventListener("click", () => {
@@ -1292,8 +1426,9 @@ function endStageGesture(clientX, clientY, target) {
   state.isDragging = false;
   const deltaX = clientX - state.dragStartX;
   const deltaY = clientY - state.dragStartY;
-  const isSwipe = Math.abs(deltaX) >= 28 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.12;
-  if (!isSwipe) {
+  const isHorizontalSwipe = Math.abs(deltaX) >= 28 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.12;
+  const isVerticalSwipe = Math.abs(deltaY) >= 34 && Math.abs(deltaY) >= Math.abs(deltaX) * 1.08;
+  if (!isHorizontalSwipe && !isVerticalSwipe) {
     const isMobile = window.matchMedia("(max-width: 759px)").matches;
     if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !target.closest(".stage__content")) {
       if (isSectionGalleryZone()) {
@@ -1304,7 +1439,16 @@ function endStageGesture(clientX, clientY, target) {
     }
     return;
   }
-  shiftStage(deltaX < 0 ? 1 : -1);
+  if (isVerticalSwipe) {
+    hideAirHint("stage", "claudia_z_stage_vertical_swipe_hint_seen");
+    shiftStage(deltaY < 0 ? 1 : -1, "y");
+    return;
+  }
+  shiftStage(deltaX < 0 ? 1 : -1, "x");
+  if (isTouchDevice() && !state.hints.stageHorizontalNudgeShown && currentZone().id !== "overview") {
+    state.hints.stageHorizontalNudgeShown = true;
+    window.setTimeout(() => maybeShowStageSwipeHint(true), 360);
+  }
 }
 
 stage.addEventListener("pointerdown", (event) => {
@@ -1369,14 +1513,14 @@ document.addEventListener("keydown", (event) => {
       shiftGallery(-1);
       return;
     }
-    shiftStage(-1);
+    shiftStage(-1, "x");
   }
   if (event.key === "ArrowRight") {
     if (state.gallery.isOpen) {
       shiftGallery(1);
       return;
     }
-    shiftStage(1);
+    shiftStage(1, "x");
   }
 });
 
