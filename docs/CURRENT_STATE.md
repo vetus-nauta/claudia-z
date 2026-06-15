@@ -80,7 +80,7 @@
 - Tender uses owner-provided vertical iPhone media in the same section-gallery template. Its first/opening frame is pinned from the separate Drive file link and is not duplicated when present in the folder.
 - Mobile stage navigation now supports vertical swipe as an alternate photo-changing gesture. The main stage uses a one-time vertical air/glass hint, and horizontal fullscreen galleries keep their existing behavior with a matching horizontal hint.
 - The Welcome Hall hero media is excluded from horizontal gallery items and is faded out during the first handoff from `overview` into a zone, so it does not flash as a gallery frame.
-- Russian details for Exterior and Flybridge are owner-supplied from Google Drive `Claudia-z/Описания`; do not silently rewrite them. Exterior has the service heading removed from the public UI. Flybridge no longer uses the old long promotional Drive block in public UI; it keeps confirmed equipment only.
+- Russian details for Exterior and Flybridge are owner-supplied from Google Drive `Claudia-z/Описания`; do not silently rewrite them. Exterior has the service heading removed from the public UI. Flybridge text is restored from the original `Описания` source and must not be replaced with a shortened equipment-only block.
 - Future photos will be supplied section-by-section as Google Drive folders/links.
 
 ## Source Intake 2026-06-11
