@@ -16,7 +16,10 @@
   <body>
     <main class="presentation" aria-live="polite">
       <section class="stage" data-i18n-aria="presentationAria">
-        <img class="stage__media" id="zoneMedia" src="assets/media/overview/dji_0279-mobile.webp" srcset="assets/media/overview/dji_0279-mobile.webp 760w, assets/media/overview/dji_0279-stage.webp 1440w" sizes="100vw" alt="" decoding="async" fetchpriority="high" draggable="false">
+        <picture id="zoneMediaBootstrap">
+          <source id="zoneMediaDesktopSource" media="(min-width: 760px)" srcset="assets/media/overview/dji_0279-stage.webp">
+          <img class="stage__media" id="zoneMedia" src="assets/media/overview/dji_0279-mobile.webp" alt="" decoding="async" fetchpriority="high" draggable="false">
+        </picture>
         <div class="media-guard" id="mediaGuard" aria-hidden="true"></div>
         <div class="stage__scrim" aria-hidden="true"></div>
 
@@ -128,6 +131,6 @@
 
     </main>
 
-    <script src="src/app.js?v=20260624-2" defer></script>
+    <script src="src/app.js?v=20260624-3" defer></script>
   </body>
 </html>

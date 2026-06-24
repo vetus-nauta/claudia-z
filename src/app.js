@@ -664,6 +664,7 @@ function preloadImageSource(src) {
 document.documentElement.lang = state.lang;
 
 const mediaElement = document.querySelector("#zoneMedia");
+const mediaDesktopSource = document.querySelector("#zoneMediaDesktopSource");
 const mediaGuard = document.querySelector("#mediaGuard");
 const rail = document.querySelector("#zoneRail");
 const detailsSheet = document.querySelector("#detailsSheet");
@@ -1010,9 +1011,12 @@ function updateStageMedia(selectedMedia, altText, options = {}) {
   const stageSrc = stageSourceFor(selectedMedia);
   const nextRequestId = state.mediaRequestId + 1;
   state.mediaRequestId = nextRequestId;
-  if (currentZone().id !== "overview" && mediaElement.hasAttribute("srcset")) {
-    mediaElement.removeAttribute("srcset");
-    mediaElement.removeAttribute("sizes");
+  if (currentZone().id !== "overview") {
+    mediaDesktopSource?.remove();
+    if (mediaElement.hasAttribute("srcset")) {
+      mediaElement.removeAttribute("srcset");
+      mediaElement.removeAttribute("sizes");
+    }
   }
   mediaElement.alt = altText;
   if (options.hideCurrent) {
