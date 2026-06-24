@@ -74,13 +74,17 @@ const zones = [
     en: {
       label: "Exterior",
       title: "Profile and proportions",
+      noteTitle: "",
       copy: "A modern Sunseeker profile with clean British lines, a planted stance, and a serious presence on the water.",
+      noteCopy: "",
       detail: "The exterior keeps the yacht's sporty character without feeling overdrawn or aggressive. The lines stay balanced, clean, and unmistakably marine.\n\nUnderway, the Sunseeker 76 feels responsive and predictable. That matters on a yacht of this size: the captain gets the sense of control and confidence that makes the boat feel composed rather than heavy."
     },
     ru: {
       label: "Экстерьер",
       title: "Профиль и пропорции",
+      noteTitle: "",
       copy: "Профиль, линия корпуса, остекление и объем палуб одним взглядом.",
+      noteCopy: "",
       detail: "Sunseeker 76 — современная моторная яхта с узнаваемыми классическими чертами британского дизайна. В её экстерьере хорошо сочетаются спортивный характер, уверенная посадка на воде и серьёзный, солидный внешний вид.\n\nПри этом в облике яхты нет лишней агрессии и перегруженности, которые часто встречаются в последних дизайнерских трендах. Линии остаются чистыми, сбалансированными и по-настоящему морскими.\n\nНа ходу Sunseeker 76 ощущается маневренной, послушной и предсказуемой яхтой. Она уверенно отвечает на управление и даёт капитану то важное чувство контроля, которое особенно ценится на лодке такого класса."
     }
   },
@@ -335,14 +339,14 @@ const zones = [
     en: {
       label: "Master cabin",
       title: "Principal cabin",
-      copy: "The principal lower-deck cabin, with berth, storage, seating, and ensuite.",
-      detail: "A plain private cabin with room to settle in. The strongest information is the complete sleeping, storage, and bathroom arrangement."
+      copy: "The cabins on the Sunseeker 76 were given particular attention.",
+      detail: "The cabins on the Sunseeker 76 were given particular attention. These are not simply sleeping areas, but personal spaces for rest, quiet, and comfortable time on board.\n\nEach cabin is arranged for two people and has everything needed for an easy life on the yacht. Here, guests can rest, watch a movie, take care of their own things, or simply close the door and step out of the yacht's shared rhythm for a while.\n\nAn important part of the comfort is good sound insulation. Underway, outside noise does not distract from rest, sleep, or work, which is especially valuable on longer passages.\n\nEach cabin has its own shower and toilet, so guests keep their personal space and independence. There is also air conditioning and temperature control, keeping the cabins comfortable in both warm and cooler weather.\n\nStorage is also thought through. Dedicated places are provided for luggage, so suitcases, bags, and personal items do not clutter the living space or interfere with rest.\n\nThe cabin audio supports a calm atmosphere. Guests can watch a movie, play music in the background, or set the mood for a quiet evening.\n\nOverall, the cabins on the Sunseeker 76 are quiet, comfortable, well-planned spaces where guests can properly rest, have time to themselves, and feel comfortable throughout the trip."
     },
     ru: {
       label: "Мастер-каюта",
       title: "Главная каюта",
-      copy: "Главная каюта нижней палубы: кровать, хранение, посадка и своя ванная.",
-      detail: "Спокойная приватная каюта, где можно нормально разместиться. Важны не эпитеты, а полный набор сна, хранения и ванной."
+      copy: "Каютам на Sunseeker 76 уделено особое внимание.",
+      detail: "Каютам на Sunseeker 76 уделено особое внимание. Это не просто спальные помещения, а личные пространства для отдыха, тишины и комфортного пребывания на борту.\n\nКаждая каюта рассчитана на двух человек и оснащена всем необходимым для спокойной жизни на яхте. Здесь можно отдохнуть, посмотреть фильм, заняться своими делами или просто закрыть дверь и на время выйти из общего ритма яхты.\n\nВажная часть комфорта — хорошая звукоизоляция. Во время движения посторонние звуки не отвлекают от отдыха, сна или рабочих дел, что особенно ценно на длительных переходах.\n\nВ каждой каюте есть собственная душевая кабина и туалет, поэтому гости сохраняют личное пространство и независимость. Также предусмотрена система кондиционирования и поддержания температуры, благодаря чему в каютах комфортно как в тёплое, так и в холодное время года.\n\nОтдельно продумано хранение багажа. Для вещей предусмотрены специальные места, чтобы чемоданы, сумки и личные предметы не загромождали жилое пространство и не мешали отдыху.\n\nАкустика в каютах поддерживает атмосферу уюта. Можно посмотреть фильм, включить музыку фоном или создать настроение спокойного вечера.\n\nВ итоге каюты на Sunseeker 76 — это тихие, удобные и хорошо продуманные пространства, где гости могут полноценно отдохнуть, побыть наедине с собой и чувствовать себя комфортно на протяжении всего путешествия."
     }
   },
   {
@@ -366,14 +370,14 @@ const zones = [
     en: {
       label: "Forward VIP",
       title: "Forward VIP cabin",
-      copy: "A forward guest cabin with double berth, storage, light, and ensuite.",
-      detail: "Placed in the bow section of the lower deck, it works as a proper guest cabin rather than spare sleeping space."
+      copy: "The cabins on the Sunseeker 76 were given particular attention.",
+      detail: "The cabins on the Sunseeker 76 were given particular attention. These are not simply sleeping areas, but personal spaces for rest, quiet, and comfortable time on board.\n\nEach cabin is arranged for two people and has everything needed for an easy life on the yacht. Here, guests can rest, watch a movie, take care of their own things, or simply close the door and step out of the yacht's shared rhythm for a while.\n\nAn important part of the comfort is good sound insulation. Underway, outside noise does not distract from rest, sleep, or work, which is especially valuable on longer passages.\n\nEach cabin has its own shower and toilet, so guests keep their personal space and independence. There is also air conditioning and temperature control, keeping the cabins comfortable in both warm and cooler weather.\n\nStorage is also thought through. Dedicated places are provided for luggage, so suitcases, bags, and personal items do not clutter the living space or interfere with rest.\n\nThe cabin audio supports a calm atmosphere. Guests can watch a movie, play music in the background, or set the mood for a quiet evening.\n\nOverall, the cabins on the Sunseeker 76 are quiet, comfortable, well-planned spaces where guests can properly rest, have time to themselves, and feel comfortable throughout the trip."
     },
     ru: {
       label: "Носовая VIP",
       title: "Носовая VIP-каюта",
-      copy: "Носовая гостевая каюта с французской кроватью, хранением, светом и ванной.",
-      detail: "Она находится в носовой части нижней палубы и работает как полноценная каюта, а не запасное спальное место."
+      copy: "Каютам на Sunseeker 76 уделено особое внимание.",
+      detail: "Каютам на Sunseeker 76 уделено особое внимание. Это не просто спальные помещения, а личные пространства для отдыха, тишины и комфортного пребывания на борту.\n\nКаждая каюта рассчитана на двух человек и оснащена всем необходимым для спокойной жизни на яхте. Здесь можно отдохнуть, посмотреть фильм, заняться своими делами или просто закрыть дверь и на время выйти из общего ритма яхты.\n\nВажная часть комфорта — хорошая звукоизоляция. Во время движения посторонние звуки не отвлекают от отдыха, сна или рабочих дел, что особенно ценно на длительных переходах.\n\nВ каждой каюте есть собственная душевая кабина и туалет, поэтому гости сохраняют личное пространство и независимость. Также предусмотрена система кондиционирования и поддержания температуры, благодаря чему в каютах комфортно как в тёплое, так и в холодное время года.\n\nОтдельно продумано хранение багажа. Для вещей предусмотрены специальные места, чтобы чемоданы, сумки и личные предметы не загромождали жилое пространство и не мешали отдыху.\n\nАкустика в каютах поддерживает атмосферу уюта. Можно посмотреть фильм, включить музыку фоном или создать настроение спокойного вечера.\n\nВ итоге каюты на Sunseeker 76 — это тихие, удобные и хорошо продуманные пространства, где гости могут полноценно отдохнуть, побыть наедине с собой и чувствовать себя комфортно на протяжении всего путешествия."
     }
   },
   {
@@ -397,14 +401,14 @@ const zones = [
     en: {
       label: "Starboard guest",
       title: "Starboard guest cabin",
-      copy: "A starboard guest cabin with double berth, storage, and ensuite access.",
-      detail: "It keeps the lower-deck accommodation balanced and gives another proper cabin without needing to overstate the space."
+      copy: "The cabins on the Sunseeker 76 were given particular attention.",
+      detail: "The cabins on the Sunseeker 76 were given particular attention. These are not simply sleeping areas, but personal spaces for rest, quiet, and comfortable time on board.\n\nEach cabin is arranged for two people and has everything needed for an easy life on the yacht. Here, guests can rest, watch a movie, take care of their own things, or simply close the door and step out of the yacht's shared rhythm for a while.\n\nAn important part of the comfort is good sound insulation. Underway, outside noise does not distract from rest, sleep, or work, which is especially valuable on longer passages.\n\nEach cabin has its own shower and toilet, so guests keep their personal space and independence. There is also air conditioning and temperature control, keeping the cabins comfortable in both warm and cooler weather.\n\nStorage is also thought through. Dedicated places are provided for luggage, so suitcases, bags, and personal items do not clutter the living space or interfere with rest.\n\nThe cabin audio supports a calm atmosphere. Guests can watch a movie, play music in the background, or set the mood for a quiet evening.\n\nOverall, the cabins on the Sunseeker 76 are quiet, comfortable, well-planned spaces where guests can properly rest, have time to themselves, and feel comfortable throughout the trip."
     },
     ru: {
       label: "Правая гостевая",
       title: "Правая гостевая каюта",
-      copy: "Правая гостевая каюта с французской кроватью, хранением и ванной.",
-      detail: "Она держит баланс размещения на нижней палубе и остается нормальной гостевой каютой без лишних обещаний."
+      copy: "Каютам на Sunseeker 76 уделено особое внимание.",
+      detail: "Каютам на Sunseeker 76 уделено особое внимание. Это не просто спальные помещения, а личные пространства для отдыха, тишины и комфортного пребывания на борту.\n\nКаждая каюта рассчитана на двух человек и оснащена всем необходимым для спокойной жизни на яхте. Здесь можно отдохнуть, посмотреть фильм, заняться своими делами или просто закрыть дверь и на время выйти из общего ритма яхты.\n\nВажная часть комфорта — хорошая звукоизоляция. Во время движения посторонние звуки не отвлекают от отдыха, сна или рабочих дел, что особенно ценно на длительных переходах.\n\nВ каждой каюте есть собственная душевая кабина и туалет, поэтому гости сохраняют личное пространство и независимость. Также предусмотрена система кондиционирования и поддержания температуры, благодаря чему в каютах комфортно как в тёплое, так и в холодное время года.\n\nОтдельно продумано хранение багажа. Для вещей предусмотрены специальные места, чтобы чемоданы, сумки и личные предметы не загромождали жилое пространство и не мешали отдыху.\n\nАкустика в каютах поддерживает атмосферу уюта. Можно посмотреть фильм, включить музыку фоном или создать настроение спокойного вечера.\n\nВ итоге каюты на Sunseeker 76 — это тихие, удобные и хорошо продуманные пространства, где гости могут полноценно отдохнуть, побыть наедине с собой и чувствовать себя комфортно на протяжении всего путешествия."
     }
   },
   {
@@ -429,14 +433,14 @@ const zones = [
     en: {
       label: "Port guest",
       title: "Port guest / children's cabin",
-      copy: "A flexible port cabin for children, family, or mixed guest use.",
-      detail: "It can be arranged as three single berths or as a double berth with an upper pullman. The cabin has its own bathroom."
+      copy: "The port-side cabin deserves separate attention.",
+      detail: "The port-side cabin deserves separate attention. It is a compact but very versatile cabin that can be used in different scenarios: for three children, for two adult guests, or for a small family with one child.\n\nThe main feature of this cabin is the convertible bed. The sleeping area can be arranged as two separate beds, with an additional fold-down berth above when needed. This layout works not only for children, but also for guests who prefer to sleep separately.\n\nIn another setup, the two lower beds can be joined into one larger double bed. This lets the cabin adapt easily to the actual guest mix: children can stay separately, adults can sleep apart, and a small family can use the cabin as its own comfortable space.\n\nAs in the other cabins, it has everything needed for a full stay on board: a private shower, toilet, TV, and audio. Air conditioning and temperature control help keep the cabin comfortable in both warm and cooler weather.\n\nOverall, the port-side cabin is one of the yacht's most flexible and thoughtfully planned accommodation spaces. It gives guests more options and helps distribute people on board comfortably, without feeling like a compromise."
     },
     ru: {
       label: "Левая гостевая",
       title: "Левая гостевая / детская",
-      copy: "Гибкая левая каюта для детей, семьи или смешанного размещения.",
-      detail: "Ее можно использовать как три односпальных места или как французскую кровать с верхней откидной полкой. Ванная - своя."
+      copy: "Отдельного внимания заслуживает левая боковая каюта.",
+      detail: "Отдельного внимания заслуживает левая боковая каюта. Это небольшая, но очень универсальная каюта, которую можно использовать по разным сценариям — для троих детей, для двоих взрослых гостей или для небольшой семьи с одним ребёнком.\n\nГлавная особенность этой каюты — кровать-трансформер. Спальное место можно организовать как две раздельные кровати, а при необходимости использовать дополнительную откидную кровать сверху. Такой вариант подходит не только для детей, но и для гостей, которым удобнее размещаться отдельно.\n\nПри другом сценарии две нижние кровати можно объединить в одну большую французскую кровать. Благодаря этому каюта легко перестраивается под конкретный состав гостей: дети могут жить отдельно, взрослые могут разместиться раздельно, а небольшая семья — использовать каюту как самостоятельное комфортное пространство.\n\nВ этой каюте, как и в остальных, есть всё необходимое для полноценного пребывания на борту: собственная душевая, туалет, телевизор и акустика. Система кондиционирования и поддержания температуры позволяет сохранять комфорт как в тёплое, так и в холодное время года.\n\nВ итоге левая боковая каюта — одна из самых гибких и продуманных зон размещения на яхте. Она даёт больше вариантов для гостей и помогает удобно распределить людей на борту без ощущения компромисса."
     }
   }
 ];
@@ -493,9 +497,6 @@ const copy = {
     zoneDetailsDialogAria: "Zone details",
     close: "Close",
     mediaViewerAria: "Media viewer",
-    detailsTitle: "Zone details",
-    yachtDetailsTitle: "Specifications",
-    zoneDetailsTitle: "Zone details",
     model: "Model",
     year: "Year",
     length: "Length",
@@ -553,9 +554,6 @@ const copy = {
     zoneDetailsDialogAria: "Детали зоны",
     close: "Закрыть",
     mediaViewerAria: "Просмотр фотографий",
-    detailsTitle: "Детали зоны",
-    yachtDetailsTitle: "Характеристики",
-    zoneDetailsTitle: "Детали зоны",
     model: "Модель",
     year: "Год",
     length: "Длина",
@@ -691,7 +689,6 @@ const galleryImage = document.querySelector("#galleryImage");
 const galleryCaption = document.querySelector("#galleryCaption");
 const stage = document.querySelector(".stage");
 const detailsButtonLabel = detailsButton.querySelector("[data-i18n]");
-const detailsTitle = detailsSheet.querySelector("[data-i18n='detailsTitle']");
 
 function detectLanguage() {
   const preferred = [navigator.language, ...(navigator.languages || [])]
@@ -1070,7 +1067,6 @@ function renderZone() {
   horizontalGalleryButton.hidden = !hasSectionGallery;
   const detailMode = isOverview ? "yacht" : "zone";
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
-  detailsTitle.textContent = copy[state.lang][`${detailMode}DetailsTitle`];
   detailsSheet.setAttribute("aria-label", copy[state.lang][`${detailMode}DetailsDialogAria`]);
   updateStageMedia(selectedMedia, zone[state.lang].title, { hideCurrent: isLeavingOverview });
   mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
@@ -1078,8 +1074,12 @@ function renderZone() {
   stageZoneDetail.textContent = "";
   stageZoneDetail.hidden = true;
   currentZoneLabel.textContent = zone[state.lang].label;
-  zoneTitle.textContent = zone[state.lang].title;
-  zoneCopy.textContent = zone[state.lang].copy;
+  const noteTitle = zone[state.lang].noteTitle ?? zone[state.lang].title;
+  const noteCopy = zone[state.lang].noteCopy ?? zone[state.lang].copy;
+  zoneTitle.textContent = noteTitle;
+  zoneTitle.hidden = !noteTitle;
+  zoneCopy.textContent = noteCopy;
+  zoneCopy.hidden = !noteCopy;
   zoneDetail.textContent = zone[state.lang].detail || "";
   maybeShowStageSwipeHint();
 }
