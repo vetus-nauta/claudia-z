@@ -453,19 +453,19 @@ const zones = [
   }
 ];
 
-function horizontalGalleryItems() {
-  return zones
-    .filter((zone) => zone.id !== "overview")
-    .flatMap((zone) => {
-      const mediaItems = zone.horizontalMedia || (SECTION_GALLERY_ZONE_IDS.has(zone.id) ? [] : zone.media);
-      return mediaItems.map((mediaItem) => ({
-        ...mediaItem,
-        galleryLabel: {
-          en: zone.en.label,
-          ru: zone.ru.label
-        }
-      }));
-    });
+function secondaryGalleryItems() {
+  const zone = currentZone();
+  const mode = secondaryMediaMode(zone);
+  if (!mode) {
+    return [];
+  }
+  return mediaItemsFor(zone, mode).map((mediaItem) => ({
+    ...mediaItem,
+    galleryLabel: {
+      en: zone.en.label,
+      ru: zone.ru.label
+    }
+  }));
 }
 
 const zoneIcons = {
@@ -537,8 +537,10 @@ const copy = {
     nextMedia: "Next image",
     openMedia: "Open image",
     swipeHint: "Swipe sideways",
-    horizontalGallery: "Section: horizontal gallery",
+    horizontalGallery: "Horizontal gallery",
     horizontalGalleryAria: "Open horizontal gallery",
+    verticalGallery: "Vertical gallery",
+    verticalGalleryAria: "Open vertical gallery",
     sectionGalleryAria: "Section gallery",
     portraitOnly: "Portrait view only",
     portraitOnlyHint: "Please rotate your phone upright to continue."
@@ -596,8 +598,10 @@ const copy = {
     nextMedia: "Следующее изображение",
     openMedia: "Открыть изображение",
     swipeHint: "Свайп вбок",
-    horizontalGallery: "Раздел: горизонтальная галерея",
+    horizontalGallery: "Горизонтальная галерея",
     horizontalGalleryAria: "Открыть горизонтальную галерею",
+    verticalGallery: "Вертикальная галерея",
+    verticalGalleryAria: "Открыть вертикальную галерею",
     sectionGalleryAria: "Галерея раздела",
     portraitOnly: "Только вертикальный просмотр",
     portraitOnlyHint: "Поверните телефон вертикально, чтобы продолжить."
@@ -608,7 +612,9 @@ const state = {
   lang: detectLanguage(),
   theme: detectTheme(),
   zoneId: "overview",
+  mediaMode: "vertical",
   mediaIndex: 0,
+  mediaIndexByZoneMode: {},
   mediaDirection: 0,
   mediaAxis: "x",
   mediaRequestId: 0,
@@ -651,6 +657,7 @@ const state = {
 const preloadedImageSources = new Set();
 let adjacentStagePreloadTimer = 0;
 let adjacentGalleryPreloadTimer = 0;
+let mediaModeViewportTimer = 0;
 
 function runWhenIdle(callback, timeout = 1800) {
   if ("requestIdleCallback" in window) {
@@ -725,9 +732,72 @@ function currentZone() {
   return zones.find((zone) => zone.id === state.zoneId) || zones[0];
 }
 
+function isWideMediaViewport() {
+  const isDesktop = window.matchMedia("(min-width: 1120px)").matches;
+  const isTabletLandscape = window.matchMedia("(orientation: landscape) and (min-width: 760px)").matches;
+  return isDesktop || isTabletLandscape;
+}
+
+function mediaItemsFor(zone, mode = state.mediaMode) {
+  if (mode === "horizontal" && zone.horizontalMedia?.length) {
+    return zone.horizontalMedia;
+  }
+  return zone.media;
+}
+
+function preferredMediaMode(zone = currentZone()) {
+  if (zone.id !== "overview" && zone.horizontalMedia?.length && isWideMediaViewport()) {
+    return "horizontal";
+  }
+  return "vertical";
+}
+
+function secondaryMediaMode(zone = currentZone()) {
+  const primaryMode = state.mediaMode;
+  if (primaryMode === "horizontal" && zone.media?.length) {
+    return "vertical";
+  }
+  if (primaryMode === "vertical" && zone.horizontalMedia?.length) {
+    return "horizontal";
+  }
+  return null;
+}
+
+function mediaIndexKey(zoneId = state.zoneId, mode = state.mediaMode) {
+  return `${zoneId}:${mode}`;
+}
+
+function rememberMediaIndex(zoneId = state.zoneId, mode = state.mediaMode, index = state.mediaIndex) {
+  state.mediaIndexByZoneMode[mediaIndexKey(zoneId, mode)] = index;
+}
+
+function restoredMediaIndex(zone, mode) {
+  const items = mediaItemsFor(zone, mode);
+  const storedIndex = state.mediaIndexByZoneMode[mediaIndexKey(zone.id, mode)] ?? 0;
+  if (!items.length) {
+    return 0;
+  }
+  return Math.max(0, Math.min(storedIndex, items.length - 1));
+}
+
+function applyPreferredMediaMode(zone = currentZone()) {
+  const nextMode = preferredMediaMode(zone);
+  if (nextMode !== state.mediaMode) {
+    rememberMediaIndex();
+    state.mediaMode = nextMode;
+    state.mediaIndex = restoredMediaIndex(zone, nextMode);
+    state.mediaDirection = 0;
+    state.mediaAxis = "x";
+    return true;
+  }
+  state.mediaIndex = restoredMediaIndex(zone, state.mediaMode);
+  return false;
+}
+
 function currentMedia() {
   const zone = currentZone();
-  return zone.media[state.mediaIndex] || zone.media[0];
+  const items = mediaItemsFor(zone);
+  return items[state.mediaIndex] || items[0] || zone.media[0];
 }
 
 function isSectionGalleryZone() {
@@ -824,7 +894,8 @@ function maybeShowStageSwipeHint(force = false) {
     return;
   }
   const zone = currentZone();
-  if (zone.id === "overview" || zone.media.length < 2) {
+  const items = mediaItemsFor(zone);
+  if (zone.id === "overview" || items.length < 2) {
     return;
   }
   showAirHint({
@@ -881,8 +952,11 @@ function setZone(zoneId) {
     return;
   }
   closeGalleryMode();
+  rememberMediaIndex();
   state.zoneId = zoneId;
-  state.mediaIndex = 0;
+  const zone = currentZone();
+  state.mediaMode = preferredMediaMode(zone);
+  state.mediaIndex = restoredMediaIndex(zone, state.mediaMode);
   state.mediaDirection = 0;
   state.mediaAxis = "x";
   closeZoneMenu();
@@ -903,12 +977,14 @@ function setAdjacentZone(direction) {
 
 function setMediaIndex(index, direction = 0, axis = "x") {
   const zone = currentZone();
-  if (zone.media.length < 2) {
+  const items = mediaItemsFor(zone);
+  if (items.length < 2) {
     return;
   }
   state.mediaDirection = direction;
   state.mediaAxis = axis === "y" ? "y" : "x";
-  state.mediaIndex = (index + zone.media.length) % zone.media.length;
+  state.mediaIndex = (index + items.length) % items.length;
+  rememberMediaIndex();
   document.body.classList.remove("is-media-surfacing");
   window.requestAnimationFrame(() => {
     document.body.classList.add("is-media-surfacing");
@@ -917,7 +993,7 @@ function setMediaIndex(index, direction = 0, axis = "x") {
 }
 
 function shiftStage(direction, axis = "x") {
-  if (currentZone().media.length > 1) {
+  if (mediaItemsFor(currentZone()).length > 1) {
     setMediaIndex(state.mediaIndex + direction, direction, axis);
     return;
   }
@@ -967,11 +1043,12 @@ function scheduleAdjacentMediaPreload() {
         return;
       }
       const zone = currentZone();
-      if (zone.media.length < 2) {
+      const items = mediaItemsFor(zone);
+      if (items.length < 2) {
         return;
       }
-      const next = zone.media[(state.mediaIndex + 1) % zone.media.length];
-      const previous = zone.media[(state.mediaIndex - 1 + zone.media.length) % zone.media.length];
+      const next = items[(state.mediaIndex + 1) % items.length];
+      const previous = items[(state.mediaIndex - 1 + items.length) % items.length];
       preloadImageSource(stageSourceFor(next));
       window.setTimeout(() => {
         if (requestId === state.mediaRequestId && !state.gallery.isOpen) {
@@ -1064,24 +1141,34 @@ function updateStageMedia(selectedMedia, altText, options = {}) {
 
 function renderZone() {
   const zone = currentZone();
+  applyPreferredMediaMode(zone);
+  const activeItems = mediaItemsFor(zone);
   const selectedMedia = currentMedia();
   const isOverview = zone.id === "overview";
   const hasSectionGallery = isSectionGalleryZone();
+  const alternateMode = secondaryMediaMode(zone);
   const isLeavingOverview = stage.classList.contains("stage--welcome") && !isOverview;
   if (isOverview) {
     toggleLightbox(false);
   }
   stage.classList.toggle("stage--welcome", isOverview);
   stage.classList.toggle("stage--gallery-zone", hasSectionGallery);
+  stage.classList.toggle("stage--horizontal-media", state.mediaMode === "horizontal");
   stageContent.classList.toggle("stage__content--overview", isOverview);
   detailsSheet.classList.toggle("sheet--overview", isOverview);
   detailsSheet.classList.toggle("sheet--gallery-zone", hasSectionGallery);
-  horizontalGalleryButton.hidden = !hasSectionGallery;
+  horizontalGalleryButton.hidden = !alternateMode;
+  if (alternateMode) {
+    const galleryKey = alternateMode === "vertical" ? "verticalGallery" : "horizontalGallery";
+    const galleryAriaKey = alternateMode === "vertical" ? "verticalGalleryAria" : "horizontalGalleryAria";
+    horizontalGalleryButton.textContent = copy[state.lang][galleryKey];
+    horizontalGalleryButton.setAttribute("aria-label", copy[state.lang][galleryAriaKey]);
+  }
   const detailMode = isOverview ? "yacht" : "zone";
   detailsButtonLabel.textContent = copy[state.lang][`${detailMode}Details`];
   detailsSheet.setAttribute("aria-label", copy[state.lang][`${detailMode}DetailsDialogAria`]);
   updateStageMedia(selectedMedia, zone[state.lang].title, { hideCurrent: isLeavingOverview });
-  mediaCounter.textContent = `${state.mediaIndex + 1} / ${zone.media.length}`;
+  mediaCounter.textContent = `${state.mediaIndex + 1} / ${activeItems.length}`;
   stageLead.textContent = isOverview ? copy[state.lang].lead : zone[state.lang].copy;
   stageZoneDetail.textContent = "";
   stageZoneDetail.hidden = true;
@@ -1192,7 +1279,7 @@ function preloadGallerySource(src, onReady) {
 
 function scheduleAdjacentGalleryMediaPreload() {
   window.clearTimeout(adjacentGalleryPreloadTimer);
-  const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
+  const items = state.gallery.items.length ? state.gallery.items : mediaItemsFor(currentZone());
   if (!state.gallery.isOpen || items.length < 2) {
     return;
   }
@@ -1332,7 +1419,7 @@ function renderGalleryMode(direction = 0) {
   setGalleryCaption(mediaItem);
 }
 
-function openGalleryMode(mediaItem = currentMedia(), items = currentZone().media, index = state.mediaIndex, syncStage = true) {
+function openGalleryMode(mediaItem = currentMedia(), items = mediaItemsFor(currentZone()), index = state.mediaIndex, syncStage = true) {
   if (!isSectionGalleryZone()) {
     toggleLightbox(true);
     return;
@@ -1380,7 +1467,7 @@ function shiftGallery(direction) {
   if (state.gallery.isTransitioning) {
     return;
   }
-  const items = state.gallery.items.length ? state.gallery.items : currentZone().media;
+  const items = state.gallery.items.length ? state.gallery.items : mediaItemsFor(currentZone());
   if (items.length > 1) {
     state.gallery.index = (state.gallery.index + direction + items.length) % items.length;
     state.gallery.media = items[state.gallery.index];
@@ -1388,6 +1475,7 @@ function shiftGallery(direction) {
       state.mediaDirection = direction;
       state.mediaAxis = "x";
       state.mediaIndex = state.gallery.index;
+      rememberMediaIndex();
       renderZone();
     }
     state.gallery.scale = 1;
@@ -1532,7 +1620,7 @@ openMediaButton.addEventListener("click", () => {
 });
 
 horizontalGalleryButton.addEventListener("click", () => {
-  const items = horizontalGalleryItems();
+  const items = secondaryGalleryItems();
   if (items.length) {
     openGalleryMode(items[0], items, 0, false);
   }
@@ -1722,8 +1810,23 @@ function preventFullscreenOverscroll(event) {
   }
 }
 
+function handleViewportMediaModeChange() {
+  window.clearTimeout(mediaModeViewportTimer);
+  mediaModeViewportTimer = window.setTimeout(() => {
+    const zone = currentZone();
+    if (preferredMediaMode(zone) === state.mediaMode) {
+      return;
+    }
+    closeGalleryMode();
+    applyPreferredMediaMode(zone);
+    render();
+  }, 140);
+}
+
 document.addEventListener("touchstart", rememberGlobalTouch, { passive: true });
 document.addEventListener("touchmove", preventPageOverscroll, { passive: false });
+window.addEventListener("resize", handleViewportMediaModeChange);
+window.addEventListener("orientationchange", handleViewportMediaModeChange);
 galleryMode.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
 mediaLightbox.addEventListener("touchmove", preventFullscreenOverscroll, { passive: false });
 galleryViewport.addEventListener("touchstart", beginGalleryGesture, { passive: false });
