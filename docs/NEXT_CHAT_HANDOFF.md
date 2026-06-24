@@ -12,7 +12,9 @@ Repository: `git@github.com:vetus-nauta/claudia-z.git`
 
 Branch: `main`
 
-Latest known pushed commit before this handoff update: `149b477 Add text authorship deposit`
+Latest known production/code commit before this documentation closeout: `bdcf224 Add first-party internal analytics`
+
+This handoff itself may be followed by a docs-only commit.
 
 Do not touch `/home/alexey/GitHub/Revoyacht`.
 
@@ -25,6 +27,8 @@ Core files:
 - `index.html`
 - `src/app.js`
 - `src/styles.css`
+- `src/analytics.js`
+- `analytics/collect.php`
 - `assets/brand/`
 - `assets/media/`
 
@@ -43,6 +47,151 @@ The site has:
 - disabled direct source-image opening from normal photo taps
 - author/text deposit records in `docs/text-deposit/`
 - first-party internal analytics for owner-only operational counts
+
+## Full Functional Checklist
+
+This checklist describes the production behavior that must not be accidentally lost.
+
+Identity and access:
+
+- Claudia Z private yacht presentation for Sunseeker 76.
+- Static no-index public presentation at `https://claudia-z.com`.
+- No public sales funnel, booking path, price, owner identity, contact form, or inquiry CTA.
+- No sitemap and no SEO-growth mechanics.
+- `robots.txt`, meta robots, and `X-Robots-Tag` headers are all active.
+- Security headers are managed by `.htaccess`, including CSP, HSTS, frame denial, no-referrer, and nosniff.
+
+Localization:
+
+- Automatic language detection only.
+- Russian browser/user language shows Russian.
+- English and all other languages fall back to English.
+- No visible language switcher.
+- One active language is rendered into the UI; do not add duplicate visible RU/EN blocks.
+- Any changed Russian text must receive matching English localization before deployment.
+- Owner-supplied text must be inserted in source form unless editing/localization is explicitly requested.
+
+Themes and branding:
+
+- Dark/light theme is supported.
+- Theme choice is stored in `localStorage`.
+- Theme switcher remains visible on tablet/desktop when detail sheets are open.
+- Claudia Z logo appears on the welcome screen.
+- Sunseeker mark appears on the stage and inside yacht/details panels with light/dark variants.
+- Do not place Sunseeker in a white card or oversized logo treatment.
+
+Welcome and yacht details:
+
+- First screen is a media-first presentation, not a marketing landing page.
+- Overview/welcome uses concise yacht copy, key facts, and brand marks.
+- Yacht details open in a glass-style panel.
+- When yacht/zone details are open on tablet/desktop, other controls remain visible.
+- On mobile, nonessential controls may hide behind the detail sheet for space.
+
+Zone system:
+
+- Active zones live in `src/app.js` under `const zones = [...]`.
+- Current zones are `overview`, `exterior`, `flybridge`, `foredeck`, `cockpit`, `aft_swim_platform`, `tender`, `saloon`, `master_cabin`, `forward_vip`, `starboard_guest`, `port_guest`.
+- Do not re-add generic `interior` or `main_deck` routes unless the owner explicitly asks.
+- Each zone has bilingual `en` and `ru` objects.
+- Zone tile labels and active states are generated from the active language.
+
+Zone navigation:
+
+- Zone navigation uses square visual tiles across mobile, tablet, and desktop.
+- The selected zone is shown by the active tile state.
+- Do not restore the old hamburger/popover zone menu on tablet/desktop.
+- Do not turn tiles into stretched pills.
+- Do not add a separate large bottom-left current-zone label.
+- Zone tiles are centered/scrollable where needed and must not push photos out of position.
+
+Primary media behavior:
+
+- Portrait/vertical media goes in `media`.
+- Landscape/horizontal media goes in `horizontalMedia`.
+- Mobile and tablet portrait use `media` as the primary zone gallery.
+- Tablet landscape and desktop use `horizontalMedia` as the primary gallery when it exists.
+- Zones without `horizontalMedia` stay on `media`.
+- The site remembers image index separately for each `zone + media mode`.
+- Orientation/viewport changes preserve the current zone and switch to the correct media set.
+
+Wide-screen media framing:
+
+- Wide horizontal primary media is constrained to a centered `3:2` viewing window.
+- Do not stretch horizontal photos to full viewport edges.
+- Wide vertical-only zones such as Tender use a centered `3:4` portrait viewing window.
+- Do not let vertical wide photos fall back to full-screen cover.
+- Photo next/previous/expand controls sit as a compact vertical group on the right in wide zone mode.
+- Those controls must not disappear behind the bottom zone rail.
+- Gallery counter numbers must remain horizontal, not rotated sideways.
+
+Secondary galleries:
+
+- When primary is vertical, the secondary button opens horizontal media and says `Horizontal gallery` / `Горизонтальная галерея`.
+- When primary is horizontal, the secondary button opens vertical media and says `Vertical gallery` / `Вертикальная галерея`.
+- Secondary gallery uses the same clean full-screen gallery behavior.
+- Secondary gallery captions show the zone name under horizontal photos.
+
+Touch and fullscreen behavior:
+
+- Normal photo taps do not open raw source images.
+- Fullscreen/gallery viewer is frameless and controlled by the site.
+- Swipe/drag is supported for photo navigation.
+- Vertical swipe/pull-to-refresh interference is suppressed where needed.
+- Pinch/zoom support exists in gallery mode.
+- Browser fullscreen is requested for gallery viewers where supported, but cannot be guaranteed on all mobile browsers.
+- Mobile landscape is discouraged/handled so portrait viewing remains the intended phone experience.
+
+Detail sheets:
+
+- Detail sheet title lives in `.sheet__title` / `#detailsSheetTitle`.
+- Close control is `.sheet__close`, a readable text cross with no circular button background.
+- Title and close cross sit on the same row.
+- Description body starts with `#zoneCopy` and `#zoneDetail`.
+- Do not restore a separate body heading above the text.
+- Zone detail copy must not duplicate the first `copy` sentence at the start of `detail`.
+- Detail text uses a readable glass panel with internal scrolling, not a long page-length text block.
+
+Photo/media pipeline:
+
+- Public media files are optimized derivatives in `assets/media/<zone>/`.
+- Source originals stay outside public output, typically in ignored `.media-source/`.
+- Public UI must not expose Google Drive links or source folders.
+- Preserve owner-specified first/opening frame when explicitly requested.
+- Do not duplicate a first frame if it appears both as first file and inside a folder.
+- New zone photos must be connected narrowly to the target zone only.
+
+Internal analytics:
+
+- Approved only as first-party internal operational accounting.
+- Browser script: `src/analytics.js`.
+- Collector: `analytics/collect.php`.
+- Private log target: `/private/claudia-z-analytics/events-YYYY-MM.jsonl`.
+- Local report script: `node tools/analytics-summary.mjs <events-file.jsonl>`.
+- Counts unique browser visitors, sessions, repeat visits, zone/photo interactions, details/gallery/theme events, and active time heartbeat.
+- No visual counter.
+- No third-party analytics, pixels, Google Analytics, Yandex Metrica, Meta/Facebook pixel, or public tracking scripts.
+- No raw public IP storage.
+- Do not deploy private log files.
+
+Reusable template:
+
+- Empty template lives in `templates/empty-yacht-presentation/`.
+- It is not production.
+- It has a hall with Yacht 1-5 and a reusable blank yacht template.
+- It must not contain Claudia Z text or photos.
+- Do not publish the template unless explicitly requested.
+
+Git and deployment discipline:
+
+- GitHub `main` is the source of truth.
+- Production FTP `/claudia-z.com` is only a publication target.
+- Commit and push before FTP deployment.
+- Deploy only public files.
+- Never deploy `docs/`, `templates/`, `.media-source/`, source originals, private notes, authorship evidence, or analytics logs.
+- Bump query-string versions in `index.html` when JS/CSS changes.
+- After deployment, compare live hashes for changed public files.
+- For PHP files, HTTPS returns executed output; verify source via FTP hash and behavior via POST/GET checks.
 
 ## Do Not Break
 
@@ -219,6 +368,7 @@ Run:
 
 ```bash
 npm run check
+php -l analytics/collect.php
 git diff --check
 ```
 
@@ -227,8 +377,12 @@ Then verify:
 - no docs/template/private files are in the deployment list
 - no Drive links or `.media-source` references in public files
 - `index.html` cache-bust version is bumped if JS/CSS changed
+- `analytics/collect.php` is deployed if analytics code changes
+- analytics logs remain outside public root and are not committed/deployed
 - noindex meta/robots/header behavior remains
+- CSP still includes `connect-src 'self'` for first-party analytics
 - mobile portrait, tablet portrait, tablet landscape, desktop
 - `ru` and `en` semantic parity
+- if collector changes, test GET returns `405`, same-origin POST returns `ok`, and foreign `Origin` returns `403`
 
 Deployment target remains FTP path `/claudia-z.com`.

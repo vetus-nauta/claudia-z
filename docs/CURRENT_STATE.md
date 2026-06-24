@@ -29,6 +29,10 @@ It includes:
 - zone navigation as square visual tiles
 - vertical and horizontal gallery logic per viewport
 - per-zone details popup
+- fullscreen/framed site-controlled gallery viewer
+- secondary per-zone vertical/horizontal gallery mode
+- separate image index memory for each zone and media mode
+- first-party internal analytics for owner-only operational counts
 - optimized public media derivatives
 - no public search/SEO mechanics
 - no booking/contact/pricing flow
@@ -74,6 +78,24 @@ Wide vertical-only zones such as Tender are constrained to a centered `3:4` port
 
 The system remembers image index separately for each `zone + media mode`.
 
+Photo taps from normal stage viewing must not open raw source files. Fullscreen/gallery viewing stays inside the site-controlled viewer.
+
+The gallery counter is horizontal text. Do not restore vertical/rotated counter typography.
+
+## Detail Sheet Behavior
+
+The yacht and zone detail windows use the current sheet pattern:
+
+- title in the sheet header: `.sheet__title` / `#detailsSheetTitle`
+- readable text close cross: `.sheet__close`
+- no circular close-button background
+- title and close cross on the same row
+- detail body starts with `#zoneCopy` and `#zoneDetail`
+- no duplicated body title above the text
+- no duplicate first `copy` sentence at the start of `detail`
+
+On tablet and desktop, opening a detail sheet does not hide the other controls. On mobile, some nonessential controls may hide to preserve space.
+
 ## Text State
 
 Texts are bilingual in `src/app.js`.
@@ -113,6 +135,34 @@ The site is intentionally private/no-index:
 Security headers are managed through `.htaccess`.
 
 Internal analytics are collected through `analytics/collect.php` and stored outside the public site directory in `private/claudia-z-analytics/` on the hosting account.
+
+The analytics layer is first-party only:
+
+- `src/analytics.js` sends events to `analytics/collect.php`
+- logs are JSONL files named `events-YYYY-MM.jsonl`
+- `tools/analytics-summary.mjs` summarizes downloaded logs locally
+- no visual counter
+- no third-party analytics/pixels
+- no raw public IP storage
+
+## Deployment State
+
+Latest known pushed production commit at closure: `bdcf224 Add first-party internal analytics`.
+
+Public deploy set includes:
+
+- `index.html`
+- `404.html`
+- `robots.txt`
+- `.htaccess`
+- `site.webmanifest`
+- `favicon.ico`
+- `apple-touch-icon.png`
+- `src/`
+- `assets/`
+- `analytics/`
+
+Never deploy `docs/`, `templates/`, `.media-source/`, source originals, private notes, authorship evidence, or analytics logs.
 
 ## Authorship Records
 

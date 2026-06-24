@@ -52,6 +52,8 @@ Main public files:
 - `index.html`
 - `src/app.js`
 - `src/styles.css`
+- `src/analytics.js`
+- `analytics/collect.php`
 - `assets/brand/`
 - `assets/media/`
 - `robots.txt`
@@ -239,8 +241,19 @@ Deploy only public files:
 - `apple-touch-icon.png`
 - `src/`
 - `assets/`
+- `analytics/`
 
 Production FTP path: `/claudia-z.com`.
+
+Do not deploy:
+
+- `docs/`
+- `templates/`
+- `.media-source/`
+- source originals
+- private notes
+- authorship evidence
+- `/private/claudia-z-analytics/` log files
 
 ## If Unsure
 
