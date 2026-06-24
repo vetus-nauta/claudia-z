@@ -2040,6 +2040,15 @@ h1 {
   }
 }
 
+@media (orientation: landscape) and (pointer: coarse) and (min-width: 1280px) and (max-width: 1366px) {
+  .zone-rail,
+  .is-zone-menu-open .zone-rail,
+  .stage--welcome .zone-rail,
+  .is-zone-menu-open .stage--welcome .zone-rail {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 759px) {
   .media-stepper {
     display: none;
