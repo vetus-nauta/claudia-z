@@ -306,15 +306,15 @@ const zones = [
     ],
     en: {
       label: "Saloon",
-      title: "Main saloon",
-      copy: "Main-deck living space between cockpit, dining, seating, and galley.",
-      detail: "The useful point is flow: the saloon stays connected to the aft deck, so interior time does not feel cut off from the water."
+      title: "Saloon",
+      copy: "The Sunseeker 76 saloon feels visually large and bright.",
+      detail: "The Sunseeker 76 saloon feels visually large and bright. It is not a closed interior room, but a proper living area that, through large windows and a direct connection to the cockpit, works as an open space inside the yacht.\n\nOne of the main features of the saloon is the large glazed door-window that opens out to the cockpit. When the door is open, the boundary between the saloon and cockpit almost disappears: the cockpit visually becomes a continuation of the saloon, and the saloon becomes part of the shared guest area. This makes the whole space feel larger, more alive, and more comfortable for conversation.\n\nLarge windows on all sides fill the saloon with light and keep a constant connection with the sea. Inside, there is no sense of pressure from a closed room: guests can sit in the saloon, rest, talk, or dine while still seeing the water, the shore, and the movement around the yacht.\n\nSeveral functional zones are arranged inside the saloon. There is a large dining table, a galley with an island, a lounge area with a sofa, a coffee table, and a large TV. This division makes the saloon convenient for quiet rest, meals, and an evening with a movie or conversation.\n\nThe helm station is placed far forward and is visually separated from the main guest part of the saloon. There is a small sofa next to it, but the helm area does not mix with the central lounge. As a result, the saloon stays comfortable for guests, while the working part of the yacht keeps its separate purpose.\n\nOverall, the Sunseeker 76 saloon is a bright, spacious, and well-organized interior zone. It brings together dining, galley, relaxation, and the connection with the cockpit, while keeping a feeling of lightness and openness."
     },
     ru: {
       label: "Салон",
-      title: "Главный салон",
-      copy: "Главное пространство палубы между кокпитом, столом, посадкой и камбузом.",
-      detail: "Главное здесь - поток движения: салон связан с кормовой палубой, поэтому интерьер не отрывается от воды."
+      title: "Салон",
+      copy: "Салон Sunseeker 76 визуально ощущается очень большим и светлым.",
+      detail: "Салон Sunseeker 76 визуально ощущается очень большим и светлым. Это не закрытое внутреннее помещение, а полноценная жилая зона, которая за счёт больших окон и прямой связи с кокпитом работает как открытое пространство внутри яхты.\n\nОдна из главных особенностей салона — большое витражное окно-дверь, через которое открывается выход в кокпит. Когда дверь раскрыта, граница между салоном и кокпитом почти исчезает: кокпит визуально становится продолжением салона, а салон — частью общей гостевой зоны. Это делает всё пространство более объёмным, живым и удобным для общения.\n\nБольшие окна со всех сторон наполняют салон светом и дают постоянный контакт с морем. Находясь внутри, не чувствуешь давления закрытого помещения: можно сидеть в салоне, отдыхать, разговаривать или обедать, продолжая видеть воду, берег и движение вокруг яхты.\n\nВ салоне расположены несколько функциональных зон. Здесь есть большой обеденный стол, кухня с островом, зона отдыха с диваном, журнальным столом и большим телевизором. Такое разделение делает салон удобным и для спокойного отдыха, и для обедов, и для вечера с фильмом или беседой.\n\nПост управления вынесен далеко вперёд и интерьерно отделён от основной гостевой части салона. Рядом с ним расположен небольшой диванчик, но сама зона управления не смешивается с центральной зоной отдыха. Благодаря этому салон остаётся комфортным для гостей, а рабочая часть яхты сохраняет своё отдельное назначение.\n\nВ итоге салон Sunseeker 76 — это светлая, просторная и хорошо организованная внутренняя зона яхты. Он объединяет обеденное пространство, кухню, отдых и связь с кокпитом, при этом не теряет ощущения лёгкости и открытости."
     }
   },
   {
