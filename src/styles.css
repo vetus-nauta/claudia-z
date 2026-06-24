@@ -2107,6 +2107,8 @@ h1 {
     --builder-mark-half-height: min(23.73px, 5.93vw);
     --brand-axis-y: calc(var(--builder-mark-top) + var(--builder-mark-half-height));
     --top-control-height: 36px;
+    --mobile-zone-tile: clamp(78px, 23vw, 92px);
+    --mobile-zone-dock-height: calc(var(--mobile-zone-tile) + 30px + var(--safe-bottom));
   }
 
   .media-stepper {
@@ -2193,6 +2195,7 @@ h1 {
     object-fit: contain;
     background: transparent;
     transform: none;
+    height: calc(100dvh - var(--mobile-zone-dock-height));
   }
 
   .specs {
@@ -2267,103 +2270,110 @@ h1 {
     -webkit-line-clamp: 2;
   }
 
-  .command {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 8px;
-  }
-
+  .command,
   .stage--welcome .command {
-    left: 20px;
+    left: 0;
     right: 0;
-    bottom: calc(16px + var(--safe-bottom));
+    bottom: 0;
     z-index: 24;
-    display: grid;
-    padding: 4px 20px 6px 0;
-    background: transparent;
+    display: block;
+    padding: 10px 0 calc(12px + var(--safe-bottom));
+    border: 0;
+    background: var(--command-bg);
     opacity: 1;
     visibility: visible;
     transform: none;
   }
 
+  .stage--welcome .command {
+    background: transparent;
+  }
+
+  .zone-current-label,
+  .zone-menu-button,
+  .stage--welcome .zone-current-label,
   .stage--welcome .zone-menu-button {
     display: none;
   }
 
-  .stage--welcome .zone-rail {
+  .zone-rail,
+  .is-zone-menu-open .zone-rail,
+  .stage--welcome .zone-rail,
+  .is-zone-menu-open .stage--welcome .zone-rail {
     position: static;
     display: flex;
+    flex-wrap: nowrap;
     grid-template-columns: none;
-    gap: 12px;
+    gap: 10px;
     max-height: none;
     overflow-x: auto;
     overflow-y: hidden;
+    overscroll-behavior-x: contain;
     border: 0;
-    padding: 4px 0 6px;
+    border-radius: 0;
+    padding: 4px 20px 6px;
     background: transparent;
     box-shadow: none;
     transform: none;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    scroll-padding-inline: 20px;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 36px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 36px), transparent 100%);
   }
 
-  .stage--welcome .zone-button {
-    flex: 0 0 104px;
-    min-width: 0;
-    min-height: 116px;
+  .stage--gallery-zone .zone-rail {
+    flex-wrap: nowrap;
+  }
+
+  .zone-button,
+  .stage--welcome .zone-button,
+  .section-gallery-button,
+  .stage--gallery-zone .section-gallery-button {
+    flex: 0 0 var(--mobile-zone-tile);
+    width: var(--mobile-zone-tile);
+    min-width: var(--mobile-zone-tile);
+    height: var(--mobile-zone-tile);
+    min-height: var(--mobile-zone-tile);
+    aspect-ratio: 1;
     flex-direction: column;
-    gap: 10px;
-    border-radius: 20px;
-    padding: 11px 9px;
-    font-size: 10px;
-    line-height: 1.16;
-    text-align: center;
+    gap: 7px;
+    border-radius: 18px;
+    padding: 9px 7px;
     justify-content: center;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.025em;
+    line-height: 1.08;
     white-space: normal;
+    scroll-snap-align: start;
   }
 
+  .zone-button__icon,
   .stage--welcome .zone-button__icon {
-    width: 42px;
-    height: 42px;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
   }
 
+  .zone-button.is-active .zone-button__icon {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 36%, transparent);
+    color: var(--accent);
+  }
+
+  .zone-button__label,
   .stage--welcome .zone-button__label {
+    min-width: 0;
+    max-width: 100%;
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     text-overflow: clip;
-  }
-
-  .zone-rail {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-height: min(38dvh, 320px);
-  }
-
-  .zone-menu-button {
-    width: 42px;
-    min-width: 42px;
-    min-height: 42px;
-  }
-
-  .section-gallery-button {
-    min-height: 44px;
-    border-radius: 15px;
-    padding: 0 10px;
-    font-size: 10px;
-  }
-
-  .zone-button {
-    min-height: 68px;
-    gap: 9px;
-    padding: 0 10px;
-    font-size: 10px;
-    letter-spacing: 0.035em;
-  }
-
-  .zone-button__icon {
-    width: 25px;
-    height: 25px;
   }
 }
 
