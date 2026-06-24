@@ -6,6 +6,10 @@ Old site text may be used only as directional reference.
 
 When the owner asks to insert a supplied text, insert that text in its source form. Do not rewrite, shorten, translate, reorder, summarize, split into a different meaning, or add creative copy unless the owner explicitly asks for editing or adaptation.
 
+If the owner asks for "редакция" without asking for new copy, treat it as grammar, punctuation, syntax, paragraphing, and sequence cleanup only. Do not invent new facts, tone, equipment, or marketing claims.
+
+If Russian text changes, update English localization before deployment. The English side should be natural American English, but it must preserve the owner's meaning and should not silently replace their text with a new concept.
+
 Allowed:
 
 - facts

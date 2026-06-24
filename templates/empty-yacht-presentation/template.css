@@ -1,0 +1,329 @@
+:root {
+  color-scheme: dark;
+  --page: #071012;
+  --ink: #f5f2ea;
+  --ink-soft: rgba(245, 242, 234, 0.72);
+  --line: rgba(245, 242, 234, 0.2);
+  --glass: rgba(9, 14, 16, 0.58);
+  --glass-strong: rgba(9, 14, 16, 0.76);
+  --accent: #d8bc72;
+  --shadow: 0 22px 80px rgba(0, 0, 0, 0.34);
+  --radius: 8px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #edf1ee;
+  --ink: #101719;
+  --ink-soft: rgba(16, 23, 25, 0.66);
+  --line: rgba(16, 23, 25, 0.16);
+  --glass: rgba(245, 247, 244, 0.68);
+  --glass-strong: rgba(245, 247, 244, 0.86);
+  --shadow: 0 22px 70px rgba(40, 55, 58, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+a,
+button {
+  font: inherit;
+}
+
+.hall {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(22px, 5vw, 52px);
+  padding: clamp(22px, 5vw, 72px);
+  background:
+    linear-gradient(135deg, rgba(216, 188, 114, 0.16), transparent 38%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.14), transparent 26%),
+    var(--page);
+}
+
+.hall__intro {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-size: clamp(38px, 8vw, 88px);
+  font-weight: 560;
+  line-height: 0.96;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: 30px;
+  font-weight: 520;
+}
+
+.muted,
+.lead,
+#sheetCopy {
+  color: var(--ink-soft);
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.45;
+}
+
+.yacht-grid {
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.yacht-card {
+  min-height: clamp(160px, 28vw, 360px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+.yacht-card__media,
+.placeholder-media {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(216, 188, 114, 0.16), transparent 44%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.yacht-card__label {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.presentation,
+.stage {
+  min-height: 100dvh;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(20px, 4vw, 60px);
+}
+
+.placeholder-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  border: 0;
+  border-radius: 0;
+}
+
+.placeholder-media::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 42%;
+  height: 18%;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stage__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.42), transparent 62%);
+}
+
+:root[data-theme="light"] .stage__scrim {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 62%);
+}
+
+.topbar {
+  position: fixed;
+  left: clamp(14px, 3vw, 42px);
+  right: clamp(14px, 3vw, 42px);
+  top: calc(16px + env(safe-area-inset-top));
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.text-button,
+.icon-button,
+.sheet__close {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 14px;
+  color: var(--ink);
+  background: var(--glass);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-button:hover,
+.icon-button:hover,
+.sheet__close:hover,
+.yacht-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--line));
+}
+
+.brand-axis {
+  width: min(620px, calc(100vw - 40px));
+  justify-self: start;
+  align-self: center;
+}
+
+.stepper {
+  position: fixed;
+  right: clamp(14px, 3vw, 42px);
+  bottom: calc(112px + env(safe-area-inset-bottom));
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+}
+
+.icon-button {
+  width: 42px;
+  padding: 0;
+  font-size: 24px;
+}
+
+.zone-rail {
+  position: fixed;
+  left: clamp(12px, 3vw, 42px);
+  right: clamp(12px, 3vw, 42px);
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+  scrollbar-width: none;
+}
+
+.zone-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.zone-button {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  background: var(--glass);
+  cursor: pointer;
+}
+
+.zone-button.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sheet {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  width: min(480px, calc(100vw - 32px));
+  max-height: min(640px, calc(100dvh - 40px));
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  background: var(--glass-strong);
+  box-shadow: var(--shadow);
+  transform: translate(-50%, -50%);
+}
+
+.sheet[aria-hidden="true"] {
+  display: none;
+}
+
+.sheet__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+}
+
+@media (max-width: 760px) {
+  .hall {
+    padding: 20px;
+  }
+
+  .yacht-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yacht-card {
+    min-height: 130px;
+  }
+
+  .brand-axis {
+    align-self: start;
+    margin-top: 98px;
+  }
+
+  .zone-rail {
+    justify-content: flex-start;
+  }
+
+  .zone-button {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+
+  .stepper {
+    right: 14px;
+    bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+}

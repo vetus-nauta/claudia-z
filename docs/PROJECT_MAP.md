@@ -22,6 +22,20 @@ This file describes the intended repository structure.
     BACKEND_MESSENGER_PLAN.md
     DEPLOYMENT_RULES.md
     ACCEPTANCE_CRITERIA.md
+    AUTHORSHIP.md
+    text-deposit/
+      README.md
+      EMAIL_DELIVERY_RECORD_2026-06-24.md
+      SEARCH_UNIQUENESS_AUDIT_2026-06-24.md
+      claudia-z-texts-2026-06-24.*
+
+  templates/
+    empty-yacht-presentation/
+      README.md
+      index.html
+      yacht.html
+      template.css
+      template.js
 
   .agents/
     skills/
@@ -62,3 +76,25 @@ Possible options:
 - separate controlled presentation layer and private backend subdomain
 
 Default first safe approach: controlled no-index presentation first, backend later.
+
+## Current Production Structure
+
+The production Claudia Z presentation is currently static:
+
+- `index.html`
+- `src/app.js`
+- `src/styles.css`
+- `assets/brand/`
+- `assets/media/`
+- `robots.txt`
+- `.htaccess`
+
+Do not deploy `docs/`, `templates/`, `.media-source/`, or source/private files.
+
+## Empty Template
+
+The reusable blank site shell lives in `templates/empty-yacht-presentation/`.
+
+It is intentionally not connected to production.
+
+It includes a hall with Yacht 1-5 and one reusable empty yacht template with placeholder zones.

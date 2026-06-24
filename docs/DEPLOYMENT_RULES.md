@@ -15,7 +15,7 @@ Namecheap `public_html` is the publication target, not the project memory.
 6. Verify the changed zones in a browser before deployment.
 7. Commit and push to GitHub before FTP upload.
 8. Deploy only public files: `index.html`, `404.html`, `robots.txt`, `.htaccess`, `site.webmanifest`, `favicon.ico`, `apple-touch-icon.png`, `src/`, `assets/`.
-9. Do not deploy `docs/`, `.media-source/`, source exports, temporary test folders, or private notes.
+9. Do not deploy `docs/`, `templates/`, `.media-source/`, source exports, temporary test folders, private notes, or authorship evidence files.
 10. After FTP upload, compare live hashes for changed public files.
 11. Smoke-test the live site on HTTPS.
 12. Keep the previous Git commit hash as the rollback point.
@@ -45,6 +45,8 @@ For large media releases, keep the previous live media files on the server unles
 - Do not hot-edit production as the main workflow.
 - Do not overwrite without backup.
 - Do not deploy secrets.
+- Do not deploy the empty template folder unless the owner explicitly requests a separate template publication.
+- Do not deploy authorship/evidence documents.
 - Do not deploy public indexing behavior.
 - Do not publish a sitemap.
 - Do not leave old WordPress admin exposed if WordPress is removed.

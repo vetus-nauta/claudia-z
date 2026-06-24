@@ -35,6 +35,20 @@ This repository record provides:
 - A PDF deposit copy.
 - SHA-256 hashes for the deposit files and the source files used to generate them.
 - A pushed GitHub history for third-party timestamp continuity.
+- Email delivery confirmation for the deposit package.
+
+## Email Delivery
+
+The deposit package was emailed to `a.usov@mail.com`.
+
+Gmail message ids:
+
+- `19efaf7d02647096`
+- `19efafbd80269ffd`
+
+The project owner confirmed that both messages were received.
+
+See `docs/text-deposit/EMAIL_DELIVERY_RECORD_2026-06-24.md`.
 
 ## Stronger External Evidence
 

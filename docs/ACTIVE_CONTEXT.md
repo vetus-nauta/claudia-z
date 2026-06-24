@@ -1,218 +1,250 @@
 # Active Context
 
-Last updated: 2026-06-11
-Latest pushed commit: current `main` HEAD after the last project push.
+Last updated: 2026-06-24
 
-## Work Rule
+## Read This First
 
-Read this file first before project work. For local section tasks, do not reread all docs or run broad repository scans unless this file is insufficient.
+This is the compact source of truth for future work.
 
-Minimum read set for media intake:
+Do not touch `/home/alexey/GitHub/Revoyacht`.
 
-- `docs/ACTIVE_CONTEXT.md`
-- the target zone block in `src/app.js`
-- target source/asset folders only
+Repository: `git@github.com:vetus-nauta/claudia-z.git`
 
-Use specialist roles conceptually:
+Branch: `main`
 
-- Lead: final decisions, conflict removal, commit/push.
-- Photo/media: composition, focal point, mobile crop, reject/hold/use.
-- Editorial Copy Chief: magazine-grade copy, bilingual wording, AI-slop cleanup, no photo-caption prose.
-- UX/UI: minimal chrome, no duplicate labels, mobile behavior.
-- CSS/frontend: stable layout and implementation.
-- Context/docs: record serious logic changes only, remove contradictions.
+Production: `https://claudia-z.com`
 
-Do not spam the chat with long tool outputs. Summarize decisions and verification.
+Current project status: implemented, deployed, verified, and closed for the present complex task.
+
+## Work Discipline
+
+Before changing anything:
+
+1. Read this file.
+2. Read `docs/NEXT_CHAT_HANDOFF.md`.
+3. Read only the target code/docs area needed for the task.
+4. Do not broadly refactor the site for a narrow request.
+5. Do not rewrite user-supplied text unless asked.
+6. Do not deploy docs/templates/private files.
 
 ## Hard Rules
 
-- Do not touch `/home/alexey/GitHub/Revoyacht`.
-- GitHub repo: `vetus-nauta/claudia-z`, branch `main`.
-- This is a controlled no-index yacht presentation, not a sales/SEO site.
-- No public indexing, sitemap, SEO growth logic, public prices, booking/rental CTA, inquiry/contact form, owner identity, or private client data.
-- English is default/primary. Russian opens automatically for `ru`; all other languages fall back to English. No visible language switcher.
-- One active language only; no inactive-language flash.
-- Mobile galleries: no visible previous/next photo buttons. Use swipe plus minimal hint.
-- Use optimized derivatives only in public UI; master originals stay in ignored `.media-source/`.
-- Do not claim absolute photo protection.
-- `Claudia Z` visible as the main headline only on Overview. Internal zones use integrated transparent Sunseeker mark, not repeated yacht name.
-- Do not use white logo cards in dark panels.
-- Do not use old WordPress wording/layout/SEO mechanics. Old WordPress media placeholders are temporary only.
-- Final media requires composition review before connection.
-- Reject accidental crops that cut bow, stern, hull line, flybridge, tender, platform edges, or key deck geometry.
-- For vertical/mobile derivatives from horizontal photos, use ambient background fill / tone-matched extension, not black/white bars.
+- No public indexing.
+- No sitemap.
+- No SEO growth strategy.
+- No public prices.
+- No booking/rent/charter CTA.
+- No public inquiry or contact form.
+- No owner identity or private client data.
+- No unnecessary analytics or tracking.
+- No raw source photo opening from normal UI.
+- No production deployment of `docs/`, `templates/`, `.media-source/`, source exports, or private notes.
+- No creative rewriting of supplied text unless the user asks.
+- English and Russian must stay semantically aligned.
+- One active language at a time; no visible language switcher.
+- `ru` browser/user language shows Russian; English and other languages show English.
 
-## Current UI State
+## Production Site Structure
 
-- Static frontend in `index.html`, `src/app.js`, `src/styles.css`.
-- Theme switcher exists.
-- Stage uses `localMedia(folder, stage, full, mobile, focus)`.
-- Overview is the one-screen Welcome Hall from the 2026-06-12 Drive handoff: Claudia Z logo plus short HTML-derived main text on the left, Sunseeker as a separate top-right builder mark, one contained full-yacht image on the right, and bottom zone navigation. It must not be a four-photo slideshow, top-right masthead, card, or text panel over photography.
-- Internal zones do not keep permanent text over the media surface; their details remain in the top-right glass info popup so zone photos stay primary.
-- Yacht information now opens from the compact top-right glass trigger into a semi-transparent glass popup pinned to the upper-right corner.
-- The info trigger uses a restrained animated cue; keep motion soft, premium, and non-playful.
-- Dark/light themes are now separate interface systems, not just different photo dimming. Dark uses dark glass and light type; light uses pale glass, dark type, lighter navigation/popovers, and theme-specific control tones.
-- Overview identity uses cleaned transparent `Claudia Z` logo derivatives in both the welcome hall and the glass info popup. Use theme-appropriate transparent logo derivatives; do not return to a visible plain text hero title; keep text only for accessibility.
-- Internal zone info popups use the transparent Sunseeker mark instead of repeating the yacht name on the media surface.
-- Navigation must read as restrained premium product material, not constructor UI: avoid pill/chip section buttons, oversized CTA blocks, and school-like gallery controls. Prefer text tabs, hairlines, quiet state changes, and mobile swipe behavior.
-- Top controls (`Yacht details` and theme) must follow the same visual system as the bottom zone navigation: straight glass bar, hairline borders, quiet active/hover states, no rounded pill capsules.
-- Details sheet includes transparent Sunseeker mark and specs.
-- Copy policy: use `.agents/skills/editorial-copy-chief` for review and rewrites. Prefer short human editorial copy over AI-style descriptive prose; do not narrate what is already visible in the photo. If the user asks to insert supplied text, insert the source text as-is unless they explicitly request editing, rewriting, shortening, translation, or adaptation.
-- Text placement: Overview carries only the short Welcome Hall copy from the supplied HTML direction. Internal zones keep media clean and place their concise copy/detail in the top-right glass info popup.
-- Standalone generic `main_deck` and `interior` routes were removed; use specific zones only.
+Main public files:
 
-## WordPress Source Text Mapping
+- `index.html`
+- `src/app.js`
+- `src/styles.css`
+- `assets/brand/`
+- `assets/media/`
+- `robots.txt`
+- `.htaccess`
 
-Old WordPress XML text is source material for facts only, not wording or layout.
+Zones, media arrays, and bilingual text live in:
 
-- Overview / Exterior: Sunseeker 76, 2019 context, deep-V hull, strong profile, broad glazing, deck volume, main-deck near-360-degree view.
-- Flybridge: large upper deck, social seating, bar/service context, grill/fridges/ice maker/acoustic system, shade/awning context. Avoid hard guest-count claims unless re-confirmed.
-- Cockpit: adaptable aft lounge, table/service, saloon transition, route toward stern water area.
-- Aft Swim Platform: bathing platform / mini beach-club use, tender boarding, SeaBob/SUP/water-toy context.
-- Tender: owner confirmed `Williams 420`; old WordPress mention of Williams 445 is superseded for public copy.
-- Saloon: main-deck interior, seating/dining, galley context, broad glazing, connection to cockpit.
-- Master cabin: lower-deck principal cabin, double berth, storage/wardrobe, work/lounge details, ensuite.
-- Forward VIP: lower-deck forward guest cabin, central berth, storage, light, ensuite.
-- Starboard guest: lower-deck guest cabin with double-berth arrangement, storage, ensuite.
-- Port guest / children's cabin: lower-deck flexible three-berth/family layout with ensuite.
-- Accessories from old text and owner confirmation: two SUP boards and SeaBob may be used in platform/tender copy.
+- `src/app.js`
+- `const zones = [...]`
 
-## Owner-Confirmed Copy Inputs
+CSS/layout/theme/navigation live in:
 
-- Public copy should use build year `2020`.
-- Public display length should be `24 m`; original technical source still listed `23.60 m / 77'5"`.
-- Tender model for presentation context: `Williams 420`.
-- Water toys / platform context may include all declared items: SeaBob, two SUP boards, tender, and water-level leisure setup.
-- Flybridge equipment: two refrigerators, one chilled storage box, ice maker, two sunpads, awning, sliding opening roof, and table seating for 10.
-- Foredeck equipment/use: table and sofas for 6-8 people, two refrigerators, music.
-- Cockpit equipment: refrigerator and ice maker.
-- Port guest / children's cabin configuration: can be three single berths, or one double/French berth plus an upper pullman berth.
-- Tone: family-oriented, quiet, unhurried, comfortable cruising; still capable of emotion and adrenaline when desired.
+- `src/styles.css`
 
-## Approved Real Media
+Cache-bust query versions live in:
 
-Overview / Welcome Hall, `assets/media/overview/`:
+- `index.html`
 
-- Active first-screen image: `DJI_0279` only.
-- Welcome Hall must use `DJI_0279` as a full-screen photographic frame with compact left typography and separate top-right Sunseeker mark. The yacht object is intentionally sized for screen readability on desktop and mobile; do not rebuild it as a tiny original-scale drone image, a contained cutout yacht, or an artificial gradient background.
-- Previous first-screen image `DJI_0266_1` is retained in the Exterior gallery sequence, not as the active Welcome Hall.
-- Former overview sequence `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1` has been merged into `Exterior`; do not restore cycling general views on the main screen.
+## Current Zones
 
-Former General Plans source notes:
+Active zones:
 
-- Order: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`.
-- Rejected main overview: `DJI_0257_1`.
-- Not used main overview: `DJI_0252_1`.
+- overview
+- exterior
+- flybridge
+- foredeck
+- cockpit
+- aft_swim_platform
+- tender
+- saloon
+- master_cabin
+- forward_vip
+- starboard_guest
+- port_guest
 
-Exterior, `assets/media/exterior/`:
+Do not re-add generic `interior` or `main_deck` routes unless explicitly requested.
 
-- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Exterior` / `1q1tw3qlgjmyyVtQHNLoHOk-nu8nEJcMT`.
-- Main order: `IMG_3348`, `IMG_3347`, `IMG_3349`, `IMG_3350`, `IMG_3362`, `IMG_3363`, `IMG_3355`, `IMG_3358`, then AI-processed vertical PNGs `B7161A52`, `6ABF4DF0`, `7C94AD0A`, `0A786325`.
-- Previous horizontal/general exterior order is preserved in `horizontalMedia` for the separate horizontal gallery: `DJI_0266_1`, `DJI_0261_1`, `DJI_0269_1`, `DJI_0258_1`, `DJI_0262`, `DJI_0266`, `DJI_0247`, `DJI_0267`, `DJI_0261`, `DJI_0270`, then newly supplied unprocessed horizontals `DJI_0248`, `DJI_0250`, `DJI_0252`, `DJI_0257`.
-- Russian zone detail text is based on Google Drive `Claudia-z` / `Описания` / `sunseeker_76_exterior_description.txt`, with the service heading removed from the public UI.
+## Gallery Logic
 
-Flybridge, `assets/media/flybridge/`:
+Mobile and tablet portrait:
 
-- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Flybridge` / `1MNeG7yyMHfcLiBDMTXDHyKGE_k3XOLH4`.
-- Additional media from nested Drive folder `Flybridge` / `More` / `1OTL07esdzr3y4JzmExnua2O91Moo4b9W` is added to the same zone.
-- Main order starts with the GPT-edited people frame `9BA2E70D-E6E2-4053-85A2-DA0D6807C86F.png`, then keeps the previous approved vertical order `IMG_3318`, `IMG_3319`, `IMG_3320`, `IMG_3321`, `IMG_3413`, `IMG_3425`, `IMG_3426`, `IMG_3427`, `IMG_3428`, `IMG_3429`, `IMG_3430`, then appends `IMG_3477`, `IMG_3480`, `IMG_3481`, `IMG_3482`, `IMG_3484`, `IMG_3485`, `IMG_3492`, `IMG_3494`, `IMG_3498`, `IMG_3499`, `IMG_3500`.
-- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `130-P1999658`, `DJI_0276`, `129-P1477663`, `132-P1999663`, `126-P1477652`; new `More` horizontal frames are appended in filename order: `IMG_3486`, `IMG_3487`, `IMG_3488`, `IMG_3489`, `IMG_3490`, `IMG_3491`, `IMG_3495`, `IMG_3496`, `IMG_3497`, `IMG_3501`, `IMG_3502`, `IMG_3503`.
-- Russian zone detail text is restored verbatim from Google Drive `Claudia-z` / `Описания` / `sunseeker_76_flybridge_description.txt`; do not replace it with a shortened equipment-only block.
+- primary zone media comes from `media`
+- secondary button opens `horizontalMedia` if available
+- secondary button text is `Horizontal gallery` / `Горизонтальная галерея`
 
-Foredeck, `assets/media/foredeck/`:
+Tablet landscape and desktop:
 
-- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Foredeck` / `1am7lX14F0SSm8_ir5vobngU4CCsp368N`.
-- Main order starts with the strongest foredeck frames, then access/context frames: `IMG_3416`, `IMG_3417`, `IMG_3418`, `IMG_3419`, `IMG_3420`, `IMG_3421`, `IMG_3422`, `IMG_3423`, `IMG_3424`, `IMG_3414`, `IMG_3413`.
-- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `142-P1477659`, `146-P1999711`, `149-P1999723`, `156-P1999729`, `160-P1477679`.
+- primary zone media comes from `horizontalMedia` if available
+- secondary button opens `media`
+- secondary button text is `Vertical gallery` / `Вертикальная галерея`
 
-Cockpit, `assets/media/cockpit/`:
+Zones without `horizontalMedia` remain vertical and hide the secondary button.
 
-- Main section gallery uses vertical iPhone media from Drive folder `1kXizi05ES6YikGJVQW1KYh798BoSN4nv`.
-- Main order: `IMG_3447`, `IMG_3448`, `IMG_3449`, `IMG_3450`, `IMG_3451`, `IMG_3452`, `IMG_3453`, `IMG_3454`, `IMG_3456`, `IMG_3457`, `IMG_3458`.
-- Horizontal cockpit gallery uses horizontal media from the same Drive folder: `IMG_3470`, `IMG_3471`, `IMG_3472`, `IMG_3473`.
-- Previous GH5 cockpit derivatives (`121-P1999653`, `113-P1477599`, `115-P1477604`) are superseded in public navigation by the new cockpit media.
+State remembers image index separately for each `zone + media mode`.
 
-Saloon, `assets/media/saloon/`:
+Do not change this behavior without testing mobile portrait, tablet portrait, tablet landscape, and desktop.
 
-- Main section gallery uses vertical iPhone media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Saloon` / `1EKA3m-nzh0ZtgPcdze-zjd2uupsoHiUh`.
-- Main order starts with the broadest saloon read, then seating/dining/helm context: `IMG_3404`, `IMG_3411`, `IMG_3410`, `IMG_3409`, `IMG_3408`, `IMG_3406`, `IMG_3400`, `IMG_3401`, `IMG_3402`, `IMG_3403`, `IMG_3405`.
-- Previous horizontal order is preserved in `horizontalMedia` for the separate horizontal gallery: `80-P1477573`, `89-P1999637`, `87-P1999629`, `85-P1999616`, `94-P1477558`, `98-P1999624`.
+## Navigation Rules
 
-Master cabin, `assets/media/master_cabin/`:
+Zone navigation is square visual tiles across mobile, tablet, and desktop.
 
-- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Master` / `1UdGdoPGAyBqU3CsL4sHnY6kDLQ7pvQ9P`.
-- Main order: `052E1749`, `681D9FD3`, `A4681BF8`, `CD3BDD7E`, `BC2F637F`, `672FA126`.
-- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `2-P1999374`, `6-P1999381`, `12-P1477496`, `10-P1999413`, `15-P1999395`, `14-P1999393`, `18-P1477504`.
+Do not restore:
 
-Starboard guest cabin, `assets/media/starboard_guest/`:
+- old hamburger/popover zone menu for tablet/desktop
+- stretched pill buttons
+- two-row half-screen tablet menu
+- old constructor-like section menu
 
-- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Starboard` / `17iV8GQmqldypmVUlPneLilYL38moKfpV`.
-- Main order: `E4B83691`, `2531ED23`, `842682AF`, `DB0F5A67`, `86FE2922`, `ED9DD0AB`.
-- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `19-P1999421`, `21-P1999436`, `22-P1999445`, `23-P1999446`, `27-P1999448`, `34-P1999463`.
+Selected zone is shown through the active tile state, not by adding a separate large zone-title label.
 
-Forward VIP cabin, `assets/media/forward_vip/`:
+## Text Rules
 
-- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `VIP` / `1jmn2TmYjWPu6crnG5c_uETCJAQDfa_CY`.
-- Main order: `431820E4`, `8CB19509`, `9333A7F2`, `F9D44235`, `78092E16`, `DEDA1DCF`.
-- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `38-P1999471`, `45-P1999492`, `43-P1999484`, `44-P1999491`, `47-P1999506`, `49-P1999515`.
+When the user supplies text:
 
-Port guest / children's cabin, `assets/media/port_guest/`:
+- Insert it in source form if they ask to insert it.
+- Grammar/punctuation/syntax cleanup is allowed only when clearly requested.
+- Do not invent claims, equipment, atmosphere, or marketing language.
+- Do not mix old placeholder text with new supplied text.
+- Remove duplicate first paragraphs.
+- Update English localization after Russian changes.
+- Use natural American English for localization, but preserve meaning.
 
-- Main section gallery uses vertical media from parent Drive folder `1Jl7Nol8hIqZHgd8lLZUlHpGC926ygNI1`, subfolder `Port` / `1igCIT8J8Ks_PqYns4cG4w76aZYuCzQkB`.
-- Main order: `IMG_3580`, `8FD19DA7`, `IMG_3574`, `IMG_3577`, `IMG_3579`, `IMG_3578`.
-- Previous approved order is preserved in `horizontalMedia` for the separate horizontal gallery: `58-P1999575`, `54-P1999537`, `53-P1999532`, `60-P1999557`, `62-P1999562`.
-- Additional horizontal Drive frames `IMG_3583` and `IMG_3584` are appended to the Port horizontal gallery.
+Authored text evidence is fixed in:
 
-## Section Gallery Media
+- `docs/AUTHORSHIP.md`
+- `docs/text-deposit/`
 
-Mobile gesture guidance:
+Email delivery of the authorship deposit was confirmed by the owner:
 
-- Main stage media accepts vertical swipe as an alternate photo navigation gesture on touch devices; swipe up moves forward, swipe down moves back.
-- The main stage shows a textless vertical air/glass arrow-trail hint once on touch devices, then stores the seen state in `localStorage`.
-- If a touch user later swipes the main stage sideways, a short vertical nudge may be shown once per session; horizontal swipe still works.
-- Fullscreen horizontal gallery behavior remains horizontal; it only gains a textless horizontal air/glass arrow-trail hint.
-- The Welcome Hall / `overview` hero frame must not appear as an item or flash frame when entering zone galleries; the old hero image is suppressed during the first handoff from `overview`.
-- Hints must use `pointer-events: none`, avoid text/tooltips/buttons, and honor `prefers-reduced-motion`.
+- `docs/text-deposit/EMAIL_DELIVERY_RECORD_2026-06-24.md`
 
-Aft Swim Platform, `assets/media/aft_swim_platform/`:
+## Media Rules
 
-- Section gallery uses owner-provided vertical iPhone media from Drive.
-- Generated platform placeholder media was removed after the real platform gallery was connected.
-- The first/opening frame remains `01-platform-iphone-primary`.
-- Additional media from nested Drive folder `Swimming platform` / `More` / `19ANdFWQgVGdmNHVaabozp6UX_1zrs66t` is appended to the same zone.
-- New vertical frames appended after the prior approved order: `12A52A1A`, `28F215BB`, `48D5CD2C`, `99A0CF94`, `82D20F3D`.
-- New horizontal platform frames are connected through `horizontalMedia`: `EA4BEFFD`, `81B6C017`, `9EF043F8`.
+For zone media:
 
-Tender, `assets/media/tender/`:
+- vertical/portrait set goes into `media`
+- horizontal/landscape set goes into `horizontalMedia`
+- source originals stay outside public output
+- public files are optimized derivatives only
+- keep owner-specified first frame when explicitly requested
+- do not duplicate a first frame if it also appears in the folder
 
-- Section gallery uses owner-provided vertical iPhone media from Drive folder `1aI7ahmOw-m8g631kMmTi43O-Uu2UdiXI`.
-- First/opening frame is pinned by Drive file `1B0_8J9qHKzXjj9zP_A1mLc4Yy74-ed1Y`, downloaded as `.media-source/tender/IMG_3434.PNG` and published as `01-tender-primary`.
-- Remaining tender frames follow source filename order: `IMG_3370`, `IMG_3393`, `IMG_3394`, `IMG_3395`, `IMG_3396`, `IMG_3397`, `IMG_3399`, `IMG_3433`.
-- The former temporary Williams reference image and its source were removed after real tender media was connected.
-- Tender stays excluded from the horizontal gallery while its approved media is vertical-only.
+For new media:
 
-## Removed Standalone Placeholder Routes
+1. Use only the requested zone/folder.
+2. Review composition and crop risk.
+3. Generate derivatives.
+4. Connect in `src/app.js`.
+5. Verify paths.
+6. Test responsive gallery behavior.
 
-- `main_deck` is a category concept, not a standalone gallery. Foredeck, Cockpit, and Saloon carry that story.
-- `interior` overview is not needed. Interior is fully represented through Saloon, Master cabin, Forward VIP, Starboard guest, and Port guest / children's cabin.
-- Do not re-add these as generic overview sections unless the owner explicitly approves a new route structure.
+## Authorship And Email Record
 
-## Media Intake Protocol
+Authorship deposit commit:
 
-1. Name the next section/subsection to fill.
-2. Owner provides one Google Drive folder link. If they also provide a single file link, treat it as the required first/opening frame and do not duplicate it if it also exists in the folder.
-3. Download only the target section media into `.media-source/<zone>/`.
-4. Run photo/media composition gate: use / hold / reject, crop risks, order, role.
-5. For vertical iPhone/photo sets, use the reusable section-gallery template: `thumb`, `stage`, `mobile`, and `full` WebP derivatives, source originals outside public build, no direct source opening.
-6. Connect only approved derivatives to `src/app.js`.
-7. Remove superseded placeholders and stale public references for that zone.
-8. Verify mobile, desktop, localization, section gallery, horizontal gallery, and full-screen behavior.
-9. Update `ACTIVE_CONTEXT.md` plus deeper docs when rules or behavior change.
-10. Commit and push.
+- `149b477 Add text authorship deposit`
 
-## Next Likely Sections
+Deposit files:
 
-- Continue converting future owner-supplied vertical photo zones to the section-gallery template.
-- Review final mobile crops after each new zone is connected.
+- `docs/AUTHORSHIP.md`
+- `docs/text-deposit/claudia-z-texts-2026-06-24.pdf`
+- `docs/text-deposit/claudia-z-texts-2026-06-24.sha256`
+- `docs/text-deposit/SEARCH_UNIQUENESS_AUDIT_2026-06-24.md`
 
-Note: all interior zones are now represented by specific sections; do not create a generic interior overview.
+Email record:
+
+- original message id `19efaf7d02647096`
+- resend message id `19efafbd80269ffd`
+- recipient `a.usov@mail.com`
+- owner confirmed both emails were received
+- record file `docs/text-deposit/EMAIL_DELIVERY_RECORD_2026-06-24.md`
+
+## Empty Template
+
+Reusable blank template:
+
+- `templates/empty-yacht-presentation/`
+
+Contents:
+
+- `index.html` - hall with Yacht 1-5
+- `yacht.html` - reusable blank yacht presentation
+- `template.css`
+- `template.js`
+
+Rules:
+
+- no Claudia Z texts
+- no Claudia Z photos
+- no production deployment unless explicitly requested
+- zones are placeholders named Zone 1-8
+
+## Deployment Rules
+
+Before deployment:
+
+```bash
+npm run check
+git diff --check
+```
+
+Verify:
+
+- changed public paths exist
+- no `.media-source` in public files
+- no Drive links in public files
+- no docs/template files in deployment set
+- `index.html` cache-bust version changed if JS/CSS changed
+- noindex remains active
+- localization parity
+- mobile/tablet/desktop behavior
+
+Deploy only public files:
+
+- `index.html`
+- `404.html`
+- `robots.txt`
+- `.htaccess`
+- `site.webmanifest`
+- `favicon.ico`
+- `apple-touch-icon.png`
+- `src/`
+- `assets/`
+
+Production FTP path: `/claudia-z.com`.
+
+## If Unsure
+
+Prefer asking a short question before changing:
+
+- text meaning
+- zone structure
+- first-frame choice
+- public deployment scope
+- whether a template should become production
+
+For straightforward fixes, implement narrowly, verify, commit, push, and report.

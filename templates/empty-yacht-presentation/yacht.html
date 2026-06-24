@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <title>Yacht Template</title>
+    <link rel="stylesheet" href="template.css">
+    <script src="template.js" defer></script>
+  </head>
+  <body data-screen="yacht">
+    <main class="presentation" aria-live="polite">
+      <section class="stage" id="stage">
+        <div class="placeholder-media" id="placeholderMedia" aria-hidden="true"></div>
+        <div class="stage__scrim" aria-hidden="true"></div>
+
+        <div class="topbar">
+          <a class="text-button" href="index.html">Hall</a>
+          <button class="text-button" type="button" id="detailsButton">Details</button>
+          <button class="text-button" type="button" id="themeButton" aria-pressed="false">Theme</button>
+        </div>
+
+        <div class="brand-axis">
+          <p class="eyebrow" id="templateEyebrow">Template</p>
+          <h1 id="yachtTitle">Yacht</h1>
+          <p class="lead" id="zoneLead">Zone placeholder.</p>
+        </div>
+
+        <div class="stepper">
+          <button class="icon-button" type="button" id="prevZoneButton" aria-label="Previous zone">‹</button>
+          <span id="zoneCounter">1 / 8</span>
+          <button class="icon-button" type="button" id="nextZoneButton" aria-label="Next zone">›</button>
+        </div>
+
+        <nav class="zone-rail" id="zoneRail" aria-label="Zones"></nav>
+      </section>
+
+      <aside class="sheet" id="detailsSheet" aria-hidden="true" role="dialog" aria-label="Zone details">
+        <button class="sheet__close" type="button" id="closeDetailsButton" aria-label="Close">×</button>
+        <p class="eyebrow" id="sheetEyebrow">Placeholder</p>
+        <h2 id="sheetTitle">Zone</h2>
+        <p id="sheetCopy">Add approved zone text here.</p>
+      </aside>
+    </main>
+  </body>
+</html>
