@@ -7,13 +7,19 @@ function localMedia(folder, stageFile, fullFile, mobileFile, focus = "50% 50%") 
   };
 }
 
-function localGalleryMedia(folder, baseFile, focus = "50% 50%") {
+function versionedAsset(src, version = "") {
+  return version ? `${src}?v=${version}` : src;
+}
+
+function localGalleryMedia(folder, baseFile, focus = "50% 50%", version = "") {
+  const basePath = `assets/media/${folder}/${baseFile}`;
+
   return {
-    src: `assets/media/${folder}/${baseFile}-stage.webp`,
-    fullSrc: `assets/media/${folder}/${baseFile}-full.webp`,
-    mobileSrc: `assets/media/${folder}/${baseFile}-mobile.webp`,
-    thumbSrc: `assets/media/${folder}/${baseFile}-thumb.webp`,
-    gallerySrc: `assets/media/${folder}/${baseFile}-full.webp`,
+    src: versionedAsset(`${basePath}-stage.webp`, version),
+    fullSrc: versionedAsset(`${basePath}-full.webp`, version),
+    mobileSrc: versionedAsset(`${basePath}-mobile.webp`, version),
+    thumbSrc: versionedAsset(`${basePath}-thumb.webp`, version),
+    gallerySrc: versionedAsset(`${basePath}-full.webp`, version),
     focus
   };
 }
@@ -50,10 +56,10 @@ const zones = [
       localGalleryMedia("exterior", "06-exterior-img-3363", "50% 50%"),
       localGalleryMedia("exterior", "07-exterior-img-3355", "50% 50%"),
       localGalleryMedia("exterior", "08-exterior-img-3358", "50% 50%"),
-      localGalleryMedia("exterior", "09-exterior-ai-b7161a52", "50% 50%"),
-      localGalleryMedia("exterior", "10-exterior-ai-6abf4df0", "50% 50%"),
-      localGalleryMedia("exterior", "11-exterior-ai-7c94ad0a", "50% 50%"),
-      localGalleryMedia("exterior", "12-exterior-ai-0a786325", "50% 50%")
+      localGalleryMedia("exterior", "09-exterior-ai-b7161a52", "50% 50%", "20260624-crop1"),
+      localGalleryMedia("exterior", "10-exterior-ai-6abf4df0", "50% 50%", "20260624-crop1"),
+      localGalleryMedia("exterior", "11-exterior-ai-7c94ad0a", "50% 50%", "20260624-crop1"),
+      localGalleryMedia("exterior", "12-exterior-ai-0a786325", "50% 50%", "20260624-crop1")
     ],
     horizontalMedia: [
       localMedia("overview", "dji_0266_1-stage.webp", "dji_0266_1-full.webp", "dji_0266_1-mobile.webp", "50% 48%"),
