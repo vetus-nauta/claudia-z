@@ -65,6 +65,7 @@ Tablet landscape and desktop:
 
 - `horizontalMedia` is the primary visible set when present
 - `media` opens from the secondary gallery button
+- horizontal primary photos are constrained to a centered `3:2` viewing window so they do not stretch to the screen edges
 
 Zones without `horizontalMedia` stay on `media`, and the secondary gallery button is hidden.
 

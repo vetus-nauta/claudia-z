@@ -101,6 +101,7 @@ Tablet landscape and desktop:
 - primary zone media comes from `horizontalMedia` if available
 - secondary button opens `media`
 - secondary button text is `Vertical gallery` / `Вертикальная галерея`
+- wide horizontal primary media is displayed inside a centered `3:2` viewing window with internal screen margins; do not stretch it to the full viewport edges
 
 Zones without `horizontalMedia` remain vertical and hide the secondary button.
 

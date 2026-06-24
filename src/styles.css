@@ -295,6 +295,41 @@ button {
   filter: var(--media-filter);
 }
 
+@media (min-width: 760px) {
+  .stage--horizontal-media:not(.stage--welcome) .stage__media {
+    top: calc(70px + var(--safe-top));
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: min(
+      calc(100vw - clamp(60px, 12vw, 192px)),
+      calc((100dvh - 230px - var(--safe-top) - var(--safe-bottom)) * 1.5)
+    );
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: 50% 50%;
+    background: transparent;
+    transform: translateX(-50%);
+  }
+
+  .stage--horizontal-media:not(.stage--welcome) .stage__media.stage__media--enter-from-next {
+    transform: translateX(-50%) translate3d(5%, 0, 0);
+  }
+
+  .stage--horizontal-media:not(.stage--welcome) .stage__media.stage__media--enter-from-previous {
+    transform: translateX(-50%) translate3d(-5%, 0, 0);
+  }
+
+  .stage--horizontal-media:not(.stage--welcome) .stage__media-ghost.stage__media-ghost--next.is-leaving {
+    transform: translateX(-50%) translate3d(-5%, 0, 0);
+  }
+
+  .stage--horizontal-media:not(.stage--welcome) .stage__media-ghost.stage__media-ghost--previous.is-leaving {
+    transform: translateX(-50%) translate3d(5%, 0, 0);
+  }
+}
+
 :root[data-theme="light"] .stage--welcome .stage__media {
   filter: none;
 }
