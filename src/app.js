@@ -539,7 +539,9 @@ const copy = {
     swipeHint: "Swipe sideways",
     horizontalGallery: "Section: horizontal gallery",
     horizontalGalleryAria: "Open horizontal gallery",
-    sectionGalleryAria: "Section gallery"
+    sectionGalleryAria: "Section gallery",
+    portraitOnly: "Portrait view only",
+    portraitOnlyHint: "Please rotate your phone upright to continue."
   },
   ru: {
     eyebrow: "Закрытая презентация яхты",
@@ -596,7 +598,9 @@ const copy = {
     swipeHint: "Свайп вбок",
     horizontalGallery: "Раздел: горизонтальная галерея",
     horizontalGalleryAria: "Открыть горизонтальную галерею",
-    sectionGalleryAria: "Галерея раздела"
+    sectionGalleryAria: "Галерея раздела",
+    portraitOnly: "Только вертикальный просмотр",
+    portraitOnlyHint: "Поверните телефон вертикально, чтобы продолжить."
   }
 };
 
@@ -1560,14 +1564,6 @@ function endStageGesture(clientX, clientY, target) {
   const isHorizontalSwipe = Math.abs(deltaX) >= 28 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.12;
   const isVerticalSwipe = Math.abs(deltaY) >= 34 && Math.abs(deltaY) >= Math.abs(deltaX) * 1.08;
   if (!isHorizontalSwipe && !isVerticalSwipe) {
-    const isMobile = window.matchMedia("(max-width: 759px)").matches;
-    if (isMobile && Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8 && !target.closest(".stage__content")) {
-      if (isSectionGalleryZone()) {
-        openGalleryMode();
-        return;
-      }
-      toggleLightbox(true);
-    }
     return;
   }
   if (isVerticalSwipe) {

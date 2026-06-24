@@ -139,6 +139,42 @@ button {
   padding: 0;
 }
 
+.orientation-lock {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: none;
+  place-items: center;
+  padding: calc(18px + var(--safe-top)) 18px calc(18px + var(--safe-bottom));
+  background: var(--page);
+  color: var(--ink);
+  text-align: center;
+}
+
+.orientation-lock__panel {
+  width: min(360px, 100%);
+  border: 1px solid var(--sheet-border);
+  border-radius: 18px;
+  padding: 22px 20px 20px;
+  background: color-mix(in srgb, var(--sheet-bg) 88%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.orientation-lock__title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 640;
+  line-height: 1.2;
+}
+
+.orientation-lock__copy {
+  margin: 9px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.38;
+}
+
 .presentation {
   min-height: 100dvh;
   overflow: hidden;
@@ -1153,6 +1189,14 @@ h1 {
     align-self: end;
     z-index: 2;
     margin-bottom: calc(10px + var(--safe-bottom));
+  }
+}
+
+@media (orientation: landscape) and (max-width: 960px) and (max-height: 540px) {
+  .orientation-lock {
+    display: grid;
+    pointer-events: auto;
+    touch-action: none;
   }
 }
 
