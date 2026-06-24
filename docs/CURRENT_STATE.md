@@ -105,12 +105,14 @@ The site is intentionally private/no-index:
 - `index.html` has noindex meta
 - production headers include `X-Robots-Tag`
 - no sitemap
-- no analytics
+- first-party internal analytics for owner-only operational counts
 - no owner identity
 - no public contact flow
 - no price/booking/rental CTA
 
 Security headers are managed through `.htaccess`.
+
+Internal analytics are collected through `analytics/collect.php` and stored outside the public site directory in `private/claudia-z-analytics/` on the hosting account.
 
 ## Authorship Records
 

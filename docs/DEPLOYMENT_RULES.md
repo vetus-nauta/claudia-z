@@ -14,7 +14,7 @@ Namecheap `public_html` is the publication target, not the project memory.
 5. Verify no-index controls: `robots.txt`, meta robots, sitemap absence, and `X-Robots-Tag`.
 6. Verify the changed zones in a browser before deployment.
 7. Commit and push to GitHub before FTP upload.
-8. Deploy only public files: `index.html`, `404.html`, `robots.txt`, `.htaccess`, `site.webmanifest`, `favicon.ico`, `apple-touch-icon.png`, `src/`, `assets/`.
+8. Deploy only public files: `index.html`, `404.html`, `robots.txt`, `.htaccess`, `site.webmanifest`, `favicon.ico`, `apple-touch-icon.png`, `src/`, `assets/`, `analytics/`.
 9. Do not deploy `docs/`, `templates/`, `.media-source/`, source exports, temporary test folders, private notes, or authorship evidence files.
 10. After FTP upload, compare live hashes for changed public files.
 11. Smoke-test the live site on HTTPS.
@@ -38,6 +38,7 @@ For large media releases, keep the previous live media files on the server unles
 - CSS and JS are loaded with query-string versions from HTML.
 - Static assets may use long cache headers when their filename or HTML query version changes.
 - `favicon.ico`, `apple-touch-icon.png`, and `site.webmanifest` are part of the public root.
+- `analytics/collect.php` is the approved first-party internal analytics collector; logs must stay outside the public root.
 - Security headers live in `.htaccess`: noindex, nosniff, no-referrer, frame deny, HSTS, permissions policy, and CSP.
 
 ## Do Not

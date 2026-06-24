@@ -109,6 +109,7 @@ Use privacy-by-design:
 - no secrets committed to GitHub
 - no public owner identity
 - no public private-contact details unless approved
+- first-party internal analytics only when explicitly approved by the owner; no third-party pixels or public counters
 
 ## Controlled Presentation Scope
 
@@ -142,7 +143,8 @@ Default publication rules:
 - use `X-Robots-Tag` headers where hosting allows
 - do not generate or publish a sitemap
 - do not implement SEO growth strategy, public keyword targeting, or search landing pages
-- do not add unnecessary analytics, pixels, or public tracking scripts
+- do not add unnecessary analytics, third-party pixels, public counters, or public tracking scripts
+- approved internal analytics must stay first-party, minimal, no raw public IP storage, and keep logs outside the public site directory
 - treat any legacy page metadata as migration context only, not as a new-site goal
 
 No-index is not access control. Anything sensitive, owner-identifying, commercially private, or client-specific must use private delivery, invite-only access, or another approved protection layer.

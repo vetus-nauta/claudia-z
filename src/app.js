@@ -938,6 +938,30 @@ function gallerySourceFor(mediaItem) {
   return mediaItem.gallerySrc || mediaItem.fullSrc || stageSourceFor(mediaItem);
 }
 
+function analyticsContext(extra = {}) {
+  const zone = currentZone();
+  const activeItems = mediaItemsFor(zone);
+  return {
+    zone_id: zone.id,
+    zone_label: zone[state.lang].label,
+    media_mode: state.mediaMode,
+    media_index: state.mediaIndex + 1,
+    media_count: activeItems.length,
+    lang: state.lang,
+    theme: state.theme,
+    ...extra
+  };
+}
+
+function emitAnalyticsEvent(event, detail = {}) {
+  window.dispatchEvent(new CustomEvent("claudia:analytics", {
+    detail: {
+      event,
+      ...analyticsContext(detail)
+    }
+  }));
+}
+
 function setTheme(theme) {
   state.theme = theme === "light" ? "light" : "dark";
   document.documentElement.dataset.theme = state.theme;
@@ -961,6 +985,7 @@ function setZone(zoneId) {
   state.mediaAxis = "x";
   closeZoneMenu();
   render();
+  emitAnalyticsEvent("zone_view", { source: "zone_change" });
 }
 
 function closeZoneMenu() {
@@ -990,6 +1015,7 @@ function setMediaIndex(index, direction = 0, axis = "x") {
     document.body.classList.add("is-media-surfacing");
   });
   renderZone();
+  emitAnalyticsEvent("media_view", { source: "stage", direction });
 }
 
 function shiftStage(direction, axis = "x") {
@@ -1013,8 +1039,16 @@ function renderRail() {
     const label = document.createElement("span");
     label.className = "zone-button__label";
     label.textContent = zone[state.lang].label;
+    button.dataset.zoneId = zone.id;
     button.append(icon, label);
-    button.addEventListener("click", () => setZone(zone.id));
+    button.addEventListener("click", () => {
+      emitAnalyticsEvent("zone_select", {
+        source: "zone_button",
+        zone_id: zone.id,
+        zone_label: zone[state.lang].label
+      });
+      setZone(zone.id);
+    });
     rail.append(button);
   });
 }
@@ -1197,6 +1231,7 @@ function toggleSheet(sheet, force) {
   if (sheet === detailsSheet) {
     document.body.classList.toggle("is-details-open", shouldOpen);
     detailsButton.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    emitAnalyticsEvent(shouldOpen ? "details_open" : "details_close", { source: "details_button" });
   }
 }
 
@@ -1439,10 +1474,16 @@ function openGalleryMode(mediaItem = currentMedia(), items = mediaItemsFor(curre
   document.body.classList.toggle("is-horizontal-gallery-open", !syncStage);
   requestViewerFullscreen(galleryMode);
   closeZoneMenu();
+  emitAnalyticsEvent("gallery_open", {
+    source: syncStage ? "primary_gallery" : "secondary_gallery",
+    media_index: index + 1,
+    media_count: items.length
+  });
   maybeShowHorizontalGalleryHint();
 }
 
 function closeGalleryMode() {
+  const wasOpen = state.gallery.isOpen || galleryMode.classList.contains("is-open");
   window.clearTimeout(adjacentGalleryPreloadTimer);
   state.gallery.isOpen = false;
   state.gallery.media = null;
@@ -1462,6 +1503,9 @@ function closeGalleryMode() {
   hideAirHint("gallery");
   resetGalleryTransform();
   exitViewerFullscreen(galleryMode);
+  if (wasOpen) {
+    emitAnalyticsEvent("gallery_close", { source: "gallery" });
+  }
 }
 
 function shiftGallery(direction) {
@@ -1483,6 +1527,12 @@ function shiftGallery(direction) {
     state.gallery.translateX = 0;
     state.gallery.translateY = 0;
     renderGalleryMode(direction);
+    emitAnalyticsEvent("gallery_media_view", {
+      source: state.gallery.syncStage ? "primary_gallery" : "secondary_gallery",
+      direction,
+      media_index: state.gallery.index + 1,
+      media_count: items.length
+    });
     scheduleAdjacentGalleryMediaPreload();
   }
 }
@@ -1596,6 +1646,7 @@ function endGalleryGesture(event) {
 
 themeButton.addEventListener("click", () => {
   setTheme(state.theme === "dark" ? "light" : "dark");
+  emitAnalyticsEvent("theme_change", { source: "theme_button" });
 });
 
 zoneMenuButton.addEventListener("click", () => {
@@ -1839,3 +1890,4 @@ galleryViewport.addEventListener("touchcancel", () => {
 
 setTheme(state.theme);
 render();
+emitAnalyticsEvent("zone_view", { source: "initial" });

@@ -28,6 +28,8 @@ Do not promise:
 - no unnecessary personal data
 - no public price history
 - no unnecessary tracking
+- approved internal analytics must be first-party, hidden from the UI, and stored outside the public site directory
+- analytics must not use third-party pixels or raw public IP storage
 - no public admin URLs
 - no private documents in the repo
 - no exposed registrar/hosting details

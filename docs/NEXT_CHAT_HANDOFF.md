@@ -42,11 +42,13 @@ The site has:
 - square zone navigation tiles across mobile, tablet, and desktop
 - disabled direct source-image opening from normal photo taps
 - author/text deposit records in `docs/text-deposit/`
+- first-party internal analytics for owner-only operational counts
 
 ## Do Not Break
 
 - Do not convert the project back into a public sales/SEO website.
-- Do not add sitemap, analytics, contact forms, booking/rent CTAs, prices, owner identity, or public inquiry paths.
+- Do not add sitemap, third-party analytics, public counters, contact forms, booking/rent CTAs, prices, owner identity, or public inquiry paths.
+- Do not remove the approved first-party internal analytics without owner confirmation.
 - Do not deploy `docs/`, `templates/`, `.media-source/`, or source/private files.
 - Do not rewrite owner-supplied text unless explicitly asked.
 - If the user asks to insert text, insert the supplied text in source form. Editing means punctuation/grammar only unless the user asks for rewriting or localization.
@@ -193,6 +195,23 @@ Zone/yacht description windows use a header row:
 - close control is `.sheet__close`, a readable text cross with no circular button background
 - description body starts with `#zoneCopy` and `#zoneDetail`; do not restore a separate body heading above the text
 - if copy changes, keep RU and EN synchronized and avoid duplicating the first `copy` sentence at the start of `detail`
+
+## Internal Analytics
+
+The site has owner-approved first-party internal analytics:
+
+- public collector: `analytics/collect.php`
+- browser script: `src/analytics.js`
+- private server log target: `/private/claudia-z-analytics/events-YYYY-MM.jsonl`
+- local report script: `node tools/analytics-summary.mjs <events-file.jsonl>`
+
+Rules:
+
+- no visual counter on the site
+- no third-party analytics or pixels
+- no raw public IP storage
+- no report/admin page on the public site unless explicitly requested later
+- deploy the collector and analytics JS with the public site, but never deploy private log files
 
 ## Verification Before Any Future Deployment
 

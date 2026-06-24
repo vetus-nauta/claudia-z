@@ -37,6 +37,7 @@ Before changing anything:
 - No public inquiry or contact form.
 - No owner identity or private client data.
 - No unnecessary analytics or tracking.
+- Owner-approved first-party internal analytics are allowed for operational counts; no third-party pixels, no public counter, logs outside public root.
 - No raw source photo opening from normal UI.
 - No production deployment of `docs/`, `templates/`, `.media-source/`, source exports, or private notes.
 - No creative rewriting of supplied text unless the user asks.
