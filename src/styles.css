@@ -1937,6 +1937,109 @@ h1 {
   }
 }
 
+@media (orientation: landscape) and (min-width: 760px) and (max-width: 1119px),
+  (orientation: landscape) and (pointer: coarse) and (min-width: 760px) and (max-width: 1366px) {
+  .command,
+  .stage--welcome .command {
+    left: clamp(16px, 3vw, 32px);
+    right: clamp(16px, 3vw, 32px);
+    bottom: calc(10px + var(--safe-bottom));
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .zone-menu-button,
+  .zone-current-label,
+  .stage--welcome .zone-menu-button,
+  .stage--welcome .zone-current-label {
+    display: none;
+  }
+
+  .zone-rail,
+  .is-zone-menu-open .zone-rail,
+  .stage--welcome .zone-rail,
+  .is-zone-menu-open .stage--welcome .zone-rail {
+    position: static;
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;
+    gap: 8px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    border: 0;
+    border-radius: 0;
+    padding: 4px 0 7px;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 32px), transparent 100%);
+  }
+
+  .stage--gallery-zone .zone-rail {
+    flex-wrap: nowrap;
+  }
+
+  .zone-button,
+  .stage--welcome .zone-button {
+    flex: 0 0 86px;
+    width: 86px;
+    min-width: 86px;
+    min-height: 82px;
+    flex-direction: column;
+    gap: 7px;
+    border-radius: 18px;
+    padding: 9px 7px;
+    justify-content: center;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.08;
+    white-space: normal;
+    scroll-snap-align: start;
+  }
+
+  .zone-button__icon,
+  .stage--welcome .zone-button__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .zone-button__label,
+  .stage--welcome .zone-button__label {
+    min-width: 0;
+    max-width: 100%;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: clip;
+  }
+
+  .section-gallery-button,
+  .stage--gallery-zone .section-gallery-button {
+    flex: 0 0 118px;
+    width: 118px;
+    min-width: 118px;
+    min-height: 82px;
+    order: 99;
+    grid-column: auto;
+    border-radius: 18px;
+    padding: 8px 9px;
+    font-size: 9px;
+    line-height: 1.12;
+    scroll-snap-align: start;
+  }
+}
+
 @media (max-width: 759px) {
   .media-stepper {
     display: none;
