@@ -328,6 +328,28 @@ button {
   .stage--horizontal-media:not(.stage--welcome) .stage__media-ghost.stage__media-ghost--previous.is-leaving {
     transform: translateX(-50%) translate3d(5%, 0, 0);
   }
+
+  .stage--horizontal-media:not(.stage--welcome) .media-stepper {
+    top: 50%;
+    right: clamp(18px, 3vw, 44px);
+    bottom: auto;
+    z-index: 32;
+    grid-template-columns: 32px;
+    grid-template-rows: 32px auto 32px 32px;
+    justify-items: center;
+    padding: 8px 6px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--zone-card-bg) 74%, transparent);
+    box-shadow: var(--zone-card-shadow);
+    transform: translateY(-50%);
+  }
+
+  .stage--horizontal-media:not(.stage--welcome) .media-stepper__count {
+    min-width: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
 }
 
 :root[data-theme="light"] .stage--welcome .stage__media {
