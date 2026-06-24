@@ -185,6 +185,15 @@ It has:
 
 Use it as a starting shell for future yacht cards only after copying/adapting it intentionally.
 
+## Detail Sheet UI Rule
+
+Zone/yacht description windows use a header row:
+
+- title is in `.sheet__title` / `#detailsSheetTitle`
+- close control is `.sheet__close`, a readable text cross with no circular button background
+- description body starts with `#zoneCopy` and `#zoneDetail`; do not restore a separate body heading above the text
+- if copy changes, keep RU and EN synchronized and avoid duplicating the first `copy` sentence at the start of `detail`
+
 ## Verification Before Any Future Deployment
 
 Run:

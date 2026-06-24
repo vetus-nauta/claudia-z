@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#090e0f">
-    <link rel="stylesheet" href="src/styles.css?v=20260624-12">
+    <link rel="stylesheet" href="src/styles.css?v=20260624-13">
   </head>
   <body>
     <main class="presentation" aria-live="polite">
@@ -80,7 +80,8 @@
 
       <aside class="sheet zone-sheet" id="detailsSheet" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-aria="detailsDialogAria">
         <div class="sheet__bar">
-          <button class="icon-button" type="button" data-close="details" data-i18n-aria="close">×</button>
+          <p class="sheet__title" id="detailsSheetTitle"></p>
+          <button class="sheet__close" type="button" data-close="details" data-i18n-aria="close">×</button>
         </div>
         <div class="sheet-builder-mark" aria-label="Sunseeker">
           <img class="sunseeker-mark sunseeker-mark--on-dark" src="assets/brand/sunseeker-mark-on-dark.png" alt="Sunseeker" draggable="false">
@@ -108,7 +109,6 @@
             <div><dt data-i18n="laundry"></dt><dd data-i18n="laundryValue"></dd></div>
           </dl>
           <div class="zone-note">
-            <p id="zoneTitle"></p>
             <p id="zoneCopy"></p>
             <p id="zoneDetail"></p>
           </div>
@@ -137,6 +137,6 @@
 
     </main>
 
-    <script src="src/app.js?v=20260624-10" defer></script>
+    <script src="src/app.js?v=20260624-11" defer></script>
   </body>
 </html>
