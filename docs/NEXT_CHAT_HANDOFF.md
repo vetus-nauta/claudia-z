@@ -144,9 +144,11 @@ Tablet landscape and desktop:
 - secondary button opens `media`
 - button text: `Вертикальная галерея` / `Vertical gallery`
 - primary horizontal media is intentionally framed in a centered `3:2` window with margins; do not revert it to full-viewport `cover`
-- photo next/previous/expand controls sit as a vertical group on the right in wide horizontal mode, separate from the bottom zone-tile rail
+- photo next/previous/expand controls sit as a vertical group on the right in wide zone mode, separate from the bottom zone-tile rail
 
 If a zone has no `horizontalMedia`, it stays vertical and the secondary button is hidden.
+
+On wide screens, vertical-only zones such as `tender` are framed in a centered `3:4` portrait window. Do not let them expand to full-screen cover.
 
 ## Authorship Deposit
 

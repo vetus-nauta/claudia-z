@@ -66,9 +66,11 @@ Tablet landscape and desktop:
 - `horizontalMedia` is the primary visible set when present
 - `media` opens from the secondary gallery button
 - horizontal primary photos are constrained to a centered `3:2` viewing window so they do not stretch to the screen edges
-- horizontal primary photo controls are separated from the zone rail and sit vertically on the right side
+- wide zone photo controls are separated from the zone rail and sit vertically on the right side
 
 Zones without `horizontalMedia` stay on `media`, and the secondary gallery button is hidden.
+
+Wide vertical-only zones such as Tender are constrained to a centered `3:4` portrait window, not a full-screen cover image.
 
 The system remembers image index separately for each `zone + media mode`.
 

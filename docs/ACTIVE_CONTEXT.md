@@ -102,9 +102,11 @@ Tablet landscape and desktop:
 - secondary button opens `media`
 - secondary button text is `Vertical gallery` / `Вертикальная галерея`
 - wide horizontal primary media is displayed inside a centered `3:2` viewing window with internal screen margins; do not stretch it to the full viewport edges
-- wide horizontal photo navigation buttons are a compact vertical group at the right side of the frame; do not place them back behind the bottom zone tiles
+- wide zone photo navigation buttons are a compact vertical group at the right side of the frame; do not place them back behind the bottom zone tiles
 
 Zones without `horizontalMedia` remain vertical and hide the secondary button.
+
+On wide screens, vertical-only zones such as `tender` use a centered `3:4` portrait media window. Do not let these vertical stage photos fall back to full-viewport `cover`.
 
 State remembers image index separately for each `zone + media mode`.
 
