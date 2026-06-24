@@ -226,7 +226,7 @@ const zones = [
     id: "aft_swim_platform",
     media: [
       localGalleryMedia("aft_swim_platform", "01-platform-iphone-primary", "50% 50%"),
-      localGalleryMedia("aft_swim_platform", "02-platform-iphone-26290316", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "02-platform-iphone-26290316", "50% 50%", "20260624-vertical1"),
       localGalleryMedia("aft_swim_platform", "03-platform-iphone-42e39c65", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "05-platform-iphone-58e2ff53", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "06-platform-iphone-bddff6cc", "50% 50%"),
@@ -236,7 +236,7 @@ const zones = [
       localGalleryMedia("aft_swim_platform", "10-platform-iphone-d364fbb6", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "11-platform-iphone-d9cc07d5", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "12-platform-iphone-edd7c0f8", "50% 50%"),
-      localGalleryMedia("aft_swim_platform", "13-platform-iphone-img-3432", "50% 50%"),
+      localGalleryMedia("aft_swim_platform", "13-platform-iphone-img-3432", "50% 50%", "20260624-vertical1"),
       localGalleryMedia("aft_swim_platform", "14-platform-more-12a52a1a", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "15-platform-more-28f215bb", "50% 50%"),
       localGalleryMedia("aft_swim_platform", "16-platform-more-48d5cd2c", "50% 50%"),
@@ -264,7 +264,7 @@ const zones = [
   {
     id: "tender",
     media: [
-      localGalleryMedia("tender", "01-tender-primary", "50% 50%"),
+      localGalleryMedia("tender", "01-tender-primary", "50% 50%", "20260624-vertical1"),
       localGalleryMedia("tender", "02-tender-img-3370", "50% 50%"),
       localGalleryMedia("tender", "03-tender-img-3393", "50% 50%"),
       localGalleryMedia("tender", "04-tender-img-3394", "50% 50%"),
@@ -328,12 +328,12 @@ const zones = [
   {
     id: "master_cabin",
     media: [
-      localGalleryMedia("master_cabin", "01-master-img-052e1749", "50% 50%"),
-      localGalleryMedia("master_cabin", "02-master-img-681d9fd3", "50% 50%"),
-      localGalleryMedia("master_cabin", "03-master-img-a4681bf8", "50% 50%"),
-      localGalleryMedia("master_cabin", "04-master-img-cd3bdd7e", "50% 50%"),
-      localGalleryMedia("master_cabin", "05-master-img-bc2f637f", "50% 50%"),
-      localGalleryMedia("master_cabin", "06-master-img-672fa126", "50% 50%")
+      localGalleryMedia("master_cabin", "01-master-img-052e1749", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("master_cabin", "02-master-img-681d9fd3", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("master_cabin", "03-master-img-a4681bf8", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("master_cabin", "04-master-img-cd3bdd7e", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("master_cabin", "05-master-img-bc2f637f", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("master_cabin", "06-master-img-672fa126", "50% 50%", "20260624-vertical1")
     ],
     horizontalMedia: [
       localMedia("master_cabin", "2-p1999374-stage.webp", "2-p1999374-full.webp", "2-p1999374-mobile.webp", "50% 50%"),
@@ -360,12 +360,12 @@ const zones = [
   {
     id: "forward_vip",
     media: [
-      localGalleryMedia("forward_vip", "01-vip-img-431820e4", "50% 50%"),
-      localGalleryMedia("forward_vip", "02-vip-img-8cb19509", "50% 50%"),
-      localGalleryMedia("forward_vip", "03-vip-img-9333a7f2", "50% 50%"),
-      localGalleryMedia("forward_vip", "04-vip-img-f9d44235", "50% 50%"),
-      localGalleryMedia("forward_vip", "05-vip-img-78092e16", "50% 50%"),
-      localGalleryMedia("forward_vip", "06-vip-img-deda1dcf", "50% 50%")
+      localGalleryMedia("forward_vip", "01-vip-img-431820e4", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("forward_vip", "02-vip-img-8cb19509", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("forward_vip", "03-vip-img-9333a7f2", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("forward_vip", "04-vip-img-f9d44235", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("forward_vip", "05-vip-img-78092e16", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("forward_vip", "06-vip-img-deda1dcf", "50% 50%", "20260624-vertical1")
     ],
     horizontalMedia: [
       localMedia("forward_vip", "38-p1999471-stage.webp", "38-p1999471-full.webp", "38-p1999471-mobile.webp", "50% 50%"),
@@ -391,12 +391,12 @@ const zones = [
   {
     id: "starboard_guest",
     media: [
-      localGalleryMedia("starboard_guest", "01-starboard-img-e4b83691", "50% 50%"),
-      localGalleryMedia("starboard_guest", "02-starboard-img-2531ed23", "50% 50%"),
-      localGalleryMedia("starboard_guest", "03-starboard-img-842682af", "50% 50%"),
-      localGalleryMedia("starboard_guest", "04-starboard-img-db0f5a67", "50% 50%"),
-      localGalleryMedia("starboard_guest", "05-starboard-img-86fe2922", "50% 50%"),
-      localGalleryMedia("starboard_guest", "06-starboard-img-ed9dd0ab", "50% 50%")
+      localGalleryMedia("starboard_guest", "01-starboard-img-e4b83691", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("starboard_guest", "02-starboard-img-2531ed23", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("starboard_guest", "03-starboard-img-842682af", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("starboard_guest", "04-starboard-img-db0f5a67", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("starboard_guest", "05-starboard-img-86fe2922", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("starboard_guest", "06-starboard-img-ed9dd0ab", "50% 50%", "20260624-vertical1")
     ],
     horizontalMedia: [
       localMedia("starboard_guest", "19-p1999421-stage.webp", "19-p1999421-full.webp", "19-p1999421-mobile.webp", "50% 50%"),
@@ -422,12 +422,12 @@ const zones = [
   {
     id: "port_guest",
     media: [
-      localGalleryMedia("port_guest", "01-port-img-3580", "50% 50%"),
-      localGalleryMedia("port_guest", "02-port-img-8fd19da7", "50% 50%"),
-      localGalleryMedia("port_guest", "03-port-img-3574", "50% 50%"),
-      localGalleryMedia("port_guest", "04-port-img-3577", "50% 50%"),
-      localGalleryMedia("port_guest", "05-port-img-3579", "50% 50%"),
-      localGalleryMedia("port_guest", "06-port-img-3578", "50% 50%")
+      localGalleryMedia("port_guest", "01-port-img-3580", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("port_guest", "02-port-img-8fd19da7", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("port_guest", "03-port-img-3574", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("port_guest", "04-port-img-3577", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("port_guest", "05-port-img-3579", "50% 50%", "20260624-vertical1"),
+      localGalleryMedia("port_guest", "06-port-img-3578", "50% 50%", "20260624-vertical1")
     ],
     horizontalMedia: [
       localMedia("port_guest", "58-p1999575-stage.webp", "58-p1999575-full.webp", "58-p1999575-mobile.webp", "50% 50%"),
