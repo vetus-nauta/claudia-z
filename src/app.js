@@ -74,8 +74,8 @@ const zones = [
     en: {
       label: "Exterior",
       title: "Profile and proportions",
-      copy: "Profile, hull line, glazing, and deck volume in one first read.",
-      detail: "This section is for scale and orientation: the 76 Yacht silhouette, flybridge height, side glazing, and the way the hull sits on the water."
+      copy: "A modern Sunseeker profile with clean British lines, a planted stance, and a serious presence on the water.",
+      detail: "The exterior keeps the yacht's sporty character without feeling overdrawn or aggressive. The lines stay balanced, clean, and unmistakably marine.\n\nUnderway, the Sunseeker 76 feels responsive and predictable. That matters on a yacht of this size: the captain gets the sense of control and confidence that makes the boat feel composed rather than heavy."
     },
     ru: {
       label: "Экстерьер",
@@ -132,9 +132,9 @@ const zones = [
     ],
     en: {
       label: "Flybridge",
-      title: "Open social deck",
-      copy: "The flybridge is one of the spaces that many yachts of a similar, and even larger, size could genuinely envy.",
-      detail: "Spacious, open, and well thought out, it quickly becomes a natural gathering point for guests.\n\nDuring the day, this is where guests sunbathe, talk, have coffee or cocktails, and simply spend time above deck with an open view of the sea. The aft part of the flybridge works as a separate beach area: sun loungers and a retractable awning create comfortable shade during hot hours. The space is also convenient for morning activities such as fitness, yoga, stretching, or individual training sessions.\n\nIn the evening, the flybridge changes character and becomes an atmospheric lounge area. Live music, calm dinner accompaniment, or a small gala evening at anchor fit naturally here. Invited musicians add mood and depth without turning the rest into a noisy event.\n\nA separate strength of the flybridge is the bar area. A bartender can prepare cocktails for guests, while the chef can work with the grill and serve dishes directly upstairs. This makes the flybridge not just an additional deck, but an independent space for rest, conversation, and service.\n\nIn essence, the Sunseeker 76 flybridge is its own ecosystem on board. It has air, view, privacy, bar, music, sun, and evening atmosphere. The premium audio system creates quality musical accompaniment without disturbing neighboring yachts at anchor or guests resting in other areas of the boat."
+      title: "Open upper deck",
+      copy: "The Sunseeker 76 flybridge is one of the boat's strongest social spaces, with the scale to feel natural all day.",
+      detail: "It is open, generous, and well planned, so guests tend to gather here without the space feeling staged.\n\nBy day, it works for sun, conversation, coffee, cocktails, and time above deck with an open sea view. The aft section can function as its own relaxed beach area, with sun loungers and a retractable shade for the hotter hours. It also suits morning routines such as fitness, yoga, stretching, or a private training session.\n\nIn the evening, the flybridge shifts into a quieter lounge. Live music, low-key dinner music, or a small evening at anchor can sit here naturally without turning the yacht into a loud event.\n\nThe bar area is a real advantage. Drinks can be prepared upstairs, and the grill lets food come directly from the flybridge instead of treating it as overflow space. That makes the deck useful for service as well as for conversation.\n\nTaken as a whole, the flybridge feels like its own zone on board: air, view, privacy, bar, music, sun, and an evening atmosphere. The audio system supports the mood without needing to dominate the anchorage or the rest of the yacht."
     },
     ru: {
       label: "Флайбридж",
@@ -167,9 +167,9 @@ const zones = [
     ],
     en: {
       label: "Foredeck",
-      title: "Forward lounge",
-      copy: "A quieter forward lounge, separate from the cockpit and flybridge.",
-      detail: "Sofas, a table, two refrigerators, and music make it useful at anchor for 6-8 people without turning the bow into a showpiece."
+      title: "Foredeck",
+      copy: "The foredeck on the Sunseeker 76 is a separate forward lounge with more privacy than the main guest areas aft.",
+      detail: "By day, it is a comfortable place for sun, reading, conversation, or a quiet pause away from the main rhythm of the yacht. It is arranged as a real seating area, not just a pad with sun cushions: a table and wraparound sofa make it easy to sit, talk, have coffee, a glass of wine, or simply look out over the water.\n\nIn the evening, the mood becomes quieter and more intimate. It works well for private conversation, personal time, or a small romantic dinner when guests want to step away from the rest of the boat.\n\nThe separate sound zone matters. Volume and music can be set for the foredeck itself, instead of forcing one soundtrack across the whole yacht.\n\nIn short, the foredeck is the yacht's private forward lounge: sun and rest during the day, then a calmer setting for conversation and time alone in the evening."
     },
     ru: {
       label: "Фордек",
@@ -201,9 +201,9 @@ const zones = [
     ],
     en: {
       label: "Cockpit",
-      title: "Aft lounge connection",
-      copy: "The shaded aft link between saloon, table service, and the swim platform.",
-      detail: "A refrigerator and ice maker support the cockpit table. The route aft stays direct, which matters when people move between saloon, tender, and water."
+      title: "Cockpit",
+      copy: "The cockpit is one of the key living areas on the Sunseeker 76: open, comfortable, and used throughout the day.",
+      detail: "Breakfast, lunch, and dinner often happen here. It is not just a pass-through space by the saloon entrance; it is the central meeting point on board, where guests sit together, talk, listen to music, look out to sea, and spend a large part of the day.\n\nThe connection to the main saloon is a major part of how the cockpit works. The large sliding door opens the two spaces into one larger living area, so service from the saloon feels easy and the aft deck feels more generous.\n\nThe layout also respects crew movement. Crew can use the side deck and reach the helm area through a separate side door without crossing through the guest cockpit. In real use, that keeps technical work and guest time from getting in each other's way.\n\nThe atmosphere is helped by the sound system. Music can stay in the background without taking over the conversation; after a while, it simply becomes part of the setting.\n\nFrom the cockpit there is access to the ice maker, two side decks leading forward to the foredeck, the stairs to the flybridge, and two ways down toward the swim platform and the water.\n\nOverall, the cockpit is the yacht's main social hub: a place for meals, conversation, informal meetings, and the everyday life of the boat."
     },
     ru: {
       label: "Кокпит",
@@ -242,7 +242,7 @@ const zones = [
       label: "Aft Swim Platform",
       title: "Water access aft",
       copy: "The aft submersible platform works as a beach area by the water.",
-      detail: "On the Sunseeker 76, the aft submersible swim platform is arranged in an original and practical way. It can be used as a beach area with sun loungers and a small table, while the platform height can be adjusted for comfortable entry into the water and exit from it. A ladder is provided for getting into the water.\n\nThese options allow young children, older guests, and people with reduced mobility to enjoy the sea and the beach area comfortably. The platform can lower up to 40 cm below the water, creating a conditional pool area beside the yacht.\n\nTwo showers on the platform supply fresh water at any time and prevent queues. For evening time by the water, the platform includes a grill area: a practical solution for grill gatherings on the platform beach area and for serving grilled dishes to the cockpit table.\n\nTogether with underwater lighting, step lighting, and other lighting elements, this gives comfort, independence from shore infrastructure, and a calm sense of rest by the water. For active time on board there are 2 SUP boards, a SeaBob, a tender with a towable inflatable, masks, and fins."
+      detail: "On the Sunseeker 76, the aft hydraulic swim platform is unusually useful. It can be set up as a beach area with loungers and a small table, and its height can be adjusted for easier entry into and out of the water. A swim ladder is also available.\n\nThat makes the sea more accessible for children, older guests, and anyone who needs an easier way in and out. The platform can lower up to 40 cm below the surface, creating a shallow-water area right beside the yacht.\n\nTwo freshwater showers are available on the platform, so guests do not have to wait. For evenings by the water, the grill area supports relaxed meals on the platform and easy service back to the cockpit table.\n\nUnderwater lighting, step lighting, and other small lighting details make the area feel comfortable after sunset. For active time on board, the yacht carries 2 SUP boards, a SeaBob, a tender with a towable inflatable, masks, and fins."
     },
     ru: {
       label: "Кормовая платформа",
@@ -266,9 +266,9 @@ const zones = [
     ],
     en: {
       label: "Tender",
-      title: "Tender and water toys",
-      copy: "Williams 420 support for transfers, shore runs, and towable water-toy use.",
-      detail: "This section stays practical: movement between yacht and shore, towable inflatable use, and planning around the aft platform."
+      title: "Williams 420 tender",
+      copy: "The Williams 420 is more than a support boat; at this size, it works as a capable small runabout.",
+      detail: "At more than four meters long, the tender can comfortably carry up to six people. It is used for guest transfers, arrivals and departures, and movement between yachts without spending time entering a marina or arranging a berth.\n\nIts speed makes short runs easy, while also allowing longer coastal trips when the plan calls for it.\n\nIt also adds another layer of time on the water. The tender can tow inflatable water toys, take children for a ride, support swimming in remote bays, or simply make a fast run along the coast.\n\nFor many outings, the tender becomes the practical way to explore: island visits, caves, beach landings, and places where the main yacht should not or cannot approach often start with the Williams.\n\nIn that sense, the Williams 420 is not just a boat that follows the yacht. It expands how the yacht can be used and opens up more ways to spend time on the water."
     },
     ru: {
       label: "Тендер",
