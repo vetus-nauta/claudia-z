@@ -1,0 +1,74 @@
+{
+  "title": "Claudia Z Text Authorship Deposit",
+  "generatedAt": "2026-06-24T20:43:46+02:00",
+  "project": "Claudia Z private yacht presentation",
+  "repository": "git@github.com:vetus-nauta/claudia-z.git",
+  "sourceCommit": "2449e883302da3de6bae4df87659afc5027a54c9",
+  "textClaimant": {
+    "name": "Alexey Usov",
+    "email": "sailor040381@gmail.com"
+  },
+  "zoneCount": 12,
+  "zones": [
+    {
+      "id": "overview",
+      "ruLabel": "Обзор",
+      "enLabel": "Overview"
+    },
+    {
+      "id": "exterior",
+      "ruLabel": "Экстерьер",
+      "enLabel": "Exterior"
+    },
+    {
+      "id": "flybridge",
+      "ruLabel": "Флайбридж",
+      "enLabel": "Flybridge"
+    },
+    {
+      "id": "foredeck",
+      "ruLabel": "Фордек",
+      "enLabel": "Foredeck"
+    },
+    {
+      "id": "cockpit",
+      "ruLabel": "Кокпит",
+      "enLabel": "Cockpit"
+    },
+    {
+      "id": "aft_swim_platform",
+      "ruLabel": "Кормовая платформа",
+      "enLabel": "Aft Swim Platform"
+    },
+    {
+      "id": "tender",
+      "ruLabel": "Тендер",
+      "enLabel": "Tender"
+    },
+    {
+      "id": "saloon",
+      "ruLabel": "Салон",
+      "enLabel": "Saloon"
+    },
+    {
+      "id": "master_cabin",
+      "ruLabel": "Мастер-каюта",
+      "enLabel": "Master cabin"
+    },
+    {
+      "id": "forward_vip",
+      "ruLabel": "Носовая VIP",
+      "enLabel": "Forward VIP"
+    },
+    {
+      "id": "starboard_guest",
+      "ruLabel": "Правая гостевая",
+      "enLabel": "Starboard guest"
+    },
+    {
+      "id": "port_guest",
+      "ruLabel": "Левая гостевая",
+      "enLabel": "Port guest"
+    }
+  ]
+}
