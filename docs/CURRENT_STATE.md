@@ -81,6 +81,7 @@
 - Mobile stage navigation now supports vertical swipe as an alternate photo-changing gesture. The main stage uses a one-time vertical air/glass hint, and horizontal fullscreen galleries keep their existing behavior with a matching horizontal hint.
 - The Welcome Hall hero media is excluded from horizontal gallery items and is faded out during the first handoff from `overview` into a zone, so it does not flash as a gallery frame.
 - Russian details for Exterior and Flybridge are owner-supplied from Google Drive `Claudia-z/Описания`; do not silently rewrite them. Exterior has the service heading removed from the public UI. Flybridge text is restored from the original `Описания` source and must not be replaced with a shortened equipment-only block.
+- Russian texts for Foredeck, Cockpit, and Tender are also owner-supplied from Google Drive `Claudia-z/Описания` (`sunseeker-76-foredeck-description-ru.md`, `sunseeker-76-cockpit-description-ru.md`, `williams-420-tender-description-ru.md`). Keep their wording intact unless the owner explicitly asks for editorial changes.
 - Runtime media loading is intentionally conservative: the page uses one visible stage image, the first Overview image has responsive `srcset`, and adjacent stage/gallery images are preloaded later with low priority and a small in-memory source cache. Do not restore eager adjacent-image preloads on zone render.
 - Future photos will be supplied section-by-section as Google Drive folders/links.
 
