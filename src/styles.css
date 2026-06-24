@@ -2107,8 +2107,7 @@ h1 {
     --builder-mark-half-height: min(23.73px, 5.93vw);
     --brand-axis-y: calc(var(--builder-mark-top) + var(--builder-mark-half-height));
     --top-control-height: 36px;
-    --mobile-zone-tile: clamp(78px, 23vw, 92px);
-    --mobile-zone-dock-height: calc(var(--mobile-zone-tile) + 30px + var(--safe-bottom));
+    --mobile-zone-tile: clamp(66px, 18vw, 74px);
   }
 
   .media-stepper {
@@ -2195,7 +2194,6 @@ h1 {
     object-fit: contain;
     background: transparent;
     transform: none;
-    height: calc(100dvh - var(--mobile-zone-dock-height));
   }
 
   .specs {
@@ -2277,7 +2275,7 @@ h1 {
     bottom: 0;
     z-index: 24;
     display: block;
-    padding: 10px 0 calc(12px + var(--safe-bottom));
+    padding: 8px 0 calc(9px + var(--safe-bottom));
     border: 0;
     background: var(--command-bg);
     opacity: 1;
@@ -2311,14 +2309,14 @@ h1 {
     overscroll-behavior-x: contain;
     border: 0;
     border-radius: 0;
-    padding: 4px 20px 6px;
+    padding: 3px 18px 5px;
     background: transparent;
     box-shadow: none;
     transform: none;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    scroll-padding-inline: 20px;
+    scroll-padding-inline: 18px;
     scroll-snap-type: x proximity;
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 36px), transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 36px), transparent 100%);
@@ -2339,13 +2337,13 @@ h1 {
     min-height: var(--mobile-zone-tile);
     aspect-ratio: 1;
     flex-direction: column;
-    gap: 7px;
-    border-radius: 18px;
-    padding: 9px 7px;
+    gap: 5px;
+    border-radius: 16px;
+    padding: 7px 6px;
     justify-content: center;
     text-align: center;
-    font-size: 9px;
-    letter-spacing: 0.025em;
+    font-size: 8px;
+    letter-spacing: 0.02em;
     line-height: 1.08;
     white-space: normal;
     scroll-snap-align: start;
@@ -2353,8 +2351,8 @@ h1 {
 
   .zone-button__icon,
   .stage--welcome .zone-button__icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 999px;
     transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
   }
